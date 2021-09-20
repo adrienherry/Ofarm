@@ -1,14 +1,23 @@
 /*eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import './index.css';
+
+
+import './styles/index.css';
 import App from './components/App';
+import store from './store';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <React.StrictMode>
+      <Provider store={store}>
+      <App />
+      </Provider>
+    </React.StrictMode>
+  </BrowserRouter>,
   document.getElementById('root'),
 );
 
