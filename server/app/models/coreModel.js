@@ -10,7 +10,7 @@ class CoreModel {
 			const { rows } = await db.query(`SELECT * FROM "${this.viewName}"`);
 			return rows;
 		} catch (error) {
-			console.log(error);
+			return { error: error.message };
 		}
 	}
 
@@ -25,7 +25,7 @@ class CoreModel {
 
 			return rows[0];
 		} catch (error) {
-			console.log(error);
+			return { error: error.message };
 		}
 	}
 
@@ -47,26 +47,25 @@ class CoreModel {
 					values,
 				);
 
-				if (!rows[0])
-					throw Error({ message: "Internal server error during update" });
-
 				for (const propName in rows[0]) {
 					this[propName] = rows[0][propName];
 				}
+
+				return rows[0];
 			} else {
 				const { rows } = await db.query(
 					`INSERT INTO "${this.constructor.tableName}" (${keys}) VALUES (${params}) RETURNING *`,
+					values,
 				);
-
-				if (!rows[0] || !rows[0].id)
-					throw Error({ message: "Internal server error during update" });
 
 				for (const propName in this) {
 					this[propName] = rows[0][propName];
 				}
+
+				return rows[0];
 			}
 		} catch (error) {
-			console.log(error);
+			return { error: error.message };
 		}
 	}
 
@@ -80,7 +79,7 @@ class CoreModel {
 			);
 			return rows.length;
 		} catch (error) {
-			console.log(error);
+			return { error: error.message };
 		}
 	}
 }
