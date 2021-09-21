@@ -1,7 +1,8 @@
-const router = require('express').Router();
+const { Router } = require('express')
+const router = Router();
 
-router.get("/", (req,res) => {
-    res.json("Welcome to the homepage")
-}); 
+const { homePage } = require("./controllers/mainController");
+
+router.get("/", homePage); 
 
 module.exports = router;
