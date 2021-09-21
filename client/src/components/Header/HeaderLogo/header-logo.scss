@@ -6,13 +6,20 @@
     &__image {
         width: 8rem;
         height: 8rem;
-        padding: vars.$gutter 0 vars.$gutter vars.$gutter;
+        padding: vars.$gutter 0 vars.$gutter 0;
     }
 
     &__description {
         display: flex;
         align-items: center;
+        font-size: 0.9rem;
         font-weight: 700;
         color: vars.$color-font-header;
+    }
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: vars.$color-font-header;
+        margin-bottom: 0.5rem;
     }
 }

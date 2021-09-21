@@ -2,6 +2,8 @@
 
 .header {
     background-color: vars.$header-color;
-    display: flex;
-    justify-content: space-between;
+}
+
+.mobile-menu-icon {
+    cursor: pointer;
 }
