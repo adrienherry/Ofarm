@@ -1,0 +1,18 @@
+@use '../../../styles/vars';
+
+.header-logo {
+    display: flex;
+
+    &__image {
+        width: 8rem;
+        height: 8rem;
+        padding: vars.$gutter 0 vars.$gutter vars.$gutter;
+    }
+
+    &__description {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        color: vars.$color-font-header;
+    }
+}

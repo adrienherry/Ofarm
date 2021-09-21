@@ -1,0 +1,5 @@
+@use '../../styles/vars';
+
+.header {
+    background-color: vars.$header-color;
+}
