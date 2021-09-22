@@ -4,6 +4,7 @@ import headerReducer from './header';
 import userReducer from './user';
 import searchBarReducer from './searchbar';
 import registerReducer from './register';
+import speciesReducer from './species';
 
 const rootReducer = combineReducers({
   // ici, on indique que notre state aurra une tranche (slice) appelée
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   header: headerReducer,
   user: userReducer,
   searchbar: searchBarReducer,
+  species: speciesReducer,
 });
 
 export default rootReducer;
