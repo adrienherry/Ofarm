@@ -7,8 +7,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
     "@material-ui/core": "^5.0.0-beta.5",
     "framer-motion": "^4.1.17",
     "prop-types": "^15.7.2",

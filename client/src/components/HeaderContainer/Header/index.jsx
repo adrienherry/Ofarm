@@ -29,9 +29,11 @@ const Header = () => {
         </Grid>
         )}
         {isMobile && (
-          <div className="mobile-menu-icon" onClick={handleMobileMenuIcon}>
-            <HiMenu size={32} color="#a7bbac" />
-          </div>
+          <Grid item container xs={1} justifyContent="flex-end">
+            <div className="mobile-menu-icon" onClick={handleMobileMenuIcon}>
+              <HiMenu size={32} color="#a7bbac" />
+            </div>
+          </Grid>
         )}
       </Grid>
     </header>

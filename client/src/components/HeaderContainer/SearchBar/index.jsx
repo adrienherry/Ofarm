@@ -26,7 +26,7 @@ const containerVariants = {
     height: '20rem',
   },
   collapsed: {
-    height: '3.8rem',
+    height: '2.5rem',
   },
 };
 
@@ -60,9 +60,8 @@ const SearchBar = () => {
   else if (isMobile) {
     style = {
       right: '19%',
-      width: '60%',
-      height: '2rem',
-      top: '1rem',
+      width: '55%',
+      top: '2rem',
     };
   }
   else {
