@@ -1,20 +1,40 @@
-const db = require("../database");
-const { User, Garden } = require ("../models");
+const db = require("../services/sequelize");
+const { Garden, EventType } = require("../models");
 
 const gardenController = {
-    findOneWithUserId: async(req, res) => {
-        try {
-            const gardenItem = await Garden.findById(parseInt(req.params.garden_id));
-            console.log(gardenItem);
-            if (gardenItem && parseInt(req.params.user_id) === gardenItem.user_id) {
-            res.json(gardenItem);
-            } else {
-            res.status(403).json({error: "No garden with such id for this user"});
+	findOneWithUserId: async (req, res) => {
+		try {
+			const garden_id = parseInt(req.params.garden_id);
+			const user_id = parseInt(req.params.user_id);
+
+			const gardenItem = await Garden.findByPk(garden_id, {
+				include: [
+					"species",
+					{
+						association: "species",
+						include: [
+							"events",
+							{
+								association: "events",
+								include: "eventType",
+							},
+						],
+						through: {
+							attributes: [],
+						},
+					},
+				],
+            });
+            
+			if (gardenItem && user_id === gardenItem.userId) {
+				res.json(gardenItem);
+			} else {
+				res.status(403).json({ error: "No garden with such id for this user" });
             }
-        } catch (error) {
-            res.status(500).json(error.message)
-        }
-    }
-}
-// user:id -> garden:id            garden:id -> user:id
+            
+		} catch (error) {
+			res.status(500).json(error.message);
+		}
+	},
+};
 module.exports = gardenController;

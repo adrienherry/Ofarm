@@ -1,17 +1,41 @@
-const db = require("../database");
-const CoreModel = require("./coreModel");
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../services/sequelize");
 
-class Species extends CoreModel {
-	static tableName = "species";
-	static viewName = "species_view";
+class Species extends Model {}
 
-	constructor(obj = {}) {
-		super(obj);
-
-		for (const propName in obj) {
-			this[propName] = obj[propName];
-		}
-	}
-}
+Species.init(
+	{
+		name: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true,
+		},
+		nameSlug: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true,
+		},
+		imageUrl: {
+			type: DataTypes.STRING,
+			allowNull: true,
+		},
+		color: {
+			type: DataTypes.STRING,
+			allowNull: true,
+			defaultValue: "#ffffff00",
+		},
+		description: {
+			type: DataTypes.STRING,
+			allowNull: true,
+		},
+	},
+	{
+		sequelize,
+		underscored: true,
+		modelName: "Species",
+		tableName: "species",
+		timestamps: true,
+	},
+);
 
 module.exports = Species;
