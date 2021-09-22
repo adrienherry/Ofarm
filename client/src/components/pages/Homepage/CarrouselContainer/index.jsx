@@ -1,16 +1,42 @@
+import { Grid } from '@material-ui/core';
 import React from 'react';
 import Carrousel from './Carrousel';
 
-import filip from './Carrousel/carrousel_images/filip-urban-unsplash.jpg';
-import markus1 from './Carrousel/carrousel_images/markus-spiske-sF-unsplash.jpg';
-import sandie from './Carrousel/carrousel_images/sandie-clarke-unsplash.jpg';
-import lool from './Carrousel/carrousel_images/markus-spiske-unsplash.jpg';
-import danm from './Carrousel/carrousel_images/markus-spiske-ZS-unsplash.jpg';
+import carrouselPicture1 from '/carrousel_image_1.jpg';
+import carrouselPicture2 from '/carrousel_image_2.jpg';
+import carrouselPicture3 from '/carrousel_image_3.jpg';
+import carrouselPicture4 from '/carrousel_image_4.jpg';
+import carrouselPicture5 from '/carrousel_image_5.jpg';
 
-const CarrouselContainer = () => (
-  <div className="carrousel-container">
-    <Carrousel filip={filip} markus1={markus1} sandie={sandie} lool={lool} danm={danm} />
-  </div>
-);
+const CarrouselContainer = () => {
+  const pictures = [
+    {
+      picture: carrouselPicture1,
+      id: 0,
+    },
+    {
+      picture: carrouselPicture2,
+      id: 1,
+    },
+    {
+      picture: carrouselPicture3,
+      id: 2,
+    },
+    {
+      picture: carrouselPicture4,
+      id: 3,
+    },
+    {
+      picture: carrouselPicture5,
+      id: 4,
+    },
+  ];
+  return (
+    <Grid item>
+      <Carrousel pictures={pictures} />
+    </Grid>
+
+  );
+};
 
 export default CarrouselContainer;

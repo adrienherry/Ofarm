@@ -1,15 +1,13 @@
 .carrousel {
-    height: 30em;
-    width: 90vw;
     border: 0.1em;
-    border-style: solid;
-    border-color: grey;
     box-sizing: content-box;
     padding: 1em;
-}
+    width: 40%;
 
-img {
-    object-fit: fill;
-    width: 10em;
-    height: 30em;
+    &__img {
+        object-fit: fill;
+        height: 100%;
+        border-radius: 1rem;
+        border: 10px solid #ffffff;
+    }
 }

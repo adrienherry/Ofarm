@@ -4,44 +4,31 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import './carrousel.scss';
 
-const Carrousel = ({
-  filip, markus1, sandie, lool, danm,
-}) => (
+const Carrousel = ({ pictures }) => (
   <Carousel
     className="carrousel"
     showThumbs={false}
     infiniteLoop
     autoPlay
   >
-    <div>
-      <img src={filip} />
-      <p className="legend">Legend 1</p>
-    </div>
-    <div>
-      <img src={markus1} />
-      <p className="legend">Legend 2</p>
-    </div>
-    <div>
-      <img src={sandie} />
-      <p className="legend">Legend 3</p>
-    </div>
-    <div>
-      <img src={lool} />
-      <p className="legend">Legend 4</p>
-    </div>
-    <div>
-      <img src={danm} />
-      <p className="legend">Legend 5</p>
-    </div>
+    {pictures.map((picture) => (
+      <div>
+        <img
+          src={picture.picture}
+          key={picture.id}
+          alt="carrousel"
+          className="carrousel__img"
+        />
+      </div>
+    ))}
   </Carousel>
 );
 
 Carrousel.propTypes = {
-  filip: PropTypes.string.isRequired,
-  markus1: PropTypes.string.isRequired,
-  sandie: PropTypes.string.isRequired,
-  lool: PropTypes.string.isRequired,
-  danm: PropTypes.string.isRequired,
+  pictures: PropTypes.arrayOf(PropTypes.shape({
+    picture: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+  })).isRequired,
 };
 
 export default Carrousel;

@@ -1,0 +1,13 @@
+@use '../../../styles/vars';
+
+.homepage {
+    &__grid-container {
+        margin-top: 7rem;
+
+        &__carrousel {
+            background-color: vars.$background-carrousel_color;
+            border-radius: 1rem;
+            position: relative;
+        }
+    }
+}
