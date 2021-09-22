@@ -1,15 +1,17 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addForm, setConfigPassword, setConfirmEmail, setEmail, setPassword, setUsername } from '../../../store/actions/form';
+import {
+  addForm, setConfigPassword, setConfirmEmail, setEmail, setPassword, setUsername,
+} from '../../../store/actions/register';
 import './register.scss';
 
 const RegisterForm = () => {
-  const dispatch = useDispatch()
-  const username = useSelector((state) => state.form.username);
-  const email = useSelector((state) => state.form.email);
-  const confirmEmail = useSelector((state) => state.form.confirmEmail);
-  const password = useSelector((state) => state.form.password);
-  const confirmPassword = useSelector((state) => state.form.confirmPassword);
+  const dispatch = useDispatch();
+  const username = useSelector((state) => state.register.username);
+  const email = useSelector((state) => state.register.email);
+  const confirmEmail = useSelector((state) => state.register.confirmEmail);
+  const password = useSelector((state) => state.register.password);
+  const confirmPassword = useSelector((state) => state.register.confirmPassword);
 
   const handleUsername = (event) => {
     dispatch(setUsername(event.target.value));
@@ -33,7 +35,7 @@ const RegisterForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addForm())
+    dispatch(addForm());
   };
 
   return (
