@@ -1,6 +1,6 @@
 const {Pool} = require('pg');
 const { config } = require('process');
-
+console.log(process.env.DATABASE_URL);
 let pgConfig = {
     connectionString: process.env.DATABASE_URL
 }
