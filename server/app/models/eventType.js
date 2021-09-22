@@ -1,17 +1,28 @@
-const db = require("../database");
-const CoreModel = require("./coreModel");
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../services/sequelize");
 
-class EventType extends CoreModel {
-	static tableName = "event_type";
-	static viewName = "event_type";
+class EventType extends Model {}
 
-	constructor(obj = {}) {
-		super(obj);
-
-		for (const propName in obj) {
-			this[propName] = obj[propName];
-		}
-	}
-}
+EventType.init(
+	{
+		name: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true,
+		},
+		nameSlug: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true,
+		},
+	},
+	{
+		sequelize,
+		underscored: true,
+		modelName: "EventType",
+		tableName: "event_type",
+		timestamps: true,
+	},
+);
 
 module.exports = EventType;
