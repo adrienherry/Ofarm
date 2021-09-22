@@ -1,4 +1,4 @@
-@use '../../../styles/vars';
+@use '../../../../styles/vars';
 
 .header-logo {
     display: flex;
@@ -15,6 +15,7 @@
         font-size: 0.9rem;
         font-weight: 700;
         color: vars.$color-font-header;
+        line-height: 1.1rem;
     }
     &__title {
         font-size: 2rem;

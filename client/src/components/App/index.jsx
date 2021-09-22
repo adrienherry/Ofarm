@@ -1,13 +1,10 @@
 import React from 'react';
+import HeaderContainer from '../HeaderContainer';
 import './app.scss';
-
-import Header from '../Header';
-import UserMenu from '../UserMenu';
 
 const App = () => (
   <div className="app">
-    <Header />
-    <UserMenu />
+    <HeaderContainer />
   </div>
 );
 

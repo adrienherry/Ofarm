@@ -5,7 +5,7 @@ import { useMediaQuery } from '@material-ui/core';
 import LoggedNav from './LoggedNav';
 import NotLoggedNav from './NotLoggedNav';
 import './user-menu.scss';
-import { collapseUserMenu } from '../../store/actions/user';
+import { collapseUserMenu } from '../../../store/actions/user';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -13,10 +13,10 @@ const UserMenu = () => {
   const userMenuIsOpen = useSelector((state) => state.user.userMenuIsOpen);
   const userMenuRef = useRef();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMedium = useMediaQuery(theme.breakpoints.down('md'));
 
   const userMenuStyle = {
-    width: isMobile ? '100%' : '15rem',
+    width: isMedium ? '100%' : '15rem',
   };
 
   useEffect(() => {

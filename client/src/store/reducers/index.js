@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import authentificationReducer from './authentification';
 import headerReducer from './header';
 import userReducer from './user';
+import searchBarReducer from './searchbar';
 
 const rootReducer = combineReducers({
   // ici, on indique que notre state aurra une tranche (slice) appelée
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   auth: authentificationReducer,
   header: headerReducer,
   user: userReducer,
+  searchbar: searchBarReducer,
 });
 
 export default rootReducer;

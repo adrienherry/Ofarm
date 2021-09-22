@@ -8,7 +8,7 @@ import './header.scss';
 import { useDispatch } from 'react-redux';
 import Headerlogo from './HeaderLogo';
 import HeaderNavigation from './HeaderNavigation';
-import { openUserMenu } from '../../store/actions/user';
+import { openUserMenu } from '../../../store/actions/user';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header className="header">
       <Grid container flexDirection="space-between" alignItems="center">
-        <Grid item lg={4} md={4} xs={11}>
+        <Grid item lg={4} md={4} xs={10}>
           <Headerlogo />
         </Grid>
         {!isMobile && (
