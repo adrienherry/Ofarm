@@ -1,0 +1,15 @@
+.carrousel {
+    height: 30em;
+    width: 90vw;
+    border: 0.1em;
+    border-style: solid;
+    border-color: grey;
+    box-sizing: content-box;
+    padding: 1em;
+}
+
+img {
+    object-fit: fill;
+    width: 10em;
+    height: 30em;
+}
