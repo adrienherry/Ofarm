@@ -22,6 +22,7 @@ const App = () => (
       <Route path="/login" exact>
         <Login />
       </Route>
+      <Register />
     </Switch>
     {/* <Register /> */}
     {/* <Footer /> */}
