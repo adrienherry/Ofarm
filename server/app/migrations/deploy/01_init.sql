@@ -1,6 +1,6 @@
 BEGIN;
 
-CREATE EXTENSION IF NOT EXISTS "unaccent";
+--CREATE EXTENSION IF NOT EXISTS "unaccent";
 
 CREATE OR REPLACE FUNCTION slugify (value text, sep text)
    RETURNS text
