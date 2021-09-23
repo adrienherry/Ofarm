@@ -1,17 +1,42 @@
-const db = require("../database");
-const CoreModel = require("./coreModel");
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../services/sequelize");
 
-class Garden extends CoreModel {
-	static tableName = "garden";
-	static viewName = "garden_view";
+class Garden extends Model {}
 
-	constructor(obj = {}) {
-		super(obj);
+Garden.init(
+	{
+		id: {
+			type: DataTypes.INTEGER, // 指定值的类型
+			primaryKey: true,
+			autoIncrement: true,
+		},
+		name: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		nameSlug: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+	},
+	{
+		sequelize,
+		underscored: true,
+		indexes: [
+			{
+				unique: true,
+				fields: ["name", "userId"],
+			},
+			{
+				unique: true,
+				fields: ["nameSlug", "userId"],
+			},
+		],
 
-		for (const propName in obj) {
-			this[propName] = obj[propName];
-		}
-	}
-}
+		modelName: "Garden",
+		tableName: "garden",
+		timestamps: true,
+	},
+);
 
 module.exports = Garden;
