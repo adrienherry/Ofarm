@@ -5,6 +5,11 @@ class User extends Model {}
 
 User.init(
 	{
+		id: {
+			type: DataTypes.INTEGER, // 指定值的类型
+			primaryKey: true,
+			autoIncrement: true,
+		},
 		username: {
 			type: DataTypes.STRING,
 			allowNull: false,
