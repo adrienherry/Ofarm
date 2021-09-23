@@ -7,6 +7,10 @@
 
     &__link {
 
+        &:hover {
+            color: vars.$active-color-header;
+        }
+
         &--active {
             text-decoration: underline;
             color: vars.$active-color-header;
