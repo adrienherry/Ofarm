@@ -28,9 +28,13 @@ const NotLoggedNav = () => {
             </NavLink>
           </>
         )}
-        <li className="user-menu__item">
-          Se connecter
-        </li>
+        <NavLink
+          to="/login"
+        >
+          <li className="user-menu__item">
+            Se connecter
+          </li>
+        </NavLink>
         <NavLink
           to="/register"
         >

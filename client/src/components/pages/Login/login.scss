@@ -1,0 +1,55 @@
+@use '../../../styles/vars';
+
+.login {
+    margin-top: 5%;
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: vars.$header-color;
+    }
+
+    &__field {
+        width: 100%;
+        padding: vars.$gutter ;
+        border: none;
+        border-radius: 1rem;
+        box-shadow: vars.$shadow;
+        margin-top: 1rem;
+        
+        &::placeholder {
+            font-family: vars.$font;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        &:focus {
+            outline: none;
+            &::placeholder {
+                opacity: 0;
+                transition: 0.3s;
+            }
+        }
+    }
+
+    &__label {
+        color: vars.$header-color;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    &__submit-btn {
+        padding: vars.$gutter * 0.8;
+        width: 8rem;
+        background-color: vars.$header-color;
+        border: none;
+        border-radius: 0.5rem;
+        color: #ffffff;
+        font-weight: 700;
+        box-shadow: vars.$shadow;
+
+        &:hover {
+            box-shadow: vars.$white-shadow;
+        }
+    }
+}
