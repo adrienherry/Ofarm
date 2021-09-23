@@ -14,4 +14,6 @@ router.get("/species/:id", speciesController.findOne);
 router.get("/user/:id", userController.findOne);
 router.get("/user/:user_id/garden/:garden_id", gardenController.findOneWithUserId);
 
+router.post("/user/:user_id/garden/:garden_id/species", speciesController.addOneToGarden)
+
 module.exports = router;

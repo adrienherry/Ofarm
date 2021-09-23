@@ -1,5 +1,5 @@
 const db = require("../services/sequelize");
-const { Garden, EventType } = require("../models");
+const { Garden } = require("../models");
 
 const gardenController = {
 	findOneWithUserId: async (req, res) => {

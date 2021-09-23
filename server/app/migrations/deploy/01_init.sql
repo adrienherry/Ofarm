@@ -74,6 +74,8 @@ CREATE TABLE "garden_species" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    garden_id int NOT NULL REFERENCES "garden" (id) NOT NULL,
    species_id int NOT NULL REFERENCES "species" (id) NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now()),
    UNIQUE (garden_id, species_id)
 );
 

@@ -5,6 +5,11 @@ class Event extends Model {}
 
 Event.init(
 	{
+		id: {
+			type: DataTypes.INTEGER, // 指定值的类型
+			primaryKey: true,
+			autoIncrement: true,
+		},
 		fromDate: {
 			type: DataTypes.DATE,
 			allowNull: false,
