@@ -6,7 +6,7 @@ import HeaderContainer from '../HeaderContainer';
 import HomePage from '../pages/Homepage';
 import Register from '../pages/Register';
 import Species from '../pages/Species';
-import Footer from '../Footer';
+// import Footer from '../Footer';
 import Login from '../pages/Login';
 
 const App = () => (
