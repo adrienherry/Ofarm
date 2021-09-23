@@ -1,10 +1,6 @@
 import {
   ADD_FORM,
-  SET_CONFIRM_EMAIL,
-  SET_CONFIRM_PASSWORD,
-  SET_EMAIL,
-  SET_PASSWORD,
-  SET_USERNAME,
+  SET_REGISTER_FIELD,
 } from '../actions/register';
 
 const initialState = {
@@ -17,36 +13,11 @@ const initialState = {
 
 const RegisterReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case SET_USERNAME:
+    case SET_REGISTER_FIELD:
       return {
         ...state,
-        username: action.value,
+        [action.name]: action.value,
       };
-
-    case SET_EMAIL:
-      return {
-        ...state,
-        email: action.value,
-      };
-
-    case SET_CONFIRM_EMAIL:
-      return {
-        ...state,
-        confirmEmail: action.value,
-      };
-
-    case SET_PASSWORD:
-      return {
-        ...state,
-        password: action.value,
-      };
-
-    case SET_CONFIRM_PASSWORD:
-      return {
-        ...state,
-        confirmPassword: action.value,
-      };
-
     case ADD_FORM:
       return {
         ...state,
