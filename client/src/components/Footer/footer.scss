@@ -65,10 +65,11 @@
 
     &--copyright {
       display: flex;
-      // align-items: flex-end;
-      // padding-bottom: 1em;
-      // padding-left: 1em;
-      // padding-right: 1em;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
       width: 20em;
       background-color: coral;
       &-text {

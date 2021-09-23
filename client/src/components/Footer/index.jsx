@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  FaGithub, FaTwitter, FaFacebook, FaPhoneAlt, FaArrowCircleUp,
+  FaGithub, FaTwitter, FaFacebook, FaPhoneAlt,
 } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
@@ -44,8 +44,9 @@ const Footer = () => (
         </ul>
       </div>
       <div className="footer__container--copyright">
-        <p className="footer__container--copyright-text"> Copyright </p>
-        <FaArrowCircleUp className="footer__container--copyright" size={40} />
+          <p className="footer__container--copyright-text"> Copyright </p>
+          <p className="footer__container--copyright"> Retournez en haut de la page </p>
+          {/* <FaArrowCircleUp className="footer__container--copyright" size={40} /> */}
       </div>
     </div>
   </div>
