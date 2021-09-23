@@ -10,6 +10,7 @@
     background-color: vars.$header-color;
     border-radius: 0 0  0.5rem 0.5rem;
     z-index: 10;
+    box-shadow: -10px 9px 10px 0px rgba(167,187,172,0.6);
 
 
     &__container {
@@ -23,6 +24,10 @@
 
     &__item {
         margin: 0.5rem;
+
+        &:hover {
+            color: vars.$active-color-header;
+        }
     }
 
   

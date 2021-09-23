@@ -2,4 +2,3 @@
 %project=ofarm
 
 01_init 2021-09-21T12:01:52Z Florian NGUYEN <florian.nguyen@yahoo.fr> # Initialisation de la base de données
-02_views 2021-09-21T12:03:20Z Florian NGUYEN <florian.nguyen@yahoo.fr> # Définition des views
