@@ -10,7 +10,7 @@ import './app.scss';
 const App = () => (
   <div className="app">
     <HeaderContainer />
-    <CarrouselContainer />
+    {/* <CarrouselContainer /> */}
     <Register />
   </div>
 );

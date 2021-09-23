@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -39,10 +40,11 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="register-form">
-      <form onSubmit={handleSubmit} autoComplete="on">
-        <label> Signup </label>
+    <div className="registerForm">
+      <form onSubmit={handleSubmit} autoComplete="on" className="registerForm__formulary">
+        <label className="registerForm__formulary-signup"> Signup </label>
         <input
+          className="registerForm__formulary-input"
           type="text"
           placeholder="Username"
           value={username}
@@ -50,6 +52,7 @@ const RegisterForm = () => {
           require
         />
         <input
+          className="registerForm__formulary-input"
           type="email"
           placeholder="Email"
           value={email}
@@ -57,6 +60,7 @@ const RegisterForm = () => {
           required
         />
         <input
+          className="registerForm__formulary-input"
           type="email"
           placeholder="Confirm email"
           value={confirmEmail}
@@ -64,6 +68,7 @@ const RegisterForm = () => {
           required
         />
         <input
+          className="registerForm__formulary-input"
           type="password"
           placeholder="Password"
           value={password}
@@ -71,6 +76,7 @@ const RegisterForm = () => {
           required
         />
         <input
+          className="registerForm__formulary-input"
           type="password"
           placeholder="Confirm password"
           value={confirmPassword}
@@ -78,7 +84,13 @@ const RegisterForm = () => {
           autoComplete="off"
           required
         />
-        <button type="submit"> Signup </button>
+        <input
+          className="registerForm__formulary-checkbox"
+          type="checkbox"
+          // checked={checked}
+          // onChange={handleChecked}
+        /> I agree to the terms & conditions
+        <button className="registerForm__formulary-button" type="submit"> Signup </button>
       </form>
     </div>
   );
