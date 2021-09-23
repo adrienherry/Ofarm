@@ -1,0 +1,26 @@
+@use '../../../styles/vars';
+
+.species {
+    
+    &__container {
+        margin-top: 3rem;
+        
+        &-title {
+            background-color: vars.$background-card-color;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            box-shadow: vars.$shadow;
+        }
+        &-items {
+           padding-top: 3rem;
+        }
+    }
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: vars.$background-app-color;
+    }
+}

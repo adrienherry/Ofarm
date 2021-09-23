@@ -1,0 +1,80 @@
+.footer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 30vh;
+  position: fixed;
+  bottom: 0;
+  background-color: darkolivegreen;
+  padding: 1em;
+
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: darkslateblue;
+    padding: 1em;
+    // height: 80vh;
+    &--logo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      &-img {
+        width: 8em;
+        height: 6em;
+        margin-bottom: 1em;
+      }
+
+      &-social {
+        display: flex;
+        justify-content: space-between;
+        padding: 1em;
+        box-sizing: content-box;
+        border: 0.1em;
+        border-style: solid;
+        border-color: aqua;
+        background-color: coral;
+        // height: 4em;
+        &-twitter {
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+        &-phone {
+          padding-left: 1em;
+        }
+      }
+    }
+
+    &--section {
+      background-color: deeppink;
+      &-title {
+        color: darkviolet;
+        text-align: center;
+        margin-bottom: 0.5em;
+      }
+      &-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &-item {
+          padding: 1em;
+        }
+      }
+    }
+
+    &--copyright {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      width: 20em;
+      background-color: coral;
+      &-text {
+        // margin-right: 1em;
+      }
+    }
+  }
+}
