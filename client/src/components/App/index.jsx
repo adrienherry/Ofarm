@@ -1,9 +1,10 @@
 import React from 'react';
 import './app.scss';
+import IndividualSpecies from '../pages/IndividualSpecies';
 
 const App = () => (
   <div className="app">
-    app
+    <IndividualSpecies />
   </div>
 );
 
