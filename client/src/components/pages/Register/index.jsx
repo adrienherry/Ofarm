@@ -46,7 +46,7 @@ const Login = () => {
                   onChange={handleChangeField}
                 />
               </Grid>
-              <Grid item>
+              {/* <Grid item>
                 <Field
                   value={confirmEmail}
                   type="text"
@@ -54,7 +54,7 @@ const Login = () => {
                   placeholder="Confirmez votre Email"
                   onChange={handleChangeField}
                 />
-              </Grid>
+              </Grid> */}
               <Grid item>
                 <Field
                   value={password}
