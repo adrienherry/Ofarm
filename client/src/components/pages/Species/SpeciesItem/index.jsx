@@ -15,6 +15,7 @@ const SpeciesItem = ({ name, name_slug }) => {
     root: {
       boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
       textAlign: 'center',
+      fontFamily: '"Dosis", sans-serif',
       '&:hover': {
         boxShadow: '0px 9px 23px 1px rgba(61,59,44,0.84)',
       },

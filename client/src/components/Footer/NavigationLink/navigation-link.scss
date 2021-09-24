@@ -1,0 +1,12 @@
+@use '../../../styles/vars';
+
+.navigation-link {
+    margin-bottom: 1rem;
+    overflow-wrap: break-word;
+    font-weight: 700;
+    color: vars.$header-color;
+
+    &:hover {
+        color: vars.$active-color-header;
+    }
+}

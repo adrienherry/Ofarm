@@ -4,6 +4,7 @@
     
     &__container {
         margin-top: 3rem;
+        min-height: 20rem;
         
         &-title {
             background-color: vars.$background-card-color;
@@ -20,6 +21,8 @@
 
         &-loader {
             margin-top: 15%;
+            margin: auto;
+            
         }
     }
     &__title {

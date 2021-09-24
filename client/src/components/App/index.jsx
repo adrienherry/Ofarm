@@ -11,22 +11,24 @@ import Login from '../pages/Login';
 
 const App = () => (
   <div className="app">
-    <HeaderContainer />
-    <Switch>
-      <Route path="/" exact>
-        <HomePage />
-      </Route>
-      <Route path="/species" exact>
-        <Species />
-      </Route>
-      <Route path="/login" exact>
-        <Login />
-      </Route>
-      <Route path="/register" exact>
-        <Register />
-      </Route>
-    </Switch>
-    {/* <Footer /> */}
+    <div className="app__container">
+      <HeaderContainer />
+      <Switch>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+        <Route path="/species" exact>
+          <Species />
+        </Route>
+        <Route path="/login" exact>
+          <Login />
+        </Route>
+        <Route path="/register" exact>
+          <Register />
+        </Route>
+      </Switch>
+      <Footer />
+    </div>
   </div>
 );
 
