@@ -1,0 +1,8 @@
+@use "../../styles/vars";
+
+.app {
+  font-family: vars.$font;
+  position: relative;
+  background-color: vars.$background-app-color;
+  min-height: 100vh;
+}

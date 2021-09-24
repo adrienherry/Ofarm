@@ -1,0 +1,28 @@
+.search-bar-item {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    border-bottom: 2px solid #d8d8d852;
+    padding: 0.4rem 0.5rem;
+    align-items: center;
+
+    &__thumbnail {
+        width: auto;
+        height: 100%;
+        display: flex;
+        flex: 0.4;
+
+        &-img {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    &__name {
+        font-size: 1.2rem;
+        color: #000000;
+        margin-left: 0.6rem;
+        display: flex;
+        flex: 2;
+    }
+}

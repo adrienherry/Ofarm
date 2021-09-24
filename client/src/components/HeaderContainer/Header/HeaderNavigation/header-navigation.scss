@@ -1,0 +1,7 @@
+@use '../../../../styles/vars';
+
+.header-navigation {
+    &__user-icon {
+        cursor: pointer
+    }
+}
