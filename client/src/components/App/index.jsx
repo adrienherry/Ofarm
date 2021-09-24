@@ -6,7 +6,8 @@ import HeaderContainer from '../HeaderContainer';
 import HomePage from '../pages/Homepage';
 import Register from '../pages/Register';
 import Species from '../pages/Species';
-import Footer from '../Footer';
+// import Footer from '../Footer';
+import Login from '../pages/Login';
 
 const App = () => (
   <div className="app">
@@ -15,12 +16,17 @@ const App = () => (
       <Route path="/" exact>
         <HomePage />
       </Route>
-      <Route path="/species">
+      <Route path="/species" exact>
         <Species />
       </Route>
-   </Switch>
-    {/* <Register /> */}
-   <Footer />
+      <Route path="/login" exact>
+        <Login />
+      </Route>
+      <Route path="/register" exact>
+        <Register />
+      </Route>
+    </Switch>
+    {/* <Footer /> */}
   </div>
 );
 

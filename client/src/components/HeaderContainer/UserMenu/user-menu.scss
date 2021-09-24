@@ -24,6 +24,10 @@
 
     &__item {
         margin: 0.5rem;
+
+        &:hover {
+            color: vars.$active-color-header;
+        }
     }
 
   

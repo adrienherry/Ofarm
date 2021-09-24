@@ -1,3 +1,5 @@
+@use "../../styles/vars";
+
 .footer {
   background-color: white;
   display: flex;
@@ -6,15 +8,15 @@
   height: 30vh;
   position: fixed;
   bottom: 0;
-  background-color: darkolivegreen;
+  background-color: vars.$header-color;
   padding: 1em;
 
   &__container {
     display: flex;
     justify-content: space-evenly;
-    background-color: darkslateblue;
+    // background-color: darkslateblue;
     padding: 1em;
-    // height: 80vh;
+    height: 100%;
     &--logo {
       display: flex;
       justify-content: center;
@@ -31,10 +33,10 @@
         justify-content: space-between;
         padding: 1em;
         box-sizing: content-box;
-        border: 0.1em;
-        border-style: solid;
-        border-color: aqua;
-        background-color: coral;
+        // border: 0.1em;
+        // border-style: solid;
+        // border-color: aqua;
+        // background-color: coral;
         // height: 4em;
         &-twitter {
           padding-left: 1em;
@@ -47,16 +49,18 @@
     }
 
     &--section {
-      background-color: deeppink;
+      // background-color: deeppink;
       &-title {
-        color: darkviolet;
+        color: vars.$color-font-header;
         text-align: center;
+        font-weight: bold;
         margin-bottom: 0.5em;
       }
       &-list {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        color: vars.$color-font-header;
         &-item {
           padding: 1em;
         }
@@ -67,13 +71,17 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom: 1em;
-      padding-left: 1em;
-      padding-right: 1em;
+      padding-bottom: 1.3em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
       width: 20em;
-      background-color: coral;
+      color: vars.$color-font-header;
+      box-sizing: content-box;
       &-text {
-        // margin-right: 1em;
+        margin-right: 2em;
+      }
+      &-text1 {
+        color: vars.$active-color-header;
       }
     }
   }

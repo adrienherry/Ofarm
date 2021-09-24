@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ThemeProvider } from '@mui/styles';
+import { CircleLoader } from 'react-spinners';
 import { fetchSpeciesList } from '../../../store/actions/species';
 import './species.scss';
 import SpeciesItem from './SpeciesItem';
@@ -9,6 +9,7 @@ import SpeciesItem from './SpeciesItem';
 const Species = () => {
   const dispatch = useDispatch();
   const speciesList = useSelector((state) => state.species.speciesList);
+  const loading = useSelector((state) => state.species.loading);
 
   useEffect(() => {
     dispatch(fetchSpeciesList());
@@ -43,11 +44,17 @@ const Species = () => {
           xs={11}
           className="species__container-items"
         >
-          <SpeciesItem name="Tomate" slug="/" />
-          <SpeciesItem name="Tomate" slug="/" />
-          <SpeciesItem name="Tomate" slug="/" />
-          <SpeciesItem name="Tomate" slug="/" />
-          <SpeciesItem name="Tomate" slug="/" />
+          {speciesList && !loading && speciesList.map((species) => (
+            <SpeciesItem
+              {...species}
+              key={species.id}
+            />
+          ))}
+          {loading && (
+            <div className="species__container-loader">
+              <CircleLoader color="#3d3b2c" size={120} />
+            </div>
+          )}
         </Grid>
       </Grid>
     </div>

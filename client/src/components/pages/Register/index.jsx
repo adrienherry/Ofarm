@@ -1,11 +1,11 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  addForm, setConfigPassword, setConfirmEmail, setEmail, setPassword, setUsername,
-} from '../../../store/actions/register';
+import { useDispatch, useSelector } from 'react-redux';
+import { Grid } from '@material-ui/core';
 import './register.scss';
+import Field from '../../Field';
+import { setRegisterField } from '../../../store/actions/register';
 
-const RegisterForm = () => {
+const Login = () => {
   const dispatch = useDispatch();
   const username = useSelector((state) => state.register.username);
   const email = useSelector((state) => state.register.email);
@@ -13,75 +13,79 @@ const RegisterForm = () => {
   const password = useSelector((state) => state.register.password);
   const confirmPassword = useSelector((state) => state.register.confirmPassword);
 
-  const handleUsername = (event) => {
-    dispatch(setUsername(event.target.value));
-  };
-
-  const handleEmail = (event) => {
-    dispatch(setEmail(event.target.value));
-  };
-
-  const handleConfirmEmail = (event) => {
-    dispatch(setConfirmEmail(event.target.value));
-  };
-
-  const handlePassword = (event) => {
-    dispatch(setPassword(event.target.value));
-  };
-
-  const handleConfirmPassword = (event) => {
-    dispatch(setConfigPassword(event.target.value));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    dispatch(addForm());
+  const handleChangeField = (value, name) => {
+    dispatch(setRegisterField(value, name));
   };
 
   return (
-    <div className="register-form">
-      <form onSubmit={handleSubmit} autoComplete="on">
-        <label> Signup </label>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={handleUsername}
-          require
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={handleEmail}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Confirm email"
-          value={confirmEmail}
-          onChange={handleConfirmEmail}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={handlePassword}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Confirm password"
-          value={confirmPassword}
-          onChange={handleConfirmPassword}
-          autoComplete="off"
-          required
-        />
-        <button type="submit"> Signup </button>
-      </form>
+    <div className="register">
+      <Grid container direction="row" justifyContent="center" alignItems="center">
+        <Grid item container alignItems="center" justifyContent="center" lg={11} md={11} sm={11} xs={11}>
+          <form className="register__form">
+            <Grid item lg={12} md={12} sm={12} xs={12}>
+              <h3 className="register__title">
+                S'inscrire:
+              </h3>
+            </Grid>
+            <Grid item container direction="column" lg={12} md={12} sm={12} xs={12} spacing={3}>
+              <Grid item>
+                <Field
+                  value={username}
+                  type="text"
+                  name="username"
+                  placeholder="Nom d'utilisateur"
+                  onChange={handleChangeField}
+                />
+              </Grid>
+              <Grid item>
+                <Field
+                  value={email}
+                  type="text"
+                  name="email"
+                  placeholder="Email"
+                  onChange={handleChangeField}
+                />
+              </Grid>
+              <Grid item>
+                <Field
+                  value={confirmEmail}
+                  type="text"
+                  name="confirmEmail"
+                  placeholder="Confirmez votre Email"
+                  onChange={handleChangeField}
+                />
+              </Grid>
+              <Grid item>
+                <Field
+                  value={password}
+                  type="password"
+                  name="password"
+                  placeholder="Mot de passe"
+                  onChange={handleChangeField}
+                />
+              </Grid>
+              <Grid item>
+                <Field
+                  value={confirmPassword}
+                  type="password"
+                  name="confirmPassword"
+                  placeholder="Confirmez votre mot de passe"
+                  onChange={handleChangeField}
+                />
+              </Grid>
+              <Grid item>
+                <button
+                  type="submit"
+                  className="register__submit-btn"
+                > S'inscrire
+                </button>
+              </Grid>
+            </Grid>
+          </form>
+        </Grid>
+      </Grid>
     </div>
   );
 };
 
-export default RegisterForm;
+export default Login;

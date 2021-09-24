@@ -1,0 +1,35 @@
+@use '../../styles/vars';
+
+.field {
+
+    &-label {
+        color: vars.$header-color;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    &-input {
+        width: 100%;
+        padding: vars.$gutter ;
+        border: none;
+        border-radius: 1rem;
+        box-shadow: vars.$shadow;
+        margin-top: 1rem;
+        font-family: vars.$font;
+        font-size: 1.1rem;
+        
+        &::placeholder {
+            font-family: vars.$font;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        &:focus {
+            outline: none;
+            &::placeholder {
+                opacity: 0;
+                transition: 0.3s;
+            }
+        }
+    }
+}

@@ -76,45 +76,24 @@ const speciesController = {
 				return;
 			}
 
-			const speciesExists = await Species.findByPk(species_id, {});
-			if (!speciesExists) {
+			const foundSpecies = await Species.findByPk(species_id, {});
+			if (!foundSpecies) {
 				res
 					.status(403)
 					.json({ error: "The specified species does not exist." });
 				return;
 			}
 
-			let newSpeciesList = await garden.getSpecies();
-			newSpeciesList.push(speciesExists);
-			garden.setSpecies(newSpeciesList);
-			
+			console.log(garden.species); // 2 espèces
+
+			// Ici j'ai tenté update(), save(), reload(), addSpecies(), setSpecies(), etc.
+			garden.species.push(foundSpecies); // => update l'instance
+			garden.addSpecies(foundSpecies); // => update la BD (après save()) mais pas l'instance
+			console.log(garden.species);
+
 			await garden.save();
 
-			let newGarden = await Garden.findOne({
-				where: {
-					id: garden_id,
-					userId: user_id,
-				},
-				include: [
-					"species",
-					{
-						association: "species",
-						include: [
-							"events",
-							{
-								association: "events",
-								include: "eventType",
-							},
-						],
-						through: {
-							attributes: [],
-						},
-					},
-				],
-			});
-			console.log(newGarden)
-
-			res.json({message: "Updated performed successfully!"})
+			res.json({message: "Updated successfully!"})
 
 		} catch (error) {
 			console.log(error);
