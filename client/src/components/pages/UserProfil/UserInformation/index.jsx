@@ -75,7 +75,7 @@ const UserInformation = ({ img }) => {
 };
 
 UserInformation.propTypes = {
-  cow: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
 };
 
 export default UserInformation;
