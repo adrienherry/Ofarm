@@ -1,6 +1,7 @@
-@use '../../../styles/vars';
+@use '../../../../styles/vars';
 
-.login {
+.create-garden {
+
     margin-top: 3rem;
     
     &__form {
@@ -34,4 +35,10 @@
             box-shadow: vars.$white-shadow;
         }
     }
-  }
+
+    &__list-title {
+        color: vars.$header-color;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+}

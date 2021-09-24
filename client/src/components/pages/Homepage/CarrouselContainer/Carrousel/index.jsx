@@ -13,10 +13,11 @@ const Carrousel = ({ pictures }) => (
     autoPlay
   >
     {pictures.map((picture) => (
-      <div>
+      <div
+        key={picture.id}
+      >
         <img
           src={picture.picture}
-          key={picture.id}
           alt="carrousel"
           className="carrousel__img"
         />

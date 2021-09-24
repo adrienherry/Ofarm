@@ -5,6 +5,7 @@ import userReducer from './user';
 import searchBarReducer from './searchbar';
 import registerReducer from './register';
 import speciesReducer from './species';
+import createGardenReducer from './createGarden';
 
 const rootReducer = combineReducers({
   // ici, on indique que notre state aurra une tranche (slice) appelée
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   searchbar: searchBarReducer,
   species: speciesReducer,
+  createGarden: createGardenReducer,
 });
 
 export default rootReducer;

@@ -9,7 +9,6 @@ const Login = () => {
   const dispatch = useDispatch();
   const username = useSelector((state) => state.register.username);
   const email = useSelector((state) => state.register.email);
-  const confirmEmail = useSelector((state) => state.register.confirmEmail);
   const password = useSelector((state) => state.register.password);
   const confirmPassword = useSelector((state) => state.register.confirmPassword);
 

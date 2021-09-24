@@ -1,0 +1,15 @@
+@use '../../../../../styles/vars';
+
+.display-species-choosen {
+    background: vars.$background-card-color;
+    padding: 3rem;
+    border-radius: 1rem;
+    max-width: 30rem;
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: vars.$header-color;
+        margin-bottom: 1rem;
+    }
+}
