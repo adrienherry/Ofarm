@@ -101,6 +101,11 @@ const speciesController = {
 			return;
 		}
 	},
-};
 
+	/* removeSpecies: (req, res) => {
+		const id = req.params.id;
+		req.session.species = req.session.species.filter(species => species.id !=id);
+		res.redirect("/species");
+	} */ 
+}
 module.exports = speciesController;

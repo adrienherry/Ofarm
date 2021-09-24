@@ -36,5 +36,11 @@ const gardenController = {
 			res.status(500).json(error.message);
 		}
 	},
+
+	/* removeGarden: (req, res) => {
+		const id = req.params.id;
+		req.session.garden = req.session.garden.filter(garden => garden.id !=id);
+		res.redirect("/garden");
+	} */
 };
 module.exports = gardenController;
