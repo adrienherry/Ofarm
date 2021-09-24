@@ -1,0 +1,9 @@
+@use "../../../styles/vars";
+
+.UserProfil {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  padding: 3em;
+}
