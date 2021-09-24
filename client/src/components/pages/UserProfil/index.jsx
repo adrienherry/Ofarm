@@ -1,17 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import UserInformation from './UserInformation';
+import Buttons from './Buttons';
 import cow from '../../../../public/cow.jpg';
+import './userProfil.scss';
 
 const User = () => (
-  <div>
+  <div className="userProfil">
     <UserInformation img={cow} />
+    <div>
+      <Buttons button1="Mes jardins" button2="Mes information" />
+    </div>
+
   </div>
 );
-
-User.propTypes = {
-
-};
 
 export default User;

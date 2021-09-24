@@ -1,13 +1,13 @@
 import React from 'react';
-
 import './app.scss';
 import { Switch, Route } from 'react-router-dom';
 import HeaderContainer from '../HeaderContainer';
 import HomePage from '../pages/Homepage';
 import Register from '../pages/Register';
 import Species from '../pages/Species';
-// import Footer from '../Footer';
+import Footer from '../Footer';
 import Login from '../pages/Login';
+import UserProfil from '../pages/UserProfil';
 
 const App = () => (
   <div className="app">
@@ -27,6 +27,7 @@ const App = () => (
           <Register />
         </Route>
       </Switch>
+      <UserProfil />
       <Footer />
     </div>
   </div>
