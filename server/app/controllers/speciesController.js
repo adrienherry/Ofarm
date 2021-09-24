@@ -1,5 +1,3 @@
-const db = require("../services/sequelize");
-const { col, Op } = require("sequelize");
 const { Species, Garden } = require("../models");
 
 const speciesController = {
@@ -33,7 +31,14 @@ const speciesController = {
 	addOneToGarden: async (req, res) => {
 		try {
 			const garden_id = parseInt(req.params.garden_id);
-			const user_id = parseInt(req.params.user_id);
+
+			if (!res.locals.id) {
+				res.status(403).json({ error: "Error. User must be logged in." });
+				return;
+			}
+
+			const user_id = res.locals.id;
+
 			const species_id = parseInt(req.body.speciesId);
 
 			let garden = await Garden.findOne({
@@ -84,17 +89,19 @@ const speciesController = {
 				return;
 			}
 
-			console.log(garden.species); // 2 espèces
+			const nbUpdated = await garden.addSpecies(foundSpecies);
 
-			// Ici j'ai tenté update(), save(), reload(), addSpecies(), setSpecies(), etc.
-			garden.species.push(foundSpecies); // => update l'instance
-			garden.addSpecies(foundSpecies); // => update la BD (après save()) mais pas l'instance
-			console.log(garden.species);
+			if (!nbUpdated.length === 1) {
+				console.log("There was a problem during delete");
+				res.status(500).json({
+					error: `Updated failed: ${nbUpdated.length} updated !`,
+				});
+				return;
+			}
 
-			await garden.save();
-
-			res.json({message: "Updated successfully!"})
-
+			res.json({
+				message: `Updated ${nbUpdated.length} item successfully!`,
+			});
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(error.message);
@@ -102,10 +109,60 @@ const speciesController = {
 		}
 	},
 
-	/* removeSpecies: (req, res) => {
-		const id = req.params.id;
-		req.session.species = req.session.species.filter(species => species.id !=id);
-		res.redirect("/species");
-	} */ 
-}
+	removeOneFromGarden: async (req, res) => {
+		try {
+			const garden_id = parseInt(req.params.garden_id);
+
+			if (!res.locals.id) {
+				res.status(403).json({ error: "Error. User must be logged in." });
+				return;
+			}
+
+			const user_id = res.locals.id;
+			
+			const species_id = parseInt(req.body.speciesId);
+
+			let garden = await Garden.findOne({
+				where: {
+					id: garden_id,
+					userId: user_id,
+				},
+				include: ["species"],
+			});
+
+			if (!garden) {
+				res.status(403).json({ error: "No garden with such id for this user" });
+				return;
+			}
+
+			const foundSpecies = await garden.getSpecies({
+				where: { id: species_id },
+			});
+
+			if (!foundSpecies[0]) {
+				res.status(403).json({
+					error: "Garden does not contains this species.",
+				});
+				return;
+			}
+
+			const nbDeleted = await garden.removeSpecies(foundSpecies[0]);
+
+			if (nbDeleted != 1) {
+				res.status(500).json({
+					error: `Delete failed: ${nbDeleted} deleted !`,
+				});
+				return;
+			}
+
+			res.json({
+				message: `Deleted ${nbDeleted} item successfully!`,
+			});
+		} catch (error) {
+			console.log(error);
+			res.status(500).json(error.message);
+			return;
+		}
+	},
+};
 module.exports = speciesController;

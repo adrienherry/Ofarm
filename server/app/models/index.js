@@ -12,6 +12,7 @@ EventType.hasMany(Event, {
 Event.belongsTo(EventType, {
 	foreignKey: "eventTypeId",
 	as: "eventType",
+	onDelete: "cascade"
 });
 
 Species.hasMany(Event, {
@@ -22,6 +23,7 @@ Species.hasMany(Event, {
 Event.belongsTo(Species, {
 	foreignKey: "speciesId",
 	as: "species",
+	onDelete: "cascade",
 });
 
 Species.belongsToMany(Garden, {
@@ -29,6 +31,7 @@ Species.belongsToMany(Garden, {
 	through: "garden_species",
 	foreignKey: "speciesId",
 	otherKey: "gardenId",
+	onDelete: "cascade",
 });
 
 Garden.belongsToMany(Species, {
@@ -36,6 +39,7 @@ Garden.belongsToMany(Species, {
 	through: "garden_species",
 	foreignKey: "gardenId",
 	otherKey: "speciesId",
+	onDelete: "cascade",
 });
 
 User.hasMany(Garden, {
@@ -46,6 +50,7 @@ User.hasMany(Garden, {
 Garden.belongsTo(User, {
 	foreignKey: "userId",
 	as: "owner",
+	onDelete: "cascade"
 });
 
 Garden.hasMany;

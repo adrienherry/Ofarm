@@ -1,30 +1,47 @@
 const jsonwebtoken = require("jsonwebtoken");
-const jwt = require("express-jwt");
+// const jwt = require("express-jwt");
 
-const saltRounds = 10;
 const jwtSecret = process.env.JWT_SECRET;
-const jwtOptions = { algorithm: "HS256", expiresIn: "2h" };
+const jwtOptions = { algorithm: "HS256", expiresIn: "1h" };
 
-const revokeToken = function (req, payload, done) {};
+const extractBearerToken = (headerValue) => {
+	if (typeof headerValue !== "string") {
+		return false;
+	}
+
+	const matches = headerValue.match(/(bearer)\s+(\S+)/i);
+
+	console.log(matches);
+
+	return matches && matches[2];
+};
 
 const jwtService = {
 	generateTokenWith: function (username, id) {
 		return jsonwebtoken.sign({ username: username, id }, jwtSecret, jwtOptions);
 	},
 
-	grantAccess: jwt({
-		secret: jwtSecret,
-		// audience: 'http://myapi/protected',
-		// issuer: 'http://issuer',
-		algorithms: ["HS256"],
-		isRevoked: revokeToken,
-	}),
-};
+	verifyAndDecodeTokenMiddleware: function (req, res, next) {
+		const token =
+			req.headers.authorization &&
+			extractBearerToken(req.headers.authorization);
 
-// const generateAndSendToken = jwt({ secret: secretCallback, algorithms: ["HS256"] }),
-//         function (req, res) {
-//             if (!req.user.admin) return res.sendStatus(401);
-//             res.sendStatus(200);
-//         }
+		if (!token) {
+			return res.status(401).json({ error: "Error. User must be logged in." });
+		}
+
+		jsonwebtoken.verify(token, jwtSecret, (error, decodedToken) => {
+			if (error) {
+				res.status(401).json({ error: "Error. Access token has expired." });
+			} else {
+
+				const decoded = jsonwebtoken.decode(token);
+				decoded.id ? (res.locals.id = decoded.id) : "";
+
+				return next();
+			}
+		});
+	},
+};
 
 module.exports = jwtService;
