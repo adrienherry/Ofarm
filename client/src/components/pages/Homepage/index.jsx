@@ -1,12 +1,11 @@
 import { Grid, useMediaQuery } from '@material-ui/core';
 import React from 'react';
 import CarrouselContainer from './CarrouselContainer';
-import User from '../User';
 import './homepage.scss';
 
 const HomePage = () => (
   <div className="homepage">
-    {/* <Grid container flexDirection="column" justifyContent="space-between" alignItems="center" className="homepage__grid-container">
+    <Grid container flexDirection="column" justifyContent="space-between" alignItems="center" className="homepage__grid-container">
       <Grid
         item
         container
@@ -20,8 +19,7 @@ const HomePage = () => (
       >
         <CarrouselContainer />
       </Grid>
-    </Grid> */}
-    <User />
+    </Grid>
   </div>
 
 );
