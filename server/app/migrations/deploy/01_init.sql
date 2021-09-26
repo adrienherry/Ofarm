@@ -66,6 +66,7 @@ CREATE TABLE "event" (
    event_type_id int REFERENCES "event_type" (id) ON DELETE CASCADE NOT NULL,
    from_date timestamptz NOT NULL,
    until_date timestamptz NOT NULL,
+   option_name text NOT NULL DEFAULT ('default'),
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now())
 );
