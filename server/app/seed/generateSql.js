@@ -9,6 +9,11 @@ const writeStream = fs.createWriteStream(sqlFilename, { flags: "a" });
 
 const formatTextForSql = (str) => str.replace("'", "''");
 
+const reformatDate = (str) => {
+	[day, month, year] = str.split("-");
+	return year + "-" + month + "-" + day;
+};
+
 if (fs.existsSync(sqlFilename)) {
 	fs.unlinkSync(sqlFilename);
 } else {
@@ -47,11 +52,11 @@ writeStream.write("\n");
 
 // SPECIES TABLE
 
-writeStream.write(`INSERT INTO "species" (name, image_url) VALUES\n`);
+writeStream.write(`INSERT INTO "species" (name,image_url) VALUES\n`);
 
 species.forEach((item, index) => {
 	writeStream.write(
-		`('${formatTextForSql(item.name)}', '${item.image_url}')` +
+		`('${formatTextForSql(item.name)}','${item.image_url}')` +
 			(index !== species.length - 1 ? "," : ";") +
 			"\n",
 	);
@@ -61,7 +66,7 @@ writeStream.write("\n");
 // EVENTS TABLE
 
 writeStream.write(
-	`INSERT INTO "event" (event_type_id, species_id, from_date, until_date, option_name) VALUES\n`,
+	`INSERT INTO "event" (event_type_id,species_id,from_date,until_date,option_name) VALUES\n`,
 );
 
 species.forEach((speciesItem, speciesIndex) => {
@@ -77,7 +82,9 @@ species.forEach((speciesItem, speciesIndex) => {
 					speciesItem.options[optionIndex][eventName].forEach(
 						(eventInterval, eventIntervalIndex) => {
 							writeStream.write(
-								`(${eventTypeId}, ${speciesItem.id}, '${eventInterval[0]}','${eventInterval[1]}', '${option.name}')` +
+								`(${eventTypeId},${speciesItem.id},'${reformatDate(
+									eventInterval[0],
+								)}','${reformatDate(eventInterval[1])}','${option.name}')` +
 									(speciesIndex !== species.length - 1 ||
 									eventNameIndex !== eventList.length ||
 									eventIntervalIndex !== speciesItem[eventName].length - 1
@@ -98,8 +105,11 @@ species.forEach((speciesItem, speciesIndex) => {
 			// console.log(speciesItem)
 			speciesItem[eventName].length > 0 &&
 				speciesItem[eventName].forEach((eventInterval, eventIntervalIndex) => {
+					reformatDate(eventInterval[0]);
 					writeStream.write(
-						`(${eventTypeId}, ${speciesItem.id}, '${eventInterval[0]}','${eventInterval[1]}', 'default')` +
+						`(${eventTypeId},${speciesItem.id},'${reformatDate(
+							eventInterval[0],
+						)}','${reformatDate(eventInterval[1])}','default')` +
 							(speciesIndex !== species.length - 1 ||
 							eventNameIndex !== eventList.length - 1 ||
 							eventIntervalIndex !== speciesItem[eventName].length - 1
@@ -115,11 +125,11 @@ writeStream.write("\n");
 
 // GARDEN TABLE
 
-writeStream.write(`INSERT INTO "garden" (name, user_id) VALUES\n`);
+writeStream.write(`INSERT INTO "garden" (name,user_id) VALUES\n`);
 
 gardens.forEach((item, index) => {
 	writeStream.write(
-		`('${formatTextForSql(item.name)}', ${item.user_id})` +
+		`('${formatTextForSql(item.name)}',${item.user_id})` +
 			(index !== gardens.length - 1 ? "," : ";") +
 			"\n",
 	);
@@ -129,13 +139,13 @@ writeStream.write("\n");
 // GARDEN_SPECIES TABLE
 
 writeStream.write(
-	`INSERT INTO "garden_species" (garden_id, species_id) VALUES\n`,
+	`INSERT INTO "garden_species" (garden_id,species_id) VALUES\n`,
 );
 
 gardens.forEach((item, gardenIndex) => {
 	item.species.forEach((species_id, speciesIndex) => {
 		writeStream.write(
-			`(${gardenIndex + 1}, ${species_id})` +
+			`(${gardenIndex + 1},${species_id})` +
 				(gardenIndex !== gardens.length - 1 ||
 				speciesIndex !== item.species.length - 1
 					? ","
@@ -144,6 +154,7 @@ gardens.forEach((item, gardenIndex) => {
 		);
 	});
 });
+
 writeStream.write("\n");
 
 writeStream.write("COMMIT;\n");
