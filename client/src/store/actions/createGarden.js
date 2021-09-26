@@ -17,3 +17,12 @@ export const setSpeciesChoosenList = (name, id) => (
     id,
   }
 );
+
+export const SET_NEW_SPECIES_CHOOSEN_LIST = 'SET_NEW_SPECIES_CHOOSEN_LIST';
+
+export const setNewSpeciesChoosenList = (speciesChoosenList) => (
+  {
+    type: SET_NEW_SPECIES_CHOOSEN_LIST,
+    speciesChoosenList,
+  }
+);

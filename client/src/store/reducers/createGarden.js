@@ -1,4 +1,4 @@
-import { SET_GARDEN_NAME, SET_SPECIES_CHOOSEN_LIST } from '../actions/createGarden';
+import { SET_GARDEN_NAME, SET_NEW_SPECIES_CHOOSEN_LIST, SET_SPECIES_CHOOSEN_LIST } from '../actions/createGarden';
 import { SET_SPECIES_LIST, SET_LOADING_SPECIES_TO_FALSE, SET_LOADING_SPECIES_TO_TRUE } from '../actions/species';
 
 const initialState = {
@@ -34,6 +34,11 @@ const createGardenReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         speciesChoosenList: [...state.speciesChoosenList, { name: action.name, id: action.id }],
+      };
+    case SET_NEW_SPECIES_CHOOSEN_LIST:
+      return {
+        ...state,
+        speciesChoosenList: action.speciesChoosenList,
       };
     default:
       return state;
