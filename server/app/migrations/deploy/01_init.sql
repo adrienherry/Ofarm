@@ -21,6 +21,8 @@ END;
 $$
 LANGUAGE plpgsql;
 
+BEGIN;
+
 CREATE TABLE "user" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    email text NOT NULL UNIQUE,
@@ -64,8 +66,8 @@ CREATE TABLE "event" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    species_id int REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
    event_type_id int REFERENCES "event_type" (id) ON DELETE CASCADE NOT NULL,
-   from_date timestamptz NOT NULL,
-   until_date timestamptz NOT NULL,
+   from_date date NOT NULL,
+   until_date date NOT NULL,
    option_name text NOT NULL DEFAULT ('default'),
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now())
