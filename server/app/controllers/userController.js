@@ -1,36 +1,41 @@
 const db = require("../services/sequelize");
 const bcrypt = require("bcrypt");
-const saltRounds =10;
+const saltRounds = 10;
 const slugify = require("../helpers/slugify");
 
-const {
-	User
-} = require("../models");
-const {
-	response
-} = require("express");
+const { User } = require("../models");
 
 const userController = {
 	findOne: async (req, res) => {
 		try {
-			const id = parseInt(req.params.id);
+			if (!res.locals.id) {
+				res.status(403).json({ error: "Error. User must be logged in." });
+				return;
+			}
+
+			const id = res.locals.id;
 			const userItem = await User.findByPk(id, {
-				include: [{
-					association: "gardens",
-					include: [
-						"species",
-						{
-							association: "species",
-							include: ["events", {
-								association: "events",
-								include: "eventType"
-							}],
-							through: {
-								attributes: [],
+				include: [
+					{
+						association: "gardens",
+						include: [
+							"species",
+							{
+								association: "species",
+								include: [
+									"events",
+									{
+										association: "events",
+										include: "eventType",
+									},
+								],
+								through: {
+									attributes: [],
+								},
 							},
-						},
-					],
-				}, ],
+						],
+					},
+				],
 			});
 
 			res.json(userItem);
@@ -39,65 +44,55 @@ const userController = {
 		}
 	},
 
-	    save: async (req, res) => {
-		const {	id } = req.params		
-		try {
-		const {
-			email,
-			username,
-			password
-		} = req.body;
-		if (!email && !username && !password) {
-			res.status(403).json({error: "Empty user request"})
+	save: async (req, res) => {
+		if (!res.locals.id) {
+			res.status(403).json({ error: "Error. User must be logged in." });
 			return;
 		}
+		
+		const id = res.locals.id;
 
-		let user = await User.findByPk(parseInt(id));
-		if (!user) {
-			res.status(403).json({error: "Bad request"})
-		}
+		try {
+			const { email, username, password } = req.body;
+			if (!email && !username && !password) {
+				res.status(403).json({ error: "Empty user request" });
+				return;
+			}
 
-		console.log(email === user.email)
-		if (email && email !== user.email) {
-			console.log("je suis bien rentré")
-			user.email = email;
-		}
+			let user = await User.findByPk(parseInt(id));
+			if (!user) {
+				res.status(403).json({ error: "Bad request" });
+			}
 
-		if (user && user !== user.username) {
-			user.username = username;
-			user.usernameSlug = slugify(username)
-		}
+			console.log(email === user.email);
+			if (email && email !== user.email) {
+				console.log("je suis bien rentré");
+				user.email = email;
+			}
 
-		if (password) {
-			// 
-			//bcrypt.hashSync(req.body.password, saltRounds)
+			if (user && user !== user.username) {
+				user.username = username;
+				user.usernameSlug = slugify(username);
+			}
+
+			if (password) {
 				const isEqual = await bcrypt.compare(
-				req.body.password,
-				user.hashedPassword,
-			);
+					req.body.password,
+					user.hashedPassword,
+				);
 
-			if (password !== user.hashedPassword)
-				user.hashedPassword = bcrypt.hashSync(password, saltRounds)
-				}
-		console.log(user);
-		const results = await user.save();
-		/*const results = await User.update(user, {
-			where: {id: user.id},
-			returning: true
-		});*/
-		console.log(results);
-		//console.log(status);
-		//console.log(user); 
-		res.json({message: "Update sucessfull"});
+				if (password !== user.hashedPassword)
+					user.hashedPassword = bcrypt.hashSync(password, saltRounds);
+			}
+			const results = await user.save();
+			res.json({ message: "Update sucessfull" });
+
 		} catch (error) {
-		console.log(error);
-		res.status(500).json(error);
-		return;
+			console.log(error);
+			res.status(500).json(error);
+			return;
 		}
 	},
-
-
-	
-}
+};
 
 module.exports = userController;

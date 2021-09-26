@@ -45,15 +45,6 @@ const Login = () => {
                   onChange={handleChangeField}
                 />
               </Grid>
-              {/* <Grid item>
-                <Field
-                  value={confirmEmail}
-                  type="text"
-                  name="confirmEmail"
-                  placeholder="Confirmez votre Email"
-                  onChange={handleChangeField}
-                />
-              </Grid> */}
               <Grid item>
                 <Field
                   value={password}

@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 
 import './app.scss';
@@ -8,7 +9,7 @@ import HomePage from '../pages/Homepage';
 import Register from '../pages/Register';
 import Species from '../pages/Species';
 import Footer from '../Footer';
-// import User from '../pages/User';
+import UserProfil from '../pages/UserProfil';
 import Login from '../pages/Login';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
@@ -40,7 +41,7 @@ const App = () => {
           </Route>
         </Switch>
         {/* <CreateGarden /> */}
-        {/* <User /> */}
+        {/* <UserProfil /> */}
         <Footer />
       </div>
     </div>
