@@ -7,8 +7,8 @@ import { setLoginField } from '../../../store/actions/authentification';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const email = useSelector((state) => state.auth.email);
-  const password = useSelector((state) => state.auth.password);
+  const emailLogin = useSelector((state) => state.auth.emailLogin);
+  const passwordLogin = useSelector((state) => state.auth.passwordLogin);
 
   const handleChangeField = (value, name) => {
     dispatch(setLoginField(value, name));
@@ -27,18 +27,18 @@ const Login = () => {
             <Grid item container direction="column" lg={12} md={12} sm={12} xs={12} spacing={4}>
               <Grid item>
                 <Field
-                  value={email}
+                  value={emailLogin}
                   type="text"
-                  name="email"
+                  name="emailLogin"
                   placeholder="Email"
                   onChange={handleChangeField}
                 />
               </Grid>
               <Grid item>
                 <Field
-                  value={password}
+                  value={passwordLogin}
                   type="password"
-                  name="password"
+                  name="passwordLogin"
                   placeholder="Mot de passe"
                   onChange={handleChangeField}
                 />

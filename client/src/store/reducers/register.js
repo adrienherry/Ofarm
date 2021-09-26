@@ -6,7 +6,6 @@ import {
 const initialState = {
   username: '',
   email: '',
-  confirmEmail: '',
   password: '',
   confirmPassword: '',
 };
@@ -23,7 +22,6 @@ const RegisterReducer = (state = initialState, action = {}) => {
         ...state,
         username: '',
         email: '',
-        confirmEmail: '',
         password: '',
         confirmPassword: '',
       };
