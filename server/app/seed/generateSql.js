@@ -52,11 +52,17 @@ writeStream.write("\n");
 
 // SPECIES TABLE
 
-writeStream.write(`INSERT INTO "species" (name,image_url) VALUES\n`);
+writeStream.write(`INSERT INTO "species" (name,image_url, co2_data) VALUES\n`);
 
 species.forEach((item, index) => {
+	const co2_data = item.co2_data
+		? JSON.stringify(item.co2_data).replace("'", "''")
+		: JSON.stringify(null);
+	console.log(co2_data);
 	writeStream.write(
-		`('${formatTextForSql(item.name)}','${item.image_url}')` +
+		`('${formatTextForSql(item.name)}','${
+			item.image_url
+		}','${co2_data}'::JSON)` +
 			(index !== species.length - 1 ? "," : ";") +
 			"\n",
 	);
