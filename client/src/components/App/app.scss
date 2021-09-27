@@ -1,2 +1,18 @@
-@use '../../styles/vars';
+@use "../../styles/vars";
 
+.app {
+  font-family: vars.$font;
+  position: relative;
+  background-color: vars.$background-app-color;
+  min-height: 100vh;
+  box-sizing: border-box;
+  &__container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
+
+}

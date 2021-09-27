@@ -1,0 +1,1378 @@
+[
+    {
+        "id": 1,
+        "name": "Aubergine",
+        "image_id": "DtaCnsYlzSM",
+        "image_url": "https://images.unsplash.com/photo-1613881553903-4543f5f2cac9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1NzgzNTc&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-04-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-11-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Aubergine, crue",
+            "short_name": "Aubergine",
+            "LCI_name": "Eggplant, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 5.3103591,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 5.0919415,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.16952471,
+                "distribution": 0.036575546,
+                "consumption": 0.012317297
+            }
+        }
+    },
+    {
+        "id": 2,
+        "name": "Betterave",
+        "image_id": "Xgcq-t-hCt4",
+        "image_url": "https://images.unsplash.com/photo-1573426667638-18ccdd988a39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-03-2000",
+                "01-08-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-11-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Betterave rouge, crue",
+            "short_name": "Betterave rouge",
+            "LCI_name": "Beetroot, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.24930031,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.072311127,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.14056627,
+                "distribution": 0.024105619,
+                "consumption": 0.012317297
+            }
+        }
+    },
+    {
+        "id": 3,
+        "name": "Carotte",
+        "image_id": "iPiXhoMUcV8",
+        "image_url": "https://images.unsplash.com/photo-1602496875335-b0fc93069cf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-04-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-03-2000",
+                "01-08-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-12-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Carotte, crue",
+            "short_name": "Carotte",
+            "LCI_name": "Carrot, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.38690672,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.087677241,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.1704366,
+                "distribution": 0.029228063,
+                "consumption": 0.099564814
+            }
+        }
+    },
+    {
+        "id": 4,
+        "name": "Céleri-rave",
+        "image_id": "KluF3bl0VEU",
+        "image_url": "https://images.unsplash.com/photo-1575286368486-a9bd023a3d1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-04-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-09-2000",
+                "01-12-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Céleri-rave, cru",
+            "short_name": "Céleri-rave",
+            "LCI_name": "Celeriac, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.38690672,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.087677241,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.1704366,
+                "distribution": 0.029228063,
+                "consumption": 0.099564814
+            }
+        }
+    },
+    {
+        "id": 5,
+        "name": "Chou-fleur",
+        "image_id": "D8ZrftlvNDE",
+        "image_url": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-01-2000",
+                "01-03-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-03-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-03-2000",
+                "01-05-2000"
+            ],
+            [
+                "01-06-2000",
+                "01-09-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-01-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Chou-fleur, cru",
+            "short_name": "Chou-fleur",
+            "LCI_name": "Cauliflower, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.50990048,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.30959852,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.14056627,
+                "distribution": 0.047418395,
+                "consumption": 0.012317297
+            }
+        }
+    },
+    {
+        "id": 6,
+        "name": "Concombre",
+        "image_id": "fPLSD4mz7II",
+        "image_url": "https://images.unsplash.com/photo-1523349462262-054f5b3aa500?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-03-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "15-03-2000",
+                "16-05-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-11-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Concombre, pulpe et peau, cru",
+            "short_name": "Concombre",
+            "LCI_name": "Cucumber, pulp and peel, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 4.8565886,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 4.5332143,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.18387334,
+                "distribution": 0.03993612,
+                "consumption": 0.099564814
+            }
+        }
+    },
+    {
+        "id": 7,
+        "name": "Courgette",
+        "image_id": "7OQ4oekzMzY",
+        "image_url": "https://images.unsplash.com/photo-1563252722-6434563a985d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-04-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-05-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-05-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-12-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Courgette, pulpe et peau, crue",
+            "short_name": "Courgette",
+            "LCI_name": "Courgette or zucchini, pulp and peel, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.40570914,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.21625003,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.14056627,
+                "distribution": 0.036575546,
+                "consumption": 0.012317297
+            }
+        }
+    },
+    {
+        "id": 8,
+        "name": "Epinard",
+        "image_id": "4jpNPu7IW8k",
+        "image_url": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ],
+            [
+                "01-09-2000",
+                "01-12-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-10-2000",
+                "01-04-2000"
+            ]
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Fève",
+        "image_id": "vSYo3T4AR5Y",
+        "image_url": "https://images.unsplash.com/photo-1605402966404-ec40b9bd5009?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-10-2000",
+                "01-05-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-08-2000",
+                "01-11-2000"
+            ],
+            [
+                "01-03-2000",
+                "01-07-2000"
+            ]
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Haricot nain",
+        "image_id": "rNSg5Yo1k20",
+        "image_url": "https://images.unsplash.com/photo-1594404124434-719a41b02af5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-09-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-11-2000"
+            ]
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Laitue",
+        "image_id": "WOrgNVcptD8",
+        "image_url": "https://images.unsplash.com/photo-1549736624-81a2ca809ad7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "options": [
+            {
+                "name": "printemps",
+                "saw_in": [
+                    [
+                        "01-02-2000",
+                        "01-05-2000"
+                    ]
+                ],
+                "saw_out": [],
+                "transplant": [
+                    [
+                        "01-04-2000",
+                        "16-05-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "01-05-2000",
+                        "01-07-2000"
+                    ]
+                ]
+            },
+            {
+                "name": "été",
+                "saw_in": [],
+                "saw_out": [
+                    [
+                        "01-04-2000",
+                        "01-07-2000"
+                    ]
+                ],
+                "transplant": [
+                    [
+                        "01-06-2000",
+                        "01-08-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "01-07-2000",
+                        "01-09-2000"
+                    ]
+                ]
+            },
+            {
+                "name": "automne",
+                "saw_in": [],
+                "saw_out": [
+                    [
+                        "01-07-2000",
+                        "01-09-2000"
+                    ]
+                ],
+                "transplant": [
+                    [
+                        "01-08-2000",
+                        "01-09-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "01-09-2000",
+                        "01-11-2000"
+                    ]
+                ]
+            },
+            {
+                "name": "hiver",
+                "saw_in": [],
+                "saw_out": [
+                    [
+                        "01-08-2000",
+                        "01-11-2000"
+                    ]
+                ],
+                "transplant": [
+                    [
+                        "01-10-2000",
+                        "01-11-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "01-03-2000",
+                        "01-06-2000"
+                    ]
+                ]
+            }
+        ],
+        "co2_data": {
+            "original_name": "Laitue, crue",
+            "short_name": "Laitue",
+            "LCI_name": "Lettuce, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.88251448,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.31309977,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.2272488,
+                "distribution": 0.076659738,
+                "consumption": 0.26550617
+            }
+        }
+    },
+    {
+        "id": 12,
+        "name": "Mâche",
+        "image_url": "https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-08-2000",
+                "01-11-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-09-2000",
+                "01-04-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Mâche, crue",
+            "short_name": "Mâche",
+            "LCI_name": "Lamb's lettuce, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.88251448,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.31309977,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.2272488,
+                "distribution": 0.076659738,
+                "consumption": 0.26550617
+            }
+        }
+    },
+    {
+        "id": 13,
+        "name": "Melon",
+        "image_id": "cE1gDLMsgEM",
+        "image_url": "https://images.unsplash.com/photo-1630526909851-196624edbbcd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-05-2000",
+                "01-06-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "15-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-10-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Melon cantaloup (par ex.: Charentais, de Cavaillon) pulpe, cru",
+            "short_name": "Melon cantaloup",
+            "LCI_name": "Melon, cantaloupe (ex Cavaillon or Charentais melon), pulp, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "fruits",
+            "co2_total": 0.87227002,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.30901715,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.24449853,
+                "distribution": 0.05324816,
+                "consumption": 0.26550617
+            }
+        }
+    },
+    {
+        "id": 14,
+        "name": "Navet d'automne",
+        "image_id": "Fz49Hl-Pg08",
+        "image_url": "https://images.unsplash.com/photo-1631909808696-969b7aa7ade9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-07-2000",
+                "01-10-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-09-2000",
+                "01-12-2000"
+            ]
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Oignon",
+        "image_id": "atQQQjJk8ok",
+        "image_url": "https://images.unsplash.com/photo-1536235551740-15dc337df024?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ],
+            [
+                "01-08-2000",
+                "01-10-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-10-2000",
+                "01-12-2000"
+            ],
+            [
+                "01-01-2000",
+                "01-03-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-04-2000",
+                "01-09-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Oignon, cru",
+            "short_name": "Oignon",
+            "LCI_name": "Onion, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.41548167,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.1089838,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.17697494,
+                "distribution": 0.029958116,
+                "consumption": 0.099564814
+            }
+        }
+    },
+    {
+        "id": 16,
+        "name": "Panais",
+        "image_url": "https://cdn.pixabay.com/photo/2018/12/07/02/06/parsnips-3860993_960_720.jpg",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "15-02-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-05-2000",
+                "01-10-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Panais, cru",
+            "short_name": "Panais",
+            "LCI_name": "Parsnip, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.38690672,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.087677241,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.1704366,
+                "distribution": 0.029228063,
+                "consumption": 0.099564814
+            }
+        }
+    },
+    {
+        "id": 17,
+        "name": "Petit pois",
+        "image_id": "bwKUJ3Y5JS4",
+        "image_url": "https://images.unsplash.com/photo-1596564823703-d28706a620e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "15-02-2000",
+                "16-06-2000"
+            ],
+            [
+                "01-10-2000",
+                "01-12-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ],
+            [
+                "01-05-2000",
+                "01-10-2000"
+            ]
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Poireau",
+        "image_id": "uO-ukEbpwQ0",
+        "image_url": "https://images.unsplash.com/photo-1599776764145-bcc16b4e3815?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "options": [
+            {
+                "name": "été",
+                "saw_in": [
+                    [
+                        "15-01-2000",
+                        "01-04-2000"
+                    ]
+                ],
+                "saw_out": [],
+                "transplant": [
+                    [
+                        "01-05-2000",
+                        "01-06-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "15-06-2000",
+                        "01-10-2000"
+                    ]
+                ]
+            },
+            {
+                "name": "automne ou hiver",
+                "saw_in": [
+                    [
+                        "01-03-2000",
+                        "01-06-2000"
+                    ]
+                ],
+                "saw_out": [],
+                "transplant": [
+                    [
+                        "01-05-2000",
+                        "01-08-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "01-10-2000",
+                        "01-05-2000"
+                    ]
+                ]
+            }
+        ],
+        "co2_data": {
+            "original_name": "Poireau, cru",
+            "short_name": "Poireau",
+            "LCI_name": "Leek, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.71433485,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.41437532,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.1704366,
+                "distribution": 0.029958116,
+                "consumption": 0.099564814
+            }
+        }
+    },
+    {
+        "id": 19,
+        "name": "Potiron",
+        "image_id": "w5DqWoZ5_YM",
+        "image_url": "https://images.unsplash.com/photo-1522223829476-5d8ce6672c46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-09-2000",
+                "01-12-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Potiron, cru",
+            "short_name": "Potiron",
+            "LCI_name": "Pumpkin, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.5490214,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.20516352,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.19594288,
+                "distribution": 0.048350192,
+                "consumption": 0.099564814
+            }
+        }
+    },
+    {
+        "id": 20,
+        "name": "Radis",
+        "image_id": "MLzEKo9rZ3A",
+        "image_url": "https://images.unsplash.com/photo-1592346520936-9444037b2e28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "15-02-2000",
+                "16-03-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "15-03-2000",
+                "01-10-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "15-03-2000",
+                "01-12-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Radis rouge, cru",
+            "short_name": "Radis rouge",
+            "LCI_name": "Radish, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.24930031,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.072311127,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.14056627,
+                "distribution": 0.024105619,
+                "consumption": 0.012317297
+            }
+        }
+    },
+    {
+        "id": 21,
+        "name": "Tomate",
+        "image_id": "zRqRhIJqdnI",
+        "image_url": "https://images.unsplash.com/photo-1596199050105-6d5d32222916?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-01-2000",
+                "16-05-2000"
+            ]
+        ],
+        "saw_out": [],
+        "transplant": [
+            [
+                "01-05-2000",
+                "01-06-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-11-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Tomate de saison, crue",
+            "short_name": "Tomate de saison",
+            "LCI_name": "Tomato in season, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.62369712,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.29259285,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.19160333,
+                "distribution": 0.03993612,
+                "consumption": 0.099564814
+            }
+        }
+    },
+    {
+        "id": 22,
+        "name": "Artichaut",
+        "image_id": "mTM84eo4Tew",
+        "image_url": "https://images.unsplash.com/photo-1621762556022-ddb311f5392f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-04-2000"
+            ]
+        ],
+        "saw_out": [],
+        "transplant": [
+            [
+                "01-03-2000",
+                "01-05-2000"
+            ],
+            [
+                "01-09-2000",
+                "01-11-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-05-2000",
+                "01-09-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Artichaut, cru",
+            "short_name": "Artichaut",
+            "LCI_name": "Artichoke, globe, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 3.969737,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 1.5015528,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.68174641,
+                "distribution": 0.19340077,
+                "consumption": 1.593037
+            }
+        }
+    },
+    {
+        "id": 23,
+        "name": "Cornichon",
+        "image_id": "4DTzukt0Ozs",
+        "image_url": "https://images.unsplash.com/photo-1591340270341-00a786ffc0aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-03-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "15-03-2000",
+                "16-05-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-11-2000"
+            ]
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Potimarron",
+        "image_id": "jHe6ragO2a0",
+        "image_url": "https://images.unsplash.com/photo-1570142056130-9f6b59c6287a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-06-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-03-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-03-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-12-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Potimarron, pulpe, cru",
+            "short_name": "Potimarron",
+            "LCI_name": "Red kuri squash, pulp, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.52351513,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.20516352,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.1704366,
+                "distribution": 0.048350192,
+                "consumption": 0.099564814
+            }
+        }
+    },
+    {
+        "id": 25,
+        "name": "Poivron",
+        "image_id": "LiXUoupJxM8",
+        "image_url": "https://images.unsplash.com/photo-1527276709728-d5a946ba727b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [],
+        "transplant": [
+            [
+                "01-04-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-10-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Poivron, vert, jaune ou rouge, cru",
+            "short_name": "Poivron",
+            "LCI_name": "Sweet pepper, green, yellow or red, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.92252051,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.53935177,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.22610913,
+                "distribution": 0.057494804,
+                "consumption": 0.099564814
+            }
+        }
+    },
+    {
+        "id": 26,
+        "name": "Piment",
+        "image_id": "PnFgNgCkBXY",
+        "image_url": "https://images.unsplash.com/photo-1505725513549-477dfcbe55c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [],
+        "transplant": [
+            [
+                "01-04-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-10-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Piment, cru",
+            "short_name": "Piment",
+            "LCI_name": "Chili pepper, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 3.8090038,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 3.425835,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.22610913,
+                "distribution": 0.057494804,
+                "consumption": 0.099564814
+            }
+        }
+    },
+    {
+        "id": 27,
+        "name": "Chou cabus",
+        "image_id": "AnBKV3nlIZg",
+        "image_url": "https://images.unsplash.com/photo-1508302730834-a3786a6c951d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-10-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-05-2000",
+                "01-08-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-01-2000",
+                "01-07-2000"
+            ],
+            [
+                "01-10-2000",
+                "01-01-2000"
+            ]
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Chicorée",
+        "image_url": "https://cdn.pixabay.com/photo/2015/10/08/00/12/plants-977005_960_720.jpg",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "16-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "15-05-2000",
+                "16-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-05-2000",
+                "01-09-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-05-2000",
+                "01-12-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Salade ou chicorée frisée, crue",
+            "short_name": "Salade ou chicorée frisée",
+            "LCI_name": "Curly endive, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 0.88251448,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.31309977,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.2272488,
+                "distribution": 0.076659738,
+                "consumption": 0.26550617
+            }
+        }
+    },
+    {
+        "id": 29,
+        "name": "Chou chinois",
+        "image_url": "https://cdn.pixabay.com/photo/2020/12/02/16/35/chinese-cabbage-5798137_960_720.jpg",
+        "saw_in": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-06-2000",
+                "01-09-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "15-05-2000",
+                "01-09-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "15-06-2000",
+                "01-01-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Chou chinois ou pak-choi ou pé-tsai, cru",
+            "short_name": "Chou chinois ou pak-choi ou pé-tsai",
+            "LCI_name": "Chinese cabbage (nappa cabbage or bok choy), raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "légumes",
+            "co2_total": 1.0577395,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.50051761,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.2272488,
+                "distribution": 0.064466923,
+                "consumption": 0.26550617
+            }
+        }
+    },
+    {
+        "id": 30,
+        "name": "Fraise",
+        "image_id": "Qse3AFWnc48",
+        "image_url": "https://images.unsplash.com/photo-1566804770468-867f6158bda5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-11-2000",
+                "01-04-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-11-2000",
+                "01-04-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-11-2000",
+                "01-04-2000"
+            ],
+            [
+                "01-11-2000",
+                "01-04-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-11-2000",
+                "01-04-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Fraise de saison, crue",
+            "short_name": "Fraise de saison",
+            "LCI_name": "Strawberry in season, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "fruits",
+            "co2_total": 0.52538699,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.31724926,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.16288342,
+                "distribution": 0.032937006,
+                "consumption": 0.012317297
+            }
+        }
+    },
+    {
+        "id": 31,
+        "name": "Concombre amer",
+        "image_url": "https://cdn.pixabay.com/photo/2016/08/23/17/11/bitter-gourd-1615019_960_720.jpg",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-04-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "15-05-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-06-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-09-2000"
+            ]
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Gombo",
+        "image_id": "CoIJlCZEjnw",
+        "image_url": "https://images.unsplash.com/photo-1425543103986-22abb7d7e8d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [
+            [
+                "01-12-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [],
+        "transplant": [
+            [
+                "15-05-2000",
+                "16-08-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-11-2000"
+            ]
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Framboise",
+        "image_id": "BM27BzBrhVM",
+        "image_url": "https://images.unsplash.com/photo-1593461802389-d57d73a36913?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-11-2000",
+                "01-04-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "15-06-2000",
+                "16-07-2000"
+            ]
+        ],
+        "co2_data": {
+            "original_name": "Framboise, crue",
+            "short_name": "Framboise",
+            "LCI_name": "Raspberry, raw",
+            "category": "fruits, légumes, légumineuses et oléagineux",
+            "subcategory": "fruits",
+            "co2_total": 0.90641828,
+            "co2_units": "kg CO2 eq/kg de produit",
+            "co2_share": {
+                "agriculture": 0.50243788,
+                "transform": 0,
+                "packaging": 0,
+                "transport": 0.35872609,
+                "distribution": 0.032937006,
+                "consumption": 0.012317297
+            }
+        }
+    }
+]

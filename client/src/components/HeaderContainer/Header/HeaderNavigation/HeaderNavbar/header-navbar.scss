@@ -1,0 +1,21 @@
+@use '../../../../../styles/vars';
+
+.header-navbar {
+    color: vars.$color-font-header;
+    font-weight: 700;
+    font-size: 1.1rem;
+
+    &__link {
+
+        &:hover {
+            color: vars.$active-color-header;
+        }
+
+        &--active {
+            text-decoration: underline;
+            color: vars.$active-color-header;
+            transition: color 0.2s ease-in-out;
+        }
+    }
+
+}

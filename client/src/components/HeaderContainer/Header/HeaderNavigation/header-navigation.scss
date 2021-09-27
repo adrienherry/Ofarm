@@ -1,0 +1,13 @@
+@use '../../../../styles/vars';
+
+.header-navigation {
+    &__user-icon {
+        cursor: pointer
+    }
+
+    &__username {
+        color: vars.$color-font-header;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+}

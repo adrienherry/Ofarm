@@ -1,0 +1,44 @@
+@use "../../styles/vars";
+
+
+.footer {
+  height: 13rem;
+  margin-top: 5rem;
+  background: vars.$background-footer;
+
+  &__separator {
+    width: 90%;
+    background-color: vars.$header-color;
+    height: 3px;
+    border-radius: 50%;
+    margin: auto;
+  }
+
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: vars.$header-color;
+
+    &:hover {
+      color: vars.$active-color-header;
+    }
+  }
+
+  &__return-top {
+    cursor: pointer;
+    font-weight: 700;
+    color: vars.$header-color;
+
+    &:hover {
+      color: vars.$active-color-header;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 12.8rem;
+  }
+
+}

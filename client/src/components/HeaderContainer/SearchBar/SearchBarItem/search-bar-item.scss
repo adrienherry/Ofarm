@@ -1,0 +1,30 @@
+.search-bar-item {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    border-bottom: 2px solid #d8d8d852;
+    padding: 0.4rem 0.5rem;
+    align-items: center;
+
+    &:hover {
+      background-color: #d8d8d878;
+      transition: 0.3s;
+    }
+
+    &__thumbnail {
+      max-width: 5rem;
+      max-height: 5rem;
+      min-width: 5rem;
+      min-height: 5rem;
+       
+    }
+
+    &__name {
+        font-size: 1.2rem;
+        color: #000000;
+        margin-left: 0.6rem;
+        display: flex;
+       
+        justify-content: center;
+    }
+}
