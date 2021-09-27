@@ -9,6 +9,8 @@ import Register from '../pages/Register';
 import Species from '../pages/Species';
 import Footer from '../Footer';
 import UserProfil from '../pages/UserProfil';
+import NotFound from '../pages/NotFound';
+import Team from '../pages/Team'; 
 import Login from '../pages/Login';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';

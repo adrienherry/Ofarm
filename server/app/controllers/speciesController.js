@@ -3,7 +3,9 @@ const { Species, Garden } = require("../models");
 const speciesController = {
 	findAll: async (_, res) => {
 		try {
-			const species = await Species.findAll();
+			const species = await Species.findAll({
+				order: [["name", "ASC"]],
+			});
 			res.json(species);
 		} catch (error) {
 			res.status(500).json(error.message);
