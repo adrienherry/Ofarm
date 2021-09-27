@@ -12,6 +12,7 @@ import UserProfil from '../pages/UserProfil';
 import NotFound from '../pages/NotFound';
 import Team from '../pages/Team'; 
 import Login from '../pages/Login';
+import MyGarden from '../pages/Garden';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
 import { isConnected } from '../../store/actions/authentification';
@@ -65,6 +66,9 @@ const App = () => {
           </Route>
           )}
         </Switch>
+        {/*<MyGarden />*/}
+        {/* <CreateGarden /> */}
+        {/* <UserProfil /> */}
         <Footer />
       </div>
     </div>
