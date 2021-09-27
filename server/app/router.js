@@ -14,49 +14,57 @@ const authController = require("./controllers/authController");
 /**
  * @route GET /search
  * @group Search
- * @summary Search user or specific species
- * @returns {String} 200 - An array of auth
- * @returns {String} 500 - An error message
+ * @summary Search among species with a query string
+ * @param {String} text.query - query string (ex: tomate)
+ * @returns {String} 200 - An array of matching results (species)
+ * @returns {String} 500 - Internal Server Error 
  */
 router.get("/search", searchController.findByQueryString),
 
-
-	// Find all species
 /**
- * @route GET/species
+ * @route GET /species
  * @group Species
- * @summary Responds with species from database
- * @returns {Array<species>} 200 - An array with all species from database
- * @returns {Array<species>} 500 - An error message
+ * @summary Get all species
+ * @returns {Array.<Species>} 200 - An array with all species (ordered by name)
+ * @returns {String} 500 - Internal Server Error
  */
 	router.get("/species", speciesController.findAll);
-// Find species with matching ID
 
 /**
- * @route GET / speciesId
+ * @route GET /speciesId
  * @group Species
- * @summary Responds with one species from database
- * @returns {Array<species>} 200 - A single species identified by its Id
- * @returns {Array<species>} 500 - An error message
+ * @summary Get species with matching ID
+ * @param {integer} id.required - species id (ex: 2)
+ * @returns {Array.<Species>} 200 - A single species identified by its Id
+ * @returns {String} 500 - Internal Server Error
  */
 router.get("/species/:id", speciesController.findOne);
 
 /**
- * @route POST / register
- * @group Authentification
- * @summary Register himself
- * @params {string} 
+ * @route POST /register
+ * @group Authentication
+ * @summary Register with email, username and password 
+ * @param {string} username.required - username of the new user
+ * @param {string} email.required - email of the new user
+ * @param {string} password.required - password of the new user
+ * @returns {boolean} 200 - A "created" boolean at true
+ * @returns {String} 400 - Bad Request Error
+ * @returns {String} 500 - Internal Server Error
  */
-// Register and login
 router.post("/register", authController.register);
 
 /**
- * @route POST / login
- * @group Authentification
- * @summary Log himself
- * @params {string} 
+ * @route POST /login
+ * @group Authentication
+ * @summary Login with email and password 
+ * @param {string} email.required - email of the new user
+ * @param {string} password.required - password of the new user
+ * @returns {json} 200 - A JSON object with a "logged" boolean at true, the username and the JWT token
+ * @returns {String} 400 - Bad Request Error
+ * @returns {String} 500 - Internal Server Error
  */
 router.post("/login", authController.login);
+
 // router.get("/logout", authController.logout);
 
 // REGISTERED USER ROUTES
@@ -64,36 +72,42 @@ router.post("/login", authController.login);
 // "ME" ROUTES - REGISTERED USER WITH CORRECT USERNAME AND ID
 
 /**
- * @route GET / user
+ * @route GET /user
  * @group User
- * @summary Find user with his username and Id
- * @params {id} 
+ * @summary Find user using his access token (username and ID)
+ * @returns {<User>} 200 - user information with all associated data (gardens, species, events, etc.)
+ * @returns {String} 403 - Forbidden
+ * @returns {String} 500 - Internal Server Error
  */
 router.get(
 	"/user",
 	jwtService.verifyAndDecodeTokenMiddleware,
 	userController.findOne,
-); // Find user with matching ID
+);
 
 /**
- * @route PATCH / user
+ * @route PATCH /user
  * @group User
- * @summary Update my informations
- * @params {string} 
+ * @summary Update user personal information
+ * @param {string} email.body.required - user email
+ * @param {string} username.body.required - user username
+ * @param {string} password.body.required - user password
+ * @returns {boolean} 200 - updated - true if successful
+ * @returns {String} 403 - Forbidden
+ * @returns {String} 500 - Internal Server Error
  */
 router.patch(
 	"/user",
 	jwtService.verifyAndDecodeTokenMiddleware,
 	userController.save,
-); // Update user personal information
-
-// Find garden with matching user ID and garden ID
+);
 
 /**
- * @route GET / garden
+ * @route GET /garden
  * @group Garden
- * @summary Find my garden
- * @params {string} 
+ * @summary Find garden with matching ID belonging to current user
+ * @param {integer} garden_id.params - ID of the garden 
+ * @returns {<Garden>} 200 - Garden object with all associations (species, events, etc.)
  */
 router.get(
 	"/garden/:garden_id",
@@ -101,13 +115,15 @@ router.get(
 	gardenController.findOneWithUserId,
 );
 
-// Add a species to a garden
-
 /**
- * @route POST / garden
+ * @route POST /garden
  * @group Garden
- * @summary Find a species from my garden
- * @params {string} 
+ * @summary Add a new species to a garden
+ * @param {integer} garden_id.params - ID of the garden
+ * @param {integer} species_id.body - ID of the new species
+ * @returns {boolean} 200 - updated - true if successful
+ * @returns {String} 403 - Forbidden
+ * @returns {String} 500 - Internal Server Error
  */
 router.post(
 	"/garden/:garden_id/species",
@@ -118,10 +134,11 @@ router.post(
 // Delete a species from a garden
 
 /**
- * @route DELETE / garden
+ * @route DELETE /garden
  * @group Garden
  * @summary Delete species from my garden
- * @params {string} 
+ * @param {integer} garden_id.params.required - ID of the garden
+ * @param {integer} species_id.body.required - ID of the species 
  */
 router.delete(
 	"/garden/:garden_id/species",
@@ -132,22 +149,15 @@ router.delete(
 // Delete a garden
 
 /**
- * @route DELETE / garden
+ * @route DELETE /garden
  * @group Garden
  * @summary Delete a garden
- * @params {string} 
+ * @param {integer} garden_id.params.required - ID of the garden 
  */
 router.delete(
 	"/garden/:garden_id",
 	jwtService.verifyAndDecodeTokenMiddleware,
 	gardenController.removeGarden,
-);
-
-router.get(
-	"/", 
-	(_, res) => {
-		res.redirect("/api-docs")
-	}
 );
 
 module.exports = router;

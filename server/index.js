@@ -21,7 +21,7 @@ const expressSwagger = require('express-swagger-generator')(app);
 let options = {
     swaggerDefinition: {
         info: {
-            description: 'A farm communautary',
+            description: 'An open-source farming API',
             title: 'oFarm',
             version: '1.0.0',
         },
@@ -37,7 +37,7 @@ let options = {
     },
     basedir: __dirname, //app absolute path
     files: ['./app/**/*.js'], //Path to the API handle folder
-	route: {url: '/docs', docs: '/api-docs.json'}
+	route: {url: '/api/v1/docs', docs: '/api-docs.json'}
 };
 expressSwagger(options);
 
