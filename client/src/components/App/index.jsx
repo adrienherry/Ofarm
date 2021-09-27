@@ -41,7 +41,7 @@ const App = () => {
           </Route>
         </Switch>
         {/* <CreateGarden /> */}
-        {/* <UserProfil /> */}
+        <UserProfil />
         <Footer />
       </div>
     </div>
