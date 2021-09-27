@@ -21,8 +21,6 @@ END;
 $$
 LANGUAGE plpgsql;
 
-BEGIN;
-
 CREATE TABLE "user" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    email text NOT NULL UNIQUE,
@@ -50,6 +48,7 @@ CREATE TABLE "species" (
    image_url text,
    color text DEFAULT '#ffffff00',
    description text,
+   co2_data json,
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now())
 );
