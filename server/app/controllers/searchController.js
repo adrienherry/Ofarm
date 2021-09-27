@@ -4,8 +4,7 @@ const { Op } = require("sequelize");
 const searchController = {
 	findByQueryString: async (req, res) => {
 		try {
-			const { text } = req.query ? req.query : "";
-			console.log(req.query);
+			const text = req.query.text ? req.query.text : "";
 			const species = await Species.findAll({
 				where: {
 					name: {
@@ -16,7 +15,7 @@ const searchController = {
 			});
 			res.json(species);
 		} catch (error) {
-			res.status(500).json(error.message);
+			res.status(500).json(error);
 		}
 	},
 };

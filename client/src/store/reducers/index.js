@@ -6,8 +6,7 @@ import searchBarReducer from './searchbar';
 import registerReducer from './register';
 import speciesReducer from './species';
 import createGardenReducer from './createGarden';
-import profilReducer from "./profil";
-
+import profilReducer from './profil';
 
 const rootReducer = combineReducers({
   profil: profilReducer,

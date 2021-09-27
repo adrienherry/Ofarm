@@ -1,4 +1,4 @@
-import { SET_LOGIN_FIELD } from '../actions/authentification';
+import { SET_LOGGED_TO_TRUE, SET_LOGIN_FIELD } from '../actions/authentification';
 
 const initialState = {
   logged: false,
@@ -12,6 +12,13 @@ const authentificationReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.name]: action.value,
+      };
+    case SET_LOGGED_TO_TRUE:
+      return {
+        ...state,
+        logged: true,
+        emailLogin: '',
+        passwordLogin: '',
       };
     default:
       return state;
