@@ -8,12 +8,14 @@ import Species from '../pages/Species';
 import Footer from '../Footer';
 import Login from '../pages/Login';
 import UserProfil from '../pages/UserProfil';
+import Team from '../pages/Team';
 
 const App = () => (
   <div className="app">
     <div className="app__container">
       <HeaderContainer />
-      <Switch>
+      <Team />
+      {/* <Switch>
         <Route path="/" exact>
           <HomePage />
         </Route>
@@ -27,7 +29,7 @@ const App = () => (
           <Register />
         </Route>
       </Switch>
-      <UserProfil />
+      <UserProfil /> */}
       <Footer />
     </div>
   </div>

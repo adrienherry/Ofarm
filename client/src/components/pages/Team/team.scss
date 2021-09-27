@@ -1,0 +1,29 @@
+.team {
+    // background-color: cornflowerblue;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+
+.team__titre {
+    // background-color: crimson; 
+    text-transform: uppercase;
+    text-align: center;
+    padding-top:2rem;
+    padding-bottom: 2rem;
+    font-weight: bold;
+    color: white;
+    font-size: xx-large;
+    
+}
+
+
+.team__content {
+    display:flex;
+    // background-color: darkgreen;
+    width: 40%;
+    text-align: center;
+    
+
+}
