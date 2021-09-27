@@ -1,8 +1,8 @@
 @use '../../../styles/vars';
 
 .login {
+    margin-top: 3rem;
     
-  
     &__form {
       background-color: vars.$background-card-color;
       padding: 3rem;

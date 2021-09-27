@@ -1,0 +1,2765 @@
+[
+    {
+        "nom_francais": "Tapioca ou Perles du Japon, cru",
+        "LCI_name": "Tapioca, raw",
+        "sous_groupe": "pommes de terre et autres tubercules",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.0876336,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.22767182,
+                "Transformation": 0,
+                "Emballage": 0.13575342,
+                "Transport": 0.55687337,
+                "Supermarché et distribution": 0.061771047,
+                "Consommation": 0.10556394
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pomme de terre nouvelle, crue",
+        "LCI_name": "New potato, raw",
+        "sous_groupe": "pommes de terre et autres tubercules",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.4670968,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.070124094,
+                "Transformation": 0,
+                "Emballage": 0.10860273,
+                "Transport": 0.23415383,
+                "Supermarché et distribution": 0.049416837,
+                "Consommation": 0.0047993021
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Patate douce, crue",
+        "LCI_name": "Sweet potato, raw",
+        "sous_groupe": "pommes de terre et autres tubercules",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.36252883,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.07229288,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.22202572,
+                "Supermarché et distribution": 0.050945193,
+                "Consommation": 0.017265031
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Ail, cru",
+        "LCI_name": "Garlic, fresh",
+        "sous_groupe": "herbes",
+        "groupe": "aides culinaires et ingrédients divers",
+        "co2": {
+            "synthese": 0.37474333,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.06811426,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.17538905,
+                "Supermarché et distribution": 0.031675203,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Raifort, cru",
+        "LCI_name": "Horseradish, fresh",
+        "sous_groupe": "herbes",
+        "groupe": "aides culinaires et ingrédients divers",
+        "co2": {
+            "synthese": 0.70943889,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.079706583,
+                "Transformation": 0,
+                "Emballage": 0.33443152,
+                "Transport": 0.16406077,
+                "Supermarché et distribution": 0.031675203,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Ananas, pulpe, cru",
+        "LCI_name": "Pineapple, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.1459791,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.22738276,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.45643934,
+                "Supermarché et distribution": 0.063897792,
+                "Consommation": 0.39825926
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Avocat, pulpe, cru",
+        "LCI_name": "Avocado, pulp, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 2.7496498,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 1.7728241,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.51466861,
+                "Supermarché et distribution": 0.063897792,
+                "Consommation": 0.39825926
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Banane, pulpe, crue",
+        "LCI_name": "Banana, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.8667377,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.65574971,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.53372688,
+                "Supermarché et distribution": 0.07987224,
+                "Consommation": 0.59738888
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Cassis, cru",
+        "LCI_name": "Black currant, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.7551809,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 1.4452434,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Citron, pulpe, cru",
+        "LCI_name": "Lemon, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.91070964,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.30402273,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.29856854,
+                "Supermarché et distribution": 0.042612199,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Coing, cru",
+        "LCI_name": "Quince, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.48835781,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.11930004,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.22955684,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Figue, crue",
+        "LCI_name": "Fig, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.57700764,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.23909936,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19840735,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Fraise de saison, crue",
+        "LCI_name": "Strawberry in season, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.52538699,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31724926,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.16288342,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Framboise, crue",
+        "LCI_name": "Raspberry, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.90641828,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.50243788,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.35872609,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Fruit de la passion ou maracudja, pulpe et pépins, cru",
+        "LCI_name": "Passion fruit, pulp and pips, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.91373231,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.60379477,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Grenade, pulpe et pépins, crue",
+        "LCI_name": "Pomegranate, pulp and pips, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.42923757,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.11930004,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Groseille, crue",
+        "LCI_name": "Red currant, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.7551809,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 1.4452434,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Groseille à maquereau, crue",
+        "LCI_name": "Gooseberry, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.541975,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 1.1013819,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.3010922,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Kiwi, pulpe et graines, cru",
+        "LCI_name": "Kiwi fruit, pulp and seeds, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.92347897,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.60379477,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.18018326,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Litchi, pulpe, cru",
+        "LCI_name": "Lychee, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.47983657,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.16989903,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Mangue importée par avion, pulpe, crue",
+        "LCI_name": "Mango by plane, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.65538399,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.17006893,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.34581412,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Melon cantaloup (par ex.: Charentais, de Cavaillon) pulpe, cru",
+        "LCI_name": "Melon, cantaloupe (ex Cavaillon or Charentais melon), pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.87227002,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.30901715,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.24449853,
+                "Supermarché et distribution": 0.05324816,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Myrtille, crue",
+        "LCI_name": "Blueberry, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.3777739,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 1.1919533,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Mûre (de ronce), crue",
+        "LCI_name": "Blackberry, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.62711893,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.44129836,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Nectarine ou brugnon, pulpe et peau, crue",
+        "LCI_name": "Nectarine, pulp and peel, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.57167205,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.26173451,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Orange, pulpe, crue",
+        "LCI_name": "Orange, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.9701987,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.32762271,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.33445761,
+                "Supermarché et distribution": 0.042612199,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Papaye, pulpe, crue",
+        "LCI_name": "Papaya, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.86407655,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.20838797,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.51618765,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pastèque, pulpe, crue",
+        "LCI_name": "Watermelon, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.58532818,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.23176286,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.21406438,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Poire, pulpe et peau, crue",
+        "LCI_name": "Pear, pulp and peel, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.25270852,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.058136545,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14931767,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pomelo (dit Pamplemousse), pulpe, cru",
+        "LCI_name": "Grapefruit, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.63329523,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.18270046,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.3190708,
+                "Supermarché et distribution": 0.031959149,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Prune Reine-Claude, crue",
+        "LCI_name": "Greengage plum, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.90663697,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.59669943,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pêche, pulpe et peau, crue",
+        "LCI_name": "Peach, pulp and peel, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.1434819,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.38438194,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.29694292,
+                "Supermarché et distribution": 0.063897792,
+                "Consommation": 0.39825926
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Raisin blanc, à gros grain (type Italia ou Dattier), cru",
+        "LCI_name": "Grape, white, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.62837474,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.29161536,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19725844,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Raisin noir, cru",
+        "LCI_name": "Grape, red, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.62837474,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.29161536,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19725844,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Rhubarbe, tige, crue",
+        "LCI_name": "Rhubarb, stalk, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.68532574,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.3753882,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pomme, pulpe, crue",
+        "LCI_name": "Apple, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.28421235,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.098391782,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Carambole, pulpe, crue",
+        "LCI_name": "Carambola, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.47983657,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.16989903,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Figue de Barbarie, pulpe et graines, crue",
+        "LCI_name": "Prickly pear, pulp and seeds, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.25270852,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.058136545,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14931767,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Kaki, pulpe, cru",
+        "LCI_name": "Persimmon, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.90593462,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.53935177,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.22708192,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Citron vert ou Lime, pulpe, cru",
+        "LCI_name": "Lime, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.52997762,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.22801705,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.031959149,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Mûre noire (du mûrier), crue",
+        "LCI_name": "Black mulberry, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.8450118,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.53507426,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Tamarin, fruit immature, pulpe, cru",
+        "LCI_name": "Tamarind, immature fruit, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.4584142,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.14847666,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Clémentine, pulpe, crue",
+        "LCI_name": "Clementine, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.70837917,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.10169226,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.29856854,
+                "Supermarché et distribution": 0.042612199,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Goyave, pulpe, crue",
+        "LCI_name": "Guava, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.1630145,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.60343249,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.4200811,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pomme Canada, pulpe, crue",
+        "LCI_name": "Apple, Canada, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.28421235,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.098391782,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Mandarine, pulpe, crue",
+        "LCI_name": "Mandarin, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.70837917,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.10169226,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.29856854,
+                "Supermarché et distribution": 0.042612199,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Prune, crue",
+        "LCI_name": "Plum, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.90663697,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.59669943,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Poire, pulpe, crue",
+        "LCI_name": "Pear, peeled, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.25270852,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.058136545,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14931767,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Griotte, crue",
+        "LCI_name": "Morello cherry, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.90663697,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.59669943,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Raisin, cru",
+        "LCI_name": "Grape, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.62837474,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.29161536,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19725844,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Canneberge ou cranberry, crue",
+        "LCI_name": "Cranberry, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.1577427,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.60859734,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.40964439,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Citron, zeste, cru",
+        "LCI_name": "Lemon zest, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.91070964,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.30402273,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.29856854,
+                "Supermarché et distribution": 0.042612199,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Sureau, baie, crue",
+        "LCI_name": "Elderberry, berries, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.8450118,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.53507426,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Salade de fruits, crue",
+        "LCI_name": "Fruit salad, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.0731989,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.30202273,
+                "Transformation": 0.15482142,
+                "Emballage": 0.27503424,
+                "Transport": 0.22163584,
+                "Supermarché et distribution": 0.020119891,
+                "Consommation": 0.099564814
+            },
+            "ingredients": {
+                "Fructose": 0.18503627,
+                "Pêche": 0.28322743,
+                "Poire": 0.02965656,
+                "Ananas": 0.030709657,
+                "Raisin de table": 0.010555278,
+                "Autres étapes": 0.5340137406900001
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pomelo (dit Pamplemousse) jaune, pulpe, cru",
+        "LCI_name": "Grapefruit, yellow, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.63329523,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.18270046,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.3190708,
+                "Supermarché et distribution": 0.031959149,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pomelo (dit Pamplemousse) rose, pulpe, cru",
+        "LCI_name": "Grapefruit, red or pink, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.63329523,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.18270046,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.3190708,
+                "Supermarché et distribution": 0.031959149,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Kumquat, sans pépin, cru",
+        "LCI_name": "Kumquat, without pips, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.57603133,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.27407076,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.031959149,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pamplemousse chinois, pulpe, cru",
+        "LCI_name": "Pummelo, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.5840083,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.27407076,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pomme Golden, pulpe et peau, crue",
+        "LCI_name": "Apple, var. Golden, pulp and skin, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.28421235,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.098391782,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Melon miel ou melon honeydew, pulpe, cru",
+        "LCI_name": "Melon, honeydew, pulp, raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.87227002,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.30901715,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.24449853,
+                "Supermarché et distribution": 0.05324816,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Fruits rouges, crus (framboises, fraises, groseilles, cassis)",
+        "LCI_name": "Red berries (raspberries, strawberries, red currants, black currants) , raw",
+        "sous_groupe": "fruits",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.90641828,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.50243788,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.35872609,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Châtaigne, crue",
+        "LCI_name": "Chestnut, raw",
+        "sous_groupe": "fruits à coque et graines oléagineuses",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.6324335,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 1.3964351,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.15119955,
+                "Supermarché et distribution": 0.040547779,
+                "Consommation": 0.044251023
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Bette ou blette, crue",
+        "LCI_name": "Swiss chard, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.4799701,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.15247388,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Carotte, crue",
+        "LCI_name": "Carrot, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.38690672,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.087677241,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.029228063,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Salade ou chicorée frisée, crue",
+        "LCI_name": "Curly endive, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.88251448,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31309977,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.076659738,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Chou rouge, cru",
+        "LCI_name": "Red cabbage, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.0577395,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.50051761,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.064466923,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Chou-fleur, cru",
+        "LCI_name": "Cauliflower, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.50990048,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.30959852,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.047418395,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Concombre, pulpe et peau, cru",
+        "LCI_name": "Cucumber, pulp and peel, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 4.8565886,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 4.5332143,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.18387334,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Courgette, pulpe et peau, crue",
+        "LCI_name": "Courgette or zucchini, pulp and peel, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.40570914,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.21625003,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.036575546,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Cresson de fontaine, cru",
+        "LCI_name": "Watercress, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.77271322,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.20329851,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.076659738,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Céleri branche, cru",
+        "LCI_name": "Celery stalk, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.66122856,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.47540799,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.032937006,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Endive, crue",
+        "LCI_name": "Chicory, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.79470609,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.46720987,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Fenouil, cru",
+        "LCI_name": "Fennel, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.9716564,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.53978325,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.28395814,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Laitue, crue",
+        "LCI_name": "Lettuce, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.88251448,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31309977,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.076659738,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Oignon, cru",
+        "LCI_name": "Onion, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.41548167,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.1089838,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.17697494,
+                "Supermarché et distribution": 0.029958116,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pissenlit, cru",
+        "LCI_name": "Dandelion, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.87032166,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31309977,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.064466923,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Poireau, cru",
+        "LCI_name": "Leek, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.71433485,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.41437532,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.029958116,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Poivron, vert, jaune ou rouge, cru",
+        "LCI_name": "Sweet pepper, green, yellow or red, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.92252051,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.53935177,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.22610913,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Potiron, cru",
+        "LCI_name": "Pumpkin, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.5490214,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.20516352,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19594288,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Radis rouge, cru",
+        "LCI_name": "Radish, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.24930031,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.072311127,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.024105619,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Tomate de saison, crue",
+        "LCI_name": "Tomato in season, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.62369712,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.29259285,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19160333,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Artichaut, cru",
+        "LCI_name": "Artichoke, globe, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 3.969737,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 1.5015528,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.68174641,
+                "Supermarché et distribution": 0.19340077,
+                "Consommation": 1.593037
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Aubergine, crue",
+        "LCI_name": "Eggplant, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 5.3103591,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 5.0919415,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.16952471,
+                "Supermarché et distribution": 0.036575546,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Cardon, cru",
+        "LCI_name": "Cardoon, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.69373981,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.3753882,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Céleri-rave, cru",
+        "LCI_name": "Celeriac, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.38690672,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.087677241,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.029228063,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Brocoli, cru",
+        "LCI_name": "Broccoli, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.67898428,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.47868232,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.047418395,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Chou de Bruxelles, cru",
+        "LCI_name": "Brussels sprout, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.50235853,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.30959852,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.039876447,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Épinard, cru",
+        "LCI_name": "Spinach, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.32605361,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.12575165,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.047418395,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Navet, pelé, cru",
+        "LCI_name": "Turnip, peeled, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.38690672,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.087677241,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.029228063,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Chou-rave, cru",
+        "LCI_name": "Turnip cabbage, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.38690672,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.087677241,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.029228063,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Chou vert, cru",
+        "LCI_name": "Green cabbage, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.0577395,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.50051761,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.064466923,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Petits pois, crus",
+        "LCI_name": "Garden peas, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.39122671,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.23557796,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.13634928,
+                "Supermarché et distribution": 0.019299477,
+                "Consommation": 0
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Asperge, pelée, crue",
+        "LCI_name": "Asparagus, peeled, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.3880947,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 1.0563045,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.18387517,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Poivron vert, cru",
+        "LCI_name": "Sweet pepper, green, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.92252051,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.53935177,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.22610913,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Poivron rouge, cru",
+        "LCI_name": "Sweet pepper, red, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.92252051,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.53935177,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.22610913,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Radis noir, cru",
+        "LCI_name": "Radish, black, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.24930031,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.072311127,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.024105619,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Scarole, crue",
+        "LCI_name": "Escaroles",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.1144112,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31309977,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.35894158,
+                "Supermarché et distribution": 0.16886486,
+                "Consommation": 0.27350501
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Betterave rouge, crue",
+        "LCI_name": "Beetroot, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.24930031,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.072311127,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.024105619,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Échalote, crue",
+        "LCI_name": "Shallot, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.37488522,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.074925686,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.029958116,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Mâche, crue",
+        "LCI_name": "Lamb's lettuce, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.88251448,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31309977,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.076659738,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Champignon, morille, crue",
+        "LCI_name": "Morel, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.40242191,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.074925686,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Oseille, crue",
+        "LCI_name": "Sorrel, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.56232104,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.23482483,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Chou blanc, cru",
+        "LCI_name": "White cabbage, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.0577395,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.50051761,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.064466923,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Tomate verte, crue",
+        "LCI_name": "Tomato, green, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.62369712,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.29259285,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19160333,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Haricot de Lima, cru",
+        "LCI_name": "Lima bean, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.75581015,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.60016139,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.13634928,
+                "Supermarché et distribution": 0.019299477,
+                "Consommation": 0
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Courge musquée, pulpe, crue",
+        "LCI_name": "Pumpkin (cucurbita moschata), pulp, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.52351513,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.20516352,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Potimarron, pulpe, cru",
+        "LCI_name": "Red kuri squash, pulp, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.52351513,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.20516352,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Courge hokkaïdo, pulpe, crue",
+        "LCI_name": "Sweet green hokkaido squash, pulp, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.52351513,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.20516352,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Courge melonnette, pulpe, crue",
+        "LCI_name": "Squash, melonnette jaspée from Vendée, pulp, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.5490214,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.20516352,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19594288,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Courge doubeurre (butternut), pulpe, crue",
+        "LCI_name": "Squash, butternut, pulp, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.5490214,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.20516352,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19594288,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Courge, crue",
+        "LCI_name": "Squash, all types, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.5490214,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.20516352,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19594288,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Courge spaghetti, pulpe, crue",
+        "LCI_name": "Squash, spaghetti, pulp, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.5490214,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.20516352,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19594288,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Piment, cru",
+        "LCI_name": "Chili pepper, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 3.8090038,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 3.425835,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.22610913,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Chicorée rouge, crue",
+        "LCI_name": "Red endive, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.88251448,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31309977,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.076659738,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Chicorée verte, crue",
+        "LCI_name": "Green endive, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.88251448,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31309977,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.076659738,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Citrouille, pulpe, crue",
+        "LCI_name": "Pumpkin, pulp, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.5490214,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.20516352,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.19594288,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Chou chinois ou pak-choi ou pé-tsai, cru",
+        "LCI_name": "Chinese cabbage (nappa cabbage or bok choy), raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.0577395,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.50051761,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.064466923,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Poivron jaune, cru",
+        "LCI_name": "Sweet pepper, yellow, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.92252051,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.53935177,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.22610913,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Laitue romaine, crue",
+        "LCI_name": "Cos or romaine lettuce, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.88251448,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31309977,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.076659738,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Tomate cerise, crue",
+        "LCI_name": "Tomato, cherry, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.50934855,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.19941101,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Pois mange-tout ou pois gourmand, cru",
+        "LCI_name": "Snow pea, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.58859821,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.29447244,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.024124346,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Panais, cru",
+        "LCI_name": "Parsnip, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.38690672,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.087677241,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.029228063,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Haricot mungo germé ou pousse de \"soja\", cru",
+        "LCI_name": "Mung bean, sprouted or soy spouts, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.75581015,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.60016139,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.13634928,
+                "Supermarché et distribution": 0.019299477,
+                "Consommation": 0
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Haricot beurre, cru",
+        "LCI_name": "Butter bean or yellow bean, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.47597288,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.14847666,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Topinambour, cru",
+        "LCI_name": "Jerusalem artichoke, raw",
+        "sous_groupe": "pommes de terre et autres tubercules",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.85581834,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.3753882,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.26920619,
+                "Supermarché et distribution": 0.10566,
+                "Consommation": 0.10556394
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Salsifis noir, cru",
+        "LCI_name": "Salsify, black, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.38690672,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.087677241,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.029228063,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Bambou, pousse, crue",
+        "LCI_name": "Bamboo shoots, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.3746561,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 1.0563045,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Cresson alénois, cru",
+        "LCI_name": "Garden cress, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.88251448,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31309977,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.076659738,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Laitue iceberg, crue",
+        "LCI_name": "Iceberg lettuce, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.85956983,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.29015512,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.076659738,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Rutabaga, cru",
+        "LCI_name": "Rutabaga or Swede, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.38690672,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.087677241,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.029228063,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Concombre, pulpe, cru",
+        "LCI_name": "Cucumber, pulp, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 4.8565886,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 4.5332143,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.18387334,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Roquette, crue",
+        "LCI_name": "Roman rocket, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.88251448,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31309977,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.076659738,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Chou frisé, cru",
+        "LCI_name": "Curly kale, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.70288442,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.3753882,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Haricot plat, cru",
+        "LCI_name": "Flat bean, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.47597288,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.14847666,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Épinard, jeunes pousses pour salades, cru",
+        "LCI_name": "Spinach, young leaves, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.32605361,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.12575165,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.14056627,
+                "Supermarché et distribution": 0.047418395,
+                "Consommation": 0.012317297
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Asperge, verte, crue",
+        "LCI_name": "Asparagus, green, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.3880947,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 1.0563045,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.18387517,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Chou romanesco ou brocoli à pomme, cru",
+        "LCI_name": "Romanesco cauliflower or romanesco broccoli, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.70288442,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.3753882,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.1704366,
+                "Supermarché et distribution": 0.057494804,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Asperge, blanche ou violette, pelée, crue",
+        "LCI_name": "Asparagus, white or purple, peeled, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.3880947,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 1.0563045,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.18387517,
+                "Supermarché et distribution": 0.048350192,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Lupin, graine crue",
+        "LCI_name": "lupin grain, raw",
+        "sous_groupe": "légumineuses",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 1.2263753,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.55116862,
+                "Transformation": 0,
+                "Emballage": 0.26940995,
+                "Transport": 0.38968745,
+                "Supermarché et distribution": 0.016109268,
+                "Consommation": 0
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Salade verte, crue, sans assaisonnement",
+        "LCI_name": "Green salad, raw, without seasoning",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.88251448,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.31309977,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.2272488,
+                "Supermarché et distribution": 0.076659738,
+                "Consommation": 0.26550617
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Banane plantain, crue",
+        "LCI_name": "Plantain banana, raw",
+        "sous_groupe": "légumes",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.79874399,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.3325408,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.32670226,
+                "Supermarché et distribution": 0.03993612,
+                "Consommation": 0.099564814
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Taro, tubercule, cru",
+        "LCI_name": "Taro, tuber, raw",
+        "sous_groupe": "pommes de terre et autres tubercules",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.64491061,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.18208283,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.40861164,
+                "Supermarché et distribution": 0.049416837,
+                "Consommation": 0.0047993021
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Igname, épluchée, crue",
+        "LCI_name": "Yam or Indian potato, peeled, raw",
+        "sous_groupe": "pommes de terre et autres tubercules",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.65572219,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.18771426,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.39979771,
+                "Supermarché et distribution": 0.050945193,
+                "Consommation": 0.017265031
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Manioc, racine crue",
+        "LCI_name": "Cassava or manioc, roots, raw",
+        "sous_groupe": "pommes de terre et autres tubercules",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.92839408,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.22767182,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.53338727,
+                "Supermarché et distribution": 0.061771047,
+                "Consommation": 0.10556394
+            }
+        },
+        "avion": false
+    },
+    {
+        "nom_francais": "Fruit à pain, cru",
+        "LCI_name": "Breadfruit, raw",
+        "sous_groupe": "pommes de terre et autres tubercules",
+        "groupe": "fruits, légumes, légumineuses et oléagineux",
+        "co2": {
+            "synthese": 0.63101725,
+            "unite": "kg CO2 eq/kg de produit",
+            "etapes": {
+                "Agriculture": 0.16989903,
+                "Transformation": 0,
+                "Emballage": 0,
+                "Transport": 0.26920619,
+                "Supermarché et distribution": 0.086348093,
+                "Consommation": 0.10556394
+            }
+        },
+        "avion": false
+    }
+]

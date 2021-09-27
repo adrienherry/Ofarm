@@ -24,6 +24,10 @@ Species.init(
 			type: DataTypes.STRING,
 			allowNull: true,
 		},
+		co2Data: {
+			type: DataTypes.JSON,
+			allowNull: true
+		},
 		color: {
 			type: DataTypes.STRING,
 			allowNull: true,

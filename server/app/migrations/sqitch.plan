@@ -2,3 +2,4 @@
 %project=ofarm
 
 01_init 2021-09-21T12:01:52Z Florian NGUYEN <florian.nguyen@yahoo.fr> # Initialisation de la base de données
+02_add-slugs 2021-09-27T11:11:46Z Florian NGUYEN <florian.nguyen@yahoo.fr> # Ajout des slugs après premier seed de données

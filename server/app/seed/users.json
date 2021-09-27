@@ -1,0 +1,17 @@
+[
+    {
+        "username": "florian",
+        "email": "florian@mail.fr",
+        "hashed_password": "$2b$10$/kmbu0zXpMnmFuvIuz6B2ujKbpAVN3613tLpwb5nUm26nIvtkJ2Q."
+    },
+    {
+        "username": "nicolas",
+        "email": "nicolas@mail.com",
+        "hashed_password": "$2b$10$/kmbu0zXpMnmFuvIuz6B2ujKbpAVN3613tLpwb5nUm26nIvtkJ2Q."
+    },
+    {
+        "username": "bob",
+        "email": "bob@mail.com",
+        "hashed_password": "$2b$10$/kmbu0zXpMnmFuvIuz6B2ujKbpAVN3613tLpwb5nUm26nIvtkJ2Q."
+    }
+]

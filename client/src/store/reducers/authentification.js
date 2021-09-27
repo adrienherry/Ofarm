@@ -2,8 +2,8 @@ import { SET_LOGIN_FIELD } from '../actions/authentification';
 
 const initialState = {
   logged: false,
-  email: '',
-  password: '',
+  emailLogin: '',
+  passwordLogin: '',
 };
 
 const authentificationReducer = (state = initialState, action = {}) => {
