@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 
 import './app.scss';
@@ -13,6 +12,7 @@ import UserProfil from '../pages/UserProfil';
 import Login from '../pages/Login';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
+import { isConnected } from '../../store/actions/authentification';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,18 @@ const App = () => {
 
   useEffect(() => {
     dispatch(collapseUserMenu());
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }, [location]);
+
+  useEffect(() => {
+    if (localStorage.getItem('jwt')) {
+      dispatch(isConnected());
+    }
+  }, []);
 
   return (
     <div className="app">

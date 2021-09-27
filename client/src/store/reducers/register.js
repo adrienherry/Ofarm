@@ -1,5 +1,5 @@
 import {
-  ADD_FORM,
+  SET_IS_CONFIRMED_TO_FALSE,
   SET_REGISTER_FIELD,
 } from '../actions/register';
 
@@ -8,6 +8,7 @@ const initialState = {
   email: '',
   password: '',
   confirmPassword: '',
+  isConfirmed: true,
 };
 
 const RegisterReducer = (state = initialState, action = {}) => {
@@ -17,15 +18,11 @@ const RegisterReducer = (state = initialState, action = {}) => {
         ...state,
         [action.name]: action.value,
       };
-    case ADD_FORM:
+    case SET_IS_CONFIRMED_TO_FALSE:
       return {
         ...state,
-        username: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
+        isConfirmed: false,
       };
-
     default:
       return state;
   }

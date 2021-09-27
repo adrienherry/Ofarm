@@ -42,7 +42,7 @@ const authController = {
 			);
 
 			if (!passwordIsCorrect) {
-				res.status(400).json("Wrong username or password");
+				res.status(400).json({"Wrong username or password"});
 				return;
 			}
 

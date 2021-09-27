@@ -13,3 +13,12 @@ export const collapseUserMenu = () => (
     type: COLLAPSE_USER_MENU,
   }
 );
+
+export const SET_USER_INFO = 'SET_USER_INFO';
+
+export const setUserInfo = (username) => (
+  {
+    type: SET_USER_INFO,
+    username,
+  }
+);

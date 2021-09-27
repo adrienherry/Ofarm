@@ -7,3 +7,27 @@ export const setLoginField = (value, name) => (
     name,
   }
 );
+
+export const SEND_LOGIN_FORM = 'SEND_LOGIN_FORM';
+
+export const sendLoginForm = () => (
+  {
+    type: SEND_LOGIN_FORM,
+  }
+);
+
+export const SET_LOGGED_TO_TRUE = 'SET_LOGGED_TO_TRUE';
+
+export const setLoggedToTrue = () => (
+  {
+    type: SET_LOGGED_TO_TRUE,
+  }
+);
+
+export const IS_CONNECTED = 'IS_CONNECTED';
+
+export const isConnected = () => (
+  {
+    type: IS_CONNECTED,
+  }
+);

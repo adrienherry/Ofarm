@@ -2,10 +2,19 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reducer from './reducers';
 import debugMiddleware from './middlewares/debug';
 import speciesMiddleware from './middlewares/species';
+import registerMiddleware from './middlewares/register';
+import authMiddleware from './middlewares/auth';
+import isConnectedMiddleware from './middlewares/isConnected';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const middlewares = [debugMiddleware, speciesMiddleware];
+const middlewares = [
+  debugMiddleware,
+  speciesMiddleware,
+  registerMiddleware,
+  authMiddleware,
+  isConnectedMiddleware,
+];
 
 const enhancers = composeEnhancers(
   applyMiddleware(...middlewares),
