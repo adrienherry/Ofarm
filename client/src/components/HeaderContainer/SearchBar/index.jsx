@@ -12,9 +12,9 @@ import {
   expandContainer,
   fetchSearchInfo,
   resetSearchValue,
-  resetTvShows,
+  resetResults,
   setIsEmptyToTrue,
-  setNoTvShowsToFalse,
+  setNoResultsToFalse,
   setSearchValue,
 } from '../../../store/actions/searchbar';
 import { useDebounce } from '../../../hooks/debounceHook';
@@ -23,7 +23,7 @@ import SearchBarWarningMessage from './SearchBarWarningMessage';
 
 const containerVariants = {
   expanded: {
-    height: '20rem',
+    height: '21.5rem',
   },
   collapsed: {
     height: '2.5rem',
@@ -40,9 +40,9 @@ const SearchBar = () => {
   const isExpanded = useSelector((state) => state.searchbar.isExpanded);
   const searchValue = useSelector((state) => state.searchbar.searchValue);
   const isLoading = useSelector((state) => state.searchbar.isLoading);
-  const tvShows = useSelector((state) => state.searchbar.tvShows);
+  const results = useSelector((state) => state.searchbar.results);
   const isEmpty = useSelector((state) => state.searchbar.isEmpty);
-  const noTvShows = useSelector((state) => state.searchbar.noTvShows);
+  const noResults = useSelector((state) => state.searchbar.noResults);
   const dispatch = useDispatch();
   const [parentRef, isClickedOutside] = useClickOutside();
   const inputRef = useRef();
@@ -73,8 +73,8 @@ const SearchBar = () => {
 
   const collapseSearchContainer = () => {
     dispatch(collapseContainer());
-    dispatch(resetTvShows());
-    dispatch(setNoTvShowsToFalse());
+    dispatch(resetResults());
+    dispatch(setNoResultsToFalse());
     dispatch(setIsEmptyToTrue());
     if (inputRef.current) {
       dispatch(resetSearchValue());
@@ -83,8 +83,8 @@ const SearchBar = () => {
 
   const handleSearchInputChange = (event) => {
     if (event.target.value === '') {
-      dispatch(setNoTvShowsToFalse());
-      dispatch(resetTvShows());
+      dispatch(setNoResultsToFalse());
+      dispatch(resetResults());
       dispatch(setIsEmptyToTrue());
     }
     dispatch(setSearchValue(event.target.value));
@@ -146,23 +146,22 @@ const SearchBar = () => {
             <MoonLoader loading color="#000000" size={40} />
           </div>
           ) }
-          { !isLoading && isEmpty && !noTvShows && (
+          { !isLoading && isEmpty && !noResults && (
           <div className="search-bar__loading-wrapper">
-            <SearchBarWarningMessage message="Start typing to search !" />
+            <SearchBarWarningMessage message="Écrivez le légume ou le fruit que vous voulez rechercher" />
           </div>
           ) }
-          { !isLoading && noTvShows && (
+          { !isLoading && noResults && (
           <div className="search-bar__loading-wrapper">
-            <SearchBarWarningMessage message="No Tv Shows or Series found !" />
+            <SearchBarWarningMessage message="Pas de résultat" />
           </div>
           ) }
           { !isLoading && !isEmpty && (
           <div>
-            { tvShows.map(({ show }) => (
+            { results.map((item) => (
               <SearchBarItem
-                key={show.id}
-                thumbnailSrc={show.image && show.image.medium}
-                name={show.name}
+                key={item.id}
+                {...item}
               />
             )) }
           </div>

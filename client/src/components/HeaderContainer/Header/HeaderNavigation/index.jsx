@@ -4,13 +4,15 @@ import { HiUserCircle } from 'react-icons/hi';
 import { IconContext } from 'react-icons';
 import './header-navigation.scss';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import SearchBar from './SearchBar';
 import HeaderNavbar from './HeaderNavbar';
 import { openUserMenu } from '../../../../store/actions/user';
 
 const HeaderNavigation = () => {
   const dispatch = useDispatch();
+  const username = useSelector((state) => state.user.username);
+  const logged = useSelector((state) => state.auth.logged);
 
   const handleUserIconClick = () => {
     dispatch(openUserMenu());
@@ -24,13 +26,16 @@ const HeaderNavigation = () => {
           <HeaderNavbar />
         </Grid>
         <div className="header-navigation__user-icon" onClick={handleUserIconClick}>
-          <Grid item lg={1} md={2}>
+          <Grid container item lg={1} md={2} direction="column" alignItems="center">
             <IconContext.Provider value={{
               color: '#bdbdbd',
               size: '65px',
             }}
             >
               <HiUserCircle />
+              {logged && (
+                <div className="header-navigation__username">{username}</div>
+              )}
             </IconContext.Provider>
           </Grid>
         </div>

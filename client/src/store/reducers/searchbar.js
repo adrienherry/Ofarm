@@ -2,16 +2,16 @@ import {
   COLLAPSE_CONTAINER,
   EXPAND_CONTAINER,
   RESET_SEARCH_VALUE,
-  RESET_TVSHOWS,
+  RESET_RESULTS,
   SET_IS_EMPTY_TO_FALSE,
   SET_IS_EMPTY_TO_TRUE,
   SET_LOADING_TO_FALSE,
   SET_LOADING_TO_TRUE,
-  SET_NOTVSHOWS_TO_FALSE,
-  SET_NOTVSHOWS_TO_TRUE,
+  SET_NO_RESULTS_TO_FALSE,
+  SET_NO_RESULTS_TO_TRUE,
   SET_SEARCH_VALUE,
   SET_TIMER,
-  SET_TVSHOWS,
+  SET_SEARCH_RESULT,
 }
   from '../actions/searchbar';
 
@@ -20,9 +20,9 @@ const initialState = {
   searchValue: '',
   timer: null,
   isLoading: false,
-  tvShows: [],
+  results: [],
   isEmpty: true,
-  noTvShows: false,
+  noResults: false,
 };
 
 const searchBarReducer = (state = initialState, action = {}) => {
@@ -58,10 +58,10 @@ const searchBarReducer = (state = initialState, action = {}) => {
         ...state,
         isLoading: true,
       };
-    case SET_TVSHOWS:
+    case SET_SEARCH_RESULT:
       return {
         ...state,
-        tvShows: action.tvShows,
+        results: action.result,
       };
     case SET_LOADING_TO_FALSE:
       return {
@@ -78,20 +78,20 @@ const searchBarReducer = (state = initialState, action = {}) => {
         ...state,
         isEmpty: false,
       };
-    case RESET_TVSHOWS:
+    case RESET_RESULTS:
       return {
         ...state,
-        tvShows: [],
+        results: [],
       };
-    case SET_NOTVSHOWS_TO_TRUE:
+    case SET_NO_RESULTS_TO_TRUE:
       return {
         ...state,
-        noTvShows: true,
+        noResults: true,
       };
-    case SET_NOTVSHOWS_TO_FALSE:
+    case SET_NO_RESULTS_TO_FALSE:
       return {
         ...state,
-        noTvShows: false,
+        noResults: false,
       };
     default:
       return state;

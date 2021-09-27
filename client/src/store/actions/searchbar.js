@@ -56,12 +56,12 @@ export const setLoadingToTrue = () => (
   }
 );
 
-export const SET_TVSHOWS = 'SET_TVSHOWS';
+export const SET_SEARCH_RESULT = 'SET_TVSHOWS';
 
-export const setTvShows = (tvShows) => (
+export const setSearchResult = (result) => (
   {
-    type: SET_TVSHOWS,
-    tvShows,
+    type: SET_SEARCH_RESULT,
+    result,
   }
 );
 
@@ -89,26 +89,26 @@ export const setIsEmptyToFalse = () => (
   }
 );
 
-export const RESET_TVSHOWS = 'RESET_TVSHOWS';
+export const RESET_RESULTS = 'RESET_RESULTS';
 
-export const resetTvShows = () => (
+export const resetResults = () => (
   {
-    type: RESET_TVSHOWS,
+    type: RESET_RESULTS,
   }
 );
 
-export const SET_NOTVSHOWS_TO_TRUE = 'SET_NOTVSHOWS_TO_TRUE';
+export const SET_NO_RESULTS_TO_TRUE = 'SET_NO_RESULTS_TO_TRUE';
 
-export const setNoTvShowsToTrue = () => (
+export const setNoResultsToTrue = () => (
   {
-    type: SET_NOTVSHOWS_TO_TRUE,
+    type: SET_NO_RESULTS_TO_TRUE,
   }
 );
 
-export const SET_NOTVSHOWS_TO_FALSE = 'SET_NOTVSHOWS_TO_FALSE';
+export const SET_NO_RESULTS_TO_FALSE = 'SET_NO_RESULTS_TO_FALSE';
 
-export const setNoTvShowsToFalse = () => (
+export const setNoResultsToFalse = () => (
   {
-    type: SET_NOTVSHOWS_TO_FALSE,
+    type: SET_NO_RESULTS_TO_FALSE,
   }
 );
