@@ -66,9 +66,6 @@ const App = () => {
           </Route>
           )}
         </Switch>
-        {/*<MyGarden />*/}
-        {/* <CreateGarden /> */}
-        {/* <UserProfil /> */}
         <Footer />
       </div>
     </div>
