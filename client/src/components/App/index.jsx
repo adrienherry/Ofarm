@@ -10,6 +10,7 @@ import Register from '../pages/Register';
 import Species from '../pages/Species';
 import Footer from '../Footer';
 import UserProfil from '../pages/UserProfil';
+import NotFound from '../pages/NotFound';
 
 
 import Team from '../pages/Team';
@@ -18,8 +19,13 @@ const App = () => (
   <div className="app">
     <div className="app__container">
       <HeaderContainer />
+
+      <NotFound />
+      <Switch>
+
       <Team />
       <Switch>
+
         <Route path="/" exact>
           <HomePage />
         </Route>
@@ -33,7 +39,11 @@ const App = () => (
           <Register />
         </Route>
       </Switch>
+
       <UserProfil /> 
+
+      <UserProfil /> 
+
       <Footer />
 
   
