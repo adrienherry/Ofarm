@@ -3,6 +3,14 @@ const sequelize = require("../services/sequelize");
 
 class User extends Model {}
 
+/**
+ * @typedef User
+ * @property {integer} id - id of the user
+ * @property {string} username.required - username of the user
+ * @property {string} usernameSlug.required - username slug of the user
+ * @property {string} hashedPassword.required - hashed password of the user
+ * @property {string} email.required - email address of the user
+ */
 User.init(
 	{
 		id: {
