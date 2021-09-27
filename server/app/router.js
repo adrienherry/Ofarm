@@ -4,15 +4,16 @@ const router = Router();
 const speciesController = require("./controllers/speciesController");
 const userController = require("./controllers/userController");
 const gardenController = require("./controllers/gardenController");
+const searchController = require("./controllers/searchController");
 
 const jwtService = require("./services/jwtService");
 const authController = require("./controllers/authController");
 
 // PUBLIC ROUTES
 
-router.get("/search", speciesController.findAll),
-// Find all species
-router.get("/species", speciesController.findAll);
+router.get("/search", searchController.findByQueryString),
+	// Find all species
+	router.get("/species", speciesController.findAll);
 // Find species with matching ID
 router.get("/species/:id", speciesController.findOne);
 // Register and login
@@ -24,8 +25,16 @@ router.post("/login", authController.login);
 
 // "ME" ROUTES - REGISTERED USER WITH CORRECT USERNAME AND ID
 
-router.get("/user", jwtService.verifyAndDecodeTokenMiddleware, userController.findOne); // Find user with matching ID
-router.patch("/user", jwtService.verifyAndDecodeTokenMiddleware, userController.save); // Update user personal information
+router.get(
+	"/user",
+	jwtService.verifyAndDecodeTokenMiddleware,
+	userController.findOne,
+); // Find user with matching ID
+router.patch(
+	"/user",
+	jwtService.verifyAndDecodeTokenMiddleware,
+	userController.save,
+); // Update user personal information
 
 // Find garden with matching user ID and garden ID
 router.get(
