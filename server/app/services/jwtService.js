@@ -11,8 +11,6 @@ const extractBearerToken = (headerValue) => {
 
 	const matches = headerValue.match(/(bearer)\s+(\S+)/i);
 
-	console.log(matches);
-
 	return matches && matches[2];
 };
 

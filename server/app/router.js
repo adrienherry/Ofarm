@@ -131,10 +131,9 @@ router.post(
 	speciesController.addOneToGarden,
 );
 
-// Delete a species from a garden
 
 /**
- * @route DELETE /garden
+ * @route DELETE /garden/:garden_id/species
  * @group Garden
  * @summary Delete species from my garden
  * @param {integer} garden_id.params.required - ID of the garden
@@ -146,13 +145,30 @@ router.delete(
 	speciesController.removeOneFromGarden,
 );
 
-// Delete a garden
+/**
+ * @route POST /garden
+ * @group Garden
+ * @summary Create a new garden
+ * @param {integer} name.body.name.required - name of the new garden 
+ * @param {integer} name.body.nameSlug.required - name slug of the new garden 
+ * @returns {boolean} 200 - created - true if successful
+ * @returns {String} 403 - Forbidden
+ * @returns {String} 500 - Internal Server Error
+ */
+router.post(
+	"/garden",
+	jwtService.verifyAndDecodeTokenMiddleware,
+	gardenController.createGarden,
+);
 
 /**
  * @route DELETE /garden
  * @group Garden
  * @summary Delete a garden
  * @param {integer} garden_id.params.required - ID of the garden 
+ * @returns {boolean} 200 - deleted - true if successful
+ * @returns {String} 403 - Forbidden
+ * @returns {String} 500 - Internal Server Error
  */
 router.delete(
 	"/garden/:garden_id",

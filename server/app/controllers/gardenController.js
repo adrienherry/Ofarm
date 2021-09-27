@@ -1,6 +1,7 @@
 const db = require("../services/sequelize");
+const { Op } = require("sequelize");
 const { Garden } = require("../models");
-const { standardErrors } = require("../helpers");
+const { standardErrors, slugify } = require("../helpers");
 
 const gardenController = {
 	findOneWithUserId: async (req, res) => {
@@ -41,9 +42,50 @@ const gardenController = {
 		} catch (error) {}
 	},
 
-	/*createGarden: async (req, res) => {
+	createGarden: async (req, res) => {
+		try {
+			const user_id = res.locals.id;
+			const formattedName = req.body.name.trim();
 
-	},*/
+			const garden = await Garden.findOne({
+				where: {
+					[Op.or]: [
+						{
+							name: {
+								[Op.iLike]: `${formattedName}`,
+							},
+						},
+						{
+							nameSlug: slugify(formattedName),
+						},
+					],
+				},
+			});
+
+			if (garden) {
+				res.status(400).json(standardErrors.GardenNameAlreadyExists);
+				return;
+			}
+
+			const newGarden = await Garden.create({
+				name: formattedName,
+				nameSlug: slugify(formattedName),
+				userId: user_id,
+			});
+
+			if (!newGarden.id) {
+				res.status(500).json(standardErrors.FailedCreateError);
+			}
+
+			res.json({
+				id: newGarden.id,
+			});
+			
+		} catch (error) {
+			console.log(error);
+			res.status(500).json(error);
+		}
+	},
 
 	removeGarden: async (req, res) => {
 		try {
@@ -79,11 +121,8 @@ const gardenController = {
 			}
 
 			res.json({
-				message: nbDeleted,
+				deleted: nbDeleted === 1,
 			});
-
-			// req.session.garden.filter(garden => garden.id != id);
-			// res.redirect("/garden");
 		} catch (error) {
 			res.status(500).json(error);
 		}

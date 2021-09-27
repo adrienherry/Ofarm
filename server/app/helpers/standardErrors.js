@@ -14,6 +14,8 @@ const standardErrors = {
 	},
 
 	GardenNotFoundError: { error: "Aucun jardin ne correspond à cet ID." },
+
+	GardenNameAlreadyExists: {error: "Vous possédez déjà un jardin avec ce nom."},
 	
 	SpeciesAlreadyExistsInGardenError: {
 		error: "Ce jardin contient déjà cette espèce.",
@@ -21,6 +23,10 @@ const standardErrors = {
 	
 	SpeciesDoesNotExistError: { error: "Cette espèce n'existe pas." },
 	
+	FailedCreateError: {
+		error: "Echec durant la création."
+	},
+
 	FailedUpdateError: (param) => {
 		console.log("Erreur durant la mise à jour: " + param);
 		return {
@@ -34,6 +40,8 @@ const standardErrors = {
 			error: `Suppression échouée: ${param} supprimé !`,
 		};
 	},
+
+
 
 	SpeciesNotInGardenError: {
 		error: "Ce jardin ne contient pas cette espèce.",
