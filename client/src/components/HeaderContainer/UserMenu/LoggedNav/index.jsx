@@ -3,8 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { useTheme } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import './logged-nav.scss';
+import { useSelector } from 'react-redux';
 
 const LoggedNav = () => {
+  const usernameSlug = useSelector((state) => state.user.usernameSlug);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
@@ -29,7 +31,7 @@ const LoggedNav = () => {
         </>
         )}
         <NavLink
-          to="/"
+          to={`/${usernameSlug}/profile`}
           exact
         >
           <li className="user-menu__item">
@@ -42,6 +44,14 @@ const LoggedNav = () => {
         >
           <li className="user-menu__item">
             Mes jardins
+          </li>
+        </NavLink>
+        <NavLink
+          to={`/${usernameSlug}/creategarden`}
+          exact
+        >
+          <li className="user-menu__item">
+            Créer un jardin
           </li>
         </NavLink>
         <NavLink
