@@ -13,7 +13,7 @@ export default (store) => (next) => async (action) => {
         store.dispatch(setLoadingSpeciesToFalse());
       }
       catch (error) {
-        console.log(err);
+        console.log(error);
       }
       next(action);
       break;

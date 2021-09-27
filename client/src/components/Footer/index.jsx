@@ -53,7 +53,6 @@ const Footer = () => {
             <NavigationLink path="/species" name="Espèces" />
             <NavigationLink path="/login" name="Se connecter" />
             <NavigationLink path="/register" name="S'inscrire" />
-
           </Grid>
           <Grid
             container

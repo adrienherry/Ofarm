@@ -1,0 +1,41 @@
+[
+    {
+        "name": "Premier jardin de Florian",
+        "user_id": 1,
+        "species": [
+            1,
+            6,
+            11,
+            16
+        ]
+    },
+    {
+        "name": "Deuxième jardin de Florian",
+        "user_id": 1,
+        "species": [
+            3,
+            4
+        ]
+    },
+    {
+        "name": "Troisième jardin de Florian",
+        "user_id": 1,
+        "species": [
+            18
+        ]
+    },
+    {
+        "name": "Le fabuleux jardin de Bob",
+        "user_id": 3,
+        "species": []
+    },
+    {
+        "name": "Premier jardin de Nicolas",
+        "user_id": 2,
+        "species": [
+            5,
+            10,
+            15
+        ]
+    }
+]
