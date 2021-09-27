@@ -11,6 +11,7 @@ import Species from '../pages/Species';
 import Footer from '../Footer';
 import UserProfil from '../pages/UserProfil';
 import Login from '../pages/Login';
+import MyGarden from '../pages/Garden';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
 
@@ -40,8 +41,9 @@ const App = () => {
             <Register />
           </Route>
         </Switch>
+        <MyGarden />
         {/* <CreateGarden /> */}
-        <UserProfil />
+        {/* <UserProfil /> */}
         <Footer />
       </div>
     </div>
