@@ -4,7 +4,7 @@ import { setTimer } from '../store/actions/searchbar';
 // eslint-disable-next-line import/prefer-default-export
 export const useDebounce = (value, timeout, callback) => {
   const dispatch = useDispatch();
-  const timer = useSelector((state) => state.timer);
+  const timer = useSelector((state) => state.searchbar.timer);
 
   const clearTimer = () => {
     if (timer) clearTimeout(timer);

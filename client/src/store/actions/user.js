@@ -16,9 +16,9 @@ export const collapseUserMenu = () => (
 
 export const SET_USER_INFO = 'SET_USER_INFO';
 
-export const setUserInfo = (username) => (
+export const setUserInfo = (payload) => (
   {
     type: SET_USER_INFO,
-    username,
+    payload,
   }
 );

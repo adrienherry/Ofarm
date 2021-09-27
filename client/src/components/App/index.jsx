@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import './app.scss';
 import { Switch, Route, useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import HeaderContainer from '../HeaderContainer';
 import HomePage from '../pages/Homepage';
 import Register from '../pages/Register';
@@ -17,6 +17,8 @@ import { isConnected } from '../../store/actions/authentification';
 const App = () => {
   const dispatch = useDispatch();
   const location = useLocation();
+  const logged = useSelector((state) => state.auth.logged);
+  const usernameSlug = useSelector((state) => state.user.usernameSlug);
 
   useEffect(() => {
     dispatch(collapseUserMenu());
@@ -50,9 +52,17 @@ const App = () => {
           <Route path="/register" exact>
             <Register />
           </Route>
+          {logged && (
+            <Route path={`/${usernameSlug}/createGarden`} exact>
+              <CreateGarden />
+            </Route>
+          )}
+          {logged && (
+          <Route path={`/${usernameSlug}/profile`} exact>
+            <UserProfil />
+          </Route>
+          )}
         </Switch>
-        {/* <CreateGarden /> */}
-        {/* <UserProfil /> */}
         <Footer />
       </div>
     </div>
