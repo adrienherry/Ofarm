@@ -12,7 +12,6 @@ export default (store) => (next) => async (action) => {
           password: passwordLogin,
         });
         localStorage.setItem('jwt', response.data.token);
-        localStorage.setItem('username', response.data.username);
         store.dispatch(setUserInfo(response.data.username));
         store.dispatch(setLoggedToTrue());
       }
