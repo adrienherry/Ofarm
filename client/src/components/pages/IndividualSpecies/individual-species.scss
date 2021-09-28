@@ -1,1 +1,23 @@
+@use '../../../styles/vars';
 
+.individual-species {
+
+    padding: 3rem;
+    margin: 0 2rem;
+    background-color: vars.$background-card-color;
+    border-radius: vars.$gutter;
+    box-shadow: vars.$shadow;
+
+    &__image-container {
+        width: 20rem;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image {
+        width: 90%;
+        height: 90%;
+    }
+}

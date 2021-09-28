@@ -56,7 +56,7 @@ const App = () => {
           <Route path="/register" exact>
             <Register />
           </Route>
-          <Route patch="/species/:slug" exact component={IndividualSpecies} />
+          <Route path="/species/:slug" exact component={IndividualSpecies} />
           {logged && (
             <Route path={`/${usernameSlug}/createGarden`} exact>
               <CreateGarden />

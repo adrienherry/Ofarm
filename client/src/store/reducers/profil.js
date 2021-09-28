@@ -1,44 +1,35 @@
 import {
-  PROFIL_USERNAME,
-  PROFIL_NAME,
-  PROFIL_EMAIL,
-  PROFIL_PASSWORD,
   ADD_PROFIL,
-} from "../actions/profil";
+  SET_PROFIL_FIELD,
+  SET_USER_INFO,
+} from '../actions/profil';
 
 const initialState = {
-  username: "",
-  name: "",
-  email: "",
-  password: "",
+  usernameProfil: '',
+  emailProfil: '',
+  creationDate: '',
+  updatedDate: '',
 };
 
 const profilReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case PROFIL_USERNAME:
+    case SET_PROFIL_FIELD:
       return {
         ...state,
-        username: action.value,
-      };
-    case PROFIL_NAME:
-      return {
-        ...state,
-        name: action.value,
-      };
-    case PROFIL_EMAIL:
-      return {
-        ...state,
-        email: action.value,
-      };
-    case PROFIL_PASSWORD:
-      return {
-        ...state,
-        password: action.value,
+        [action.name]: action.value,
       };
     case ADD_PROFIL:
       return {
         ...state,
         // value: action.value,
+      };
+    case SET_USER_INFO:
+      return {
+        ...state,
+        usernameProfil: action.payload.username,
+        emailProfil: action.payload.email,
+        creationDate: action.payload.createdAt,
+        updatedDate: action.payload.updatedAt,
       };
     default:
       return state;
