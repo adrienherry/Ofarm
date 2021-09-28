@@ -1,23 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Grid } from '@material-ui/core';
 import './individual-species.scss';
-import SpeciesInformations from './SpeciesInformations';
-import SpeciesPicture from './SpeciesPicture';
-import tomatesImages1 from '../../../../public/tomates.jpg';
-// '/tomates.jpg';
+import { useParams } from 'react-router-dom';
+import { fetchSpeciesList } from '../../../store/actions/species';
+import { findSpecies } from '../../../selectors/species';
 
-const IndividualSpecies = () => (
+const IndividualSpecies = () => {
+  const dispatch = useDispatch();
+  const speciesList = useSelector((state) => state.species.speciesList);
+  const { slug } = useParams();
+  console.log(slug);
+  const species = findSpecies(speciesList, slug);
 
-  <div className="individual-species">
+  useEffect(() => {
+    dispatch(fetchSpeciesList());
+  }, []);
 
-    <SpeciesInformations
-      nom="tomates"
-      semis="Date de semis: Fin mai"
-      récolte="Date de récolte: Fin juillet"
-      description="Les tomates et leurs bienfaits"
-      images={tomatesImages1}
-    />
-    <SpeciesPicture />
-  </div>
-);
+  console.log(species);
+  return (
+    <div className="individual-species">
+      {species && (
+      <Grid container>
+        <Grid item lg={3}>
+          <img src={species.imageUrl} alt={species.name} />
+          <h1>{species.name}</h1>
+        </Grid>
+      </Grid>
+      )}
+    </div>
+  );
+};
 
 export default IndividualSpecies;

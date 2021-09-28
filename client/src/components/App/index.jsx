@@ -10,12 +10,13 @@ import Species from '../pages/Species';
 import Footer from '../Footer';
 import UserProfil from '../pages/UserProfil';
 import NotFound from '../pages/NotFound';
-import Team from '../pages/Team'; 
+import Team from '../pages/Team';
 import Login from '../pages/Login';
 import MyGarden from '../pages/Garden';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
 import { isConnected } from '../../store/actions/authentification';
+import IndividualSpecies from '../pages/IndividualSpecies';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ const App = () => {
           <Route path="/register" exact>
             <Register />
           </Route>
+          <Route patch="/species/:slug" exact component={IndividualSpecies} />
           {logged && (
             <Route path={`/${usernameSlug}/createGarden`} exact>
               <CreateGarden />
