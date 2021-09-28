@@ -17,6 +17,7 @@ const UserMenu = () => {
 
   const userMenuStyle = {
     width: isMedium ? '100%' : '15rem',
+    height: isMedium ? '15rem' : '12rem',
   };
 
   useEffect(() => {

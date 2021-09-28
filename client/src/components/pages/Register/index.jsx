@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Grid } from '@material-ui/core';
 import './register.scss';
 import Field from '../../Field';
-import { setRegisterField } from '../../../store/actions/register';
+import { sendRegisterForm, setRegisterField } from '../../../store/actions/register';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -11,16 +11,22 @@ const Login = () => {
   const email = useSelector((state) => state.register.email);
   const password = useSelector((state) => state.register.password);
   const confirmPassword = useSelector((state) => state.register.confirmPassword);
+  const isConfirmed = useSelector((state) => state.register.isConfirmed);
 
   const handleChangeField = (value, name) => {
     dispatch(setRegisterField(value, name));
+  };
+
+  const handleRegisterFormSubmit = (event) => {
+    event.preventDefault();
+    dispatch(sendRegisterForm());
   };
 
   return (
     <div className="register">
       <Grid container direction="row" justifyContent="center" alignItems="center">
         <Grid item container alignItems="center" justifyContent="center" lg={11} md={11} sm={11} xs={11}>
-          <form className="register__form">
+          <form className="register__form" onSubmit={handleRegisterFormSubmit}>
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <h3 className="register__title">
                 S'inscrire:
@@ -70,6 +76,9 @@ const Login = () => {
                 > S'inscrire
                 </button>
               </Grid>
+              {!isConfirmed && (
+                <p>Votre mot de passe n'est pas le même</p>
+              )}
             </Grid>
           </form>
         </Grid>

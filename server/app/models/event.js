@@ -3,6 +3,12 @@ const sequelize = require("../services/sequelize");
 
 class Event extends Model {}
 
+/**
+ * @typedef Event
+ * @property {integer} id - id of the event
+ * @property {date} fromDate.required - date at which the event starts
+ * @property {date} untilDate.required - date at which the event ends
+ */
 Event.init(
 	{
 		id: {

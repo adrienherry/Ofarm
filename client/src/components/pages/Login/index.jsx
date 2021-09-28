@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Grid } from '@material-ui/core';
 import './login.scss';
 import Field from '../../Field';
-import { setLoginField } from '../../../store/actions/authentification';
+import { sendLoginForm, setLoginField } from '../../../store/actions/authentification';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -14,11 +14,16 @@ const Login = () => {
     dispatch(setLoginField(value, name));
   };
 
+  const handleLoginFormSubmit = (event) => {
+    event.preventDefault();
+    dispatch(sendLoginForm());
+  };
+
   return (
     <div className="login">
       <Grid container direction="row" justifyContent="center" alignItems="center">
         <Grid item container alignItems="center" justifyContent="center" lg={11} md={11} sm={11} xs={11}>
-          <form className="login__form">
+          <form className="login__form" onSubmit={handleLoginFormSubmit}>
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <h3 className="login__title">
                 Se connecter:

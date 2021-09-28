@@ -1,0 +1,40 @@
+.infos {
+    // background-color: burlywood;
+    flex-direction: row;
+
+ 
+
+
+}
+
+.infos__picture  {
+    
+width: 20rem;
+margin-top: 1rem;
+margin-left: 3.1rem;
+margin-bottom: 1rem;
+border-radius: 1rem;
+
+}
+
+
+.infos__name, .infos__role {
+    margin-left: 3rem;
+
+}
+
+.infos__name {
+font-weight: bold;
+}
+
+
+.infos__a {
+    color: black;
+    margin-left: 3rem;
+}
+
+
+.infos__a:hover {
+    color: white;
+}
+
