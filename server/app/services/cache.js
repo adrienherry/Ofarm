@@ -1,5 +1,5 @@
 const redisClient = require("./redisClient");
-const promisify = require("util");
+const { promisify } = require("util");
 
 const asyncClient = {
 	get: promisify(redisClient.get).bind(redisClient),
@@ -9,6 +9,6 @@ const asyncClient = {
 	exists: promisify(redisClient.exists).bind(redisClient),
 };
 
-const PREFIX = 'jwt-blacklist';
+const PREFIX = "jwt-blacklist";
 const TIMEOUT = 60 * 60; // 1 hour
 const keys = [];

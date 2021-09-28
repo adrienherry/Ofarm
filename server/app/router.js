@@ -9,6 +9,8 @@ const searchController = require("./controllers/searchController");
 const jwtService = require("./services/jwtService");
 const authController = require("./controllers/authController");
 
+const cache = require("./services/cache");
+
 // PUBLIC ROUTES
 
 /**
