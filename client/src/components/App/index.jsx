@@ -16,6 +16,7 @@ import MyGarden from '../pages/Garden';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
 import { isConnected } from '../../store/actions/authentification';
+import EditGarden from '../pages/User/EditGarden';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -39,37 +40,42 @@ const App = () => {
   }, []);
 
   return (
-    <div className="app">
-      <div className="app__container">
-        <HeaderContainer />
-        <Switch>
-          <Route path="/" exact>
-            <HomePage />
+		<div className="app">
+			<div className="app__container">
+				<HeaderContainer />
+				<Switch>
+					<Route path="/" exact>
+						<HomePage />
+					</Route>
+					<Route path="/species" exact>
+						<Species />
+					</Route>
+					<Route path="/login" exact>
+						<Login />
+					</Route>
+					<Route path="/register" exact>
+						<Register />
+					</Route>
+					{logged && (
+						<Route path={`/${usernameSlug}/createGarden`} exact>
+							<CreateGarden />
+						</Route>
+					)}
+					{logged && (
+						<Route path={`/${usernameSlug}/profile`} exact>
+							<UserProfil />
+						</Route>
+					)}
+
+          <Route path="/leaflet/profile" exact>
+            <EditGarden />
           </Route>
-          <Route path="/species" exact>
-            <Species />
-          </Route>
-          <Route path="/login" exact>
-            <Login />
-          </Route>
-          <Route path="/register" exact>
-            <Register />
-          </Route>
-          {logged && (
-            <Route path={`/${usernameSlug}/createGarden`} exact>
-              <CreateGarden />
-            </Route>
-          )}
-          {logged && (
-          <Route path={`/${usernameSlug}/profile`} exact>
-            <UserProfil />
-          </Route>
-          )}
-        </Switch>
-        <Footer />
-      </div>
-    </div>
-  );
+          
+				</Switch>
+				<Footer />
+			</div>
+		</div>
+	);
 };
 
 export default App;
