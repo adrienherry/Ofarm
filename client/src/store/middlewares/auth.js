@@ -1,5 +1,5 @@
 import { axiosInstance } from '../../services/axios';
-import { SEND_LOGIN_FORM, setLoggedToTrue } from '../actions/authentification';
+import { SEND_LOGIN_FORM, setIsReadyToRedirectToFalse, setLoggedToTrue } from '../actions/authentification';
 import { setUserInfo } from '../actions/user';
 
 export default (store) => (next) => async (action) => {
@@ -17,6 +17,7 @@ export default (store) => (next) => async (action) => {
           usernameSlug: response.data.usernameSlug,
         }));
         store.dispatch(setLoggedToTrue());
+        store.dispatch(setIsReadyToRedirectToFalse());
       }
       catch (error) {
         console.log(error.response);

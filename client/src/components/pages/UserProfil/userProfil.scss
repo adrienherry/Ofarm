@@ -1,15 +1,19 @@
+// .userProfil {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100vw;
+//   height: 100vh;
+//   padding-top: 3em;
+//   padding-left: 5em;
+//   padding-right: 5em;
+//   &__information {
+//     // margin-right: 15em;
+//   }
+//   &__form {
+//     margin-left: 2em;
+//   }
+// }
+
 .userProfil {
-  display: flex;
-  justify-content: space-between;
-  width: 100vw;
-  height: 100vh;
-  padding-top: 3em;
-  padding-left: 5em;
-  padding-right: 5em;
-  &__information {
-    // margin-right: 15em;
-  }
-  &__form {
-    margin-left: 2em;
-  }
+  margin-top: 2rem;
 }

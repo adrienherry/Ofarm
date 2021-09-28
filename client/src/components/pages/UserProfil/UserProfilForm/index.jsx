@@ -1,38 +1,18 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { makeStyles } from '@mui/styles';
-import { InputAdornment } from '@material-ui/core';
-import ModeIcon from '@mui/icons-material/Mode';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import { TextField } from '@mui/material';
-import {
-  profilUsername, profilName, profilEmail, profilPassword, addProfil,
-} from '../../../../store/actions/profil';
+import { Grid } from '@material-ui/core';
+import { addProfil, setProfilField } from '../../../../store/actions/profil';
 import Field from '../../../Field';
 import './userProfilForm.scss';
 
-const UserProfilForm = ({ button }) => {
+const UserProfilForm = ({
+  button, usernameProfil, emailProfil,
+}) => {
   const dispatch = useDispatch();
-  const username = useSelector((state) => state.profil.username);
-  const name = useSelector((state) => state.profil.name);
-  const email = useSelector((state) => state.profil.email);
-  const password = useSelector((state) => state.profil.password);
 
-  const handleUsername = (event) => {
-    dispatch(profilUsername(event.target.value));
-  };
-
-  const handleName = (event) => {
-    dispatch(profilName(event.target.value));
-  };
-
-  const handleEmail = (event) => {
-    dispatch(profilEmail(event.target.value));
-  };
-
-  const handlePassword = (event) => {
-    dispatch(profilPassword(event.target.value));
+  const handleChangeField = (value, name) => {
+    dispatch(setProfilField(value, name));
   };
 
   const handleSubmit = (event) => {
@@ -40,59 +20,40 @@ const UserProfilForm = ({ button }) => {
     dispatch(addProfil());
   };
 
-  // const useStyles = makeStyles(() => ({
-  //   root: {
-  //     marginInline: 100,
-  //   },
-  // }));
-
-  // const classes = useStyles();
-
   return (
     <form onSubmit={handleSubmit} className="form">
-      <Field
-        // className={classes.root}
-        type="text"
-        name="username"
-        placeholder="Prénom"
-        value={username}
-        onChange={handleUsername}
-        helperText="Please enter your name"
-        endAdornment={(
-          <InputAdornment position="end">
-            <ModeIcon />
-          </InputAdornment>
-      )}
-      />
-      <Field
-        type="text"
-        name="name"
-        placeholder="Nom"
-        value={name}
-        onChange={handleName}
-      />
-      <Field
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={email}
-        onChange={handleEmail}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          ),
-        }}
-      />
-      <Field
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={password}
-        onChange={handlePassword}
-      />
-      <button type="submit" className="form__submit"> {button} </button>
+      <Grid container direction="column" spacing={3} justifyContent="center">
+        <Grid item>
+          <Field
+            type="text"
+            name="usernameProfil"
+            placeholder="Nom d'utilisateur"
+            value={usernameProfil}
+            onChange={handleChangeField}
+          />
+        </Grid>
+        <Grid item>
+          <Field
+            type="email"
+            name="emailProfil"
+            placeholder="Email"
+            value={emailProfil}
+            onChange={handleChangeField}
+          />
+        </Grid>
+        {/* <Grid item>
+          <Field
+            type="password"
+            name="passwordProfil"
+            placeholder="Password"
+            value={passwordProfil}
+            onChange={handleChangeField}
+          />
+        </Grid> */}
+        <Grid item>
+          <button type="submit" className="form__submit"> {button} </button>
+        </Grid>
+      </Grid>
     </form>
   );
 };
