@@ -1,15 +1,25 @@
-import React from 'react'
-import "./edit-garden.scss";
-import GardenMap from './GardenMap';
+import React from "react";
+import { Grid, useMediaQuery, useTheme } from "@material-ui/core";
 
+import "./edit-garden.scss";
+import GardenMap from "./GardenMap";
 
 const EditGarden = () => {
-    return (
+	return (
 		<div className="edit-garden">
-			<h1>Mon jardin : nom de mon jardin</h1>
-			<GardenMap />
-			</div>
-		);
-}
+			<Grid container justifyContent="center">
+				<Grid item>
+					<h1>Mon jardin : nom de mon jardin</h1>
+				</Grid>
+			</Grid>
 
-export default EditGarden
+			<Grid container justifyContent="center">
+				<Grid item height={"500px"} width={"100%"}>
+					<GardenMap />
+				</Grid>
+			</Grid>
+		</div>
+	);
+};
+
+export default EditGarden;

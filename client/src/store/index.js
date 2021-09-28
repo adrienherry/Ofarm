@@ -6,6 +6,7 @@ import registerMiddleware from './middlewares/register';
 import authMiddleware from './middlewares/auth';
 import isConnectedMiddleware from './middlewares/isConnected';
 import searchbarMiddleware from './middlewares/searchbar';
+import userMiddleware from './middlewares/user';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -16,6 +17,7 @@ const middlewares = [
   authMiddleware,
   isConnectedMiddleware,
   searchbarMiddleware,
+  userMiddleware,
 ];
 
 const enhancers = composeEnhancers(

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -17,9 +17,12 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 // import { typography } from '@material-ui/system';
+import './user-information.scss';
 
-const UserInformation = ({ img }) => {
-  const [expanded, setExpanded] = React.useState(false);
+const UserInformation = ({
+  img, createdAt, updatedAt, username, email,
+}) => {
+  const [expanded, setExpanded] = useState(false);
 
   const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -37,7 +40,7 @@ const UserInformation = ({ img }) => {
   };
 
   return (
-    <div>
+    <div className="user-information">
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"
@@ -47,7 +50,7 @@ const UserInformation = ({ img }) => {
         />
         <CardActions disableSpacing>
           <Typography variant="body2" color="text.secondary">
-            More info
+            Plus d'informations
           </Typography>
           <ExpandMore
             expand={expanded}
@@ -60,12 +63,11 @@ const UserInformation = ({ img }) => {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>User Information:</Typography>
             <Typography paragraph>
-              Inscrit le 15 septembre 2021
+              Création du compte: {createdAt}
             </Typography>
             <Typography paragraph>
-              Mis à jour le 23 septembre 2021
+              Dernière modification: {updatedAt}
             </Typography>
           </CardContent>
         </Collapse>

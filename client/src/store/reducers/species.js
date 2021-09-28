@@ -1,8 +1,11 @@
-import { SET_LOADING_SPECIES_TO_FALSE, SET_LOADING_SPECIES_TO_TRUE, SET_SPECIES_LIST } from '../actions/species';
+import {
+  SET_LOADING_SPECIES_TO_FALSE, SET_LOADING_SPECIES_TO_TRUE, SET_ONE_SPECIES, SET_SPECIES_LIST,
+} from '../actions/species';
 
 const initialState = {
   speciesList: [],
   loading: 'true',
+  species: null,
 };
 
 const speciesReducer = (state = initialState, action = {}) => {
@@ -21,6 +24,11 @@ const speciesReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         loading: true,
+      };
+    case SET_ONE_SPECIES:
+      return {
+        ...state,
+        species: action.payload,
       };
     default:
       return state;
