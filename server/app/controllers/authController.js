@@ -49,7 +49,8 @@ const authController = {
 			res.json({
 				logged: true,
 				username: foundUser.username,
-				token: jwt.generateTokenWith(foundUser.username, foundUser.id),
+				slug: foundUser.usernameSlug,
+				token: jwt.generateTokenWith(foundUser.id, foundUser.username),
 			});
 			
 		} catch (error) {

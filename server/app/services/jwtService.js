@@ -17,7 +17,7 @@ const extractBearerToken = (headerValue) => {
 };
 
 const jwtService = {
-	generateTokenWith: function (username, id) {
+	generateTokenWith: function (id, username) {
 		return jsonwebtoken.sign({ username: username, id }, jwtSecret, jwtOptions);
 	},
 
