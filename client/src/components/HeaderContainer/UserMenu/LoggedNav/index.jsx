@@ -3,12 +3,18 @@ import { NavLink } from 'react-router-dom';
 import { useTheme } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import './logged-nav.scss';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../../../store/actions/logout';
 
 const LoggedNav = () => {
+  const dispatch = useDispatch();
   const usernameSlug = useSelector((state) => state.user.usernameSlug);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  const handleClickLogout = () => {
+    dispatch(logout());
+  };
   return (
     <>
       <ul className="user-menu__container">
@@ -58,7 +64,7 @@ const LoggedNav = () => {
           to="/logout"
           exact
         >
-          <li className="user-menu__item">
+          <li className="user-menu__item" onClick={handleClickLogout}>
             Se déconnecter
           </li>
         </NavLink>

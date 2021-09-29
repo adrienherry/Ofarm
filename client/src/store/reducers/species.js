@@ -1,4 +1,5 @@
 import {
+  RESET_SPECIES,
   SET_LOADING_SPECIES_TO_FALSE, SET_LOADING_SPECIES_TO_TRUE, SET_ONE_SPECIES, SET_SPECIES_LIST,
 } from '../actions/species';
 
@@ -29,6 +30,11 @@ const speciesReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         species: action.payload,
+      };
+    case RESET_SPECIES:
+      return {
+        ...state,
+        species: null,
       };
     default:
       return state;
