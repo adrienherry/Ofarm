@@ -32,15 +32,21 @@ Species.init(
 		imageUrl: {
 			type: DataTypes.STRING,
 			allowNull: true,
+			validate: {
+				isUrl: true,
+			},
 		},
 		co2Data: {
 			type: DataTypes.JSON,
-			allowNull: true
+			allowNull: true,
 		},
 		color: {
 			type: DataTypes.STRING,
 			allowNull: true,
 			defaultValue: "#ffffff00",
+			validate: {
+				is: ["^(#([0-9a-fA-F]{6,8}))"],
+			},
 		},
 		description: {
 			type: DataTypes.STRING,
