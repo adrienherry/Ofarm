@@ -1,12 +1,12 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import reducer from './reducers';
-import debugMiddleware from './middlewares/debug';
-import speciesMiddleware from './middlewares/species';
-import registerMiddleware from './middlewares/register';
-import authMiddleware from './middlewares/auth';
-import isConnectedMiddleware from './middlewares/isConnected';
-import searchbarMiddleware from './middlewares/searchbar';
-import userMiddleware from './middlewares/user';
+import { createStore, applyMiddleware, compose } from "redux";
+import reducer from "./reducers";
+import debugMiddleware from "./middlewares/debug";
+import speciesMiddleware from "./middlewares/species";
+import registerMiddleware from "./middlewares/register";
+import authMiddleware from "./middlewares/auth";
+import isConnectedMiddleware from "./middlewares/isConnected";
+import searchbarMiddleware from "./middlewares/searchbar";
+import userMiddleware from "./middlewares/user";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -20,9 +20,7 @@ const middlewares = [
   userMiddleware,
 ];
 
-const enhancers = composeEnhancers(
-  applyMiddleware(...middlewares),
-);
+const enhancers = composeEnhancers(applyMiddleware(...middlewares));
 
 const store = createStore(reducer, enhancers);
 

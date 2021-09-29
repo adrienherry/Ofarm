@@ -1,19 +1,22 @@
-import { axiosInstance } from '../../services/axios';
+import { axiosInstance } from "../../services/axios";
 import {
   FETCH_ONE_SPECIES,
-  FETCH_SPECIES_LIST, setLoadingSpeciesToFalse, setLoadingSpeciesToTrue, setOneSpecies, setSpeciesList,
-} from '../actions/species';
+  FETCH_SPECIES_LIST,
+  setLoadingSpeciesToFalse,
+  setLoadingSpeciesToTrue,
+  setOneSpecies,
+  setSpeciesList,
+} from "../actions/species";
 
 export default (store) => (next) => async (action) => {
   switch (action.type) {
     case FETCH_SPECIES_LIST: {
       try {
         store.dispatch(setLoadingSpeciesToTrue());
-        const response = await axiosInstance.get('/species');
+        const response = await axiosInstance.get("/species");
         store.dispatch(setSpeciesList(response.data));
         store.dispatch(setLoadingSpeciesToFalse());
-      }
-      catch (error) {
+      } catch (error) {
         console.log(error);
       }
       next(action);
@@ -23,8 +26,7 @@ export default (store) => (next) => async (action) => {
       try {
         const response = await axiosInstance.get(`/species/${action.id}`);
         store.dispatch(setOneSpecies(response.data));
-      }
-      catch (error) {
+      } catch (error) {
         console.log(error);
       }
       next(action);

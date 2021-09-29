@@ -9,7 +9,7 @@ const BlockField = ({
 }) => {
   const dispatch = useDispatch();
   const disabled = useSelector((state) => state.profil.disabled);
- 
+
   const handleChange = (event) => {
     onChange(event.target.value, name);
   };
