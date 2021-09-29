@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Grid } from '@material-ui/core';
 import { addProfil, setProfilField } from '../../../../store/actions/profil';
 import Field from '../../../Field';
+import BlockField from '../../../BlockField';
 import './userProfilForm.scss';
 
 const UserProfilForm = ({
@@ -24,7 +25,7 @@ const UserProfilForm = ({
     <form onSubmit={handleSubmit} className="form">
       <Grid container direction="column" spacing={3} justifyContent="center">
         <Grid item>
-          <Field
+          <BlockField
             type="text"
             name="usernameProfil"
             placeholder="Nom d'utilisateur"
@@ -33,7 +34,7 @@ const UserProfilForm = ({
           />
         </Grid>
         <Grid item>
-          <Field
+          <BlockField
             type="email"
             name="emailProfil"
             placeholder="Email"
@@ -41,6 +42,15 @@ const UserProfilForm = ({
             onChange={handleChangeField}
           />
         </Grid>
+        {/* <Grid item>
+          <BlockField
+            type="text"
+            name="usernameProfil"
+            placeholder="Nom d'utilisateur"
+            value={usernameProfil}
+            onChange={handleChangeField}
+          />
+        </Grid> */}
         {/* <Grid item>
           <Field
             type="password"
