@@ -40,7 +40,11 @@ const User = () => {
           />
         </Grid>
         <Grid item lg={5} md={6} sm={10} xs={10}>
-          <UserProfilForm button="Enregistrer les informations" usernameProfil={usernameProfil} emailProfil={emailProfil} />
+          <UserProfilForm
+            button="Enregistrer les informations"
+            usernameProfil={usernameProfil}
+            emailProfil={emailProfil}
+          />
         </Grid>
       </Grid>
       {/* <div className="userProfil__information"> */}
