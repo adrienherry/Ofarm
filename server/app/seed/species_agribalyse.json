@@ -4,6 +4,24 @@
         "name": "Aubergine",
         "image_id": "DtaCnsYlzSM",
         "image_url": "https://images.unsplash.com/photo-1613881553903-4543f5f2cac9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1NzgzNTc&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "plein soleil"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "humifère",
+            "drainé",
+            "riche",
+            "réchauffé"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en pot",
+            "en serre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-02-2000",
@@ -51,6 +69,23 @@
         "name": "Betterave",
         "image_id": "Xgcq-t-hCt4",
         "image_url": "https://images.unsplash.com/photo-1573426667638-18ccdd988a39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "tout type",
+            "drainé",
+            "léger",
+            "frais"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [],
         "saw_out": [
             [
@@ -88,6 +123,22 @@
         "name": "Carotte",
         "image_id": "iPiXhoMUcV8",
         "image_url": "https://images.unsplash.com/photo-1602496875335-b0fc93069cf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "drainé",
+            "meuble",
+            "riche",
+            "tout type"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-02-2000",
@@ -130,6 +181,22 @@
         "name": "Céleri-rave",
         "image_id": "KluF3bl0VEU",
         "image_url": "https://images.unsplash.com/photo-1575286368486-a9bd023a3d1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "humifère",
+            "meuble",
+            "frais",
+            "léger"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-02-2000",
@@ -177,6 +244,26 @@
         "name": "Chou-fleur",
         "image_id": "D8ZrftlvNDE",
         "image_url": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "argileux",
+            "calcaire",
+            "humifère",
+            "frais",
+            "riche",
+            "humide"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-01-2000",
@@ -228,6 +315,23 @@
         "name": "Concombre",
         "image_id": "fPLSD4mz7II",
         "image_url": "https://images.unsplash.com/photo-1523349462262-054f5b3aa500?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "sableux",
+            "humifère",
+            "drainé",
+            "réchauffé"
+        ],
+        "culture": [
+            "en serre",
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-03-2000",
@@ -275,6 +379,23 @@
         "name": "Courgette",
         "image_id": "7OQ4oekzMzY",
         "image_url": "https://images.unsplash.com/photo-1563252722-6434563a985d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "riche",
+            "meuble",
+            "lourd",
+            "humifère"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-04-2000",
@@ -322,6 +443,23 @@
         "name": "Epinard",
         "image_id": "4jpNPu7IW8k",
         "image_url": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "argileux",
+            "humifère",
+            "frais",
+            "riche",
+            "humide"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [],
         "saw_out": [
             [
@@ -346,6 +484,21 @@
         "name": "Fève",
         "image_id": "vSYo3T4AR5Y",
         "image_url": "https://images.unsplash.com/photo-1605402966404-ec40b9bd5009?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "argileux",
+            "calcaire",
+            "humifère"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [],
         "saw_out": [
             [
@@ -370,6 +523,23 @@
         "name": "Haricot nain",
         "image_id": "rNSg5Yo1k20",
         "image_url": "https://images.unsplash.com/photo-1594404124434-719a41b02af5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "tout type",
+            "réchauffé",
+            "riche",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [],
         "saw_out": [
             [
@@ -390,6 +560,24 @@
         "name": "Laitue",
         "image_id": "WOrgNVcptD8",
         "image_url": "https://images.unsplash.com/photo-1549736624-81a2ca809ad7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "mi-ombre",
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humifère",
+            "humide",
+            "drainé",
+            "meuble"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en pot"
+        ],
+        "description": "",
         "options": [
             {
                 "name": "printemps",
@@ -502,6 +690,24 @@
         "id": 12,
         "name": "Mâche",
         "image_url": "https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg",
+        "exposition": [
+            "mi-ombre",
+            "ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "argileux",
+            "humifère",
+            "frais",
+            "drainé"
+        ],
+        "culture": [
+            "en pot",
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [],
         "saw_out": [
             [
@@ -539,6 +745,25 @@
         "name": "Melon",
         "image_id": "cE1gDLMsgEM",
         "image_url": "https://images.unsplash.com/photo-1630526909851-196624edbbcd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "calcaire",
+            "humifère",
+            "riche",
+            "drainé",
+            "réchauffé",
+            "léger"
+        ],
+        "culture": [
+            "en serre",
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-02-2000",
@@ -586,6 +811,23 @@
         "name": "Navet d'automne",
         "image_id": "Fz49Hl-Pg08",
         "image_url": "https://images.unsplash.com/photo-1631909808696-969b7aa7ade9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "mi-ombre",
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humide",
+            "humifère",
+            "riche",
+            "frais"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [],
         "saw_out": [
             [
@@ -606,6 +848,22 @@
         "name": "Oignon",
         "image_id": "atQQQjJk8ok",
         "image_url": "https://images.unsplash.com/photo-1536235551740-15dc337df024?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "faible"
+        ],
+        "soil_type": [
+            "léger",
+            "meuble",
+            "drainé",
+            "humifère"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [],
         "saw_out": [
             [
@@ -655,6 +913,24 @@
         "id": 16,
         "name": "Panais",
         "image_url": "https://cdn.pixabay.com/photo/2018/12/07/02/06/parsnips-3860993_960_720.jpg",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "calcaire",
+            "argileux",
+            "humifère",
+            "frais",
+            "riche",
+            "meuble"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [],
         "saw_out": [
             [
@@ -692,6 +968,21 @@
         "name": "Petit pois",
         "image_id": "bwKUJ3Y5JS4",
         "image_url": "https://images.unsplash.com/photo-1596564823703-d28706a620e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humifère",
+            "frais",
+            "léger",
+            "meuble"
+        ],
+        "culture": [],
+        "description": "",
         "saw_in": [],
         "saw_out": [
             [
@@ -720,6 +1011,23 @@
         "name": "Poireau",
         "image_id": "uO-ukEbpwQ0",
         "image_url": "https://images.unsplash.com/photo-1599776764145-bcc16b4e3815?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "tout type",
+            "frais",
+            "meuble",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "options": [
             {
                 "name": "été",
@@ -789,6 +1097,21 @@
         "name": "Potiron",
         "image_id": "w5DqWoZ5_YM",
         "image_url": "https://images.unsplash.com/photo-1522223829476-5d8ce6672c46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "humifère",
+            "riche",
+            "lourd"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [],
         "saw_out": [
             [
@@ -826,6 +1149,25 @@
         "name": "Radis",
         "image_id": "MLzEKo9rZ3A",
         "image_url": "https://images.unsplash.com/photo-1592346520936-9444037b2e28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "humifère",
+            "sableux",
+            "argileux",
+            "frais",
+            "meuble",
+            "drainé"
+        ],
+        "culture": [
+            "en pot",
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "15-02-2000",
@@ -868,6 +1210,23 @@
         "name": "Tomate",
         "image_id": "zRqRhIJqdnI",
         "image_url": "https://images.unsplash.com/photo-1596199050105-6d5d32222916?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "plein soleil"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "tout type",
+            "drainé",
+            "riche",
+            "réchauffé"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-01-2000",
@@ -910,6 +1269,25 @@
         "name": "Artichaut",
         "image_id": "mTM84eo4Tew",
         "image_url": "https://images.unsplash.com/photo-1621762556022-ddb311f5392f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "argileux",
+            "humifère",
+            "drainé",
+            "riche",
+            "meuble",
+            "léger",
+            "frais"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-02-2000",
@@ -956,6 +1334,22 @@
         "name": "Cornichon",
         "image_id": "4DTzukt0Ozs",
         "image_url": "https://images.unsplash.com/photo-1591340270341-00a786ffc0aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humifère",
+            "meuble",
+            "humide"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en pot"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-03-2000",
@@ -986,6 +1380,22 @@
         "name": "Potimarron",
         "image_id": "jHe6ragO2a0",
         "image_url": "https://images.unsplash.com/photo-1570142056130-9f6b59c6287a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "humifère",
+            "riche",
+            "lourd",
+            "meuble"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-02-2000",
@@ -1033,6 +1443,26 @@
         "name": "Poivron",
         "image_id": "LiXUoupJxM8",
         "image_url": "https://images.unsplash.com/photo-1527276709728-d5a946ba727b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "plein soleil"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humifère",
+            "caillouteux",
+            "drainé",
+            "meuble",
+            "riche",
+            "réchauffé"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre",
+            "en pot"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-02-2000",
@@ -1075,6 +1505,26 @@
         "name": "Piment",
         "image_id": "PnFgNgCkBXY",
         "image_url": "https://images.unsplash.com/photo-1505725513549-477dfcbe55c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "plein soleil"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humifère",
+            "meuble",
+            "caillouteux",
+            "riche",
+            "réchauffé",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre",
+            "en pot"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-02-2000",
@@ -1117,6 +1567,25 @@
         "name": "Chou cabus",
         "image_id": "AnBKV3nlIZg",
         "image_url": "https://images.unsplash.com/photo-1508302730834-a3786a6c951d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "argileux",
+            "calcaire",
+            "humifère",
+            "humide",
+            "riche",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-02-2000",
@@ -1145,6 +1614,22 @@
         "id": 28,
         "name": "Chicorée",
         "image_url": "https://cdn.pixabay.com/photo/2015/10/08/00/12/plants-977005_960_720.jpg",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "tout type",
+            "drainé",
+            "meuble",
+            "frais"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-02-2000",
@@ -1191,6 +1676,25 @@
         "id": 29,
         "name": "Chou chinois",
         "image_url": "https://cdn.pixabay.com/photo/2020/12/02/16/35/chinese-cabbage-5798137_960_720.jpg",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "calcaire",
+            "humifère",
+            "argileux",
+            "meuble",
+            "riche",
+            "frais"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-04-2000",
@@ -1238,6 +1742,25 @@
         "name": "Fraise",
         "image_id": "Qse3AFWnc48",
         "image_url": "https://images.unsplash.com/photo-1566804770468-867f6158bda5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "riche",
+            "humifère",
+            "léger",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en pot",
+            "en serre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-11-2000",
@@ -1288,6 +1811,24 @@
         "id": 31,
         "name": "Concombre amer",
         "image_url": "https://cdn.pixabay.com/photo/2016/08/23/17/11/bitter-gourd-1615019_960_720.jpg",
+        "exposition": [
+            "ensoleillée",
+            "plein soleil"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "frais",
+            "riche",
+            "drainé",
+            "léger"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-02-2000",
@@ -1318,6 +1859,22 @@
         "name": "Gombo",
         "image_id": "CoIJlCZEjnw",
         "image_url": "https://images.unsplash.com/photo-1425543103986-22abb7d7e8d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "tout type",
+            "réchauffé",
+            "léger",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "",
         "saw_in": [
             [
                 "01-12-2000",
@@ -1343,6 +1900,23 @@
         "name": "Framboise",
         "image_id": "BM27BzBrhVM",
         "image_url": "https://images.unsplash.com/photo-1593461802389-d57d73a36913?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "mi-ombre",
+            "ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "léger",
+            "frais",
+            "riche"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en pot"
+        ],
+        "description": "",
         "saw_in": [],
         "saw_out": [
             [

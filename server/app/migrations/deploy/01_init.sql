@@ -41,6 +41,41 @@ CREATE TABLE "garden" (
    UNIQUE (user_id, name)
 );
 
+CREATE TABLE "exposition" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   name text NOT NULL UNIQUE,
+   name_slug text UNIQUE,
+   value int NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now()),
+);
+
+CREATE TABLE "water_level" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   name text NOT NULL UNIQUE,
+   name_slug text UNIQUE,
+   value int NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now()),
+);
+
+CREATE TABLE "culture_type" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   name text NOT NULL UNIQUE,
+   name_slug text UNIQUE,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now()),
+);
+
+CREATE TABLE "soil_type" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   name text NOT NULL UNIQUE,
+   name_slug text UNIQUE,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now()),
+);
+
+
 CREATE TABLE "species" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    name text NOT NULL UNIQUE,
