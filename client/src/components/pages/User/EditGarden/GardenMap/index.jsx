@@ -53,25 +53,75 @@ const GardenMap = () => {
 		}
 	};
 
+	const _onCreated = (e) => {
+		console.log(e);
+
+		const { layerType, layer } = e;
+
+		if (layerType === "polygon") {
+			const { _leaflet_id } = layer;
+
+			setMapLayers((layers) => [
+				...layers,
+				{ id: _leaflet_id, latlngs: layer.getLatLngs()[0] },
+			]);
+		}
+	};
+
+	const _onEdited = (e) => {
+		console.log(e);
+
+		const {
+			layers: { _layers },
+		} = e;
+
+		Object.values(_layers).map(({ _leaflet_id, editing }) => {
+			setMapLayers((layers) =>
+				layers.map((l) =>
+					l.id === _leaflet_id
+						? { ...l, latLngs: { ...editing.latlngs[0] } }
+						: l,
+				),
+			);
+		});
+	};
+
+	const _onDeleted = (e) => {
+		console.log(e);
+
+		const {
+			layers: { _layers },
+		} = e;
+
+		Object.values(_layers).map(({ _leaflet_id }) =>
+			setMapLayers((layers) => layers.filter((l) => l.id !== _leaflet_id)),
+		);
+	};
+
 	return (
 		<div className="map-container">
 			<Map ref={mapRef} className="map" center={center} zoom={ZOOM_LEVEL}>
+				<FeatureGroup>
+					<EditControl position="topright" />
+				</FeatureGroup>
 				<TileLayer
 					url={providers.googleMaps.url}
 					attribution={providers.googleMaps.attribution}
 					maxNativeZoom={19}
 					maxZoom={25}
 				/>
-				{showUser && location.loaded && location.error && 
-				<Marker position={
-				center
-					//location.coordinates.lat, location.coordinates.lng
-				}>
+				{showUser && location.loaded && location.error && (
+					<Marker
+						position={
+							center
+							//location.coordinates.lat, location.coordinates.lng
+						}
+					>
 						<Popup>
 							A pretty CSS3 popup. <br /> Easily customizable.
 						</Popup>
 					</Marker>
-				} 
+				)}
 			</Map>
 
 			<div>
