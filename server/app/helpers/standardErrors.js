@@ -1,4 +1,5 @@
 const standardErrors = {
+	InternalServerError: {error: "Erreur serveur interne."},
 	BadRequestError: { error: "Requête incorrecte." },
 	
 	UserAlreadyExistsError: {
@@ -27,6 +28,10 @@ const standardErrors = {
 		error: "Echec durant la création."
 	},
 
+	UserTokenExpired: {
+		error : "Session expirée. Veuillez vous reconnecter."
+	},
+
 	FailedUpdateError: (param) => {
 		console.log("Erreur durant la mise à jour: " + param);
 		return {
@@ -40,8 +45,6 @@ const standardErrors = {
 			error: `Suppression échouée: ${param} supprimé !`,
 		};
 	},
-
-
 
 	SpeciesNotInGardenError: {
 		error: "Ce jardin ne contient pas cette espèce.",

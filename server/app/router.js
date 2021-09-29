@@ -9,7 +9,7 @@ const searchController = require("./controllers/searchController");
 const jwtService = require("./services/jwtService");
 const authController = require("./controllers/authController");
 
-const cache = require("./services/cache");
+const { cache, flush } = require("./services/cache");
 
 // PUBLIC ROUTES
 
@@ -21,7 +21,7 @@ const cache = require("./services/cache");
  * @returns {String} 200 - An array of matching results (species)
  * @returns {String} 500 - Internal Server Error 
  */
-router.get("/search", searchController.findByQueryString),
+router.get("/search", cache, searchController.findByQueryString),
 
 /**
  * @route GET /species
@@ -30,7 +30,7 @@ router.get("/search", searchController.findByQueryString),
  * @returns {Array.<Species>} 200 - An array with all species (ordered by name)
  * @returns {String} 500 - Internal Server Error
  */
-	router.get("/species", speciesController.findAll);
+	router.get("/species", cache, speciesController.findAll);
 
 /**
  * @route GET /speciesId
@@ -40,7 +40,7 @@ router.get("/search", searchController.findByQueryString),
  * @returns {Array.<Species>} 200 - A single species identified by its Id
  * @returns {String} 500 - Internal Server Error
  */
-router.get("/species/:id", speciesController.findOne);
+router.get("/species/:id", cache, speciesController.findOne);
 
 /**
  * @route POST /register
@@ -65,9 +65,17 @@ router.post("/register", authController.register);
  * @returns {String} 400 - Bad Request Error
  * @returns {String} 500 - Internal Server Error
  */
-router.post("/login", authController.login);
+router.post(
+	"/login",
+	jwtService.redirectIfAlreadyLoggedMiddleware,
+	authController.login,
+);
 
-// router.get("/logout", authController.logout);
+router.get(
+	"/logout",
+	jwtService.verifyAndDecodeTokenMiddleware,
+	authController.logout,
+);
 
 // REGISTERED USER ROUTES
 
@@ -84,6 +92,7 @@ router.post("/login", authController.login);
 router.get(
 	"/user",
 	jwtService.verifyAndDecodeTokenMiddleware,
+	cache,
 	userController.findOne,
 );
 
@@ -101,6 +110,7 @@ router.get(
 router.patch(
 	"/user",
 	jwtService.verifyAndDecodeTokenMiddleware,
+	flush,
 	userController.save,
 );
 
@@ -114,6 +124,7 @@ router.patch(
 router.get(
 	"/garden/:garden_id",
 	jwtService.verifyAndDecodeTokenMiddleware,
+	cache,
 	gardenController.findOneWithUserId,
 );
 
@@ -130,6 +141,7 @@ router.get(
 router.post(
 	"/garden/:garden_id/species",
 	jwtService.verifyAndDecodeTokenMiddleware,
+	flush,
 	speciesController.addOneToGarden,
 );
 
@@ -144,6 +156,7 @@ router.post(
 router.delete(
 	"/garden/:garden_id/species",
 	jwtService.verifyAndDecodeTokenMiddleware,
+	flush,
 	speciesController.removeOneFromGarden,
 );
 
@@ -160,6 +173,7 @@ router.delete(
 router.post(
 	"/garden",
 	jwtService.verifyAndDecodeTokenMiddleware,
+	flush,
 	gardenController.createGarden,
 );
 
@@ -175,6 +189,7 @@ router.post(
 router.delete(
 	"/garden/:garden_id",
 	jwtService.verifyAndDecodeTokenMiddleware,
+	flush,
 	gardenController.removeGarden,
 );
 
