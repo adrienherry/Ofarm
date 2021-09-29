@@ -10,9 +10,10 @@ import Species from '../pages/Species';
 import Footer from '../Footer';
 import UserProfil from '../pages/UserProfil';
 import NotFound from '../pages/NotFound';
-import Team from '../pages/Team'; 
+import Team from '../pages/Team';
 import Login from '../pages/Login';
 import MyGarden from '../pages/Garden';
+import About from '../pages/About';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
 import { isConnected } from '../../store/actions/authentification';
@@ -42,7 +43,8 @@ const App = () => {
     <div className="app">
       <div className="app__container">
         <HeaderContainer />
-        <Switch>
+        <About />
+        {/* <Switch>
           <Route path="/" exact>
             <HomePage />
           </Route>
@@ -65,7 +67,7 @@ const App = () => {
             <UserProfil />
           </Route>
           )}
-        </Switch>
+        </Switch> */}
         <Footer />
       </div>
     </div>
