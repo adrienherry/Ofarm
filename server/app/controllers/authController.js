@@ -15,8 +15,7 @@ const authController = {
 	register: async (req, res) => {
 		try {
 			if (!req.body.password || !req.body.email || !req.body.username) {
-				res.status(400).json(standardErrors.BadRequestError);
-				return;
+				return res.status(400).json(standardErrors.BadRequestError);
 			}
 
 			const foundUser = await User.findOne({
@@ -29,8 +28,7 @@ const authController = {
 			});
 
 			if (foundUser) {
-				res.status(400).json(standardErrors.UserAlreadyExistsError);
-				return;
+				return res.status(400).json(standardErrors.UserAlreadyExistsError);
 			}
 
 			await User.create({
@@ -52,8 +50,7 @@ const authController = {
 		try {
 
 			if (!req.body.password || !req.body.email) {
-				res.status(400).json(standardErrors.BadRequestError);
-				return;
+				return res.status(400).json(standardErrors.BadRequestError);
 			}
 
 			const foundUser = await User.findOne({
@@ -63,8 +60,7 @@ const authController = {
 			});
 
 			if (!foundUser) {
-				res.status(400).json(standardErrors.WrongUsernameOrPasswordError);
-				return;
+				return res.status(400).json(standardErrors.WrongUsernameOrPasswordError);
 			}
 
 			const passwordIsCorrect = bcrypt.compareSync(
@@ -73,10 +69,10 @@ const authController = {
 			);
 
 			if (!passwordIsCorrect) {
-				res.status(400).json(standardErrors.WrongUsernameOrPasswordError);
-				return;
+				return res.status(400).json(standardErrors.WrongUsernameOrPasswordError);
 			}
 
+			console.log()
 			res.json({
 				logged: true,
 				username: foundUser.username,
@@ -91,15 +87,14 @@ const authController = {
 	logout: async (req, res) => {
 		try {
 			if (!res.locals.id || !res.locals.token) {
-				res.status(500).json(standardErrors.InternalServerError);
-				return;
+				return res.status(500).json(standardErrors.InternalServerError);
 			}
 
 			await blacklist.addToBlacklist(res.locals.id, res.locals.token);
-			res.json({ redirect: true });
+			return res.json({ redirect: true });
 
 		} catch (error) {
-			res.json(error);
+			return res.json(error);
 		}
 	}
 };

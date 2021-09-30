@@ -1,5 +1,6 @@
 const redisClient = require("./redisClient");
 const { promisify } = require("util");
+const { standardErrors } = require("../helpers");
 
 const asyncClient = {
 	get: promisify(redisClient.get).bind(redisClient),
@@ -9,37 +10,43 @@ const asyncClient = {
 	exists: promisify(redisClient.exists).bind(redisClient),
 };
 
-const TIMEOUT = 60 * 60; // 1 hour = 60 * 60 sec
+const TIMEOUT = 30 * 60; // 30 min = 30 * 60 sec
 
 const DB_PREFIX = "ofarm";
 
 const keys = [];
 
 const cache = async (req, res, next) => {
-	// Additional option for query string in /search route
-	const key =
-		`${DB_PREFIX}:${req.url}` +
-		(req.url === "/search" && req.query.text
-			? `?text=${req.query.text.toLowerCase()}`
-			: "");
-	
-	if (keys.includes(key)) {
-		const jsonData = await asyncClient.get(key);
-		const value = JSON.parse(jsonData);
-		res.json(value);
-	} else {
-		const originalJson = res.json.bind(res);
+	try {
+		const key =
+			`${DB_PREFIX}:${
+				req.url
+			}` +
+			(req.url === "/search" && req.query.text
+				? `?text=${req.query.text.toLowerCase()}`
+				: "");
 
-		res.json = async (data) => {
-			const jsonData = JSON.stringify(data);
-			await asyncClient.setex(key, TIMEOUT, jsonData);
-			keys.push(key);
+		if (keys.includes(key)) {
+			const jsonData = await asyncClient.get(key);
+			const value = JSON.parse(jsonData);
 
-			const check = await asyncClient.get(key);
-			originalJson(data);
-		};
+			res.json(value);
+		} else {
+			const originalJson = res.json.bind(res);
 
-		next();
+			// res.json = async (data) => {
+			// 	await asyncClient
+			// 		.setex(key, TIMEOUT, JSON.stringify(data))
+			// 	keys.push(key);
+			// 	console.log(keys)
+			// 	originalJson(data);
+			// };
+
+			next();
+		}
+	} catch (error) {
+		console.log(error);
+		res.status(500).json(standardErrors.InternalServerError);
 	}
 };
 
@@ -51,7 +58,6 @@ const flush = async (_, __, next) => {
 	}
 
 	keys.length = 0;
-	console.log(keys);
 	next();
 };
 

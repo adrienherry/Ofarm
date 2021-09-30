@@ -11,7 +11,6 @@ const userController = {
 		try {
 			if (!res.locals.id) {
 				res.status(403).json(standardErrors.UserNotLoggedError);
-				return;
 			}
 
 			const id = res.locals.id;
@@ -51,9 +50,9 @@ const userController = {
 				},
 			});
 
-			res.json(userItem);
+			return res.json(userItem);
 		} catch (error) {
-			res.status(500).json(error);
+			return res.status(500).json(error);
 		}
 	},
 
@@ -68,13 +67,12 @@ const userController = {
 		try {
 			const { email, username, password } = req.body;
 			if (!email && !username && !password) {
-				res.status(403).json(standardErrors.BadRequestError);
-				return;
+				return res.status(403).json(standardErrors.BadRequestError);
 			}
 
 			let user = await User.findByPk(parseInt(id));
 			if (!user) {
-				res.status(403).json(standardErrors.BadRequestError);
+				return res.status(403).json(standardErrors.BadRequestError);
 			}
 
 			console.log(email === user.email);
@@ -96,12 +94,10 @@ const userController = {
 				if (password !== user.hashedPassword)
 					user.hashedPassword = bcrypt.hashSync(password, saltRounds);
 			}
-			const results = await user.save();
-			res.json({ updated: true });
+			await user.save();
+			return res.json({ updated: true });
 		} catch (error) {
-			console.log(error);
-			res.status(500).json(error);
-			return;
+			return res.status(500).json(error);
 		}
 	},
 };
