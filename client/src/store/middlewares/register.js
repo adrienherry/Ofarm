@@ -1,4 +1,10 @@
-import { SEND_REGISTER_FORM, setIsConfirmedToFalse } from '../actions/register';
+import {
+  resetRegisterInfo,
+  SEND_REGISTER_FORM,
+  setIsConfirmedToFalse,
+  setIsConfirmedToTrue,
+  setIsReadyToRedirectToLoginToTrue,
+} from '../actions/register';
 import { axiosInstance } from '../../services/axios';
 
 export default (store) => (next) => async (action) => {
@@ -11,12 +17,14 @@ export default (store) => (next) => async (action) => {
           },
         } = store.getState();
         if (password === confirmPassword) {
+          store.dispatch(setIsConfirmedToTrue());
           const response = await axiosInstance.post('/register', {
             username: username,
             email: email,
             password: password,
           });
-          console.log(response.data);
+          store.dispatch(resetRegisterInfo());
+          store.dispatch(setIsReadyToRedirectToLoginToTrue());
         }
         else {
           store.dispatch(setIsConfirmedToFalse());

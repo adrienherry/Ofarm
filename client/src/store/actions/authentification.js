@@ -39,3 +39,19 @@ export const setIsReadyToRedirectToFalse = () => (
     type: SET_IS_READY_TO_REDIRECT_TO_FALSE,
   }
 );
+
+export const SET_IS_READY_TO_REDIRECT_TO_TRUE = 'SET_IS_READY_TO_REDIRECT_TO_TRUE';
+
+export const setIsReadyToRedirectToTrue = () => (
+  {
+    type: SET_IS_READY_TO_REDIRECT_TO_TRUE,
+  }
+);
+
+export const SET_LOGGED_TO_FALSE = 'SET_LOGGED_TO_FALSE';
+
+export const setLoggedToFalse = () => (
+  {
+    type: SET_LOGGED_TO_FALSE,
+  }
+);

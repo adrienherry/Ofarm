@@ -48,3 +48,11 @@ export const setOneSpecies = (payload) => (
     payload,
   }
 );
+
+export const RESET_SPECIES = 'RESET_SPECIES';
+
+export const resetSpecies = () => (
+  {
+    type: RESET_SPECIES,
+  }
+);
