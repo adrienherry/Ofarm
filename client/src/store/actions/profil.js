@@ -1,29 +1,9 @@
-export const PROFIL_USERNAME = "PROFIL_USERNAME";
+export const SET_PROFIL_FIELD = "SET_PROFIL_FIELD";
 
-export const profilUsername = (value) => ({
-  type: PROFIL_USERNAME,
+export const setProfilField = (value, name) => ({
+  type: SET_PROFIL_FIELD,
   value,
-});
-
-export const PROFIL_NAME = "PROFIL_NAME";
-
-export const profilName = (value) => ({
-  type: PROFIL_NAME,
-  value,
-});
-
-export const PROFIL_EMAIL = "PROFIL_EMAIL";
-
-export const profilEmail = (value) => ({
-  type: PROFIL_EMAIL,
-  value,
-});
-
-export const PROFIL_PASSWORD = "PROFIL_PASSWORD";
-
-export const profilPassword = (value) => ({
-  type: PROFIL_PASSWORD,
-  value,
+  name,
 });
 
 export const ADD_PROFIL = "ADD_PROFIL";
@@ -31,4 +11,29 @@ export const ADD_PROFIL = "ADD_PROFIL";
 export const addProfil = (value) => ({
   type: ADD_PROFIL,
   value,
+});
+
+export const FETCH_USER_INFO = "FETCH_USER_INFO";
+
+export const fetchUserInfo = () => ({
+  type: FETCH_USER_INFO,
+});
+
+export const SET_USER_INFO = "SET_USER_INFO";
+
+export const setUserInfo = (payload) => ({
+  type: SET_USER_INFO,
+  payload,
+});
+
+export const SET_USER_DISABLED = "SET_USER_DISABLED";
+
+export const setUserDisabled = () => ({
+  type: SET_USER_DISABLED,
+});
+
+export const SET_USER_ENABLED = "SET_USER_ENABLED";
+
+export const setUserEnabled = () => ({
+  type: SET_USER_ENABLED,
 });

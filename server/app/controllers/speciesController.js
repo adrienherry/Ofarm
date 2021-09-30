@@ -6,8 +6,7 @@ const {
 	CultureType,
 	WaterNeed,
 } = require("../models");
-
-// const standardErrors = require("../helpers/s")
+const { standardErrors } = require("../helpers");
 
 const speciesController = {
 	findAll: async (_, res) => {
@@ -101,7 +100,7 @@ const speciesController = {
 			const garden_id = parseInt(req.params.garden_id);
 
 			if (!res.locals.id) {
-				res.status(403).json({error: "Error. User must be logged in."});
+				res.status(403).json(standardErrors.UserNotLoggedError);
 				return;
 			}
 
@@ -133,7 +132,7 @@ const speciesController = {
 			});
 
 			if (!garden) {
-				res.status(403).json({ error: "No garden with such id for this user" });
+				res.status(403).json(standardErrors.GardenNotFoundError);
 				return;
 			}
 
@@ -142,10 +141,7 @@ const speciesController = {
 			);
 
 			if (alreadyPresent) {
-				res.status(403).json({
-					error:
-						"Garden already contains this species. Please choose another species.",
-				});
+				res.status(403).json(standardErrors.SpeciesAlreadyExistsInGardenError);
 				return;
 			}
 
@@ -153,26 +149,22 @@ const speciesController = {
 			if (!foundSpecies) {
 				res
 					.status(403)
-					.json({ error: "The specified species does not exist." });
+					.json(standardErrors.SpeciesDoesNotExistError);
 				return;
 			}
 
 			const nbUpdated = await garden.addSpecies(foundSpecies);
 
 			if (!nbUpdated.length === 1) {
-				console.log("There was a problem during delete");
-				res.status(500).json({
-					error: `Updated failed: ${nbUpdated.length} updated !`,
-				});
+				res.status(500).json(standardErrors.FailedUpdateError(nbUpdated.length));
 				return;
 			}
 
 			res.json({
-				message: `Updated ${nbUpdated.length} item successfully!`,
+				updated: nbUpdated.length,
 			});
 		} catch (error) {
-			console.log(error);
-			res.status(500).json(error.message);
+			res.status(500).json(error);
 			return;
 		}
 	},
@@ -182,7 +174,7 @@ const speciesController = {
 			const garden_id = parseInt(req.params.garden_id);
 
 			if (!res.locals.id) {
-				res.status(403).json({ error: "Error. User must be logged in." });
+				res.status(403).json(standardErrors.UserNotLoggedError);
 				return;
 			}
 
@@ -199,7 +191,7 @@ const speciesController = {
 			});
 
 			if (!garden) {
-				res.status(403).json({ error: "No garden with such id for this user" });
+				res.status(403).json(standardErrors.GardenNotFoundError);
 				return;
 			}
 
@@ -208,27 +200,23 @@ const speciesController = {
 			});
 
 			if (!foundSpecies[0]) {
-				res.status(403).json({
-					error: "Garden does not contains this species.",
-				});
+				res.status(403).json(standardErrors.SpeciesNotInGardenError);
 				return;
 			}
 
 			const nbDeleted = await garden.removeSpecies(foundSpecies[0]);
 
 			if (nbDeleted != 1) {
-				res.status(500).json({
-					error: `Delete failed: ${nbDeleted} deleted !`,
-				});
+				res.status(500).json(standardErrors.FailedDeleteError(nbDeleted));
 				return;
 			}
 
 			res.json({
-				message: `Deleted ${nbDeleted} item successfully!`,
+				deleted: nbDeleted,
 			});
 		} catch (error) {
 			console.log(error);
-			res.status(500).json(error.message);
+			res.status(500).json(error);
 			return;
 		}
 	},

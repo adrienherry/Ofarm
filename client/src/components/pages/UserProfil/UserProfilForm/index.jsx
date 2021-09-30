@@ -1,33 +1,20 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import {
-  profilUsername, profilName, profilEmail, profilPassword, addProfil,
-} from '../../../../store/actions/profil';
+import { Grid } from '@material-ui/core';
+import { addProfil, setProfilField, setUserEnabled } from '../../../../store/actions/profil';
 import Field from '../../../Field';
+import BlockField from '../../../BlockField';
 import './userProfilForm.scss';
 
-const UserProfilForm = ({ button }) => {
+const UserProfilForm = ({
+  button, usernameProfil, emailProfil,
+}) => {
   const dispatch = useDispatch();
-  const username = useSelector((state) => state.profil.username);
-  const name = useSelector((state) => state.profil.name);
-  const email = useSelector((state) => state.profil.email);
-  const password = useSelector((state) => state.profil.password);
+  const inputRef = useRef();
 
-  const handleUsername = (event) => {
-    dispatch(profilUsername(event.target.value));
-  };
-
-  const handleName = (event) => {
-    dispatch(profilName(event.target.value));
-  };
-
-  const handleEmail = (event) => {
-    dispatch(profilEmail(event.target.value));
-  };
-
-  const handlePassword = (event) => {
-    dispatch(profilPassword(event.target.value));
+  const handleChangeField = (value, name) => {
+    dispatch(setProfilField(value, name));
   };
 
   const handleSubmit = (event) => {
@@ -35,37 +22,64 @@ const UserProfilForm = ({ button }) => {
     dispatch(addProfil());
   };
 
+  useEffect(() => {
+    const maybeHandler = (event) => {
+      if (inputRef.current && !inputRef.current.contains(event.target)) {
+        dispatch(setUserEnabled());
+      }
+    };
+
+    document.addEventListener('mousedown', maybeHandler);
+
+    return () => {
+      document.removeEventListener('mousedown', maybeHandler);
+    };
+  });
+
   return (
     <form onSubmit={handleSubmit} className="form">
-      <Field
-        type="text"
-        name="username"
-        placeholder="Prénom"
-        value={username}
-        onChange={handleUsername}
-      />
-      <Field
-        type="text"
-        name="name"
-        placeholder="Nom"
-        value={name}
-        onChange={handleName}
-      />
-      <Field
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={email}
-        onChange={handleEmail}
-      />
-      <Field
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={password}
-        onChange={handlePassword}
-      />
-      <button type="submit" className="form__submit"> {button} </button>
+      <Grid container direction="column" spacing={3} justifyContent="center">
+        <Grid item>
+          <BlockField
+            type="text"
+            name="usernameProfil"
+            placeholder="Nom d'utilisateur"
+            value={usernameProfil}
+            onChange={handleChangeField}
+            ref={inputRef}
+          />
+        </Grid>
+        <Grid item>
+          <BlockField
+            type="email"
+            name="emailProfil"
+            placeholder="Email"
+            value={emailProfil}
+            onChange={handleChangeField}
+          />
+        </Grid>
+        {/* <Grid item>
+          <BlockField
+            type="text"
+            name="usernameProfil"
+            placeholder="Nom d'utilisateur"
+            value={usernameProfil}
+            onChange={handleChangeField}
+          />
+        </Grid> */}
+        {/* <Grid item>
+          <Field
+            type="password"
+            name="passwordProfil"
+            placeholder="Password"
+            value={passwordProfil}
+            onChange={handleChangeField}
+          />
+        </Grid> */}
+        <Grid item>
+          <button type="submit" className="form__submit"> {button} </button>
+        </Grid>
+      </Grid>
     </form>
   );
 };

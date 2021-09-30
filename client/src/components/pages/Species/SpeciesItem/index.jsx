@@ -6,11 +6,10 @@ import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import './species-item.scss';
 import { Grid } from '@material-ui/core';
-import testImg from '/carrousel_image_1.jpg';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 
-const SpeciesItem = ({ name, name_slug }) => {
+const SpeciesItem = ({ name, nameSlug, imageUrl }) => {
   const useStyles = makeStyles(() => ({
     root: {
       boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
@@ -26,7 +25,7 @@ const SpeciesItem = ({ name, name_slug }) => {
   return (
     <Grid item xl={3} lg={4} md={4} sm={5} xs={8}>
       <Link
-        to={`/species/${name_slug}`}
+        to={`/species/${nameSlug}`}
         exact="true"
       >
         <div className="species-item">
@@ -34,7 +33,7 @@ const SpeciesItem = ({ name, name_slug }) => {
             <CardMedia
               component="img"
               height="140"
-              image={testImg}
+              image={imageUrl}
               alt="green iguana"
             />
             <CardContent>
@@ -51,7 +50,8 @@ const SpeciesItem = ({ name, name_slug }) => {
 
 SpeciesItem.propTypes = {
   name: PropTypes.string.isRequired,
-  name_slug: PropTypes.string.isRequired,
+  nameSlug: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
 };
 
 export default SpeciesItem;
