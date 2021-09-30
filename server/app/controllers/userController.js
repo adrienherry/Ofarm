@@ -27,15 +27,27 @@ const userController = {
 									{
 										association: "events",
 										include: "eventType",
+										attributes: {
+											exclude: ["createdAt", "updatedAt", "eventTypeId","speciesId"],
+										},
 									},
 								],
 								through: {
 									attributes: [],
 								},
+								attributes: {
+									exclude: ["createdAt", "updatedAt"],
+								},
 							},
 						],
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
 					},
 				],
+				attributes: {
+					exclude: ["createdAt", "updatedAt"],
+				},
 			});
 
 			res.json(userItem);
@@ -49,7 +61,7 @@ const userController = {
 			res.status(403).json({ error: "Error. User must be logged in." });
 			return;
 		}
-		
+
 		const id = res.locals.id;
 
 		try {
@@ -86,7 +98,6 @@ const userController = {
 			}
 			const results = await user.save();
 			res.json({ message: "Update sucessfull" });
-
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(error);

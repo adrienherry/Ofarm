@@ -47,16 +47,16 @@ CREATE TABLE "exposition" (
    name_slug text UNIQUE,
    value int NOT NULL,
    created_at timestamptz NOT NULL DEFAULT (now()),
-   updated_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
 );
 
-CREATE TABLE "water_level" (
+CREATE TABLE "water_need" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    name text NOT NULL UNIQUE,
    name_slug text UNIQUE,
    value int NOT NULL,
    created_at timestamptz NOT NULL DEFAULT (now()),
-   updated_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
 );
 
 CREATE TABLE "culture_type" (
@@ -64,7 +64,7 @@ CREATE TABLE "culture_type" (
    name text NOT NULL UNIQUE,
    name_slug text UNIQUE,
    created_at timestamptz NOT NULL DEFAULT (now()),
-   updated_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
 );
 
 CREATE TABLE "soil_type" (
@@ -72,7 +72,7 @@ CREATE TABLE "soil_type" (
    name text NOT NULL UNIQUE,
    name_slug text UNIQUE,
    created_at timestamptz NOT NULL DEFAULT (now()),
-   updated_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
 );
 
 
@@ -114,6 +114,38 @@ CREATE TABLE "garden_species" (
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now()),
    UNIQUE (garden_id, species_id)
+);
+
+CREATE TABLE "exposition_species" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   exposition_id int NOT NULL REFERENCES "exposition" (id) ON DELETE CASCADE NOT NULL,
+   species_id int NOT NULL REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
+);
+
+CREATE TABLE "culture_type_species" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   culture_type_id int NOT NULL REFERENCES "culture_type" (id) ON DELETE CASCADE NOT NULL,
+   species_id int NOT NULL REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
+);
+
+CREATE TABLE "species_water_need" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   water_need_id int NOT NULL REFERENCES "water_need" (id) ON DELETE CASCADE NOT NULL,
+   species_id int NOT NULL REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
+);
+
+CREATE TABLE "soil_type_species" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   soil_type_id int NOT NULL REFERENCES "soil_type" (id) ON DELETE CASCADE NOT NULL,
+   species_id int NOT NULL REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
 );
 
 COMMIT;

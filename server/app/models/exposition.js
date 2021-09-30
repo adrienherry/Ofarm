@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../services/sequelize");
 
-class EventType extends Model {}
+class Exposition extends Model {}
 
-EventType.init(
+Exposition.init(
 	{
 		name: {
 			type: DataTypes.STRING,
@@ -19,10 +19,10 @@ EventType.init(
 	{
 		sequelize,
 		underscored: true,
-		modelName: "EventType",
-		tableName: "event_type",
-		timestamps: false,
+		modelName: "Exposition",
+		tableName: "exposition",
+		timestamps: true,
 	},
 );
 
-module.exports = EventType;
+module.exports = Exposition;

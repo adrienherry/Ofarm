@@ -981,7 +981,9 @@
             "léger",
             "meuble"
         ],
-        "culture": [],
+        "culture": [
+            "en pleine terre"
+        ],
         "description": "",
         "saw_in": [],
         "saw_out": [
