@@ -1,5 +1,5 @@
 const jsonwebtoken = require("jsonwebtoken");
-const blacklist = require("./jwtBlacklist");
+// const blacklist = require("./jwtBlacklist");
 const standardErrors = require("../helpers/standardErrors");
 
 const jwtSecret = process.env.JWT_SECRET;
@@ -41,9 +41,9 @@ const jwtService = {
 			} else {
 				// const decoded = jsonwebtoken.decode(token);
 
-				if (!blacklist.verify(decoded.id, token)) {
-					res.status(403).json(standardErrors.UserNotLoggedError);
-				}
+				// if (!blacklist.verify(decoded.id, token)) {
+				// 	res.status(403).json(standardErrors.UserNotLoggedError);
+				// }
 
 				decoded.id ? (res.locals.id = decoded.id) : "";
 				res.locals.token = token;
@@ -64,9 +64,9 @@ const jwtService = {
 
 				const decoded = jsonwebtoken.decode(token);
 				
-				if (!blacklist.verify(decoded.id, token)) {
-					return next();
-				}
+				// if (!blacklist.verify(decoded.id, token)) {
+				// 	return next();
+				// }
 
 				res.json({ redirect: true });
 			} else {

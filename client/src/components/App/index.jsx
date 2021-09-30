@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 
 import './app.scss';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import {
+  Switch, Route, useLocation, Redirect,
+} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import HeaderContainer from '../HeaderContainer';
 import HomePage from '../pages/Homepage';
@@ -17,8 +19,11 @@ import About from '../pages/About';
 import LegalNotice from '../pages/LegalNotice';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
-import { isConnected } from '../../store/actions/authentification';
+import { isConnected, setIsReadyToRedirectToFalse } from '../../store/actions/authentification';
 import IndividualSpecies from '../pages/IndividualSpecies';
+import { setIsReadyToRedirectToLoginToFalse } from '../../store/actions/register';
+import { resetSpecies } from '../../store/actions/species';
+import { collapseContainer, resetSearchValue } from '../../store/actions/searchbar';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -28,6 +33,9 @@ const App = () => {
 
   useEffect(() => {
     dispatch(collapseUserMenu());
+    dispatch(setIsReadyToRedirectToFalse());
+    dispatch(setIsReadyToRedirectToLoginToFalse());
+    dispatch(resetSpecies());
     window.scrollTo({
       top: 0,
       left: 0,
@@ -45,6 +53,7 @@ const App = () => {
     <div className="app">
       <div className="app__container">
         <HeaderContainer />
+
         <LegalNotice />
         {/* <About />
         <Switch>
@@ -64,14 +73,38 @@ const App = () => {
           {logged && (
             <Route path={`/${usernameSlug}/createGarden`} exact>
               <CreateGarden />
+
+          <Switch>
+            <Route path="/" exact>
+              <HomePage />
+
             </Route>
-          )}
-          {logged && (
-          <Route path={`/${usernameSlug}/profile`} exact>
-            <UserProfil />
-          </Route>
-          )}
-        </Switch> */}
+            <Route path="/species" exact>
+              <Species />
+            </Route>
+            <Route path="/about exact>
+              <About />
+            </Route>
+            <Route path="/login" exact>
+              <Login />
+            </Route>
+            <Route path="/register" exact>
+              <Register />
+            </Route>
+            <Route path="/species/:slug" exact component={IndividualSpecies} />
+            {logged && (
+              <Route path={`/${usernameSlug}/createGarden`} exact>
+                <CreateGarden />
+              </Route>
+            )}
+            {logged && (
+              <Route path={`/${usernameSlug}/profile`} exact>
+                <UserProfil />
+              </Route>
+            )}
+
+            <Redirect from="/logout" to="/login" />
+          </Switch>
         <Footer />
       </div>
     </div>
