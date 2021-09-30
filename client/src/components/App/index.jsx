@@ -15,6 +15,7 @@ import NotFound from '../pages/NotFound';
 import Team from '../pages/Team';
 import Login from '../pages/Login';
 import MyGarden from '../pages/Garden';
+import About from '../pages/About';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
 import { isConnected, setIsReadyToRedirectToFalse } from '../../store/actions/authentification';
@@ -51,32 +52,36 @@ const App = () => {
     <div className="app">
       <div className="app__container">
         <HeaderContainer />
-        <Switch>
-          <Route path="/" exact>
-            <HomePage />
-          </Route>
-          <Route path="/species" exact>
-            <Species />
-          </Route>
-          <Route path="/login" exact>
-            <Login />
-          </Route>
-          <Route path="/register" exact>
-            <Register />
-          </Route>
-          <Route path="/species/:slug" exact component={IndividualSpecies} />
-          {logged && (
-            <Route path={`/${usernameSlug}/createGarden`} exact>
-              <CreateGarden />
+          <Switch>
+            <Route path="/" exact>
+              <HomePage />
             </Route>
-          )}
-          {logged && (
-            <Route path={`/${usernameSlug}/profile`} exact>
-              <UserProfil />
+            <Route path="/species" exact>
+              <Species />
             </Route>
-          )}
-          <Redirect from="/logout" to="/login" />
-        </Switch>
+            <Route path="/about exact>
+              <About />
+            </Route>
+            <Route path="/login" exact>
+              <Login />
+            </Route>
+            <Route path="/register" exact>
+              <Register />
+            </Route>
+            <Route path="/species/:slug" exact component={IndividualSpecies} />
+            {logged && (
+              <Route path={`/${usernameSlug}/createGarden`} exact>
+                <CreateGarden />
+              </Route>
+            )}
+            {logged && (
+              <Route path={`/${usernameSlug}/profile`} exact>
+                <UserProfil />
+              </Route>
+            )}
+
+            <Redirect from="/logout" to="/login" />
+          </Switch>
         <Footer />
       </div>
     </div>

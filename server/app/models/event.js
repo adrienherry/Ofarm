@@ -19,12 +19,10 @@ Event.init(
 		fromDate: {
 			type: DataTypes.DATE,
 			allowNull: false,
-			unique: true,
 		},
 		untilDate: {
 			type: DataTypes.DATE,
 			allowNull: false,
-			unique: true,
 		},
 	},
 	{

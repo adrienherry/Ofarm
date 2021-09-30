@@ -7,6 +7,8 @@ const { User } = require("../models");
 const { slugify, standardErrors } = require("../helpers");
 
 const jwt = require("../services/jwtService");
+const blacklist = require("../services/jwtBlacklist");
+
 const saltRounds = 10;
 
 const authController = {
@@ -48,6 +50,7 @@ const authController = {
 
 	login: async (req, res) => {
 		try {
+
 			if (!req.body.password || !req.body.email) {
 				res.status(400).json(standardErrors.BadRequestError);
 				return;
@@ -77,12 +80,28 @@ const authController = {
 			res.json({
 				logged: true,
 				username: foundUser.username,
-				token: jwt.generateTokenWith(foundUser.username, foundUser.id),
+				usernameSlug: foundUser.usernameSlug,
+				token: jwt.generateTokenWith(foundUser.id, foundUser.username),
 			});
 		} catch (error) {
 			res.json(error);
 		}
 	},
+
+	logout: async (req, res) => {
+		try {
+			if (!res.locals.id || !res.locals.token) {
+				res.status(500).json(standardErrors.InternalServerError);
+				return;
+			}
+
+			await blacklist.addToBlacklist(res.locals.id, res.locals.token);
+			res.json({ redirect: true });
+
+		} catch (error) {
+			res.json(error);
+		}
+	}
 };
 
 module.exports = authController;

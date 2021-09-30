@@ -4,6 +4,11 @@ const Species = require("./species");
 const Garden = require("./garden");
 const User = require("./user");
 
+const Exposition = require("./exposition");
+const SoilType = require("./soilType");
+const CultureType = require("./cultureType");
+const WaterNeed = require("./waterNeed");
+
 EventType.hasMany(Event, {
 	foreignKey: "eventTypeId",
 	as: "events",
@@ -12,7 +17,7 @@ EventType.hasMany(Event, {
 Event.belongsTo(EventType, {
 	foreignKey: "eventTypeId",
 	as: "eventType",
-	onDelete: "cascade"
+	onDelete: "cascade",
 });
 
 Species.hasMany(Event, {
@@ -50,9 +55,83 @@ User.hasMany(Garden, {
 Garden.belongsTo(User, {
 	foreignKey: "userId",
 	as: "owner",
-	onDelete: "cascade"
+	onDelete: "cascade",
+});
+
+Species.belongsToMany(Exposition, {
+	as: "exposition",
+	through: "exposition_species",
+	foreignKey: "speciesId",
+	otherKey: "expositionId",
+	onDelete: "cascade",
+});
+
+Exposition.belongsToMany(Species, {
+	as: "species",
+	through: "exposition_species",
+	foreignKey: "expositionId",
+	otherKey: "speciesId",
+	onDelete: "cascade",
+});
+
+Species.belongsToMany(SoilType, {
+	as: "soil",
+	through: "soil_type_species",
+	foreignKey: "speciesId",
+	otherKey: "soilTypeId",
+	onDelete: "cascade",
+});
+
+SoilType.belongsToMany(Species, {
+	as: "soil_type",
+	through: "soil_type_species",
+	foreignKey: "soilTypeId",
+	otherKey: "speciesId",
+	onDelete: "cascade",
+});
+
+Species.belongsToMany(CultureType, {
+	as: "culture",
+	through: "culture_type_species",
+	foreignKey: "speciesId",
+	otherKey: "cultureTypeId",
+	onDelete: "cascade",
+});
+
+CultureType.belongsToMany(Species, {
+	as: "species",
+	through: "culture_type_species",
+	foreignKey: "cultureTypeId",
+	otherKey: "speciesId",
+	onDelete: "cascade",
+});
+
+Species.belongsToMany(WaterNeed, {
+	as: "water_need",
+	through: "species_water_need",
+	foreignKey: "speciesId",
+	otherKey: "waterNeedId",
+	onDelete: "cascade",
+});
+
+WaterNeed.belongsToMany(Species, {
+	as: "species",
+	through: "species_water_need",
+	foreignKey: "waterNeedId",
+	otherKey: "speciesId",
+	onDelete: "cascade",
 });
 
 Garden.hasMany;
 
-module.exports = { EventType, Event, Species, Garden, User };
+module.exports = {
+	EventType,
+	Event,
+	Species,
+	Garden,
+	User,
+	Exposition,
+	WaterNeed,
+	SoilType,
+	CultureType,
+};

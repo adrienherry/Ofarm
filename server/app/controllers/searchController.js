@@ -8,7 +8,7 @@ const searchController = {
 			const species = await Species.findAll({
 				where: {
 					name: {
-						[Op.iLike]: `%${text.toLowerCase()}%`,
+						[Op.iLike]: `${text.toLowerCase()}%`,
 					},
 				},
 				order: [["name", "ASC"]],
