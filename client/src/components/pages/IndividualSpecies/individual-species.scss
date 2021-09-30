@@ -48,10 +48,15 @@
         border-radius: 0.5rem;
         max-height: 16rem;
 
+
         &-co2 {
             border-radius: 0.5rem;
             box-shadow: vars.$shadow-card-item;
             padding: 2rem;
+
+            &-container {
+                margin-top: 2rem;
+            }
         }
     }
     
@@ -90,5 +95,4 @@
         background-color: vars.$header-color;
     }
 }
-
 

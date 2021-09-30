@@ -34,8 +34,6 @@ const App = () => {
     dispatch(setIsReadyToRedirectToFalse());
     dispatch(setIsReadyToRedirectToLoginToFalse());
     dispatch(resetSpecies());
-    dispatch(collapseContainer());
-    dispatch(resetSearchValue());
     window.scrollTo({
       top: 0,
       left: 0,

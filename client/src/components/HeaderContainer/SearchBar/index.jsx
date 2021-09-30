@@ -7,6 +7,7 @@ import { useClickOutside } from 'react-click-outside-hook';
 import { useTheme } from '@material-ui/core/styles';
 import { useMediaQuery, Grid } from '@material-ui/core';
 import { MoonLoader } from 'react-spinners';
+import { useLocation } from 'react-router';
 import {
   collapseContainer,
   expandContainer,
@@ -49,6 +50,7 @@ const SearchBar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const isLarge = useMediaQuery(theme.breakpoints.up('lg'));
+  const location = useLocation();
 
   let style;
 
@@ -93,6 +95,10 @@ const SearchBar = () => {
   useEffect(() => {
     if (isClickedOutside) collapseSearchContainer();
   }, [isClickedOutside]);
+
+  useEffect(() => {
+    collapseSearchContainer();
+  }, [location]);
 
   const searchInfoToShow = () => {
     dispatch(fetchSearchInfo());

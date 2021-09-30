@@ -108,18 +108,19 @@ const IndividualSpecies = () => {
                 ))}
               </Grid>
             </Grid>
-            <Grid
-              item
-              container
-              direction="column"
-              lg={5}
-              md={5}
-              sm={12}
-              xs={12}
-              justifyContent="center"
-              className="individual-species__info-co2"
-            >
-              {species.co2Data && (
+            <Grid container item lg={12} md={12} sm={12} xs={12} className="individual-species__info-co2-container" mt={2} justifyContent={isMedium ? 'center' : 'flex-start'}>
+              <Grid
+                item
+                container
+                direction="column"
+                lg={4}
+                md={5}
+                sm={11}
+                xs={10}
+                justifyContent="center"
+                className="individual-species__info-co2"
+              >
+                {species.co2Data && (
                 <>
                   <Grid item>
                     <div className="individual-species__co2">
@@ -138,7 +139,17 @@ const IndividualSpecies = () => {
                   <Co2InfoItem co2Percent={species.co2Data.co2_share.transform} name="Transformation" totalCO2={Math.round(species.co2Data.co2_total * 100) / 100} />
                   <Co2InfoItem co2Percent={species.co2Data.co2_share.transport} name="Transport" totalCO2={Math.round(species.co2Data.co2_total * 100) / 100} />
                 </>
-              )}
+                )}
+                {!species.co2Data && (
+                <>
+                  <Grid item>
+                    <div className="individual-species__co2">
+                      <span className="individual-species__span">Info CO2 :  </span> N/C
+                    </div>
+                  </Grid>
+                </>
+                )}
+              </Grid>
             </Grid>
           </Grid>
         </>

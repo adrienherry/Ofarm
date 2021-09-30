@@ -5,7 +5,7 @@ import './co2-info-item.scss';
 
 const Co2InfoItem = ({ co2Percent, name, totalCO2 }) => (
   <div className="co2-info-item">
-    <Grid item container direction="row" alignItems="center">
+    <Grid item container direction="row" alignItems="center" justifyContent="space-between">
       <div className="co2-info-item__name">- {name} :  </div>
       <div className="co2-info-item__container">
         <div className="co2-info-item__container-percent" style={{ width: `${co2Percent * 100 / totalCO2}%` }} />
