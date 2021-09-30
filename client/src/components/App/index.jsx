@@ -14,6 +14,7 @@ import Team from '../pages/Team';
 import Login from '../pages/Login';
 import MyGarden from '../pages/Garden';
 import About from '../pages/About';
+import LegalNotice from '../pages/LegalNotice';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
 import { isConnected } from '../../store/actions/authentification';
@@ -44,8 +45,9 @@ const App = () => {
     <div className="app">
       <div className="app__container">
         <HeaderContainer />
-        <About />
-        {/* <Switch>
+        <LegalNotice />
+        {/* <About />
+        <Switch>
           <Route path="/" exact>
             <HomePage />
           </Route>
