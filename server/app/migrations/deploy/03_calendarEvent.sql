@@ -7,12 +7,15 @@ CREATE TABLE "calendar_event" (
     garden_id int NOT NULL REFERENCES "garden" (id) ON DELETE CASCADE NOT NULL,
     species_id int NOT NULL REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
     event_type_id int NOT NULL REFERENCES "event_type" ON DELETE CASCADE NOT NULL,
-    from_date timestamptz NOT NULL DEFAULT (now()),
-    until_date timestamptz NOT NULL DEFAULT (now()),
+    from_date timestamptz NOT NULL,
+    until_date timestamptz NOT NULL,
+    created_at timestamptz NOT NULL DEFAULT (now()),
+    updated_at timestamptz NOT NULL DEFAULT (now()),
     name text NOT NULL,
     comment  text
     --field_id int NOT NULL REFERENCES "field" (id), ON DELETE CASCADE NOT NULL,
     --variety_id int NOT NULL REFERENCES "variety" (id), ON DELETE CASCADE NOT NULL,
+    
 );
 
 COMMIT;
