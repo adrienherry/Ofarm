@@ -1,5 +1,10 @@
 BEGIN;
 
+DROP TABLE "exposition_species";
+DROP TABLE "species_water_need";
+DROP TABLE "culture_type_species";
+DROP TABLE "soil_type_species";
+
 DROP TABLE "garden_species";
 DROP TABLE "event";
 DROP TABLE "species";

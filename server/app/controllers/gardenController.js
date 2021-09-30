@@ -25,13 +25,22 @@ const gardenController = {
 							{
 								association: "events",
 								include: "eventType",
+								attributes: {
+									exclude: ["createdAt", "updatedAt", "speciesId", "eventTypeId"],
+								},
 							},
 						],
 						through: {
 							attributes: [],
 						},
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
 					},
 				],
+				attributes: {
+					exclude: ["createdAt", "updatedAt"],
+				},
 			});
 
 			if (gardenItem && user_id === gardenItem.userId) {

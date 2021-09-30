@@ -1,14 +1,49 @@
-const { Species, Garden } = require("../models");
+const {
+	Species,
+	Garden,
+	SoilType,
+	Exposition,
+	CultureType,
+	WaterNeed,
+} = require("../models");
 const { standardErrors } = require("../helpers");
 
 const speciesController = {
 	findAll: async (_, res) => {
 		try {
 			const species = await Species.findAll({
+				include: [
+					{
+						model: SoilType,
+						as: "soil",
+						attributes: ["id", "name", "nameSlug"],
+						through: { attributes: [] },
+					},
+					{
+						model: CultureType,
+						as: "culture",
+						attributes: ["id", "name", "nameSlug"],
+						through: { attributes: [] },
+					},
+					{
+						model: WaterNeed,
+						as: "water_need",
+						attributes: ["id", "name", "nameSlug", "value"],
+						through: { attributes: [] },
+					},
+					{
+						model: Exposition,
+						as: "exposition",
+						attributes: ["id", "name", "nameSlug", "value"],
+						through: { attributes: [] },
+					},
+				],
 				order: [["name", "ASC"]],
+				attributes: { exclude: ["createdAt", "updatedAt"] },
 			});
 			res.json(species);
 		} catch (error) {
+			console.log(error);
 			res.status(500).json(error);
 		}
 	},
@@ -22,11 +57,40 @@ const speciesController = {
 					{
 						association: "events",
 						include: "eventType",
+						attributes: {
+							exclude: ["createdAt", "updatedAt", "eventTypeId", "speciesId"],
+						},
+					},
+					{
+						model: SoilType,
+						as: "soil",
+						attributes: ["id", "name", "nameSlug"],
+						through: { attributes: [] },
+					},
+					{
+						model: CultureType,
+						as: "culture",
+						attributes: ["id", "name", "nameSlug"],
+						through: { attributes: [] },
+					},
+					{
+						model: WaterNeed,
+						as: "water_need",
+						attributes: ["id", "name", "nameSlug", "value"],
+						through: { attributes: [] },
+					},
+					{
+						model: Exposition,
+						as: "exposition",
+						attributes: ["id", "name", "nameSlug", "value"],
+						through: { attributes: [] },
 					},
 				],
+				attributes: { exclude: ["createdAt", "updatedAt"] },
 			});
 			res.json(speciesItem);
 		} catch (error) {
+			console.log(error);
 			res.status(500).json(error);
 		}
 	},
@@ -115,7 +179,7 @@ const speciesController = {
 			}
 
 			const user_id = res.locals.id;
-			
+
 			const species_id = parseInt(req.body.speciesId);
 
 			let garden = await Garden.findOne({
