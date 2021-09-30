@@ -1,4 +1,4 @@
-export const SET_PROFIL_FIELD = 'SET_PROFIL_FIELD';
+export const SET_PROFIL_FIELD = "SET_PROFIL_FIELD";
 
 export const setProfilField = (value, name) => ({
   type: SET_PROFIL_FIELD,
@@ -6,26 +6,34 @@ export const setProfilField = (value, name) => ({
   name,
 });
 
-export const ADD_PROFIL = 'ADD_PROFIL';
+export const ADD_PROFIL = "ADD_PROFIL";
 
 export const addProfil = (value) => ({
   type: ADD_PROFIL,
   value,
 });
 
-export const FETCH_USER_INFO = 'FETCH_USER_INFO';
+export const FETCH_USER_INFO = "FETCH_USER_INFO";
 
-export const fetchUserInfo = () => (
-  {
-    type: FETCH_USER_INFO,
-  }
-);
+export const fetchUserInfo = () => ({
+  type: FETCH_USER_INFO,
+});
 
-export const SET_USER_INFO = 'SET_USER_INFO';
+export const SET_USER_INFO = "SET_USER_INFO";
 
-export const setUserInfo = (payload) => (
-  {
-    type: SET_USER_INFO,
-    payload,
-  }
-);
+export const setUserInfo = (payload) => ({
+  type: SET_USER_INFO,
+  payload,
+});
+
+export const SET_USER_DISABLED = "SET_USER_DISABLED";
+
+export const setUserDisabled = () => ({
+  type: SET_USER_DISABLED,
+});
+
+export const SET_USER_ENABLED = "SET_USER_ENABLED";
+
+export const setUserEnabled = () => ({
+  type: SET_USER_ENABLED,
+});
