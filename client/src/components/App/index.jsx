@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import "./app.scss";
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Switch, Route, useLocation, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import HeaderContainer from "../HeaderContainer";
 import HomePage from "../pages/Homepage";
@@ -13,12 +13,22 @@ import NotFound from "../pages/NotFound";
 import Team from "../pages/Team";
 import Login from "../pages/Login";
 import MyGarden from "../pages/Garden";
+import About from "../pages/About";
+import LegalNotice from "../pages/LegalNotice";
 import { collapseUserMenu } from "../../store/actions/user";
 import CreateGarden from "../pages/User/CreateGarden";
-import { isConnected } from "../../store/actions/authentification";
-import EditGarden from "../pages/User/EditGarden";
-
+import {
+	isConnected,
+	setIsReadyToRedirectToFalse,
+} from "../../store/actions/authentification";
 import IndividualSpecies from "../pages/IndividualSpecies";
+import { setIsReadyToRedirectToLoginToFalse } from "../../store/actions/register";
+import { resetSpecies } from "../../store/actions/species";
+import {
+	collapseContainer,
+	resetSearchValue,
+} from "../../store/actions/searchbar";
+import EditGarden from "../pages/User/EditGarden";
 
 const App = () => {
 	const dispatch = useDispatch();
@@ -36,10 +46,16 @@ const App = () => {
 	}, [location]);
 
 	useEffect(() => {
-		if (localStorage.getItem("jwt")) {
-			dispatch(isConnected());
-		}
-	}, []);
+		dispatch(collapseUserMenu());
+		dispatch(setIsReadyToRedirectToFalse());
+		dispatch(setIsReadyToRedirectToLoginToFalse());
+		dispatch(resetSpecies());
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: "smooth",
+		});
+	}, [location]);
 
 	return (
 		<div className="app">
@@ -70,11 +86,9 @@ const App = () => {
 						</Route>
 					)}
 
-					{logged && (
-						<Route path={`/leaflet/profile`} exact>
-							<EditGarden />
-						</Route>
-					)}
+					<Route path={`/leaflet`} exact>
+						<EditGarden />
+					</Route>
 				</Switch>
 				<Footer />
 			</div>

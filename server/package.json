@@ -1,5 +1,6 @@
 {
   "name": "express-api-template",
+  "repository": "",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -25,9 +26,8 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12",
     "pg": "^8.7.1",
-    "sequelize": "^6.6.5"
-  },
-  "devDependencies": {
+    "redis": "^3.1.2",
+    "sequelize": "^6.6.5",
     "express-swagger-generator": "^1.1.17"
   }
 }

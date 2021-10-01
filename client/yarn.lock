@@ -1749,6 +1749,11 @@ js-yaml@^3.13.1:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
+js-year-calendar@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/js-year-calendar/-/js-year-calendar-1.0.2.tgz#eb60df6591b2543520b76245f158ad7e9b2915f2"
+  integrity sha512-ayHH/vE7xuXgGCprhQ23REbp3Rb2fy1rXO8jA26Wmuw4vYJ/TTIgFxFuNAlNPL8WR4tNXfnG41nlH3p+hjFesg==
+
 jsesc@^2.5.1:
   version "2.5.2"
   resolved "https://registry.npmjs.org/jsesc/-/jsesc-2.5.2.tgz"
@@ -2253,10 +2258,26 @@ punycode@^2.1.0:
   resolved "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
+rc-year-calendar@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/rc-year-calendar/-/rc-year-calendar-1.0.2.tgz#726480d1010edc8fd03032b210dc3f155ba2ae9e"
+  integrity sha512-TdEHZ4hs3WEuEAAmX/HEWlK7EZwhACkpuJKdkxL360igekuQDguyXTC9RuDFdk6lv4CAT7L4d4D6PTP7zUMBlQ==
+  dependencies:
+    js-year-calendar "^1.0.2"
+
 react-click-outside-hook@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-click-outside-hook/-/react-click-outside-hook-1.1.1.tgz#e64d354aee463ff7c5c8dca4c5e2fd947b16df5f"
   integrity sha512-wIPef9ik68f/Tz/0uvuOZI7hE7XLOc2moKUGWu9c68LqYS8b0D9LnR7J9i0Uc0DiXZaJENlRqZpmaYJFhjADMA==
+
+react-dom@^17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
+  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    scheduler "^0.20.2"
 
 react-easy-swipe@^0.0.21:
   version "0.0.21"
@@ -2490,6 +2511,14 @@ sass@^1.41.1:
   integrity sha512-vIjX7izRxw3Wsiez7SX7D+j76v7tenfO18P59nonjr/nzCkZuoHuF7I/Fo0ZRZPKr88v29ivIdE9BqGDgQD/Nw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
+
+scheduler@^0.20.2:
+  version "0.20.2"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.2.tgz#4baee39436e34aa93b4874bddcbf0fe8b8b50e91"
+  integrity sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 "semver@2 || 3 || 4 || 5":
   version "5.7.1"

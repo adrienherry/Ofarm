@@ -2,13 +2,16 @@ import {
   ADD_PROFIL,
   SET_PROFIL_FIELD,
   SET_USER_INFO,
-} from '../actions/profil';
+  SET_USER_DISABLED,
+  SET_USER_ENABLED,
+} from "../actions/profil";
 
 const initialState = {
-  usernameProfil: '',
-  emailProfil: '',
-  creationDate: '',
-  updatedDate: '',
+  usernameProfil: "",
+  emailProfil: "",
+  creationDate: "",
+  updatedDate: "",
+  disabled: true,
 };
 
 const profilReducer = (state = initialState, action = {}) => {
@@ -30,6 +33,16 @@ const profilReducer = (state = initialState, action = {}) => {
         emailProfil: action.payload.email,
         creationDate: action.payload.createdAt,
         updatedDate: action.payload.updatedAt,
+      };
+    case SET_USER_DISABLED:
+      return {
+        ...state,
+        disabled: false,
+      };
+    case SET_USER_ENABLED:
+      return {
+        ...state,
+        disable: true,
       };
     default:
       return state;

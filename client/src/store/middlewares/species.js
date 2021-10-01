@@ -1,7 +1,11 @@
 import { axiosInstance } from '../../services/axios';
 import {
   FETCH_ONE_SPECIES,
-  FETCH_SPECIES_LIST, setLoadingSpeciesToFalse, setLoadingSpeciesToTrue, setOneSpecies, setSpeciesList,
+  FETCH_SPECIES_LIST,
+  setLoadingSpeciesToFalse,
+  setLoadingSpeciesToTrue,
+  setOneSpecies,
+  setSpeciesList,
 } from '../actions/species';
 
 export default (store) => (next) => async (action) => {

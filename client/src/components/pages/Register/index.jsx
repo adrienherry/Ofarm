@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 import './register.scss';
 import Field from '../../Field';
@@ -12,6 +13,9 @@ const Login = () => {
   const password = useSelector((state) => state.register.password);
   const confirmPassword = useSelector((state) => state.register.confirmPassword);
   const isConfirmed = useSelector((state) => state.register.isConfirmed);
+  const isReadyToRedirectToLogin = useSelector((state) => state.register.isReadyToRedirectToLogin);
+
+  if (isReadyToRedirectToLogin) return <Redirect to="/login" />;
 
   const handleChangeField = (value, name) => {
     dispatch(setRegisterField(value, name));

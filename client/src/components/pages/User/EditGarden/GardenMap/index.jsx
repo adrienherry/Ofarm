@@ -19,17 +19,11 @@ import "leaflet-draw/dist/leaflet.draw.css";
 import providers from "./providers";
 import "./garden-map.scss";
 import useGeoLocation from "../../../../../hooks/geolocationHook";
-// const carrotMarker = divIcon({
-// 	html: renderToStaticMarkup(<i className="fa-solid fa-carrot"></i>),
-// 	iconSize: [34, 34],
-// 	iconAnchor: [17, 35],
-// 	popupAnchor: [17, -36],
-// 	className:'carrotIcon'
-// });
 
 const GardenMap = () => {
 	const location = useGeoLocation();
 	const [showUser, setShowUser] = useState(false);
+	const [mapLayers, setMapLayers] = useState([]);
 
 	const dispatch = useDispatch();
 	const theme = useTheme();
@@ -54,13 +48,16 @@ const GardenMap = () => {
 	};
 
 	const _onCreated = (e) => {
-		console.log(e);
-
 		const { layerType, layer } = e;
 
+		console.log(e);
 		if (layerType === "polygon") {
-			const { _leaflet_id } = layer;
+			const { _feature_type, _leaflet_id } = layer;
 
+			console.log(layer);
+			// var popup = <Tooltip>Some content for my polygon</Tooltip>;
+			// layer.bindTooltip(popup);
+			// console.log(popup);
 			setMapLayers((layers) => [
 				...layers,
 				{ id: _leaflet_id, latlngs: layer.getLatLngs()[0] },
@@ -100,9 +97,55 @@ const GardenMap = () => {
 
 	return (
 		<div className="map-container">
-			<Map ref={mapRef} className="map" center={center} zoom={ZOOM_LEVEL}>
+			<Map
+				ref={mapRef}
+				className="map"
+				center={center}
+				zoom={ZOOM_LEVEL}
+				// onDrawStart={}
+			>
 				<FeatureGroup>
-					<EditControl position="topright" />
+					<EditControl
+						position="topright"
+						onCreated={_onCreated}
+						onEdited={_onEdited}
+						onDeleted={_onDeleted}
+						// onEachFeature={_onEachFeature}
+						draw={{
+							metric: true,
+							circle: false,
+							circlemarker: false,
+							polyline: false,
+							polygon: {
+								shapeOptions: {
+									stroke: true,
+									color: "#ff3333",
+									fillColor: "#ff333380",
+									weight: 3,
+									opacity: 0.4,
+									fill: true,
+									clickable: true,
+								},
+								// showArea: true,
+								showLength: true,
+							},
+						}}
+					/>
+					<Popup
+						direction={"top"}
+						interactive={true}
+						opacity={0.8}
+					>
+						<div className="PopupContent">
+							<h1>Nom : Mon jardin 1</h1>
+							<p>
+								Espèces contenues :
+								<span>carotte</span>
+								<span>poireau</span>
+								<span>asperge</span>
+							</p>
+						</div>
+					</Popup>
 				</FeatureGroup>
 				<TileLayer
 					url={providers.googleMaps.url}
@@ -128,6 +171,8 @@ const GardenMap = () => {
 				<button onClick={showMyLocation}>
 					Locate me and let's start planting some shit!
 				</button>
+
+				<textarea value={JSON.stringify(mapLayers, 0, 2)}></textarea>
 			</div>
 		</div>
 	);
