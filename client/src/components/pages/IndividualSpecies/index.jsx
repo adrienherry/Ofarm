@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Grid, useTheme, useMediaQuery } from '@material-ui/core';
 import './individual-species.scss';
 import { useParams } from 'react-router-dom';
+import aos from 'aos';
 import convertEventDate from '../../../utils/convertDate';
 import { fetchOneSpecies, fetchSpeciesList } from '../../../store/actions/species';
 import { findSpecies } from '../../../selectors/species';
+import 'aos/dist/aos.css';
 import Co2InfoItem from './Co2InfoIntem';
 
 const IndividualSpecies = () => {
@@ -30,6 +32,10 @@ const IndividualSpecies = () => {
       dispatch(fetchOneSpecies(speciesToFetch.id));
     }
   });
+
+  useEffect(() => {
+    aos.init();
+  }, []);
 
   let style;
   if (isMobile) {
@@ -77,7 +83,7 @@ const IndividualSpecies = () => {
                   {species.name}
                 </div>
               </Grid>
-              <Grid item lg={12} md={12} sm={12} xs={12}>
+              <Grid item lg={12} md={12} sm={12} xs={12} data-aos="slide-left" delay="100">
                 <p className="individual-species__description">
                   <span className="individual-species__span">Description : </span>
                   <br />

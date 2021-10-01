@@ -3,6 +3,7 @@
     box-sizing: content-box;
     padding: 1em;
     width: 40%;
+    min-width: 19rem;
 
     &__img {
         object-fit: fill;
