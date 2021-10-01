@@ -6,10 +6,10 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import MyGardenButton from '../MyGardenButton';
-import cow from '../../../../../public/cow.jpg';
+import ButtonUserSection from '../../ButtonUserSection';
+import cow from '../../../../../../public/cow.jpg';
 
-const MyGardenCard = ({ title, description }) => (
+const GardensCard = ({ title, description }) => (
   <div>
     <Card sx={{
       maxWidth: 345,
@@ -35,16 +35,16 @@ const MyGardenCard = ({ title, description }) => (
       </CardActionArea>
       <CardActions>
         <Link to="/">
-          <MyGardenButton name="Voir le jardin" />
+          <ButtonUserSection name="Voir le jardin" />
         </Link>
       </CardActions>
     </Card>
   </div>
 );
 
-MyGardenCard.propTypes = {
+GardensCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
 
-export default MyGardenCard;
+export default GardensCard;

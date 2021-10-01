@@ -11,7 +11,7 @@ import {
   setUsernameProfil,
   setEmailProfil,
   setUserEnabled2,
-} from '../../../../store/actions/profil';
+} from '../../../../../store/actions/profil';
 import './userProfilForm.scss';
 
 const UserProfilForm = ({
@@ -75,9 +75,9 @@ const UserProfilForm = ({
   });
 
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <Grid container direction="column" spacing={3} justifyContent="center">
-        <Grid item>
+    <form onSubmit={handleSubmit} className="form-user-profil">
+      <Grid container direction="column" justifyContent="center">
+        <Grid item mb={3}>
           <div className="blockField">
             <label
               htmlFor="field-usernameProfil"
@@ -104,7 +104,7 @@ const UserProfilForm = ({
             </button>
           </div>
         </Grid>
-        <Grid item>
+        <Grid item mb={3}>
           <div className="blockField">
             <label
               htmlFor="field-emailProfil"
@@ -132,7 +132,7 @@ const UserProfilForm = ({
           </div>
         </Grid>
         <Grid item>
-          <button type="submit" className="form__submit"> {button} </button>
+          <button type="submit" className="form-user-profil__submit"> {button} </button>
         </Grid>
       </Grid>
     </form>

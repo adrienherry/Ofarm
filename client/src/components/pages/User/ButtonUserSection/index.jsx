@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
-const myGardenButton = ({ name }) => (
+const ButtonUserSection = ({ name }) => (
   <Button
     variant="contained"
     className="myGardenHeader__button"
@@ -19,8 +19,8 @@ const myGardenButton = ({ name }) => (
   </Button>
 );
 
-myGardenButton.propTypes = {
+ButtonUserSection.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default myGardenButton;
+export default ButtonUserSection;
