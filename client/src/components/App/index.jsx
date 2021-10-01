@@ -90,6 +90,7 @@ const App = () => {
             <NotFound />
           </Route>
         </Switch>
+        <MyGarden />
         <Footer />
       </div>
     </div>
