@@ -1,26 +1,25 @@
 import {
   ADD_PROFIL,
-  SET_PROFIL_FIELD,
   SET_USER_INFO,
   SET_USER_DISABLED,
+  SET_USER_DISABLED2,
   SET_USER_ENABLED,
-} from "../actions/profil";
+  SET_USERNAME_PROFIL,
+  SET_EMAIL_PROFIL,
+  SET_USER_ENABLED2,
+} from '../actions/profil';
 
 const initialState = {
-  usernameProfil: "",
-  emailProfil: "",
-  creationDate: "",
-  updatedDate: "",
+  usernameProfil: '',
+  emailProfil: '',
+  creationDate: '',
+  updatedDate: '',
   disabled: true,
+  disabled2: true,
 };
 
 const profilReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case SET_PROFIL_FIELD:
-      return {
-        ...state,
-        [action.name]: action.value,
-      };
     case ADD_PROFIL:
       return {
         ...state,
@@ -39,10 +38,30 @@ const profilReducer = (state = initialState, action = {}) => {
         ...state,
         disabled: false,
       };
+    case SET_USER_DISABLED2:
+      return {
+        ...state,
+        disabled2: false,
+      };
     case SET_USER_ENABLED:
       return {
         ...state,
-        disable: true,
+        disabled: true,
+      };
+    case SET_USER_ENABLED2:
+      return {
+        ...state,
+        disabled2: true,
+      };
+    case SET_USERNAME_PROFIL:
+      return {
+        ...state,
+        usernameProfil: action.value,
+      };
+    case SET_EMAIL_PROFIL:
+      return {
+        ...state,
+        emailProfil: action.value,
       };
     default:
       return state;

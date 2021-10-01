@@ -1,14 +1,14 @@
 @use "../../styles/vars";
 
 .blockField {
-  //   background-color: ;
+  position: relative;
+
   &__label {
     color: vars.$header-color;
     font-weight: 700;
     font-size: 1.1rem;
   }
   &__input {
-    // position: relative;
     width: 100%;
     padding: vars.$gutter;
     border: none;
@@ -19,12 +19,12 @@
     font-size: 1.1rem;
   }
   &__button {
-    position: relative;
+    position: absolute;
     color: #ffffff;
     border: none;
     font-weight: 700;
-    left: 25.9em;
-    bottom: 3.85em;
+    right: 0.2rem;
+    bottom: 0.2rem;
     background-color: vars.$header-color;
     border-radius: 1em;
     padding: 1.3em;

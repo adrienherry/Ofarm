@@ -80,11 +80,11 @@ const App = () => {
             <UserProfil />
           </Route>
           )}
-            {logged && (
-              <Route path={`/${usernameSlug}/profile`} exact>
-                <UserProfil />
-              </Route>
-            )}
+          {logged && (
+          <Route path={`/${usernameSlug}/profile`} exact>
+            <UserProfil />
+          </Route>
+          )}
           <Redirect from="/logout" to="/login" />
           <Route>
             <NotFound />
