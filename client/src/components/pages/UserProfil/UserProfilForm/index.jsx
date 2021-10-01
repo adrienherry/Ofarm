@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Grid } from '@material-ui/core';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {
   updateProfilInfo,
   setUserEnabled,
@@ -18,12 +18,14 @@ const UserProfilForm = ({
   button, usernameProfil, emailProfil,
 }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const inputUsername = useRef();
   const inputEmail = useRef();
   const disabled = useSelector((state) => state.profil.disabled);
   const disabled2 = useSelector((state) => state.profil.disabled2);
   const username = useSelector((state) => state.user.username);
   const usernameSlug = useSelector((state) => state.user.usernameSlug);
+  console.log(history);
 
   const handleChangeFieldUsernameProfil = (event) => {
     dispatch(setUsernameProfil(event.target.value));
@@ -71,10 +73,6 @@ const UserProfilForm = ({
       document.removeEventListener('mousedown', maybeHandler);
     };
   });
-
-  // useEffect(() => {
-  //   <Redirect to={`/${usernameSlug}/profile`} exact />;
-  // }, [username]);
 
   return (
     <form onSubmit={handleSubmit} className="form">

@@ -1,21 +1,21 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 import './register.scss';
 import Field from '../../Field';
-import { sendRegisterForm, setRegisterField } from '../../../store/actions/register';
+import {
+  sendRegisterForm, setRegisterField, setIsConfirmedToTrue, setIsConfirmedToFalse,
+} from '../../../store/actions/register';
 
 const Login = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const username = useSelector((state) => state.register.username);
   const email = useSelector((state) => state.register.email);
   const password = useSelector((state) => state.register.password);
   const confirmPassword = useSelector((state) => state.register.confirmPassword);
   const isConfirmed = useSelector((state) => state.register.isConfirmed);
-  const isReadyToRedirectToLogin = useSelector((state) => state.register.isReadyToRedirectToLogin);
-
-  if (isReadyToRedirectToLogin) return <Redirect to="/login" />;
 
   const handleChangeField = (value, name) => {
     dispatch(setRegisterField(value, name));
@@ -23,7 +23,14 @@ const Login = () => {
 
   const handleRegisterFormSubmit = (event) => {
     event.preventDefault();
-    dispatch(sendRegisterForm());
+    if (password === confirmPassword) {
+      dispatch(setIsConfirmedToTrue());
+      dispatch(sendRegisterForm());
+      history.push('/login');
+    }
+    else {
+      dispatch(setIsConfirmedToFalse());
+    }
   };
 
   return (

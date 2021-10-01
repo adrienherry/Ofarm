@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { axiosInstance } from '../../services/axios';
 import { IS_CONNECTED, setLoggedToTrue } from '../actions/authentification';
 import { setUserInfo } from '../actions/user';

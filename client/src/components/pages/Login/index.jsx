@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Grid } from '@material-ui/core';
 import './login.scss';
@@ -10,9 +10,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const emailLogin = useSelector((state) => state.auth.emailLogin);
   const passwordLogin = useSelector((state) => state.auth.passwordLogin);
-  const isReadyToRedirect = useSelector((state) => state.auth.isReadyToRedirect);
-
-  if (isReadyToRedirect) return <Redirect to="/" exact />;
+  const history = useHistory();
 
   const handleChangeField = (value, name) => {
     dispatch(setLoginField(value, name));
@@ -21,6 +19,7 @@ const Login = () => {
   const handleLoginFormSubmit = (event) => {
     event.preventDefault();
     dispatch(sendLoginForm());
+    history.goBack();
   };
 
   return (
