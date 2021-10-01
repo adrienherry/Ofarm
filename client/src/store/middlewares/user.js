@@ -27,6 +27,7 @@ export default (store) => (next) => async (action) => {
       catch (error) {
         console.log(error);
       }
+
       next(action);
       break;
     default:

@@ -19,7 +19,7 @@ import About from '../pages/About';
 import LegalNotice from '../pages/LegalNotice';
 import { collapseUserMenu } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
-import { isConnected, setIsReadyToRedirectToFalse } from '../../store/actions/authentification';
+import { isConnected } from '../../store/actions/authentification';
 import IndividualSpecies from '../pages/IndividualSpecies';
 import { setIsReadyToRedirectToLoginToFalse } from '../../store/actions/register';
 import { resetSpecies } from '../../store/actions/species';
@@ -33,7 +33,6 @@ const App = () => {
 
   useEffect(() => {
     dispatch(collapseUserMenu());
-    dispatch(setIsReadyToRedirectToFalse());
     dispatch(setIsReadyToRedirectToLoginToFalse());
     dispatch(resetSpecies());
     window.scrollTo({
