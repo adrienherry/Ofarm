@@ -1,22 +1,16 @@
 import React from 'react';
-import { Button, Stack } from '@material-ui/core';
-import PropTypes from 'prop-types';
+import { Stack } from '@material-ui/core';
+import MyGardenButton from '../MyGardenButton';
 import './myGardenHeader.scss';
 
-const MyGardenHeader = ({ garden, button1, button2 }) => (
+const MyGardenHeader = () => (
   <header className="myGardenHeader">
-    <Button variant="contained"> {garden} </Button>
+    <MyGardenButton name="Créer un nouveau jardin" />
     <Stack direction="row" spacing={2}>
-      <Button variant="contained"> {button1} </Button>
-      <Button variant="contained" disabled> {button2} </Button>
+      <MyGardenButton name="Mes jardins" />
+      <MyGardenButton name="Information personnelles" disabled />
     </Stack>
   </header>
 );
-
-MyGardenHeader.propTypes = {
-  garden: PropTypes.string.isRequired,
-  button1: PropTypes.string.isRequired,
-  button2: PropTypes.string.isRequired,
-};
 
 export default MyGardenHeader;
