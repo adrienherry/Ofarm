@@ -1,14 +1,10 @@
 @use '../../../styles/vars';
 
 .homepage {
-    &__grid-container {
-       
-
-        &__carrousel {
-            background-color: vars.$background-card-color;
-            border-radius: 1rem;
-            position: relative;
-            box-shadow: vars.$shadow;
-        }
+    margin-top: 4rem;
+    &__container {
+        background-color: vars.$background-card-color;
+        border-radius: 1rem;
+        box-shadow: vars.$shadow;
     }
 }

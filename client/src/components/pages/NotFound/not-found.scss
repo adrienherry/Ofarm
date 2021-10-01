@@ -1,9 +1,26 @@
+@use '../../../styles/vars';
+
 .NotFound {
 
-background-color: #a7bbac;
-text-align: center;
-margin-top: 2em;
-border-radius: 10%;
+    background-color: #a7bbac;
+    text-align: center;
+    margin-top: 2em;
+    border-radius: 10%;
 
+    &__image {
+        height: 100%;
+        width: 100%;
+    }
+
+    &__redirect-btn {
+        padding: 1rem;
+        background-color: vars.$background-card-color;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        box-shadow: vars.$shadow;
+        color: vars.$header-color;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
 }
 

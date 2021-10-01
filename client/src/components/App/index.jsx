@@ -52,36 +52,39 @@ const App = () => {
     <div className="app">
       <div className="app__container">
         <HeaderContainer />
-          <Switch>
-            <Route path="/" exact>
-              <HomePage />
-            </Route>
-            <Route path="/species" exact>
-              <Species />
-            </Route>
-            <Route path="/about exact>
-              <About />
-            </Route>
-            <Route path="/login" exact>
-              <Login />
-            </Route>
-            <Route path="/register" exact>
-              <Register />
-            </Route>
-            <Route path="/species/:slug" exact component={IndividualSpecies} />
-            {logged && (
-              <Route path={`/${usernameSlug}/createGarden`} exact>
-                <CreateGarden />
-              </Route>
-            )}
-            {logged && (
-              <Route path={`/${usernameSlug}/profile`} exact>
-                <UserProfil />
-              </Route>
-            )}
+        <Switch>
+          <Route path="/" exact>
+            <HomePage />
+          </Route>
+          <Route path="/species" exact>
+            <Species />
+          </Route>
+          <Route path="/about" exact>
+            <About />
+          </Route>
+          <Route path="/login" exact>
+            <Login />
+          </Route>
+          <Route path="/register" exact>
+            <Register />
+          </Route>
+          <Route path="/species/:slug" exact component={IndividualSpecies} />
+          {logged && (
+          <Route path={`/${usernameSlug}/createGarden`} exact>
+            <CreateGarden />
+          </Route>
+          )}
+          {logged && (
+          <Route path={`/${usernameSlug}/profile`} exact>
+            <UserProfil />
+          </Route>
+          )}
 
-            <Redirect from="/logout" to="/login" />
-          </Switch>
+          <Redirect from="/logout" to="/login" />
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
         <Footer />
       </div>
     </div>
