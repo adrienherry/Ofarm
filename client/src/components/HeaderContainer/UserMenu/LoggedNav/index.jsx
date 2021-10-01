@@ -45,7 +45,7 @@ const LoggedNav = () => {
           </li>
         </NavLink>
         <NavLink
-          to="/"
+          to={`/${usernameSlug}/gardens`}
           exact
         >
           <li className="user-menu__item">

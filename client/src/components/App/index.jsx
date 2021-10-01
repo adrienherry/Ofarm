@@ -10,11 +10,11 @@ import HomePage from '../pages/Homepage';
 import Register from '../pages/Register';
 import Species from '../pages/Species';
 import Footer from '../Footer';
-import UserProfil from '../pages/UserProfil';
+import UserProfil from '../pages/User/UserProfil';
 import NotFound from '../pages/NotFound';
 import Team from '../pages/Team';
 import Login from '../pages/Login';
-import MyGarden from '../pages/Garden';
+import Gardens from '../pages/User/Gardens';
 import About from '../pages/About';
 import LegalNotice from '../pages/LegalNotice';
 import { collapseUserMenu } from '../../store/actions/user';
@@ -84,12 +84,16 @@ const App = () => {
             <UserProfil />
           </Route>
           )}
+          {logged && (
+          <Route path={`/${usernameSlug}/gardens`} exact>
+            <Gardens />
+          </Route>
+          )}
           <Redirect from="/logout" to="/login" />
           <Route>
             <NotFound />
           </Route>
         </Switch>
-        <MyGarden />
         <Footer />
       </div>
     </div>
