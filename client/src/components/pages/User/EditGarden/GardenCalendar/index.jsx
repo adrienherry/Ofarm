@@ -54,6 +54,8 @@ const GardenCalendar = ({ gardenData, onDayClick }) => {
 					)
 						gardenEvents.push({
 							id: event.id,
+							species: speciesItem.name,
+							speciesId: speciesItem.id,
 							name: event.eventType.name,
 							startDate: new Date(event.fromDate),
 							endDate: new Date(event.untilDate),

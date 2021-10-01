@@ -369,17 +369,16 @@ const data = {
 };
 
 const EditGarden = () => {
-	const [modalIsOpen, setOpenModal] = useState(true);
+	const [modalIsOpen, setOpenModal] = useState(false);
 	const modalRef = useRef();
-	const [modalText, setModalText] = useState("");
+	const [modalDate, setModalDate] = useState(null);
+	const [modalEvents, setModalEvents] = useState(null);
 
 	const handleOnDayClick = (date, events) => {
-
-		const monObjet = { date, events }
-		
-		setModalText(JSON.stringify(monObjet));
+		setModalEvents(events);
+		setModalDate(date);
 		setOpenModal(true);
-	}
+	};
 
 	useEffect(() => {
 		if (modalIsOpen) {
@@ -407,12 +406,48 @@ const EditGarden = () => {
 			</Grid>
 
 			<div ref={modalRef} className="modal">
-				<div className="modalContent">
-					<button className="close-button" onClick={() => setOpenModal(false)}>Fermer la modale</button>
+				<form className="modalContent">
+					<button className="close-button" onClick={() => setOpenModal(false)}>
+						Fermer la modale
+					</button>
 
-					<textarea value={modalText}>
-					</textarea>
-				</div>
+					<h1>Evènements prévus le {JSON.stringify(modalDate)}</h1>
+					<div className="eventList">
+						{modalEvents &&
+							modalEvents.map((modalEvent) => {
+								console.log(modalEvent);
+								return (
+									<div className="eventContainer">
+										<div className="eventSpecies">{modalEvent.species}</div>
+										<div className="eventName">{modalEvent.name}</div>
+										<div className="eventFrom">
+											<input
+												onDoubleClick={() =>
+													(e.target.style.disabled = !e.target.style.disabled)
+												}
+												type="text"
+												disabled
+												value={JSON.stringify(modalEvent.startDate)}
+											/>
+										</div>
+										<div className="eventUntil">
+											<input
+												onDoubleClick={() => {
+													console.log(e.target.style.disabled)
+													e.target.style.disabled = !e.target.style.disabled;
+												}}
+												type="text"
+												disabled
+												value={JSON.stringify(modalEvent.endDate)}
+											/>
+										</div>
+									</div>
+								);
+							})}
+						
+						<button className="sendFormButton">Enregistrer mes modifications</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	);
