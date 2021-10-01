@@ -16,6 +16,11 @@ Event.init(
 			primaryKey: true,
 			autoIncrement: true,
 		},
+		optionName: {
+			type: DataTypes.TEXT,
+			allowNull: false,
+			defaultValue: "default"
+		},
 		fromDate: {
 			type: DataTypes.DATE,
 			allowNull: false,

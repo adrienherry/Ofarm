@@ -34,8 +34,8 @@ UPDATE
 SET
    name_slug = slugify (name);
 
-ALTER TABLE "water_type"
-   ADD CONSTRAINT water_type_name_slug_unique UNIQUE (name_slug),
+ALTER TABLE "exposition"
+   ADD CONSTRAINT exposition_species_slug_unique UNIQUE (name_slug),
    ALTER COLUMN name_slug SET NOT NULL;
 
 UPDATE
