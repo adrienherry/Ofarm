@@ -33,7 +33,7 @@ const HomePage = () => {
           sm={11}
           xs={11}
           className="homepage__container"
-          data-aos="slide-up"
+          data-aos="fade-up"
         >
           <CarrouselContainer />
         </Grid>
