@@ -199,4 +199,10 @@ router.delete(
 	gardenController.removeGarden,
 );
 
+
+// PATCH /event/:id (token)
+// DELETE /event/:id (token)
+
+
+
 module.exports = router;
