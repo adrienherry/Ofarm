@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Grid, useTheme, useMediaQuery } from '@material-ui/core';
 import './individual-species.scss';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import aos from 'aos';
 import convertEventDate from '../../../utils/convertDate';
 import { fetchOneSpecies, fetchSpeciesList } from '../../../store/actions/species';
@@ -60,8 +60,9 @@ const IndividualSpecies = () => {
   }
 
   return (
-    <div className="individual-species" style={style}>
+    <>
       {species && (
+      <div className="individual-species" style={style}>
         <>
           <Grid container direction="row" justifyContent={isMedium ? 'center' : 'space-between'}>
             <Grid item lg={4} md={4} sm={7} xs={12} container justifyContent="center">
@@ -159,8 +160,9 @@ const IndividualSpecies = () => {
             </Grid>
           </Grid>
         </>
+      </div>
       )}
-    </div>
+    </>
   );
 };
 

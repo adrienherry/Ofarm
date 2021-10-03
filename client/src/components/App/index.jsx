@@ -23,7 +23,7 @@ import { isConnected } from '../../store/actions/authentification';
 import IndividualSpecies from '../pages/IndividualSpecies';
 import { setIsReadyToRedirectToLoginToFalse } from '../../store/actions/register';
 import { resetSpecies } from '../../store/actions/species';
-import { collapseContainer, resetSearchValue } from '../../store/actions/searchbar';
+import IndividualGarden from '../pages/User/IndividualGarden';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -87,6 +87,11 @@ const App = () => {
           {logged && (
           <Route path={`/${usernameSlug}/gardens`} exact>
             <Gardens />
+          </Route>
+          )}
+          {logged && (
+          <Route path={`/${usernameSlug}/gardens/:slug`} exact>
+            <IndividualGarden />
           </Route>
           )}
           <Redirect from="/logout" to="/login" />

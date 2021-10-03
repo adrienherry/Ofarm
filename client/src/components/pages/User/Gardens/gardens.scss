@@ -2,4 +2,11 @@
 
 .myGarden {
   padding: 3rem;
+
+  &__container-loader {
+    height: 20vh;
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+  }
 }

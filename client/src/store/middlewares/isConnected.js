@@ -7,12 +7,12 @@ export default (store) => (next) => async (action) => {
     case IS_CONNECTED:
       try {
         const response = await axiosInstance.get('/user');
+        console.log(response.data);
         store.dispatch(setLoggedToTrue());
         store.dispatch(setUserInfo({
           username: response.data.username,
           usernameSlug: response.data.usernameSlug,
         }));
-        console.log(response.data);
       }
       catch (error) {
         console.log(error);
