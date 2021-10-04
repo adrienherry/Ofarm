@@ -9,11 +9,18 @@ export default (store) => (next) => async (action) => {
     case CREATE_GARDEN:
       try {
         const { createGarden: { gardenName, speciesChoosenList } } = store.getState();
-        const speciesId = speciesChoosenList.map((species) => species.id);
+        const { user: { token } } = store.getState();
         const response = await axiosInstance.post('/garden', {
           name: gardenName,
-          species: speciesId,
+          species: speciesChoosenList,
+        }, {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            Authorization: `Bearer ${token}`,
+          },
         });
+
+        console.log(response.data);
 
         store.dispatch(resetGardenInfo());
       }
@@ -25,8 +32,14 @@ export default (store) => (next) => async (action) => {
       break;
     case FETCH_GARDENS:
       try {
+        const { user: { token } } = store.getState();
         store.dispatch(setIsGardensLoadingToTrue());
-        const response = await axiosInstance('/user');
+        const response = await axiosInstance('/user', {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            Authorization: `Bearer ${token}`,
+          },
+        });
         store.dispatch(setUserGardens(response.data.gardens));
         store.dispatch(setIsGardensLoadingToFalse());
       }

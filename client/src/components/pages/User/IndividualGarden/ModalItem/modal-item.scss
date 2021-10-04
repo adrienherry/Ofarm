@@ -1,0 +1,28 @@
+@use '../../../../../styles/vars';
+
+.modal-item {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: vars.$shadow-card-item;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    &__image-container {
+     width: 10rem;
+     height: 7rem;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5rem;
+    }
+
+    &__tag-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}

@@ -7,4 +7,10 @@ const convertEventDate = (date) => {
   return convertedDate;
 };
 
+export const convertModalDate = (date) => {
+  dayjs.locale(fr);
+  const convertedDate = dayjs(date).format('DD MMMM YYYY');
+  return convertedDate;
+};
+
 export default convertEventDate;

@@ -4,7 +4,6 @@ import debugMiddleware from './middlewares/debug';
 import speciesMiddleware from './middlewares/species';
 import registerMiddleware from './middlewares/register';
 import authMiddleware from './middlewares/auth';
-import isConnectedMiddleware from './middlewares/isConnected';
 import searchbarMiddleware from './middlewares/searchbar';
 import userMiddleware from './middlewares/user';
 import logoutMiddleware from './middlewares/logout';
@@ -17,7 +16,6 @@ const middlewares = [
   speciesMiddleware,
   registerMiddleware,
   authMiddleware,
-  isConnectedMiddleware,
   searchbarMiddleware,
   userMiddleware,
   logoutMiddleware,

@@ -24,14 +24,6 @@ export const setLoggedToTrue = () => (
   }
 );
 
-export const IS_CONNECTED = 'IS_CONNECTED';
-
-export const isConnected = () => (
-  {
-    type: IS_CONNECTED,
-  }
-);
-
 export const SET_LOGGED_TO_FALSE = 'SET_LOGGED_TO_FALSE';
 
 export const setLoggedToFalse = () => (

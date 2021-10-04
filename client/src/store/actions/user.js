@@ -22,3 +22,21 @@ export const setUserInfo = (payload) => (
     payload,
   }
 );
+
+export const SET_USER_TOKEN = 'SET_USER_TOKEN';
+
+export const setUserToken = (token) => (
+  {
+    type: SET_USER_TOKEN,
+    token,
+  }
+);
+
+export const SET_NEW_USERNAMESLUG = 'SET_NEW_USERNAMESLUG';
+
+export const setNewUsernameSlug = (slug) => (
+  {
+    type: SET_NEW_USERNAMESLUG,
+    slug,
+  }
+);

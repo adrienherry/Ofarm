@@ -23,6 +23,7 @@ const UserProfilForm = ({
   const inputEmail = useRef();
   const disabled = useSelector((state) => state.profil.disabled);
   const disabled2 = useSelector((state) => state.profil.disabled2);
+  const usernameSlug = useSelector((state) => state.user.usernameSlug);
 
   const handleChangeFieldUsernameProfil = (event) => {
     dispatch(setUsernameProfil(event.target.value));

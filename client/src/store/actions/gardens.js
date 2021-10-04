@@ -66,3 +66,37 @@ export const setEvents = (events) => (
     events,
   }
 );
+
+export const OPEN_MODAL = 'OPEN_MODAL';
+
+export const openModal = () => (
+  {
+    type: OPEN_MODAL,
+  }
+);
+
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+
+export const closeModal = () => (
+  {
+    type: CLOSE_MODAL,
+  }
+);
+
+export const SET_MODAL_DATE = 'SET_MODAL_DATE';
+
+export const setModalDate = (date) => (
+  {
+    type: SET_MODAL_DATE,
+    date,
+  }
+);
+
+export const SET_MODAL_EVENTS = 'SET_MODAL_EVENTS';
+
+export const setModalEvents = (events) => (
+  {
+    type: SET_MODAL_EVENTS,
+    events,
+  }
+);

@@ -11,7 +11,7 @@ import UserList from './UserList';
 import './userProfil.scss';
 import { fetchUserInfo } from '../../../../store/actions/profil';
 
-const User = () => {
+const UserProfil = () => {
   dayjs.locale(fr);
   const dispatch = useDispatch();
   const theme = useTheme();
@@ -51,4 +51,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default UserProfil;
