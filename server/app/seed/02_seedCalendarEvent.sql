@@ -18,7 +18,7 @@ INSERT INTO "calendar_event" (
    name,
    garden_id,
    species_id,
-   event_type_id,
+   event_id,
    from_date,
    until_date
    )

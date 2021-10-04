@@ -2,7 +2,9 @@ const EventType = require("./eventType");
 const Event = require("./event");
 const Species = require("./species");
 const Garden = require("./garden");
+
 const User = require("./user");
+const CalendarEvent = require("./calendarEvent");
 
 const Exposition = require("./exposition");
 const SoilType = require("./soilType");
@@ -122,7 +124,27 @@ WaterNeed.belongsToMany(Species, {
 	onDelete: "cascade",
 });
 
-Garden.hasMany;
+CalendarEvent.belongsTo(Garden, {
+	foreignKey: "gardenId",
+	as: "garden",
+	onDelete: "cascade",
+});
+
+Garden.hasMany(CalendarEvent, {
+	foreignKey: "gardenId",
+	as: "calendarEvents",
+});
+
+CalendarEvent.belongsTo(Event, {
+	foreignKey: "eventId",
+	as: "baseEvent",
+	onDelete: "cascade",
+});
+
+Event.hasMany(CalendarEvent, {
+	foreignKey: "eventId",
+	as: "calendarEvents",
+});
 
 module.exports = {
 	EventType,
@@ -134,4 +156,5 @@ module.exports = {
 	WaterNeed,
 	SoilType,
 	CultureType,
+	CalendarEvent
 };
