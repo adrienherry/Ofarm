@@ -83,11 +83,11 @@ router.post(
 	authController.login,
 );
 
-// router.get(
-// 	"/logout",
-// 	jwtService.verifyAndDecodeTokenMiddleware,
-// 	authController.logout,
-// );
+router.get(
+	"/logout",
+	jwtService.verifyAndDecodeTokenMiddleware,
+	authController.logout,
+);
 
 // REGISTERED USER ROUTES
 
