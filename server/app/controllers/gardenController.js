@@ -1,6 +1,6 @@
 const db = require("../services/sequelize");
-const { Op } = require("sequelize");
-const { Garden } = require("../models");
+const { Op, transaction } = require("sequelize");
+const { Garden, Species } = require("../models");
 const { standardErrors, slugify } = require("../helpers");
 
 const gardenController = {
@@ -26,7 +26,12 @@ const gardenController = {
 								association: "events",
 								include: "eventType",
 								attributes: {
-									exclude: ["createdAt", "updatedAt", "speciesId", "eventTypeId"],
+									exclude: [
+										"createdAt",
+										"updatedAt",
+										"speciesId",
+										"eventTypeId",
+									],
 								},
 							},
 						],
@@ -76,6 +81,7 @@ const gardenController = {
 				return;
 			}
 
+			// console.log(speciesIds);
 			const newGarden = await Garden.create({
 				name: formattedName,
 				nameSlug: slugify(formattedName),
@@ -86,10 +92,19 @@ const gardenController = {
 				res.status(500).json(standardErrors.FailedCreateError);
 			}
 
+			const gardenSpecies = req.body.species.map(({ id }) => {
+				return new Species({ id: id });
+			});
+
+			await newGarden.setSpecies(gardenSpecies);
+
+			// await newGarden.save();
+
+			// Add species to new garden here
+
 			res.json({
 				id: newGarden.id,
 			});
-			
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(error);
