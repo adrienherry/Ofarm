@@ -104,6 +104,8 @@ const gardenController = {
 
 			res.json({
 				id: newGarden.id,
+				name: newGarden.name,
+				nameSlug: newGarden.nameSlug
 			});
 		} catch (error) {
 			console.log(error);
