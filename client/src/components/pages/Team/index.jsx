@@ -1,39 +1,39 @@
 import React from 'react';
 import './team.scss';
 import TeamInfos from './TeamInfos';
-import Pic1 from '/pic1.jpg';
-import Pic2 from '/pic2.jpg';
-import Pic3 from '/pic3.jpg';
+import PictureFlorian from '/florian.jpg';
+import PictureNicolas from '/nicolas.jpg';
+import PictureAdrien from '/adrien.jpg';
 // import Pic4 from '/pic4.jpg';
-import Pic5 from '/pic5.jpg';
-import Pic6 from '/pic6.jpg';
+import PictureLaurence from '/laurence.jpg';
+import PictureMickael from '/mickael.png';
 
 const Team = () => (
 
   <div className="team">
 
-    <div className="team__titre">La fine équipe !</div>
+    <div className="team__title">La fine équipe !</div>
 
     <div className="team__content">
 
       <div>
-        <TeamInfos name="Florian NGUYEN" role="Product Owner" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={Pic1} />
+        <TeamInfos name="Florian NGUYEN" role="Product Owner" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={PictureFlorian} />
       </div>
 
       <div>
-        <TeamInfos name="Nicolas LEONARDON" role="Git Master" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={Pic2} />
+        <TeamInfos name="Nicolas LEONARDON" role="Git Master" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={PictureNicolas} />
       </div>
 
       <div>
-        <TeamInfos name="Adrien HERRY" role="Référent technique" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={Pic3} />
+        <TeamInfos name="Adrien HERRY" role="Référent technique" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={PictureAdrien} />
       </div>
 
       <div>
-        <TeamInfos name="Laurence OCCHIPINTI" role="Lead Dev Front" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={Pic6} />
+        <TeamInfos name="Laurence OCCHIPINTI" role="Lead Dev Front" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={PictureLaurence} />
       </div>
 
       <div>
-        <TeamInfos name="Mickaël BELJIO" role="Scrum Master" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={Pic5} />
+        <TeamInfos name="Mickaël BELJIO" role="Scrum Master" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={PictureMickael} />
       </div>
 
     </div>
