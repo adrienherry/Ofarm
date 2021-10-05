@@ -21,7 +21,6 @@ Exposition.init(
 		underscored: true,
 		modelName: "Exposition",
 		tableName: "exposition",
-		timestamps: true,
 	},
 );
 

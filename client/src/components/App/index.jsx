@@ -69,15 +69,16 @@ const App = () => {
           <Route path="/register" exact>
             <Register />
           </Route>
+          <Route path="/team" exact>
+						<Team />
+					</Route>
+					<Route path="/terms" exact>
+						<LegalNotice />
+					</Route>
           <Route path="/species/:slug" exact component={IndividualSpecies} />
           {logged && (
           <Route path={`/${usernameSlug}/createGarden`} exact>
             <CreateGarden />
-          </Route>
-          )}
-          {logged && (
-          <Route path={`/${usernameSlug}/profile`} exact>
-            <UserProfil />
           </Route>
           )}
           {logged && (

@@ -5,17 +5,10 @@ import PropTypes from 'prop-types';
 const LegalNoticeContent = ({ titre, text }) => (
 
   <div className="content">
-
-    <p className="content__titre">{titre}</p>
+    <h1 className="content__title">{titre}</h1>
     <p className="content__text">{text}</p>
-
   </div>
 
 );
-
-// LegalNoticeContent.propTypes = {
-//   titre: PropTypes.string.isRequired,
-//   text: PropTypes.string.isRequired,
-// };
 
 export default LegalNoticeContent;

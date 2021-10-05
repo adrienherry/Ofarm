@@ -93,11 +93,18 @@ const userController = {
 					user.hashedPassword,
 				);
 
-				if (password !== user.hashedPassword)
+				if (!isEqual)
 					user.hashedPassword = bcrypt.hashSync(password, saltRounds);
 			}
-			const results = await user.save();
-			res.json({ updated: true });
+
+			const editedUser = await user.save();
+
+			console.log({
+				username: editedUser.username,
+				usernameSlug: editedUser.usernameSlug,
+				email: editedUser.email
+			})
+			res.json(results);
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(error);

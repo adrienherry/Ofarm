@@ -1,25 +1,30 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../services/sequelize");
 
-class Event extends Model {}
+class CalendarEvent extends Model {}
 
 /**
- * @typedef Event
+ * @typedef CalendarEvent
  * @property {integer} id - id of the event
+ * @property {text} comment - custom comment associated to the event and defined by the user
  * @property {date} fromDate.required - date at which the event starts
  * @property {date} untilDate.required - date at which the event ends
  */
-Event.init(
+CalendarEvent.init(
 	{
 		id: {
 			type: DataTypes.INTEGER, // 指定值的类型
 			primaryKey: true,
 			autoIncrement: true,
 		},
-		optionName: {
+		name: {
 			type: DataTypes.TEXT,
 			allowNull: false,
-			defaultValue: "default"
+		},
+		comment: {
+			type: DataTypes.TEXT,
+			allowNull: true,
+			defaultValue: "",
 		},
 		fromDate: {
 			type: DataTypes.DATE,
@@ -28,14 +33,14 @@ Event.init(
 		untilDate: {
 			type: DataTypes.DATE,
 			allowNull: false,
-		},
+        },
 	},
 	{
 		sequelize,
 		underscored: true,
-		modelName: "Event",
-		tableName: "event",
+		modelName: "CalendarEvent",
+		tableName: "calendar_event",
 	},
 );
 
-module.exports = Event;
+module.exports = CalendarEvent;

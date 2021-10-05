@@ -3,6 +3,7 @@ const species = require("./species_agribalyse.json");
 const users = require("./users.json");
 const eventTypes = require("./eventType.json");
 const gardens = require("./gardens.json");
+const colors = require("./colors.json");
 
 const sqlFilename = __dirname + `/01_seed_agribalyse.sql`;
 
@@ -59,11 +60,11 @@ writeStream.write("\n");
 
 // EVENT_TYPE TABLE
 
-writeStream.write(`INSERT INTO "event_type" (name) VALUES\n`);
+writeStream.write(`INSERT INTO "event_type" (name, color) VALUES\n`);
 
 eventTypes.forEach((item, index) => {
 	writeStream.write(
-		`('${formatTextForSql(item.name)}')` +
+		`('${formatTextForSql(item.name)}', '${item.color}')` +
 			(index !== eventTypes.length - 1 ? "," : ";") +
 			"\n",
 	);
@@ -124,16 +125,20 @@ writeStream.write("\n");
 
 // SPECIES TABLE
 
-writeStream.write(`INSERT INTO "species" (name,image_url, co2_data) VALUES\n`);
+writeStream.write(`INSERT INTO "species" (name,image_url, color, co2_data) VALUES\n`);
 
 species.forEach((item, index) => {
 	const co2_data = item.co2_data
 		? JSON.stringify(item.co2_data).replace("'", "''")
 		: JSON.stringify(null);
+	const color = colors[index];
 	writeStream.write(
-		`('${formatTextForSql(item.name)}','${
+		`('${formatTextForSql(item.name)}',
+		'${
 			item.image_url
-		}','${co2_data}'::JSON)` +
+		}',
+		'${color}',
+		'${co2_data}'::JSON)` +
 			(index !== species.length - 1 ? "," : ";") +
 			"\n",
 	);
@@ -319,4 +324,4 @@ writeStream.write("COMMIT;\n");
 
 writeStream.close();
 
-console.log("SQL file generation : complete!")
+console.log("SQL file generation : complete!");

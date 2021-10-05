@@ -21,7 +21,6 @@ WaterNeed.init(
 		underscored: true,
 		modelName: "WaterNeed",
 		tableName: "water_need",
-		timestamps: false,
 	},
 );
 
