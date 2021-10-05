@@ -5,6 +5,12 @@ import aos from 'aos';
 import 'aos/dist/aos.css';
 import PitchSection from './PitchSection';
 
+import co2Icon from "/icons8-co2-60.png";
+
+import sproutImage from "/icons8-sprout-60.png";
+import booksImage from "/icons8-books-60.png";
+// import handsImage from "/icons8-hands-60.png";
+// 
 const PitchContainer = () => {
   useEffect(() => {
     aos.init({
@@ -22,17 +28,26 @@ const PitchContainer = () => {
         </Grid>
         <Grid item container justifyContent="flex-end" lg={12} data-aos="fade-left" data-aos-delay="100">
           <Grid item lg={9} md={9} mb={5}>
-            <PitchSection title="Quoi de plus local que de le faire soi-même !" text="Chez O’Farm, nous rêvons d’une société reconnectée à la nature, où chacun fait lui-même pousser une partie de ce qu’il mange, composte ses déchets, et transmet ces habitudes de vie à ses enfants.  C’est bon pour vous, c’est bon pour la planète, alors on se retrousse les manches et on y va !" />
+            <PitchSection
+              title="Quoi de plus local que de le faire soi-même !"
+              img={sproutImage}
+              text="Chez O’Farm, nous rêvons d’une société reconnectée à la nature, où chacun fait lui-même pousser une partie de ce qu’il mange, composte ses déchets, et transmet ces habitudes de vie à ses enfants.  C’est bon pour vous et votre famille, c’est bon pour la planète, alors on se retrousse les manches et on y va !" />
           </Grid>
         </Grid>
         <Grid item container justifyContent="flex-start" lg={12} mb={5} data-aos="fade-right" data-aos-delay="200">
           <Grid item lg={9} md={9}>
-            <PitchSection title="Choisissez vos variétés, planifiez, et apprenez de vos erreurs !" text="Nous mettons à votre disposition une bibliothèque de variétés variétés maraîchères et nous vous aidons à choisir les plus adaptées à votre jardin. Avec O’Farm, vous pouvez aussi consulter votre calendrier de tâches à réaliser, et garder une trace de vos précédentes saisons." />
+            <PitchSection
+              title="Découvrez, apprenez, planifiez, partagez !"
+              img={booksImage}
+              text="Nous mettons à votre disposition une bibliothèque de variétés maraîchères et vous permettons de choisir les plus adaptées à votre jardin en vous appuyant sur les conseils de notre communauté. Avec O'Farm, planifiez également vos semis, repiquages et récoltes grâce à notre calendrier et à notre outil de visualisation de votre jardin !" />
           </Grid>
         </Grid>
         <Grid item container justifyContent="flex-end" lg={12} mb={3} data-aos="fade-left" data-aos-delay="300">
           <Grid item lg={9} md={9}>
-            <PitchSection title="Mesurons ensemble notre impact" text="Saisissez vos récoltes, estimez les émissions de CO2 évitées grâce à votre nouveau mode de vie, et ajoutez votre contribution à celle de notre communauté de jardiniers passionnés ! " />
+            <PitchSection
+              title="Mesurons ensemble l'impact de notre action !"
+              img={co2Icon}
+              text="Lorsque vous saisissez les quantités que vous avez récoltées dans votre jardin, nous estimons les émissions de CO2 évitées grâce à votre action et ajoutons votre contribution à celle de tous nos membres ! Rejoignez-nous !" />
           </Grid>
         </Grid>
       </Grid>
