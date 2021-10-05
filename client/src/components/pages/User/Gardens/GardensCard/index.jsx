@@ -17,7 +17,7 @@ const GardensCard = ({ title, description, titleSlug }) => {
       <Card sx={{
         maxWidth: 345,
         boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
-        marginTop: 10,
+        marginBottom: '3rem',
       }}
       >
         <CardActionArea>

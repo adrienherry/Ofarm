@@ -11,7 +11,7 @@ import {
 
 const initialState = {
   garden: null,
-  selectedSpecies: 'Tous',
+  selectedSpecies: '',
   selectedEventType: 'Tous',
   events: [],
   isModalOpen: false,

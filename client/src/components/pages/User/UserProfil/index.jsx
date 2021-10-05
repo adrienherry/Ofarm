@@ -10,6 +10,7 @@ import cow from '../../../../../public/cow.jpg';
 import UserList from './UserList';
 import './userProfil.scss';
 import { fetchUserInfo } from '../../../../store/actions/profil';
+import UserHeader from '../UserHeader';
 
 const UserProfil = () => {
   dayjs.locale(fr);
@@ -28,26 +29,29 @@ const UserProfil = () => {
   }, []);
 
   return (
-    <div className="userProfil">
-      <Grid container justifyContent="center">
-        <Grid item mr={isMedium ? 0 : 10} mb={isMedium ? 10 : 0} mt={isMedium ? 5 : 0}>
-          <UserInformation
-            img={cow}
-            username={usernameProfil}
-            email={emailProfil}
-            createdAt={createdAt}
-            updatedAt={updatedAt}
-          />
+    <>
+      <UserHeader />
+      <div className="userProfil">
+        <Grid container justifyContent="center">
+          <Grid item mr={isMedium ? 0 : 10} mb={isMedium ? 10 : 0} mt={isMedium ? 5 : 0}>
+            <UserInformation
+              img={cow}
+              username={usernameProfil}
+              email={emailProfil}
+              createdAt={createdAt}
+              updatedAt={updatedAt}
+            />
+          </Grid>
+          <Grid item lg={5} md={6} sm={10} xs={10}>
+            <UserProfilForm
+              button="Enregistrer les informations"
+              usernameProfil={usernameProfil}
+              emailProfil={emailProfil}
+            />
+          </Grid>
         </Grid>
-        <Grid item lg={5} md={6} sm={10} xs={10}>
-          <UserProfilForm
-            button="Enregistrer les informations"
-            usernameProfil={usernameProfil}
-            emailProfil={emailProfil}
-          />
-        </Grid>
-      </Grid>
-    </div>
+      </div>
+    </>
   );
 };
 

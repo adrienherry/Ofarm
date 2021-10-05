@@ -16,3 +16,28 @@
     }
 
 }
+.calendar {
+    box-sizing: border-box;
+}
+
+.day-content {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.month-container {
+    box-shadow: vars.$shadow-card-item;
+    border-radius: 0.5rem;margin-bottom: 0.5rem;
+}
+
+
+
+.calendar-container {
+    background-color: vars.$background-card-color;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: vars.$shadow-card-item;
+}

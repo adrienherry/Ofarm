@@ -31,3 +31,11 @@ export const setLoggedToFalse = () => (
     type: SET_LOGGED_TO_FALSE,
   }
 );
+
+export const IS_CONNECTED = 'IS_CONNECTED';
+
+export const isConnected = () => (
+  {
+    type: IS_CONNECTED,
+  }
+);

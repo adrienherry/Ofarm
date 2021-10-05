@@ -17,27 +17,29 @@ const Gardens = () => {
   }, []);
 
   return (
-    <div className="myGarden">
+    <>
       <UserHeader />
-      <Grid container justifyContent="center">
-        {gardens && (
-          gardens.map((garden) => (
-            <Grid item m={3} key={garden.id}>
-              <GardensCard
-                title={garden.name}
-                description="Je ne plante rien mais je récolte tout !!"
-                titleSlug={garden.nameSlug}
-              />
-            </Grid>
-          ))
-        )}
-        {isGardensLoading && (
-        <div className="myGarden__container-loader">
-          <CircleLoader color="#3d3b2c" size={120} />
-        </div>
-        )}
-      </Grid>
-    </div>
+      <div className="myGarden">
+        <Grid container justifyContent="center">
+          {gardens && (
+            gardens.map((garden) => (
+              <Grid item mr={3} ml={3} mb={3} key={garden.id}>
+                <GardensCard
+                  title={garden.name}
+                  description="Je ne plante rien mais je récolte tout !!"
+                  titleSlug={garden.nameSlug}
+                />
+              </Grid>
+            ))
+          )}
+          {isGardensLoading && (
+          <div className="myGarden__container-loader">
+            <CircleLoader color="#3d3b2c" size={120} />
+          </div>
+          )}
+        </Grid>
+      </div>
+    </>
   );
 };
 

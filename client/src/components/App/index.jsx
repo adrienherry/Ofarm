@@ -19,7 +19,7 @@ import About from '../pages/About';
 import LegalNotice from '../pages/LegalNotice';
 import { collapseUserMenu, setUserInfo, setUserToken } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
-import { setLoggedToTrue } from '../../store/actions/authentification';
+import { isConnected, setLoggedToTrue } from '../../store/actions/authentification';
 import IndividualSpecies from '../pages/IndividualSpecies';
 import { setIsReadyToRedirectToLoginToFalse } from '../../store/actions/register';
 import { resetSpecies } from '../../store/actions/species';
@@ -43,14 +43,9 @@ const App = () => {
   }, [location]);
 
   useEffect(() => {
-    dispatch(setUserInfo({
-      username: localStorage.getItem('username'),
-      usernameSlug: localStorage.getItem('usernameSlug'),
-      email: localStorage.getItem('email'),
-    }));
-    dispatch(setUserToken(localStorage.getItem('jwt')));
     if (localStorage.getItem('jwt')) {
-      dispatch(setLoggedToTrue());
+      dispatch(setUserToken(localStorage.getItem('jwt')));
+      dispatch(isConnected());
     }
   }, []);
 

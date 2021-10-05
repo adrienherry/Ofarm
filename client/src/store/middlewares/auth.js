@@ -1,5 +1,6 @@
 import { axiosInstance } from '../../services/axios';
 import {
+  IS_CONNECTED,
   SEND_LOGIN_FORM, setLoggedToTrue,
 } from '../actions/authentification';
 import { setUserInfo, setUserToken } from '../actions/user';
@@ -14,9 +15,6 @@ export default (store) => (next) => async (action) => {
           password: passwordLogin,
         });
         localStorage.setItem('jwt', response.data.token);
-        localStorage.setItem('username', response.data.username);
-        localStorage.setItem('usernameSlug', response.data.usernameSlug);
-        localStorage.setItem('email', response.data.email);
         store.dispatch(setUserToken(response.data.token));
         store.dispatch(setUserInfo({
           username: response.data.username,
@@ -27,6 +25,27 @@ export default (store) => (next) => async (action) => {
       }
       catch (error) {
         console.log(error.response);
+      }
+      next(action);
+      break;
+    case IS_CONNECTED:
+      try {
+        const { user: { token } } = store.getState();
+        const response = await axiosInstance.get('/user', {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        store.dispatch(setUserInfo({
+          username: response.data.username,
+          usernameSlug: response.data.usernameSlug,
+          email: response.data.email,
+        }));
+        store.dispatch(setLoggedToTrue());
+      }
+      catch (error) {
+        console.log(error);
       }
       next(action);
       break;

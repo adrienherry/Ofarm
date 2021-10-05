@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import Typography from '@mui/material/Typography';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/core/ModalUnstyled';
-import Modal from '@mui/material/Modal';
+import UserHeader from '../UserHeader';
 import { findGarden } from '../../../../selectors/garden';
 import {
   closeModal, fetchGardens, openModal, setModalDate, setModalEvents, setUserGarden,
@@ -22,6 +21,7 @@ const IndividualGarden = () => {
   const isModalOpen = useSelector((state) => state.garden.isModalOpen);
   const modalDate = useSelector((state) => state.garden.modalDate);
   const modalEvents = useSelector((state) => state.garden.modalEvents);
+  console.log(modalEvents);
 
   const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -81,6 +81,7 @@ const IndividualGarden = () => {
   }, []);
   return (
     <>
+      <UserHeader />
       {userGarden && (
         <div className="individual-garden">
           <GardenCalendar onDayClick={handleOnDayClick} />

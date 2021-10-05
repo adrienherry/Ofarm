@@ -4,20 +4,35 @@ import {
 } from '@material-ui/core';
 import ButtonUserSection from '../ButtonUserSection';
 import './user-header.scss';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const UserHeader = () => {
   const theme = useTheme();
   const isMedium = useMediaQuery(theme.breakpoints.down('md'));
+  const usernameSlug = useSelector((state) => state.user.usernameSlug);
   return (
     <header className="user-header">
       <Grid container justifyContent={isMedium ? 'center' : 'space-between'}>
         <Grid item mb={isMedium ? 4 : 0} lg={4} md={5} sm={10}>
-          <ButtonUserSection name="Créer un nouveau jardin" />
+          <NavLink
+            to={`/${usernameSlug}/createGarden`}
+          >
+            <ButtonUserSection name="Créer un nouveau jardin" />
+          </NavLink>
         </Grid>
         <Grid item lg={5} md={6} sm={10}>
           <Stack direction="row" spacing={2} justifyContent={isMedium ? 'flex-start' : 'flex-end'}>
-            <ButtonUserSection name="Mes jardins" />
-            <ButtonUserSection name="Information personnelles" disabled />
+            <NavLink
+              to={`/${usernameSlug}/gardens`}
+            >
+              <ButtonUserSection name="Mes jardins" />
+            </NavLink>
+            <NavLink
+              to={`/${usernameSlug}/profile`}
+            >
+              <ButtonUserSection name="Information personnelles" />
+            </NavLink>
           </Stack>
         </Grid>
       </Grid>
