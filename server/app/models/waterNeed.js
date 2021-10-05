@@ -15,6 +15,11 @@ WaterNeed.init(
 			allowNull: false,
 			unique: true,
 		},
+		value: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+			unique: true,
+		},
 	},
 	{
 		sequelize,
