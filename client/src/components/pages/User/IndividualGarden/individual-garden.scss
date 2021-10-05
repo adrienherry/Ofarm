@@ -1,0 +1,15 @@
+@use '../../../../styles/vars';
+
+.individual-garden {
+    margin-top: 3rem;
+}
+
+.modal-item__container {
+    overflow: auto
+}
+
+.modal__title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-family: vars.$font;
+}
