@@ -31,7 +31,10 @@ const eventController = {
 					association: "",
 					include: [{
 						model: EventType,
-						as: "eventType"
+						as: "eventType",
+						attributes: {
+						exclude: ["createdAt", "updatedAt"]
+					}
 					}],
 					attributes: {
 						exclude: ["createdAt", "updatedAt", "speciesId", "eventTypeId"]
