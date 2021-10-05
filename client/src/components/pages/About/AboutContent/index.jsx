@@ -8,8 +8,10 @@ const AboutContent = ({ titre, text }) => {
   const isMedium = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <div className="content">
-      <p className="content__titre">{titre}</p>
-      <p className="content__text" style={isMedium ? { marginLeft: '2rem' } : {}}>{text}</p>
+      <h2 className="content__titre">{titre}</h2>
+      <div className="content__text">
+        {text}
+      </div>
     </div>
   );
 };
