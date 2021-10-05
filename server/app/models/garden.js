@@ -43,7 +43,6 @@ Garden.init(
 
 		modelName: "Garden",
 		tableName: "garden",
-		timestamps: true,
 	},
 );
 

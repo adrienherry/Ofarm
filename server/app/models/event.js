@@ -35,7 +35,6 @@ Event.init(
 		underscored: true,
 		modelName: "Event",
 		tableName: "event",
-		timestamps: true,
 	},
 );
 
