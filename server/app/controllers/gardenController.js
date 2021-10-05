@@ -1,6 +1,6 @@
 const db = require("../services/sequelize");
 const { Op, transaction } = require("sequelize");
-const { Garden, Species } = require("../models");
+const { Garden, Species, EventType } = require("../models");
 const { standardErrors, slugify } = require("../helpers");
 
 const gardenController = {
@@ -17,14 +17,21 @@ const gardenController = {
 
 			const gardenItem = await Garden.findByPk(garden_id, {
 				include: [
-					"species",
+					{
+						model: Species,
+						as: "species",
+					},
 					{
 						association: "species",
 						include: [
 							"events",
 							{
 								association: "events",
-								include: "eventType",
+								include: {
+									model: EventType,
+									as: "eventType",
+									attributes: { exclude: ["createdAt", "updatedAt"] },
+								},
 								attributes: {
 									exclude: [
 										"createdAt",
@@ -105,7 +112,7 @@ const gardenController = {
 			res.json({
 				id: newGarden.id,
 				name: newGarden.name,
-				nameSlug: newGarden.nameSlug
+				nameSlug: newGarden.nameSlug,
 			});
 		} catch (error) {
 			console.log(error);
