@@ -27,7 +27,7 @@ const soil_type_array = [
 	"tout type",
 ];
 
-const formatTextForSql = (str) => str.replace("'", "''");
+const formatTextForSql = (str) => str.split("'").join("''");
 
 const reformatDate = (str) => {
 	[day, month, year] = str.split("-");
@@ -125,7 +125,7 @@ writeStream.write("\n");
 
 // SPECIES TABLE
 
-writeStream.write(`INSERT INTO "species" (name,image_url, color, co2_data) VALUES\n`);
+writeStream.write(`INSERT INTO "species" (name,description,image_url,color,co2_data) VALUES\n`);
 
 species.forEach((item, index) => {
 	const co2_data = item.co2_data
@@ -134,9 +134,8 @@ species.forEach((item, index) => {
 	const color = colors[index];
 	writeStream.write(
 		`('${formatTextForSql(item.name)}',
-		'${
-			item.image_url
-		}',
+		'${formatTextForSql(item.description)}',
+		'${item.image_url}',
 		'${color}',
 		'${co2_data}'::JSON)` +
 			(index !== species.length - 1 ? "," : ";") +
