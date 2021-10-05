@@ -21,7 +21,6 @@ SoilType.init(
 		underscored: true,
 		modelName: "SoilType",
 		tableName: "soil_type",
-		timestamps: false,
 	},
 );
 

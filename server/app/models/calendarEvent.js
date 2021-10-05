@@ -40,7 +40,6 @@ CalendarEvent.init(
 		underscored: true,
 		modelName: "CalendarEvent",
 		tableName: "calendar_event",
-		timestamps: true,
 	},
 );
 

@@ -46,7 +46,6 @@ User.init(
 		underscored: true,
 		modelName: "User",
 		tableName: "user",
-		timestamps: true,
 	},
 );
 

@@ -5,6 +5,8 @@ const {
 	Exposition,
 	CultureType,
 	WaterNeed,
+	Event,
+	EventType
 } = require("../models");
 const { standardErrors } = require("../helpers");
 
@@ -16,25 +18,33 @@ const speciesController = {
 					{
 						model: SoilType,
 						as: "soil",
-						attributes: ["id", "name", "nameSlug"],
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
 						through: { attributes: [] },
 					},
 					{
 						model: CultureType,
 						as: "culture",
-						attributes: ["id", "name", "nameSlug"],
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
 						through: { attributes: [] },
 					},
 					{
 						model: WaterNeed,
 						as: "water_need",
-						attributes: ["id", "name", "nameSlug", "value"],
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
 						through: { attributes: [] },
 					},
 					{
 						model: Exposition,
 						as: "exposition",
-						attributes: ["id", "name", "nameSlug", "value"],
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
 						through: { attributes: [] },
 					},
 				],
@@ -53,36 +63,53 @@ const speciesController = {
 			const id = parseInt(req.params.id);
 			const speciesItem = await Species.findByPk(id, {
 				include: [
-					"events",
 					{
-						association: "events",
-						include: "eventType",
+						model: Event,
+						as: "events",
 						attributes: {
 							exclude: ["createdAt", "updatedAt", "eventTypeId", "speciesId"],
 						},
 					},
 					{
+						association: "events",
+						include: {
+							model: EventType,
+							as: "eventType",
+							attributes: {
+								exclude: ["createdAt", "updatedAt"],
+							},
+						},
+					},
+					{
 						model: SoilType,
 						as: "soil",
-						attributes: ["id", "name", "nameSlug"],
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
 						through: { attributes: [] },
 					},
 					{
 						model: CultureType,
 						as: "culture",
-						attributes: ["id", "name", "nameSlug"],
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
 						through: { attributes: [] },
 					},
 					{
 						model: WaterNeed,
 						as: "water_need",
-						attributes: ["id", "name", "nameSlug", "value"],
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
 						through: { attributes: [] },
 					},
 					{
 						model: Exposition,
 						as: "exposition",
-						attributes: ["id", "name", "nameSlug", "value"],
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
 						through: { attributes: [] },
 					},
 				],

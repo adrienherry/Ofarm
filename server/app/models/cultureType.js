@@ -21,7 +21,6 @@ CultureType.init(
 		underscored: true,
 		modelName: "CultureType",
 		tableName: "culture_type",
-		timestamps: false,
 	},
 );
 
