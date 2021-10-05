@@ -1,0 +1,38 @@
+.paragraph {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+	box-sizing: content-box;
+	padding: 0 1rem;
+}
+
+.image-container {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin: auto;
+
+	min-width: 75px;
+	min-height: 75px;
+	height: 85px;
+	width: 85px;
+
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.text-content {
+	width: 85%;
+
+	& div {
+		margin: 1rem 0 0;
+	}
+}
+
+a {
+	font-weight: 600;
+	color: tomato;
+}
