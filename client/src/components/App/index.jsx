@@ -70,11 +70,11 @@ const App = () => {
             <Register />
           </Route>
           <Route path="/team" exact>
-						<Team />
-					</Route>
-					<Route path="/terms" exact>
-						<LegalNotice />
-					</Route>
+            <Team />
+          </Route>
+          <Route path="/terms" exact>
+            <LegalNotice />
+          </Route>
           <Route path="/species/:slug" exact component={IndividualSpecies} />
           {logged && (
           <Route path={`/${usernameSlug}/createGarden`} exact>

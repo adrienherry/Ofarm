@@ -23,11 +23,15 @@ const GardenCalendar = ({ onDayClick }) => {
   const calendarDate = convertCalendarDate(newDate);
 
   const eventTypeList = () => {
-    const list = [{ name: 'Tous', id: 0, color: '' }];
+    const list = [];
     garden.species.forEach((speciesItem) => {
       speciesItem.events.forEach((speciesEvent) => {
         if (!list.find((eventTypeItem) => eventTypeItem.name === speciesEvent.eventType.name)) {
-          list.push({ name: speciesEvent.eventType.name, id: generateId(list) });
+          list.push({
+            name: speciesEvent.eventType.name,
+            id: generateId(list),
+            color: speciesEvent.eventType.color,
+          });
         }
       });
     });
@@ -44,10 +48,10 @@ const GardenCalendar = ({ onDayClick }) => {
       const endDateEvent = convertCalendarDayDate(event.endDate);
       if (eventDate >= startDateEvent && eventDate <= endDateEvent) {
         if (!styleArray[0]) {
-          styleArray.push(`box-shadow: ${event.speciesColor} 0px ${(index + 1) * -2}px 0px 0px inset`);
+          styleArray.push(`box-shadow: ${event.eventColor} 0px ${(index + 1) * -2}px 0px 0px inset`);
         }
         else {
-          styleArray.push(`${event.speciesColor} 0px ${(index + 1) * -2}px 0px 0px inset`);
+          styleArray.push(`${event.eventColor} 0px ${(index + 1) * -2}px 0px 0px inset`);
         }
       }
     });
@@ -69,6 +73,7 @@ const GardenCalendar = ({ onDayClick }) => {
               startDate: new Date(convertCalendarEventDate(event.fromDate)),
               endDate: new Date(convertCalendarEventDate(event.untilDate)),
               imageSpeciesUrl: speciesItem.imageUrl,
+              eventColor: event.eventType.color,
               speciesColor: speciesItem.color,
             });
           }
@@ -134,6 +139,7 @@ const GardenCalendar = ({ onDayClick }) => {
                     placeholder="Type d'évènement"
                     className="garden-calendar__selector"
                   >
+                    <option value="Tous" className="garden-calendar__option">Tous</option>
                     {eventTypeList().map((eventTypeItem) => (
                       <option
                         value={eventTypeItem.name}
@@ -144,6 +150,11 @@ const GardenCalendar = ({ onDayClick }) => {
                       </option>
                     ))}
                   </select>
+                  {eventTypeList().map((event) => (
+                    <Grid item mt={2}>
+                      <LegendItem color={event.color} name={event.name} />
+                    </Grid>
+                  ))}
                 </Grid>
               </Grid>
             </div>
