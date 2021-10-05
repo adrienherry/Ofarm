@@ -44,10 +44,23 @@
 
     &__info {
         box-shadow: vars.$shadow-card-item;
-        padding: 1rem;
+        padding: 2rem;
         border-radius: 0.5rem;
-        max-height: 16rem;
+        
+        &-sun {
+            margin-right: 0.3rem;
+            font-weight: 700;
+            color: vars.$header-color;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
 
+        &-water {
+            margin-right: 0.3rem;
+            font-weight: 700;
+            color: vars.$header-color;
+            font-size: 1.1rem;
+        }
 
         &-co2 {
             border-radius: 0.5rem;
@@ -80,6 +93,37 @@
         &-total {
             margin-bottom: 0.5rem;
         }
+    }
+
+    &__culture-type {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        &__span {
+            font-weight: 700;
+            color: vars.$header-color;
+            font-size: 1.1rem;
+        }
+
+        &__item {
+            border: 1px solid #000000;
+            padding: 0.3rem;
+            border-radius: 0.3rem;
+            margin-left: 0.3rem;
+            margin-bottom: 0.2rem;
+        }
+    }
+
+    &__info-water__image {
+        height: 24px;
+        width: 24px;
+    }
+
+    &__no-co2 {
+        box-shadow: vars.$shadow-card-item;
+        padding: 2rem;
+        border-radius: 0.5rem;
     }
 }
 

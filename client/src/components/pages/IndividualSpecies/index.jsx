@@ -7,8 +7,12 @@ import aos from 'aos';
 import convertEventDate from '../../../utils/convertDate';
 import { fetchOneSpecies, fetchSpeciesList } from '../../../store/actions/species';
 import { findSpecies } from '../../../selectors/species';
+import waterImg from '/icons8-water-40.png';
+import sunImg from '/icons8-sunny-64.png';
+
 import 'aos/dist/aos.css';
 import Co2InfoItem from './Co2InfoIntem';
+import Rating from './Rating';
 
 const IndividualSpecies = () => {
   const dispatch = useDispatch();
@@ -78,54 +82,34 @@ const IndividualSpecies = () => {
                 />
               </div>
             </Grid>
-            <Grid item container className="individual-species__description-container" lg={7} md={7} sm={11} xs={11}>
+            <Grid item container className="individual-species__description-container" lg={7} md={7} sm={12} xs={12}>
               <Grid item>
                 <div className="individual-species__name">
                   {species.name}
                 </div>
               </Grid>
-              <Grid item lg={12} md={12} sm={12} xs={12} data-aos="slide-left" delay="100">
+              <Grid item lg={12} md={12} sm={12} xs={12} data-aos="fade-left" delay="100">
                 <p className="individual-species__description">
                   <span className="individual-species__span">Description : </span>
                   <br />
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores vero
-                  quidem repellat distinctio ipsam fugiat dignissimos aperiam,
-                  voluptatibus ullam cumque adipisci quos, veniam saepe totam natus
-                  accusantium commodi nobis ratione!
+                  {species.description}
                 </p>
               </Grid>
-              <Grid
-                item
-                container
-                direction="column"
-                lg={9}
-                md={9}
-                sm={12}
-                xs={12}
-                justifyContent="center"
-                className="individual-species__info"
-              >
-                {species.events.map((event) => (
-                  <Grid item key={event.id}>
-                    <div className="individual-species__event">
-                      <span className="individual-species__span">{event.eventType.name} : </span>
-                      du {convertEventDate(event.fromDate)} au {convertEventDate(event.untilDate)}
-                    </div>
-                  </Grid>
-                ))}
-              </Grid>
+
             </Grid>
-            <Grid container item lg={12} md={12} sm={12} xs={12} className="individual-species__info-co2-container" mt={2} justifyContent={isMedium ? 'center' : 'flex-start'}>
+            <Grid container item lg={12} md={12} sm={12} xs={12} className="individual-species__info-co2-container" mt={2} justifyContent={isMedium ? 'center' : 'space-between'} direction={isMedium ? 'column-reverse' : 'row'}>
               <Grid
                 item
                 container
                 direction="column"
+                mt={isMedium ? 3 : 0}
                 lg={4}
                 md={5}
                 sm={11}
                 xs={10}
                 justifyContent="center"
                 className="individual-species__info-co2"
+                sx={species.co2Data ? {} : { boxShadow: 'none' }}
               >
                 {species.co2Data && (
                 <>
@@ -148,14 +132,54 @@ const IndividualSpecies = () => {
                 </>
                 )}
                 {!species.co2Data && (
-                <>
-                  <Grid item>
-                    <div className="individual-species__co2">
-                      <span className="individual-species__span">Info CO2 :  </span> N/C
+                <div className="individual-species__no-co2">
+                  <span className="individual-species__span">Info CO2 :  </span> N/C
+                </div>
+                )}
+              </Grid>
+              <Grid
+                item
+                container
+                direction="row"
+                lg={7}
+                md={6}
+                sm={12}
+                xs={12}
+                justifyContent="center"
+                className="individual-species__info"
+              >
+                {species.events.map((event) => (
+                  <Grid item key={event.id} lg={12} md={12} sm={12} xs={12}>
+                    <div className="individual-species__event">
+                      <span className="individual-species__span">{event.eventType.name} : </span>
+                      du {convertEventDate(event.fromDate)} au {convertEventDate(event.untilDate)}
                     </div>
                   </Grid>
-                </>
-                )}
+                ))}
+                <Grid item mt={3} lg={12} md={12} sm={12} xs={12}>
+                  <div className="individual-species__culture-type">
+                    <div className="individual-species__culture-type__span">Mode de culture: </div>{species.culture.map((culture) => (
+                      <div className="individual-species__culture-type__item" key={culture.id}>{culture.name}</div>
+                    ))}
+                  </div>
+                </Grid>
+                <Grid item mt={2} lg={12} md={12} sm={12} xs={12}>
+                  <div className="individual-species__culture-type">
+                    <div className="individual-species__culture-type__span">Types de sols recommandés: </div>{species.soil.map((soil) => (
+                      <span className="individual-species__culture-type__item" key={soil.id}>{soil.name}</span>
+                    ))}
+                  </div>
+                </Grid>
+                <Grid item container mt={2} lg={12} md={12} sm={12} xs={12} alignItems="center">
+                  <div className="individual-species__info-sun">Exposition au soleil:</div>
+                  {species.exposition.map((exposition) => (
+                    <div className="individual-species__culture-type__item" key={exposition.id}>{exposition.name}</div>
+                  ))}
+                </Grid>
+                <Grid item container mt={2} lg={12} md={12} sm={12} xs={12} alignItems="center">
+                  <div className="individual-species__info-water">Quantité d'eau demandé:</div>
+                  <Rating rating={species.water_need[0].value} numberOfItem={3} alt="water" image={waterImg} />
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
