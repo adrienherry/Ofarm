@@ -15,25 +15,25 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <h1 className="homepage__title">Vous aussi, rejoignez-notre communauté de jardiniers !</h1>
-			<Grid container direction="row" justifyContent="center">
-				<Grid
-					item
-					lg={9}
-					md={9}
-					sm={11}
-					xs={11}
-					className="homepage__container"
-					data-aos="fade-up"
-				>
-				  <CarrouselContainer />
-				  
-				</Grid>
-				<Grid item lg={9} md={9} sm={11} xs={11} mb={10} className="homepage">
-					<PitchContainer />
-				</Grid>
-			</Grid>
-		</div>
-	);
+      <Grid container direction="row" justifyContent="center">
+        <Grid
+          item
+          lg={9}
+          md={9}
+          sm={11}
+          xs={11}
+          className="homepage__container"
+          data-aos="fade-up"
+        >
+          <CarrouselContainer />
+
+        </Grid>
+        <Grid item lg={9} md={9} sm={11} xs={11} mb={10} className="homepage">
+          <PitchContainer />
+        </Grid>
+      </Grid>
+    </div>
+  );
 };
 
 export default HomePage;

@@ -25,9 +25,11 @@ import SearchBarWarningMessage from './SearchBarWarningMessage';
 const containerVariants = {
   expanded: {
     height: '21.5rem',
+    width: '100%',
   },
   collapsed: {
     height: '2.5rem',
+    width: '100%',
   },
 };
 
@@ -49,6 +51,7 @@ const SearchBar = () => {
   const inputRef = useRef();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const is950 = useMediaQuery('(min-width: 950px)');
   const isLarge = useMediaQuery(theme.breakpoints.up('lg'));
   const location = useLocation();
 
@@ -56,15 +59,20 @@ const SearchBar = () => {
 
   if (isLarge) {
     style = {
-      width: '39rem',
+      width: '100%',
+    };
+  }
+  else if (!is950) {
+    style = {
+      width: '100%',
     };
   }
   else if (isMobile) {
-    style = {
-      right: '19%',
-      width: '55%',
-      top: '2rem',
-    };
+    // style = {
+    //   right: '19%',
+    //   width: '55%',
+    //   top: '2rem',
+    // };
   }
   else {
     style = {};
@@ -107,29 +115,29 @@ const SearchBar = () => {
   useDebounce(searchValue, 300, searchInfoToShow);
 
   return (
-    <Grid container justifyContent="center" alignItems="center">
-      <motion.div
-        className="search-bar"
-        animate={isExpanded ? 'expanded' : 'collapsed'}
-        variants={containerVariants}
-        transition={containerTransition}
-        ref={parentRef}
-        style={style}
-      >
-        <div className="search-bar__input-container">
-          <span className="search-bar__search-icon">
-            <IoSearch />
-          </span>
-          <input
-            className="search-bar__input"
-            placeholder="recherche"
-            onFocus={expandSearchContainer}
-            onChange={handleSearchInputChange}
-            value={searchValue}
-            ref={inputRef}
-          />
-          <AnimatePresence>
-            { isExpanded && (
+
+    <motion.div
+      className="search-bar"
+      animate={isExpanded ? 'expanded' : 'collapsed'}
+      variants={containerVariants}
+      transition={containerTransition}
+      ref={parentRef}
+      style={style}
+    >
+      <div className="search-bar__input-container">
+        <span className="search-bar__search-icon">
+          <IoSearch />
+        </span>
+        <input
+          className="search-bar__input"
+          placeholder="recherche"
+          onFocus={expandSearchContainer}
+          onChange={handleSearchInputChange}
+          value={searchValue}
+          ref={inputRef}
+        />
+        <AnimatePresence>
+          { isExpanded && (
             <motion.span
               className="search-bar__close-icon"
               onClick={collapseSearchContainer}
@@ -141,11 +149,11 @@ const SearchBar = () => {
             >
               <IoClose />
             </motion.span>
-            ) }
-          </AnimatePresence>
-        </div>
-        { isExpanded && <span className="search-bar__seperator" /> }
-        { isExpanded && (
+          ) }
+        </AnimatePresence>
+      </div>
+      { isExpanded && <span className="search-bar__seperator" /> }
+      { isExpanded && (
         <div className="search-bar__content">
           { isLoading && (
           <div className="search-bar__loading-wrapper">
@@ -173,9 +181,8 @@ const SearchBar = () => {
           </div>
           )}
         </div>
-        ) }
-      </motion.div>
-    </Grid>
+      ) }
+    </motion.div>
 
   );
 };

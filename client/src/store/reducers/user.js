@@ -17,7 +17,7 @@ const UserReducer = (state = initialState, action = {}) => {
     case OPEN_USER_MENU:
       return {
         ...state,
-        userMenuIsOpen: true,
+        userMenuIsOpen: !state.userMenuIsOpen,
       };
     case COLLAPSE_USER_MENU:
       return {
