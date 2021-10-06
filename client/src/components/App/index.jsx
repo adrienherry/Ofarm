@@ -24,6 +24,7 @@ import IndividualSpecies from '../pages/IndividualSpecies';
 import { setIsReadyToRedirectToLoginToFalse } from '../../store/actions/register';
 import { resetSpecies } from '../../store/actions/species';
 import { collapseContainer, resetSearchValue } from '../../store/actions/searchbar';
+import FrontPage from '../pages/FrontPage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -94,6 +95,7 @@ const App = () => {
             <NotFound />
           </Route>
         </Switch>
+        <FrontPage />
         <Footer />
       </div>
     </div>
