@@ -6,7 +6,7 @@ import chou2 from '/public/chou-404.png';
 
 const NotFound = () => (
 	<div className="NotFound">
-		<Grid container justifyContent="space-evenly" alignItems="center" gap="10%">
+		<Grid container justifyContent="center" alignItems="center" gap="10%">
 			<Grid item>
 				<p className="NotFound__text">Chou blanc !</p>
 				<div className="NotFound__image-container">

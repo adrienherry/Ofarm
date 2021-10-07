@@ -1,7 +1,6 @@
 @use "../../../styles/vars";
 
 .NotFound {
-	// background-color: #a7bbac;
 	text-align: center;
 	margin-top: 2em;
 	border-radius: 10%;
@@ -27,6 +26,7 @@
 
 		// max-width: 300px;
 		// max-height: 300px;
+
 		height: 250px;
 		width: 250px;
 
@@ -54,6 +54,8 @@
 	}
 
 	&__redirect-btn {
+		width: 300px;
+		margin: auto;
 		padding: 1rem;
 		background-color: vars.$background-card-color;
 		border-radius: 0.5rem;
