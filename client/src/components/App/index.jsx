@@ -24,11 +24,15 @@ import IndividualSpecies from '../pages/IndividualSpecies';
 import { setIsReadyToRedirectToLoginToFalse } from '../../store/actions/register';
 import { resetSpecies } from '../../store/actions/species';
 import IndividualGarden from '../pages/User/IndividualGarden';
+import RedesignHeaderContainer from '../RedesignHeaderContainer';
+import UserMenuRedesign from '../UserMenuRedesign';
+import RedesignFooter from '../RedesignFooter';
 
 const App = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const logged = useSelector((state) => state.auth.logged);
+  const userMenuIsOpen = useSelector((state) => state.user.userMenuIsOpen);
   const usernameSlug = useSelector((state) => state.user.usernameSlug);
 
   useEffect(() => {
@@ -49,10 +53,19 @@ const App = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (userMenuIsOpen) {
+      document.querySelector('body').style.overflow = 'hidden';
+    }
+    if (!userMenuIsOpen) {
+      document.querySelector('body').style.overflow = 'auto';
+    }
+  }, [userMenuIsOpen]);
+
   return (
     <div className="app">
-      <div className="app__container">
-        <HeaderContainer />
+      <div className="app__container" style={userMenuIsOpen ? { filter: 'blur(3px) grayscale(90%)', pointerEvents: 'none' } : {}}>
+        <RedesignHeaderContainer />
         <Switch>
           <Route path="/" exact>
             <HomePage />
@@ -101,8 +114,10 @@ const App = () => {
             <NotFound />
           </Route>
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
+        <RedesignFooter />
       </div>
+      <UserMenuRedesign />
     </div>
   );
 };
