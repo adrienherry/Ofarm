@@ -1,7 +1,21 @@
-@use '../../styles/vars';
+@use "../../styles/vars";
 
 .redesign-footer {
-    height: 12rem;
-    margin-top: 8rem;
-    background-color: vars.$secondary-color;
+  height: 12rem;
+  margin-top: 8rem;
+  padding-top: 3rem;
+  background-color: vars.$secondary-color;
+  &__container {
+    &--title {
+      font-size: 2rem;
+      color: black;
+      &-letter {
+        color: white;
+      }
+    }
+    &--returnTop {
+      color: vars.$background-app-color;
+      transform: rotate(268deg);
+    }
+  }
 }
