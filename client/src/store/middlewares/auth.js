@@ -1,7 +1,8 @@
 import { axiosInstance } from '../../services/axios';
 import {
   IS_CONNECTED,
-  SEND_LOGIN_FORM, setLoggedToTrue,
+  resetErrorLogin,
+  SEND_LOGIN_FORM, setErrorLogin, setLoggedToTrue, setReadyToRedirectLogin,
 } from '../actions/authentification';
 import { setUserInfo, setUserToken } from '../actions/user';
 
@@ -22,9 +23,11 @@ export default (store) => (next) => async (action) => {
           email: response.data.email,
         }));
         store.dispatch(setLoggedToTrue());
+        store.dispatch(setReadyToRedirectLogin());
       }
       catch (error) {
-        console.log(error.response);
+        console.log('error:', error.response);
+        store.dispatch(setErrorLogin());
       }
       next(action);
       break;

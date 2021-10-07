@@ -39,3 +39,35 @@ export const isConnected = () => (
     type: IS_CONNECTED,
   }
 );
+
+export const SET_ERROR_LOGIN = 'SET_ERROR_LOGIN';
+
+export const setErrorLogin = () => (
+  {
+    type: SET_ERROR_LOGIN,
+  }
+);
+
+export const RESET_ERROR_LOGIN = 'RESET_ERROR_LOGIN';
+
+export const resetErrorLogin = () => (
+  {
+    type: RESET_ERROR_LOGIN,
+  }
+);
+
+export const SET_READY_TO_REDIRECT_LOGIN = 'SET_READY_TO_REDIRECT_LOGIN';
+
+export const setReadyToRedirectLogin = () => (
+  {
+    type: SET_READY_TO_REDIRECT_LOGIN,
+  }
+);
+
+export const RESET_READY_TO_REDIRECT_LOGIN = 'RESET_READY_TO_REDIRECT_LOGIN';
+
+export const resetReadyToRedirectLogin = () => (
+  {
+    type: RESET_READY_TO_REDIRECT_LOGIN,
+  }
+);
