@@ -2,22 +2,32 @@ import React from 'react';
 import './not-found.scss';
 import { Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import chou2 from '/public/chou404.jpg';
+import chou2 from '/public/chou-404.png';
 
 const NotFound = () => (
-  <div className="NotFound">
-    <Grid container justifyContent="center" alignItems="center">
+	<div className="NotFound">
+		<Grid container justifyContent="center" alignItems="center" gap="10%">
+			<Grid item>
+				<p className="NotFound__text">Chou blanc !</p>
+				<div className="NotFound__image-container">
+					<img
+						className="NotFound__image-container__image"
+						src={chou2}
+						alt="chou blanc"
+					/>
+				</div>
+			</Grid>
       <Grid item>
-        <img className="NotFound__image" src={chou2} alt="chou blanc" />
-      </Grid>
-      <Grid item>
-        <Link to="/">
-          <div className="NotFound__redirect-btn">Retournez sur la page principale</div>
-        </Link>
-      </Grid>
-    </Grid>
-  </div>
-
+        <h1 className="NotFound__title">Erreur 404 : Page non-trouvée</h1>
+        <p className="NotFound__text-content">Ce que vous cherchez se trouve sûrement quelque part mais pas ici...</p>
+				<Link to="/">
+					<div className="NotFound__redirect-btn">
+						Retourner sur la page d'accueil
+					</div>
+				</Link>
+			</Grid>
+		</Grid>
+	</div>
 );
 
 export default NotFound;
