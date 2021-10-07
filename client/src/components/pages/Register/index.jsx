@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
@@ -14,6 +14,7 @@ import {
   setEmptyRegisterField,
   resetEmptyRegisterField,
   setReadyToSendToFalse,
+  resetRegisterInfo,
 } from '../../../store/actions/register';
 import validateEmail from '../../../utils/validateEmail';
 
@@ -35,30 +36,21 @@ const Login = () => {
 
   const handleRegisterFormSubmit = (event) => {
     event.preventDefault();
-    if (password !== confirmPassword) {
-      dispatch(setIsConfirmedToFalse());
-    }
-    if (password === confirmPassword) {
-      dispatch(setIsConfirmedToTrue());
-    }
-    if (!validateEmail(email)) {
-      dispatch(setErrorEmailRegister());
-    }
-    if (validateEmail(email)) {
-      dispatch(resetErrorEmailRegister());
-    }
-    if (password === '' || username === '' || email === '' || confirmPassword === '') {
-      dispatch(setEmptyRegisterField());
-    }
-    if (password !== '' && username !== '' && email !== '' && confirmPassword !== '') {
-      dispatch(resetEmptyRegisterField());
-    }
+    dispatch(sendRegisterForm());
     if (readyToSend) {
-      dispatch(sendRegisterForm());
       history.push('/login');
+      dispatch(resetRegisterInfo());
       dispatch(setReadyToSendToFalse());
     }
   };
+
+  useEffect(() => {
+    if (readyToSend) {
+      history.push('/login');
+      dispatch(resetRegisterInfo());
+      dispatch(setReadyToSendToFalse());
+    }
+  }, [readyToSend]);
 
   return (
     <div className="register">
