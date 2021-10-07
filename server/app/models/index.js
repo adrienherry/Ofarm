@@ -146,6 +146,17 @@ Event.hasMany(CalendarEvent, {
 	as: "calendarEvents",
 });
 
+CalendarEvent.belongsTo(Species, {
+	foreignKey: "speciesId",
+	as: "species",
+	onDelete: "cascade",
+});
+
+Species.hasMany(CalendarEvent, {
+	foreignKey: "speciesId",
+	as: "calendarEvents",
+});
+
 module.exports = {
 	EventType,
 	Event,
@@ -156,5 +167,5 @@ module.exports = {
 	WaterNeed,
 	SoilType,
 	CultureType,
-	CalendarEvent
+	CalendarEvent,
 };

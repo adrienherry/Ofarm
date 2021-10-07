@@ -46,9 +46,6 @@ const userController = {
 						},
 					},
 				],
-				attributes: {
-					exclude: ["createdAt", "updatedAt"],
-				},
 			});
 
 			res.json(userItem);

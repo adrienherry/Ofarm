@@ -27,13 +27,19 @@ CalendarEvent.init(
 			defaultValue: "",
 		},
 		fromDate: {
-			type: DataTypes.DATE,
+			type: DataTypes.DATEONLY,
 			allowNull: false,
+			validate: {
+				isDate: true,
+			},
 		},
 		untilDate: {
-			type: DataTypes.DATE,
+			type: DataTypes.DATEONLY,
 			allowNull: false,
-        },
+			validate: {
+				isDate: true,
+			},
+		},
 	},
 	{
 		sequelize,

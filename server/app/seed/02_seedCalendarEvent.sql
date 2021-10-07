@@ -17,7 +17,6 @@ LANGUAGE plpgsql;
 INSERT INTO "calendar_event" (
    name,
    garden_id,
-   species_id,
    event_id,
    from_date,
    until_date
@@ -25,8 +24,7 @@ INSERT INTO "calendar_event" (
 SELECT
    CONCAT(species.name, ' - ', event_type.name),
    garden.id AS garden_id,
-   species.id AS species_id,
-   event_type.id AS event_type_id,
+   event.id AS event_id,
    change_year(event.from_date, (SELECT extract('year' FROM now())::TEXT)) AS from_date,
    change_year(event.until_date, (SELECT extract('year' FROM now())::TEXT)) AS until_date
 FROM

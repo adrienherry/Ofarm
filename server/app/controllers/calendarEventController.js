@@ -6,85 +6,75 @@ const {
 	Species,
 	CalendarEvent,
 	EventType,
+	User,
 } = require("../models");
 const { standardErrors, slugify } = require("../helpers");
 
-const eventController = {
+const calendarEventController = {
 	getCalendarEvents: async (req, res) => {
 		try {
-			const garden_id = parseInt(req.params.garden_id);
+			const gardenId = parseInt(req.params.garden_id);
 
-			// if (!res.locals.id) {
-			// 	res.status(403).json(standardErrors.UserNotLoggedError);
-			// 	return;
-			// }
+			if (!res.locals.id) {
+				res.status(403).json(standardErrors.UserNotLoggedError);
+				return;
+			}
 
-			const user_id = 1; //res.locals.id;
+			const userId = res.locals.id;
 
 			const calendarEvents = await CalendarEvent.findAll({
 				where: {
-					garden_id: garden_id,
+					gardenId: gardenId,
 				},
-				include: [{
-					model : Event,
-					as: "baseEvent",
-					association: "",
-					include: [{
-						model: EventType,
-						as: "eventType",
+				include: [
+					{
+						model: Event,
+						as: "baseEvent",
+						include: [
+							{
+								model: EventType,
+								as: "eventType",
+								attributes: {
+									exclude: ["createdAt", "updatedAt"],
+								},
+							},
+							{
+								model: Species,
+								as: "species",
+								attributes: {
+									exclude: ["createdAt", "updatedAt"],
+								},
+							},
+						],
 						attributes: {
-						exclude: ["createdAt", "updatedAt"]
-					}
-					}],
-					attributes: {
-						exclude: ["createdAt", "updatedAt", "speciesId", "eventTypeId"]
-					}
-				}
-				// 	{
-				// 		association: "events",
-				// 		include: [
-				// 			{
-				// 				model: Event,
-				// 				as: "event",
-				// 				// attributes: {
-				// 				// 	exclude: [
-				// 				// 		"createdAt",
-				// 				// 		"updatedAt",
-				// 				// 		"speciesId",
-				// 				// 		"eventTypeId",
-				// 				// 	],
-				// 				// },
-				// 			},
-				// 			{
-				// 				model: Species,
-				// 				as: "species"
-				// 				// attributes: {
-				// 				// 	exclude: [
-				// 				// 		"createdAt",
-				// 				// 		"updatedAt",
-				// 				// 		"speciesId",
-				// 				// 		"eventTypeId",
-				// 				// 	],
-				// 				// },
-				// 			},
-				// 		],
-				// 		through: {
-				// 			attributes: [],
-				// 		},
-				// 		attributes: {
-				// 			exclude: ["createdAt", "updatedAt"],
-				// 		},
-				// 	},
+							exclude: ["createdAt", "updatedAt"],
+						},
+					},
+					{
+						model: Garden,
+						as: "garden",
+						include: [
+							{
+								model: User,
+								as: "owner",
+								attributes: ["id"],
+							},
+						],
+					},
 				],
 				attributes: {
 					exclude: ["createdAt", "updatedAt", "gardenId", "eventId"],
 				},
 			});
 
-			if (calendarEvents) {
-				res.json(calendarEvents);
-			} else {
+			if (
+				!calendarEvents ||
+				(calendarEvents && calendarEvents[0].garden.owner.id !== userId)
+			) {
 				res.status(403).json(standardErrors.GardenNotFoundError);
+				return;
+			} else {
+				res.json(calendarEvents);
 			}
 		} catch (error) {
 			console.log(error);
@@ -92,100 +82,210 @@ const eventController = {
 		}
 	},
 
-	// createGarden: async (req, res) => {
-	// 	try {
-	// 		const user_id = res.locals.id;
-	// 		const formattedName = req.body.name.trim();
+	createCalendarEvent: async (req, res) => {
+		try {
+			if (!res.locals.id) {
+				res.status(403).json(standardErrors.UserNotLoggedError);
+				return;
+			}
 
-	// 		const garden = await Garden.findOne({
-	// 			where: {
-	// 				[Op.or]: [
-	// 					{
-	// 						name: {
-	// 							[Op.iLike]: `${formattedName}`,
-	// 						},
-	// 					},
-	// 					{
-	// 						nameSlug: slugify(formattedName),
-	// 					},
-	// 				],
-	// 			},
-	// 		});
+			const userId = res.locals.id;
 
-	// 		if (garden) {
-	// 			res.status(400).json(standardErrors.GardenNameAlreadyExists);
-	// 			return;
-	// 		}
+			const gardenId = req.params.garden_id;
+			const { speciesId, fromDate, untilDate, name, comment } = req.body;
 
-	// 		// console.log(speciesIds);
-	// 		const newGarden = await Garden.create({
-	// 			name: formattedName,
-	// 			nameSlug: slugify(formattedName),
-	// 			userId: user_id,
-	// 		});
+			if (
+				!name ||
+				!gardenId ||
+				!speciesId ||
+				!fromDate ||
+				!untilDate
+			) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
 
-	// 		if (!newGarden.id) {
-	// 			res.status(500).json(standardErrors.FailedCreateError);
-	// 		}
+			const garden = await Garden.findOne({
+				where: {
+					id: gardenId,
+				},
+				include: [
+					{
+						model: User,
+						as: "owner",
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
+					},
+				],
+				attributes: {
+					exclude: ["createdAt", "updatedAt"],
+				},
+			});
 
-	// 		const gardenSpecies = req.body.species.map(({ id }) => {
-	// 			return new Species({ id: id });
-	// 		});
+			if (!garden || (garden && garden.owner.id !== userId)) {
+				res.status(403).json(standardErrors.GardenNotFoundError);
+				return;
+			}
 
-	// 		await newGarden.setSpecies(gardenSpecies);
+			const formattedName = req.body.name.trim();
 
-	// 		// await newGarden.save();
+			const newCalendarEvent = await CalendarEvent.create({
+				name: formattedName,
+				speciesId: speciesId,
+				comment: comment || "",
+				gardenId: gardenId,
+				eventId: null,
+				fromDate: fromDate,
+				untilDate: untilDate,
+			});
 
-	// 		// Add species to new garden here
+			if (!newCalendarEvent.id) {
+				res.status(500).json(standardErrors.FailedCreateError);
+				return;
+			}
 
-	// 		res.json({
-	// 			id: newGarden.id,
-	// 		});
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 		res.status(500).json(error);
-	// 	}
-	// },
+			console.log(newCalendarEvent);
 
-	// removeGarden: async (req, res) => {
-	// 	try {
-	// 		const garden_id = req.params.garden_id;
+			res.json(newCalendarEvent);
+		} catch (error) {
+			console.log(error);
+			res.status(500).json(error);
+		}
+	},
 
-	// 		const garden = await Garden.findOne({
-	// 			where: {
-	// 				id: garden_id,
-	// 			},
-	// 		});
+	updateCalendarEvent: async (req, res) => {
+		try {
+			if (!res.locals.id) {
+				res.status(403).json(standardErrors.UserNotLoggedError);
+				return;
+			}
 
-	// 		if (!garden) {
-	// 			res.status(400).json(standardErrors.GardenNotFoundError);
-	// 			return;
-	// 		}
+			if (!req.params.garden_id || !req.body.calendarEventId) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
 
-	// 		if (!res.locals.id) {
-	// 			res.status(403).json(standardErrors.UserNotLoggedError);
-	// 			return;
-	// 		}
+			const userId = res.locals.id;
+			const gardenId = req.params.garden_id;
+			const { calendarEventId } = req.body;
 
-	// 		if (garden.userId !== res.locals.id) {
-	// 			res.status(400).json(standardErrors.GardenNotFoundError);
-	// 			return;
-	// 		}
+			const calendarEvent = await CalendarEvent.findOne({
+				where: {
+					id: calendarEventId,
+					gardenId: gardenId,
+				},
+				include: [
+					{
+						model: Garden,
+						as: "garden",
+						include: {
+							model: User,
+							as: "owner",
+							attributes: {
+								exclude: ["createdAt", "updatedAt"],
+							},
+						},
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
+					},
+				],
+				attributes: {
+					exclude: ["createdAt", "updatedAt"],
+				},
+			});
 
-	// 		const nbDeleted = await garden.destroy({ returning: true });
+			if (
+				!calendarEvent ||
+				(calendarEvent && calendarEvent.garden.owner.id !== userId)
+			) {
+				res.status(403).json(standardErrors.GardenNotFoundError);
+				return;
+			}
 
-	// 		console.log(nbDeleted);
-	// 		if (nbDeleted.length !== 0) {
-	// 			res.status(500).json(standardErrors.FailedDeleteError(nbDeleted));
-	// 			return;
-	// 		}
+			const { speciesId, fromDate, untilDate, name, comment } = req.body;
 
-	// 		res.json({
-	// 			deleted: nbDeleted === 1,
-	// 		});
-	// 	} catch (error) {
-	// 		res.status(500).json(error);
-	// 	}
-	// },
+			speciesId ? (calendarEvent.speciesId = speciesId) : "";
+			fromDate ? (calendarEvent.fromDate = fromDate) : "";
+			untilDate ? (calendarEvent.untilDate = untilDate) : "";
+			name ? (calendarEvent.name = name.trim()) : "";
+			comment ? (calendarEvent.comment = comment.trim()) : "";
+
+			const result = await calendarEvent.save();
+
+			console.log(result);
+
+			if (!result.id) {
+				res.status(500).json(standardErrors.FailedCreateError);
+				return;
+			}
+
+			res.json(result);
+		} catch (error) {
+			console.log(error);
+			res.status(500).json(error);
+		}
+	},
+
+	deleteCalendarEvent: async (req, res) => {
+		try {
+			const gardenId = req.params.garden_id;
+			const calendarEventId = req.body.calendarEventId;
+
+			if (!res.locals.id) {
+				res.status(403).json(standardErrors.UserNotLoggedError);
+				return;
+			}
+
+			const userId = res.locals.id;
+
+			if (!gardenId || !calendarEventId) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
+			const calendarEvent = await CalendarEvent.findOne({
+				where: {
+					id: calendarEventId,
+				},
+				include: [
+					{
+						model: Garden,
+						as: "garden",
+						include: [
+							{
+								model: User,
+								as: "owner",
+							},
+						],
+					},
+				],
+			});
+
+			if (
+				!calendarEvent ||
+				(calendarEvent && calendarEvent.garden.owner.id !== userId)
+			) {
+				res.status(400).json(standardErrors.BadRequestError);
+				return;
+			}
+
+			const nbDeleted = await calendarEvent.destroy({ returning: true });
+
+			if (nbDeleted.length !== 0) {
+				res.status(500).json(standardErrors.FailedDeleteError(nbDeleted));
+				return;
+			}
+
+			res.json({
+				deleted: nbDeleted === 0,
+			});
+
+		} catch (error) {
+			console.log(error);
+			res.status(500).json(error);
+		}
+	},
 };
-module.exports = eventController;
+module.exports = calendarEventController;

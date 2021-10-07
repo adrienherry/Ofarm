@@ -154,7 +154,7 @@ const gardenController = {
 			}
 
 			res.json({
-				deleted: nbDeleted === 1,
+				deleted: nbDeleted === 0,
 			});
 		} catch (error) {
 			res.status(500).json(error);
