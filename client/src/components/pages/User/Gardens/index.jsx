@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, useMediaQuery, useTheme } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { CircleLoader } from 'react-spinners';
 import UserHeader from '../UserHeader';
@@ -11,6 +11,8 @@ const Gardens = () => {
   const dispatch = useDispatch();
   const gardens = useSelector((state) => state.user.gardens);
   const isGardensLoading = useSelector((state) => state.user.isGardensLoading);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     dispatch(fetchGardens());
@@ -23,7 +25,7 @@ const Gardens = () => {
         <Grid container justifyContent="center">
           {gardens && (
             gardens.map((garden) => (
-              <Grid item mr={3} ml={3} mb={3} key={garden.id}>
+              <Grid item mr={isMobile ? 0 : 3} ml={isMobile ? 0 : 3} mb={3} key={garden.id}>
                 <GardensCard
                   title={garden.name}
                   description="Je ne plante rien mais je récolte tout !!"

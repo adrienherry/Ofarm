@@ -41,7 +41,7 @@ const UserInformation = ({
 
   return (
     <div className="user-information">
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345, borderRadius: '0' }}>
         <CardMedia
           component="img"
           height="194"

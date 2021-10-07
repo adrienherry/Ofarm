@@ -19,7 +19,7 @@ const Item = ({ name, id }) => {
   };
 
   return (
-    <ListItem component="div" disablePadding sx={isExist ? { backgroundColor: '#575757', color: '#ffffff' } : {}}>
+    <ListItem component="div" disablePadding sx={isExist ? { backgroundColor: '#244435', color: '#FDF1E5' } : {}}>
       <ListItemButton>
         <ListItemText primary={name} onClick={handleClickItem} />
       </ListItemButton>

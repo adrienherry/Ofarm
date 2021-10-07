@@ -1,5 +1,7 @@
 import { axiosInstance } from '../../services/axios';
-import { CREATE_GARDEN, resetGardenInfo, setCreateGardenError } from '../actions/createGarden';
+import {
+  CREATE_GARDEN, resetGardenInfo, setCreateGardenError, setReadyToRedirectToTrue,
+} from '../actions/createGarden';
 import {
   FETCH_GARDENS, setIsGardensLoadingToFalse, setIsGardensLoadingToTrue, setUserGardens,
 } from '../actions/gardens';
@@ -19,10 +21,8 @@ export default (store) => (next) => async (action) => {
             Authorization: `Bearer ${token}`,
           },
         });
-
         console.log(response.data);
-
-        store.dispatch(resetGardenInfo());
+        store.dispatch(setReadyToRedirectToTrue());
       }
       catch (error) {
         console.log(error);

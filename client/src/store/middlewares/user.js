@@ -15,6 +15,7 @@ export default (store) => (next) => async (action) => {
             Authorization: `Bearer ${token}`,
           },
         });
+        console.log(response.data);
         store.dispatch(setUserInfo(response.data));
       }
       catch (error) {

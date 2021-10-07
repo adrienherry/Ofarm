@@ -4,7 +4,6 @@
     &__menu {
         background-color: vars.$background-card-color;
         padding: 2rem;
-        border-radius: 0.5rem;
         box-shadow: vars.$shadow-card-item;
     }
 
@@ -30,14 +29,14 @@
 
 .month-container {
     box-shadow: vars.$shadow-card-item;
-    border-radius: 0.5rem;margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 
 
 .calendar-container {
     background-color: vars.$background-card-color;
-    border-radius: 0.5rem;
     padding: 1rem;
     box-shadow: vars.$shadow-card-item;
 }

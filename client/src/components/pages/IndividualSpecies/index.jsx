@@ -54,10 +54,10 @@ const IndividualSpecies = () => {
 
   let styleImage;
   if (isMedium) {
-    styleImage = { height: '15rem', width: '15rem' };
+    styleImage = { height: '80%', width: '80%' };
   }
   else if (isLarge) {
-    styleImage = { height: '17rem', width: '17rem' };
+    styleImage = { height: '100%', width: '100%' };
   }
   else {
     styleImage = {};
@@ -69,7 +69,7 @@ const IndividualSpecies = () => {
       <div className="individual-species" style={style}>
         <>
           <Grid container direction="row" justifyContent={isMedium ? 'center' : 'space-between'}>
-            <Grid item lg={4} md={4} sm={7} xs={12} container justifyContent="center">
+            <Grid item lg={4} md={4} sm={9} xs={12} container justifyContent="center">
               <div
                 className="individual-species__image-container"
                 style={isMedium ? { marginBottom: '1rem' } : {}}
@@ -102,7 +102,7 @@ const IndividualSpecies = () => {
                 item
                 container
                 direction="column"
-                mt={isMedium ? 3 : 0}
+                mt={isMedium ? 3 : 3}
                 lg={4}
                 md={5}
                 sm={11}
@@ -115,12 +115,12 @@ const IndividualSpecies = () => {
                 <>
                   <Grid item>
                     <div className="individual-species__co2">
-                      <span className="individual-species__span">Info CO2 </span>
+                      <span className="individual-species__span">Informations CO2 </span>
                     </div>
                   </Grid>
-                  <Grid item>
+                  <Grid item mb={2}>
                     <div className="individual-species__co2-total">
-                      <span className="individual-species__span">co2 total dégagé : </span> {Math.round(species.co2Data.co2_total * 100) / 100} {species.co2Data.co2_units}
+                      <span className="individual-species__span ok">Emission CO2 : </span> {Math.round(species.co2Data.co2_total * 100) / 100} {species.co2Data.co2_units}
                     </div>
                   </Grid>
                   <Co2InfoItem co2Percent={species.co2Data.co2_share.agriculture} name="Agriculture" totalCO2={Math.round(species.co2Data.co2_total * 100) / 100} />
