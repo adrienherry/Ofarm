@@ -46,7 +46,7 @@ const UserInformation = ({
           component="img"
           height="194"
           image={img}
-          alt="Paella dish"
+          alt="Image de profil"
         />
         <CardActions disableSpacing>
           <Typography variant="body2" color="text.secondary">

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import UserInformation from './UserInformation';
 import Buttons from './Buttons';
 import UserProfilForm from './UserProfilForm';
-import cow from '../../../../../public/cow.jpg';
+import userImg from '../../../../../public/user-picture.svg';
 import UserList from './UserList';
 import './userProfil.scss';
 import { fetchUserInfo } from '../../../../store/actions/profil';
@@ -35,7 +35,7 @@ const UserProfil = () => {
         <Grid container justifyContent="center">
           <Grid item mr={isMedium ? 0 : 10} mb={isMedium ? 10 : 0} mt={isMedium ? 5 : 0}>
             <UserInformation
-              img={cow}
+              img={userImg}
               username={usernameProfil}
               email={emailProfil}
               createdAt={createdAt}
