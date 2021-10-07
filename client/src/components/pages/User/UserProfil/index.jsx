@@ -21,6 +21,7 @@ const UserProfil = () => {
   const emailProfil = useSelector((state) => state.profil.emailProfil);
   const createdDate = useSelector((state) => state.profil.createdDate);
   const updatedDate = useSelector((state) => state.profil.updatedDate);
+
   const createdAt = dayjs(createdDate).format('DD-MMMM-YYYY');
   const updatedAt = dayjs(updatedDate).format('DD-MMMM-YYYY');
 

@@ -21,7 +21,6 @@ const IndividualGarden = () => {
   const isModalOpen = useSelector((state) => state.garden.isModalOpen);
   const modalDate = useSelector((state) => state.garden.modalDate);
   const modalEvents = useSelector((state) => state.garden.modalEvents);
-  console.log(modalEvents);
 
   const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -63,8 +62,6 @@ const IndividualGarden = () => {
   }
 
   const handleOnDayClick = (date, events) => {
-    console.log('date', date);
-    console.log(events);
     dispatch(setModalDate(date));
     dispatch(setModalEvents(events));
     dispatch(openModal());
