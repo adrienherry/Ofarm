@@ -1,12 +1,12 @@
-@use '../../../styles/vars';
+@use "../../../styles/vars";
 
 .navigation-link {
-    margin-bottom: 1rem;
-    overflow-wrap: break-word;
-    font-weight: 700;
-    color: vars.$header-color;
+  margin-bottom: 1rem;
+  overflow-wrap: break-word;
+  font-weight: 700;
+  color: vars.$background-app-color;
 
-    &:hover {
-        color: vars.$active-color-header;
-    }
+  &:hover {
+    color: vars.$active-color-header;
+  }
 }
