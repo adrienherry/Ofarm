@@ -1,17 +1,16 @@
-.legalnotice {
-	background-color: #a7bbac;
+@use '../../../styles/vars';
 
+.legalnotice {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 	&__title {
-		background-color: white;
+		
 		text-transform: uppercase;
 		font-weight: bold;
-		// color: #a7bbac;
+		color: vars.$secondary-color;
 
-		margin-left: 10rem;
-		margin-right: 10rem;
-		margin-top: 3rem;
-		margin-bottom: 2rem;
-
+		margin: 2rem 0; 
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 		text-align: center;
@@ -22,11 +21,9 @@
 	&__content {
 		background-color: white;
 		padding: 1rem;
-
-		margin-left: 10rem;
-		margin-right: 10rem;
-
-		border-radius: 1rem;
-		scrollbar-color: rebeccapurple green;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		max-width: 50rem;
+		box-shadow: vars.$shadow-card-item;
 	}
 }

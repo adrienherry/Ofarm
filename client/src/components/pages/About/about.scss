@@ -5,25 +5,16 @@
 
     &__titre {
         font-weight: 700;
-        font-size: 1.7rem;
-        color: vars.$background-app-color;
+        font-size: 2.5rem;
+        color: vars.$secondary-color;
 
-        &-container {
-            padding: 1rem;
-            border-radius: 1rem;
-            box-shadow: vars.$shadow;
-            background-color: vars.$background-card-color;
-        }
     }
     
     &__content {
         background-color: white;
         padding:1rem ;
-        border-radius: 1rem;
-        box-shadow: vars.$shadow;
+        box-shadow: vars.$shadow-card-item;
     }
-
-
 
 
 }

@@ -1,3 +1,5 @@
+@use '../../../styles/vars';
+
 .team {
     // background-color: cornflowerblue;
     flex-direction: row;
@@ -7,14 +9,12 @@
 
 
 .team__title {
-    // background-color: crimson; 
-    // font-size: 50rem;
     text-transform: uppercase;
     text-align: center;
     padding-top:2rem;
     padding-bottom: 4rem;
     font-weight: bold;
-    // color: white;
+    color: vars.$secondary-color;
     font-size: 1.8rem;
     
 }

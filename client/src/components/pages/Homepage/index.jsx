@@ -18,8 +18,9 @@ const HomePage = () => {
       <Grid container direction="row" justifyContent="center">
         <Grid
           item
-          lg={9}
-          md={9}
+          xl={6}
+          lg={7}
+          md={7}
           sm={11}
           xs={11}
           className="homepage__container"
@@ -28,7 +29,7 @@ const HomePage = () => {
           <CarrouselContainer />
 
         </Grid>
-        <Grid item lg={9} md={9} sm={11} xs={11} mb={10} className="homepage">
+        <Grid item lg={9} md={9} sm={11} xs={11} mb={5} className="homepage">
           <PitchContainer />
         </Grid>
       </Grid>
