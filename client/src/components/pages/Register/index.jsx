@@ -5,8 +5,17 @@ import { Grid } from '@material-ui/core';
 import './register.scss';
 import Field from '../../Field';
 import {
-  sendRegisterForm, setRegisterField, setIsConfirmedToTrue, setIsConfirmedToFalse,
+  sendRegisterForm,
+  setRegisterField,
+  setIsConfirmedToTrue,
+  setIsConfirmedToFalse,
+  setErrorEmailRegister,
+  resetErrorEmailRegister,
+  setEmptyRegisterField,
+  resetEmptyRegisterField,
+  setReadyToSendToFalse,
 } from '../../../store/actions/register';
+import validateEmail from '../../../utils/validateEmail';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -16,6 +25,9 @@ const Login = () => {
   const password = useSelector((state) => state.register.password);
   const confirmPassword = useSelector((state) => state.register.confirmPassword);
   const isConfirmed = useSelector((state) => state.register.isConfirmed);
+  const errorEmail = useSelector((state) => state.register.errorEmail);
+  const emptyField = useSelector((state) => state.register.emptyField);
+  const readyToSend = useSelector((state) => state.register.readyToSend);
 
   const handleChangeField = (value, name) => {
     dispatch(setRegisterField(value, name));
@@ -23,13 +35,28 @@ const Login = () => {
 
   const handleRegisterFormSubmit = (event) => {
     event.preventDefault();
+    if (password !== confirmPassword) {
+      dispatch(setIsConfirmedToFalse());
+    }
     if (password === confirmPassword) {
       dispatch(setIsConfirmedToTrue());
+    }
+    if (!validateEmail(email)) {
+      dispatch(setErrorEmailRegister());
+    }
+    if (validateEmail(email)) {
+      dispatch(resetErrorEmailRegister());
+    }
+    if (password === '' || username === '' || email === '' || confirmPassword === '') {
+      dispatch(setEmptyRegisterField());
+    }
+    if (password !== '' && username !== '' && email !== '' && confirmPassword !== '') {
+      dispatch(resetEmptyRegisterField());
+    }
+    if (readyToSend) {
       dispatch(sendRegisterForm());
       history.push('/login');
-    }
-    else {
-      dispatch(setIsConfirmedToFalse());
+      dispatch(setReadyToSendToFalse());
     }
   };
 
@@ -37,7 +64,7 @@ const Login = () => {
     <div className="register">
       <Grid container direction="row" justifyContent="center" alignItems="center">
         <Grid item container alignItems="center" justifyContent="center" lg={11} md={11} sm={11} xs={11}>
-          <form className="register__form" onSubmit={handleRegisterFormSubmit}>
+          <form className="register__form" onSubmit={handleRegisterFormSubmit} autoComplete="off">
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <h3 className="register__title">
                 S'inscrire:
@@ -63,6 +90,11 @@ const Login = () => {
                 />
               </Grid>
               <Grid item>
+                {errorEmail && (
+                <p style={{ color: 'red' }}>{errorEmail}</p>
+                )}
+              </Grid>
+              <Grid item>
                 <Field
                   value={password}
                   type="password"
@@ -80,6 +112,16 @@ const Login = () => {
                   onChange={handleChangeField}
                 />
               </Grid>
+              {emptyField && (
+                <Grid item>
+                  <p style={{ color: 'red' }}>{emptyField}</p>
+                </Grid>
+              )}
+              {!isConfirmed && (
+                <Grid item>
+                  <p style={{ color: 'red' }}>Votre mot de passe n'est pas le même</p>
+                </Grid>
+              )}
               <Grid item>
                 <button
                   type="submit"
@@ -87,9 +129,6 @@ const Login = () => {
                 > S'inscrire
                 </button>
               </Grid>
-              {!isConfirmed && (
-                <p>Votre mot de passe n'est pas le même</p>
-              )}
             </Grid>
           </form>
         </Grid>

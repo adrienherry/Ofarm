@@ -10,14 +10,13 @@
 
     &-input {
         width: 100%;
-        padding: vars.$gutter ;
+        padding: vars.$gutter;
         border: none;
-        border-radius: 1rem;
-        box-shadow: vars.$shadow;
+        border-radius: 0.3rem;
+        box-shadow: vars.$shadow-card-item;
         margin-top: 1rem;
         font-family: vars.$font;
-        font-size: 1.1rem;
-        
+        font-size: 1.1rem;        
         &::placeholder {
             font-family: vars.$font;
             font-size: 1.2rem;

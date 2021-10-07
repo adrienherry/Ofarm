@@ -1,12 +1,17 @@
 import {
+  RESET_ERROR_LOGIN,
+  SET_ERROR_LOGIN,
   SET_LOGGED_TO_FALSE,
-  SET_LOGGED_TO_TRUE, SET_LOGIN_FIELD,
+  SET_LOGGED_TO_TRUE, SET_LOGIN_FIELD, SET_READY_TO_REDIRECT_LOGIN,
+  RESET_READY_TO_REDIRECT_LOGIN,
 } from '../actions/authentification';
 
 const initialState = {
   logged: false,
   emailLogin: '',
   passwordLogin: '',
+  errorLogin: '',
+  readyToRedirect: false,
 };
 
 const authentificationReducer = (state = initialState, action = {}) => {
@@ -27,6 +32,26 @@ const authentificationReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         logged: false,
+      };
+    case SET_ERROR_LOGIN:
+      return {
+        ...state,
+        errorLogin: 'Email ou mot de passe incorrect',
+      };
+    case RESET_ERROR_LOGIN:
+      return {
+        ...state,
+        errorLogin: '',
+      };
+    case SET_READY_TO_REDIRECT_LOGIN:
+      return {
+        ...state,
+        readyToRedirect: true,
+      };
+    case RESET_READY_TO_REDIRECT_LOGIN:
+      return {
+        ...state,
+        readyToRedirect: false,
       };
     default:
       return state;
