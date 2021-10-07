@@ -38,7 +38,7 @@ const CreateGarden = () => {
 
   useEffect(() => {
     if (readyToRedirect) {
-      history.push(`/${username}/gardens/${gardenName}`);
+      history.push(`/${username}/gardens`);
       dispatch(resetGardenInfo());
       dispatch(setReadyToRedirectToFalse());
     }

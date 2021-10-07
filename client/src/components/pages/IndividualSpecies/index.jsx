@@ -2,13 +2,12 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Grid, useTheme, useMediaQuery } from '@material-ui/core';
 import './individual-species.scss';
-import { useParams, Redirect } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import aos from 'aos';
 import convertEventDate from '../../../utils/convertDate';
 import { fetchOneSpecies, fetchSpeciesList } from '../../../store/actions/species';
 import { findSpecies } from '../../../selectors/species';
 import waterImg from '/icons8-water-40.png';
-import sunImg from '/icons8-sunny-64.png';
 
 import 'aos/dist/aos.css';
 import Co2InfoItem from './Co2InfoIntem';
@@ -20,7 +19,6 @@ const IndividualSpecies = () => {
   const { slug } = useParams();
   const speciesToFetch = findSpecies(speciesList, slug);
   const species = useSelector((state) => state.species.species);
-  console.log(species);
 
   const theme = useTheme();
   const isMedium = useMediaQuery(theme.breakpoints.down('md'));
@@ -38,7 +36,9 @@ const IndividualSpecies = () => {
   });
 
   useEffect(() => {
-    aos.init();
+    aos.init({
+      duration: 1000,
+    });
   }, []);
 
   let style;
@@ -69,7 +69,7 @@ const IndividualSpecies = () => {
       <div className="individual-species" style={style}>
         <>
           <Grid container direction="row" justifyContent={isMedium ? 'center' : 'space-between'}>
-            <Grid item lg={4} md={4} sm={9} xs={12} container justifyContent="center">
+            <Grid item lg={4} md={4} sm={9} xs={12} container justifyContent="center" data-aos="fade-right" data-aos-delay={isMedium ? '100' : '1700'}>
               <div
                 className="individual-species__image-container"
                 style={isMedium ? { marginBottom: '1rem' } : {}}
@@ -88,7 +88,7 @@ const IndividualSpecies = () => {
                   {species.name}
                 </div>
               </Grid>
-              <Grid item lg={12} md={12} sm={12} xs={12} data-aos="fade-left" delay="100">
+              <Grid item lg={12} md={12} sm={12} xs={12} data-aos="fade-left" data-aos-delay="100">
                 <p className="individual-species__description">
                   <span className="individual-species__span">Description : </span>
                   <br />
@@ -110,6 +110,8 @@ const IndividualSpecies = () => {
                 justifyContent="center"
                 className="individual-species__info-co2"
                 sx={species.co2Data ? {} : { boxShadow: 'none' }}
+                data-aos="fade-right"
+                data-aos-delay={isMedium ? '100' : '700'}
               >
                 {species.co2Data && (
                 <>
@@ -140,6 +142,8 @@ const IndividualSpecies = () => {
               <Grid
                 item
                 container
+                data-aos="fade-left"
+                data-aos-delay={isMedium ? '100' : '1200'}
                 direction="row"
                 lg={7}
                 md={6}

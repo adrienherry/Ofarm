@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import ButtonUserSection from '../../ButtonUserSection';
-import cow from '../../../../../../public/cow.jpg';
+import randomImage from '../../../../../utils/randomImage';
 
 const GardensCard = ({ title, description, titleSlug }) => {
   const usernameSlug = useSelector((state) => state.user.usernameSlug);
@@ -25,7 +25,7 @@ const GardensCard = ({ title, description, titleSlug }) => {
           <CardMedia
             component="img"
             height="240"
-            image={cow}
+            image={randomImage()}
             alt="user"
           />
           <CardContent>
