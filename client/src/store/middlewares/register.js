@@ -21,12 +21,6 @@ export default (store) => (next) => async (action) => {
             password, username, email, confirmPassword,
           },
         } = store.getState();
-        if (password !== confirmPassword) {
-          store.dispatch(setIsConfirmedToFalse());
-        }
-        if (password === confirmPassword) {
-          store.dispatch(setIsConfirmedToTrue());
-        }
         if (!validateEmail(email)) {
           store.dispatch(setErrorEmailRegister());
         }
@@ -44,6 +38,7 @@ export default (store) => (next) => async (action) => {
           email: email,
           password: password,
         });
+        console.log(response.data);
         if (!response.data.errors) {
           store.dispatch(setReadyToSendToTrue());
         }
