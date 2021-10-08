@@ -7,6 +7,8 @@ const gardenController = require("./controllers/gardenController");
 const searchController = require("./controllers/searchController");
 const calendarEventController = require("./controllers/calendarEventController");
 
+const harvestController = require("./controllers/harvestController");
+
 const jwtService = require("./services/jwtService");
 const authController = require("./controllers/authController");
 
@@ -22,11 +24,7 @@ const { cache, flush } = require("./services/cache");
  * @returns {string} 200 - An array of matching results (species)
  * @returns {string} 500 - Internal Server Error
  */
-router.get(
-	"/search",
-	cache,
-	searchController.findByQueryString,
-),
+router.get("/search", cache, searchController.findByQueryString),
 	/**
 	 * @route GET /species
 	 * @group Species
@@ -34,11 +32,7 @@ router.get(
 	 * @returns {Array.<Species>} 200 - An array with all species (ordered by name)
 	 * @returns {string} 500 - Internal Server Error
 	 */
-	router.get(
-		"/species",
-		cache,
-		speciesController.findAll,
-	);
+	router.get("/species", cache, speciesController.findAll);
 
 /**
  * @route GET /speciesId
@@ -48,11 +42,7 @@ router.get(
  * @returns {Array.<Species>} 200 - A single species identified by its Id
  * @returns {string} 500 - Internal Server Error
  */
-router.get(
-	"/species/:id",
-	cache,
-	speciesController.findOne,
-);
+router.get("/species/:id", cache, speciesController.findOne);
 
 /**
  * @route POST /register
@@ -214,10 +204,8 @@ router.delete(
  * @returns {string} 500 - Internal Server Error
  */
 // router.get("/garden/:garden_id/event",
-// 	jwtService.verifyAndDecodeTokenMiddleware, 
+// 	jwtService.verifyAndDecodeTokenMiddleware,
 // 	calendarEventController.getCalendarEvents);
-
-
 
 /**
  * @route POST /garden/:garden_id/event
@@ -277,5 +265,13 @@ router.delete(
 // 	calendarEventController.deleteCalendarEvent,
 // );
 
+router.get("/harvest", jwtService.verifyAndDecodeTokenMiddleware, harvestController.getHarvests);
+router.post(
+	"/harvest",
+	jwtService.verifyAndDecodeTokenMiddleware,
+	harvestController.createHarvest,
+);
+// router.patch("/harvest");
+// router.delete("/harvest");
 
 module.exports = router;
