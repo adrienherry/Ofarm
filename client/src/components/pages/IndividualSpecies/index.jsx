@@ -109,7 +109,6 @@ const IndividualSpecies = () => {
                 xs={10}
                 justifyContent="center"
                 className="individual-species__info-co2"
-                sx={species.co2Data ? {} : { boxShadow: 'none' }}
                 data-aos="fade-right"
                 data-aos-delay={isMedium ? '100' : '700'}
               >

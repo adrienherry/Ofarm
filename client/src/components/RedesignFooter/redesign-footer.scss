@@ -1,7 +1,7 @@
 @use "../../styles/vars";
 
 .redesign-footer {
-  height: 35vh;
+  height: 30vh;
   // height: 12rem;
   margin-top: 8rem;
   padding-top: 3rem;
@@ -51,10 +51,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100vw;
+      // width: 100vw;
       padding-top: 0.4rem;
-      border-top: 0.1rem solid;
-      border-color: vars.$redesign-background-footer-top;
+      // border-top: 0.1rem solid;
+      // border-color: vars.$redesign-background-footer-top;
       &-title {
         font-size: 2rem;
         color: black;

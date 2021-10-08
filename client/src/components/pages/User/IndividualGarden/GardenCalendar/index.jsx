@@ -48,10 +48,10 @@ const GardenCalendar = ({ onDayClick }) => {
       const endDateEvent = convertCalendarDayDate(event.endDate);
       if (eventDate >= startDateEvent && eventDate <= endDateEvent) {
         if (!styleArray[0]) {
-          styleArray.push(`box-shadow: ${event.eventColor} 0px ${(index + 1) * -2}px 0px 0px inset`);
+          styleArray.push(`box-shadow: ${event.eventColor} 0px ${(index + 1) * -5}px 0px 0px inset`);
         }
         else {
-          styleArray.push(`${event.eventColor} 0px ${(index + 1) * -2}px 0px 0px inset`);
+          styleArray.push(`${event.eventColor} 0px ${(index + 1) * -5}px 0px 0px inset`);
         }
       }
     });
