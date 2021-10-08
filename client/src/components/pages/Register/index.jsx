@@ -36,11 +36,12 @@ const Login = () => {
 
   const handleRegisterFormSubmit = (event) => {
     event.preventDefault();
-    dispatch(sendRegisterForm());
-    if (readyToSend) {
-      history.push('/login');
-      dispatch(resetRegisterInfo());
-      dispatch(setReadyToSendToFalse());
+    if (password !== confirmPassword) {
+      dispatch(setIsConfirmedToFalse());
+    }
+    else {
+      dispatch(sendRegisterForm());
+      dispatch(setIsConfirmedToTrue());
     }
   };
 

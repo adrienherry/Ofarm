@@ -22,9 +22,13 @@ const RedesignHeader = () => {
   return (
     <div className="redesign-header">
       <div className="redesign-header__left-container">
-        <div className="redesign-header__title">
-          <span className="redesign-header__title-span">O'</span>Farm
-        </div>
+        <Link
+          to="/"
+        >
+          <div className="redesign-header__title">
+            <span className="redesign-header__title-span">O'</span>Farm
+          </div>
+        </Link>
         <nav className="redesign-header__navbar" style={is1360 ? {} : { margin: '1rem' }}>
           <NavLink
             className="redesign-header__navbar-link"
