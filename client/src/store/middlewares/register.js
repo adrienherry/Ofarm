@@ -39,12 +39,14 @@ export default (store) => (next) => async (action) => {
           password: password,
         });
         console.log(response.data);
+        console.log(response);
         if (!response.data.errors) {
           store.dispatch(setReadyToSendToTrue());
         }
       }
       catch (error) {
-        console.log(error);
+        console.log('test');
+        console.log(error.response);
       }
       next(action);
       break;
