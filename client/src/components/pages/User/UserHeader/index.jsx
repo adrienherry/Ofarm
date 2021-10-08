@@ -14,7 +14,7 @@ const UserHeader = () => {
   return (
     <header className="user-header">
       <Grid container justifyContent={isMedium ? 'center' : 'space-between'}>
-        <Grid item mb={isMedium ? 4 : 0} lg={4} md={5} sm={10}>
+        <Grid item mb={isMedium ? 2 : 0}>
           <NavLink
             to={`/${usernameSlug}/createGarden`}
           >
@@ -22,7 +22,7 @@ const UserHeader = () => {
           </NavLink>
         </Grid>
         <Grid item lg={5} md={6} sm={10}>
-          <Stack direction="row" spacing={2} justifyContent={isMedium ? 'flex-start' : 'flex-end'}>
+          <Stack direction="row" spacing={2} justifyContent={isMedium ? 'center' : 'flex-end'}>
             <NavLink
               to={`/${usernameSlug}/gardens`}
             >

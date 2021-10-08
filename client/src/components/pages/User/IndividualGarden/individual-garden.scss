@@ -2,6 +2,13 @@
 
 .individual-garden {
     margin-top: 3rem;
+    &__name {
+        font-size: 3rem;
+        display: flex;
+        justify-content: center;
+        font-weight: 500;
+        color: vars.$secondary-color;
+    }
 }
 
 .modal-item__container {

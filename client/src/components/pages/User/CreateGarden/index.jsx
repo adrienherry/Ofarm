@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { Grid, useTheme, useMediaQuery } from '@material-ui/core';
 import Field from '../../../Field';
-import { setGardenName, createGarden, setErrorNoName } from '../../../../store/actions/createGarden';
+import {
+  setGardenName, createGarden, setErrorNoName, resetGardenInfo, setReadyToRedirectToFalse,
+} from '../../../../store/actions/createGarden';
 import './create-garden.scss';
 import SpeciesList from './SpeciesList';
 import DisplaySpeciesChoosen from './DisplaySpeciesChoosen';
@@ -10,8 +13,11 @@ import UserHeader from '../UserHeader';
 
 const CreateGarden = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const gardenName = useSelector((state) => state.createGarden.gardenName);
   const error = useSelector((state) => state.createGarden.error);
+  const readyToRedirect = useSelector((state) => state.createGarden.readyToRedirect);
+  const username = useSelector((state) => state.user.username);
 
   const theme = useTheme();
   const isMedium = useMediaQuery(theme.breakpoints.down('md'));
@@ -25,10 +31,18 @@ const CreateGarden = () => {
     if (gardenName === '') {
       dispatch(setErrorNoName());
     }
-    else {
+    if (gardenName !== '') {
       dispatch(createGarden());
     }
   };
+
+  useEffect(() => {
+    if (readyToRedirect) {
+      history.push(`/${username}/gardens`);
+      dispatch(resetGardenInfo());
+      dispatch(setReadyToRedirectToFalse());
+    }
+  }, [readyToRedirect]);
   return (
     <>
       <UserHeader />
@@ -59,7 +73,7 @@ const CreateGarden = () => {
                 </Grid>
                 <Grid item>
                   {error && (
-                  <div>{error}</div>
+                  <div style={{ color: 'red' }}>{error}</div>
                   )}
                 </Grid>
                 <Grid item>

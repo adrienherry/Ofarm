@@ -58,3 +58,19 @@ export const setErrorNoName = () => (
     type: SET_ERROR_NO_NAME,
   }
 );
+
+export const SET_READY_TO_REDIRECT_TO_TRUE = 'SET_READY_TO_REDIRECT_TO_TRUE';
+
+export const setReadyToRedirectToTrue = () => (
+  {
+    type: SET_READY_TO_REDIRECT_TO_TRUE,
+  }
+);
+
+export const SET_READY_TO_REDIRECT_TO_FALSE = 'SET_READY_TO_REDIRECT_TO_FALSE';
+
+export const setReadyToRedirectToFalse = () => (
+  {
+    type: SET_READY_TO_REDIRECT_TO_FALSE,
+  }
+);

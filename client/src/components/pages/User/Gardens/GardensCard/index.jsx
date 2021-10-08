@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import ButtonUserSection from '../../ButtonUserSection';
-import cow from '../../../../../../public/cow.jpg';
+import randomImage from '../../../../../utils/randomImage';
 
 const GardensCard = ({ title, description, titleSlug }) => {
   const usernameSlug = useSelector((state) => state.user.usernameSlug);
@@ -16,15 +16,16 @@ const GardensCard = ({ title, description, titleSlug }) => {
     <div>
       <Card sx={{
         maxWidth: 345,
-        boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
+        boxShadow: 'rgba(0, 0, 0, 0.15) 0px 3px 3px 0px',
         marginBottom: '3rem',
+        borderRadius: '0rem',
       }}
       >
         <CardActionArea>
           <CardMedia
             component="img"
             height="240"
-            image={cow}
+            image={randomImage()}
             alt="user"
           />
           <CardContent>

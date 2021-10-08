@@ -1,3 +1,5 @@
+@use '../../../../styles/vars';
+
 .infos {
 	display: flex;
 	flex-direction: column;
@@ -18,6 +20,7 @@
 	margin: auto;
 	font-weight: 700;
 	padding-bottom: 0.25rem;
+	color: vars.$secondary-color;
 }
 
 .infos__role {
@@ -34,7 +37,7 @@
 
 	margin-bottom: 1rem;
 	border-radius: 1rem;
-	box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: vars.$shadow-card-item;
 
 	background-position: center;
 	background-repeat: no-repeat;
@@ -62,5 +65,5 @@
 }
 
 .infos__link:hover {
-	color: rgb(151, 91, 1);
+	color: vars.$secondary-color;
 }

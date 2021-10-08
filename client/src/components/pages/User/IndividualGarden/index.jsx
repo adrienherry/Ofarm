@@ -12,6 +12,7 @@ import GardenCalendar from './GardenCalendar';
 import './individual-garden.scss';
 import { convertModalDate } from '../../../../utils/convertDate';
 import ModalItem from './ModalItem';
+import garden from '../../../../store/middlewares/garden';
 
 const IndividualGarden = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,6 @@ const IndividualGarden = () => {
   const isModalOpen = useSelector((state) => state.garden.isModalOpen);
   const modalDate = useSelector((state) => state.garden.modalDate);
   const modalEvents = useSelector((state) => state.garden.modalEvents);
-  console.log(modalEvents);
 
   const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -63,8 +63,6 @@ const IndividualGarden = () => {
   }
 
   const handleOnDayClick = (date, events) => {
-    console.log('date', date);
-    console.log(events);
     dispatch(setModalDate(date));
     dispatch(setModalEvents(events));
     dispatch(openModal());
@@ -83,9 +81,12 @@ const IndividualGarden = () => {
     <>
       <UserHeader />
       {userGarden && (
-        <div className="individual-garden">
-          <GardenCalendar onDayClick={handleOnDayClick} />
-        </div>
+        <>
+          <div className="individual-garden__name">{userGarden.name}</div>
+          <div className="individual-garden">
+            <GardenCalendar onDayClick={handleOnDayClick} />
+          </div>
+        </>
       )}
       {modalEvents && modalDate && (
       <div>

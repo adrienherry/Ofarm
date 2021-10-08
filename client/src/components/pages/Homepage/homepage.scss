@@ -3,14 +3,16 @@
 .homepage {
 	&__container {
 		background-color: vars.$background-card-color;
-		border-radius: 1rem;
-		box-shadow: vars.$shadow;
+		box-shadow: vars.$shadow-card-item;
 	}
 
     &__title {
 	font-weight: 700;
 	font-size: 2.5rem;
 	width: 100%;
-    text-align: center; 
+    text-align: center;
+	color: vars.$secondary-color;
+	margin: 3rem 0;
+	padding: 0 1rem;
 }
 }
