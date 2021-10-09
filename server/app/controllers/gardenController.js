@@ -105,10 +105,6 @@ const gardenController = {
 
 			await newGarden.setSpecies(gardenSpecies);
 
-			// await newGarden.save();
-
-			// Add species to new garden here
-
 			res.json({
 				id: newGarden.id,
 				name: newGarden.name,
@@ -154,7 +150,7 @@ const gardenController = {
 			}
 
 			res.json({
-				deleted: nbDeleted === 1,
+				deleted: nbDeleted === 0,
 			});
 		} catch (error) {
 			res.status(500).json(error);

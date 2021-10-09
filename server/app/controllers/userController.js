@@ -29,7 +29,12 @@ const userController = {
 										association: "events",
 										include: "eventType",
 										attributes: {
-											exclude: ["createdAt", "updatedAt", "eventTypeId","speciesId"],
+											exclude: [
+												"createdAt",
+												"updatedAt",
+												"eventTypeId",
+												"speciesId",
+											],
 										},
 									},
 								],
@@ -46,9 +51,6 @@ const userController = {
 						},
 					},
 				],
-				attributes: {
-					exclude: ["createdAt", "updatedAt"],
-				},
 			});
 
 			res.json(userItem);
@@ -97,14 +99,9 @@ const userController = {
 					user.hashedPassword = bcrypt.hashSync(password, saltRounds);
 			}
 
-			const editedUser = await user.save();
+			await user.save();
 
-			console.log({
-				username: editedUser.username,
-				usernameSlug: editedUser.usernameSlug,
-				email: editedUser.email
-			})
-			res.json(results);
+			res.json({ updated: true });
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(error);
