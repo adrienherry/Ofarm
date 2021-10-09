@@ -94,13 +94,7 @@ const calendarEventController = {
 			const gardenId = req.params.garden_id;
 			const { speciesId, fromDate, untilDate, name, comment } = req.body;
 
-			if (
-				!name ||
-				!gardenId ||
-				!speciesId ||
-				!fromDate ||
-				!untilDate
-			) {
+			if (!name || !gardenId || !speciesId || !fromDate || !untilDate) {
 				res.status(403).json(standardErrors.BadRequestError);
 				return;
 			}
@@ -144,8 +138,6 @@ const calendarEventController = {
 				res.status(500).json(standardErrors.FailedCreateError);
 				return;
 			}
-
-			console.log(newCalendarEvent);
 
 			res.json(newCalendarEvent);
 		} catch (error) {
@@ -214,14 +206,12 @@ const calendarEventController = {
 
 			const result = await calendarEvent.save();
 
-			console.log(result);
-
 			if (!result.id) {
 				res.status(500).json(standardErrors.FailedCreateError);
 				return;
 			}
 
-			res.json(result);
+			res.json({ updated: true });
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(error);
@@ -281,7 +271,6 @@ const calendarEventController = {
 			res.json({
 				deleted: nbDeleted === 0,
 			});
-
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(error);

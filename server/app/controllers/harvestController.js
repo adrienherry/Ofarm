@@ -13,17 +13,15 @@ const harvestController = {
 
 			const harvests = await Harvest.findAll({
 				where: {
-					'$garden.user_id$': userId,
+					"$garden.user_id$": userId,
 				},
-                include: {
-                    model: Garden,
-                    required: true,
-                    as: "garden"
-                }
-                
+				include: {
+					model: Garden,
+					required: true,
+					as: "garden",
+				},
 			});
-            res.json(harvests);
-            
+			res.json(harvests);
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(standardErrors.InternalServerError);
@@ -73,8 +71,6 @@ const harvestController = {
 				comment: req.body.comment ? req.body.comment.trim() : "",
 			});
 
-			console.log(newHarvest);
-
 			if (!newHarvest.id) {
 				res.status(500).json(standardErrors.InternalServerError);
 				return;
@@ -84,6 +80,106 @@ const harvestController = {
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(standardErrors.InternalServerError);
+		}
+	},
+
+	updateHarvest: async (req, res) => {
+		try {
+			if (!res.locals.id) {
+				res.status(403).json(standardErrors.UserNotLoggedError);
+				return;
+			}
+			const userId = res.locals.id;
+
+			if (!req.body.harvestId) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
+			const harvestId = parseInt(req.body.harvestId);
+
+			const harvest = await Harvest.findOne({
+				where: {
+					id: harvestId,
+					"$garden.user_id$": userId,
+				},
+				include: {
+					model: Garden,
+					as: "garden",
+					required: true,
+				},
+			});
+
+			if (!harvest) {
+				res.status(403).json(standardErrors.HarvestNotFoundError);
+			}
+
+			const { comment, date, quantity, gardenId, speciesId } = req.body;
+
+			quantity ? (harvest.quantity = quantity) : "";
+			date ? (harvest.date = date) : "";
+			speciesId ? (harvest.speciesId = speciesId) : "";
+			comment ? (harvest.comment = comment.trim()) : "";
+			gardenId ? (harvest.gardenId = gardenId) : "";
+
+			const result = await harvest.save();
+
+			if (!result.id) {
+				res.status(500).json(standardErrors.FailedCreateError);
+				return;
+			}
+
+			res.json({ updated: true });
+		} catch (error) {
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
+		}
+	},
+
+	deleteHarvest: async (req, res) => {
+		try {
+			if (!res.locals.id) {
+				res.status(403).json(standardErrors.UserNotLoggedError);
+				return;
+			}
+			const userId = res.locals.id;
+
+			if (!req.body.id) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+			const harvestId = parseInt(req.body.id);
+
+			const garden = await Harvest.findOne({
+				where: {
+					id: harvestId,
+					"$garden.user_id$": userId,
+				},
+				include: {
+					model: Garden,
+					as: "garden",
+					required: true,
+				},
+			});
+
+			if (!garden) {
+				res.status(400).json(standardErrors.GardenNotFoundError);
+				return;
+			}
+
+			const nbDeleted = await garden.destroy({ returning: true });
+
+			console.log(nbDeleted);
+			if (nbDeleted.length !== 0) {
+				res.status(500).json(standardErrors.FailedDeleteError(nbDeleted));
+				return;
+			}
+
+			res.json({
+				deleted: nbDeleted.length === 0,
+			});
+		} catch (error) {
+			res.status(500).json(error);
 		}
 	},
 };
