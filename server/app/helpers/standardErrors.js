@@ -20,6 +20,10 @@ const standardErrors = {
 		error: "Aucune récolte ne correspond à cet ID.",
 	},
 
+	FieldNotFoundError: {
+		error: "Aucune récolte ne correspond à cet ID.",
+	},
+
 	GardenNameAlreadyExists: {
 		error: "Vous possédez déjà un jardin avec ce nom.",
 	},
