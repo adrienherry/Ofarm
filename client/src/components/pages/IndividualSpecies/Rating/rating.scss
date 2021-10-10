@@ -1,0 +1,14 @@
+.image__clear {
+    height: 24px;
+    width: 24px;
+    filter: grayscale(0%);
+    margin-right: 0.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.image__dark {
+    height: 24px;
+    width: 24px;
+    margin-bottom: 0.3rem;
+    filter: grayscale(100%);
+}

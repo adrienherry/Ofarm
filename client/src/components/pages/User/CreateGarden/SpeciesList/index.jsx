@@ -19,7 +19,7 @@ const SpeciesList = () => {
     <div className="species-list">
       <List sx={{ overflowY: 'auto', height: 200 }}>
         {speciesList && speciesList.map((species) => (
-          <Item name={species.name} key={species.id} />
+          <Item name={species.name} id={species.id} key={species.id} />
         ))}
         <div className="species-list__loader">
           {loading && (

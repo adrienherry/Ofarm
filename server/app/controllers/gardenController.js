@@ -1,6 +1,6 @@
 const db = require("../services/sequelize");
-const { Op } = require("sequelize");
-const { Garden } = require("../models");
+const { Op, transaction } = require("sequelize");
+const { Garden, Species, EventType } = require("../models");
 const { standardErrors, slugify } = require("../helpers");
 
 const gardenController = {
@@ -17,16 +17,28 @@ const gardenController = {
 
 			const gardenItem = await Garden.findByPk(garden_id, {
 				include: [
-					"species",
+					{
+						model: Species,
+						as: "species",
+					},
 					{
 						association: "species",
 						include: [
 							"events",
 							{
 								association: "events",
-								include: "eventType",
+								include: {
+									model: EventType,
+									as: "eventType",
+									attributes: { exclude: ["createdAt", "updatedAt"] },
+								},
 								attributes: {
-									exclude: ["createdAt", "updatedAt", "speciesId", "eventTypeId"],
+									exclude: [
+										"createdAt",
+										"updatedAt",
+										"speciesId",
+										"eventTypeId",
+									],
 								},
 							},
 						],
@@ -76,6 +88,7 @@ const gardenController = {
 				return;
 			}
 
+			// console.log(speciesIds);
 			const newGarden = await Garden.create({
 				name: formattedName,
 				nameSlug: slugify(formattedName),
@@ -86,10 +99,17 @@ const gardenController = {
 				res.status(500).json(standardErrors.FailedCreateError);
 			}
 
+			const gardenSpecies = req.body.species.map(({ id }) => {
+				return new Species({ id: id });
+			});
+
+			await newGarden.setSpecies(gardenSpecies);
+
 			res.json({
 				id: newGarden.id,
+				name: newGarden.name,
+				nameSlug: newGarden.nameSlug,
 			});
-			
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(error);
@@ -130,7 +150,7 @@ const gardenController = {
 			}
 
 			res.json({
-				deleted: nbDeleted === 1,
+				deleted: nbDeleted === 0,
 			});
 		} catch (error) {
 			res.status(500).json(error);

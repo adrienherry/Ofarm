@@ -1,14 +1,18 @@
-@use '../../../styles/vars';
+@use "../../../styles/vars";
 
 .homepage {
-    &__grid-container {
-       
+	&__container {
+		background-color: vars.$background-card-color;
+		box-shadow: vars.$shadow-card-item;
+	}
 
-        &__carrousel {
-            background-color: vars.$background-card-color;
-            border-radius: 1rem;
-            position: relative;
-            box-shadow: vars.$shadow;
-        }
-    }
+    &__title {
+	font-weight: 700;
+	font-size: 2.5rem;
+	width: 100%;
+    text-align: center;
+	color: vars.$secondary-color;
+	margin: 3rem 0;
+	padding: 0 1rem;
+}
 }

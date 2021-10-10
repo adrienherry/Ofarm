@@ -15,13 +15,17 @@ WaterNeed.init(
 			allowNull: false,
 			unique: true,
 		},
+		value: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+			unique: true,
+		},
 	},
 	{
 		sequelize,
 		underscored: true,
 		modelName: "WaterNeed",
 		tableName: "water_need",
-		timestamps: false,
 	},
 );
 

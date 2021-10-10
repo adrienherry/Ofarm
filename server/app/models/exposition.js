@@ -15,13 +15,17 @@ Exposition.init(
 			allowNull: false,
 			unique: true,
 		},
+		value: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+			unique: true,
+		},
 	},
 	{
 		sequelize,
 		underscored: true,
 		modelName: "Exposition",
 		tableName: "exposition",
-		timestamps: true,
 	},
 );
 

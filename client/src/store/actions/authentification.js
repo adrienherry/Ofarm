@@ -24,6 +24,14 @@ export const setLoggedToTrue = () => (
   }
 );
 
+export const SET_LOGGED_TO_FALSE = 'SET_LOGGED_TO_FALSE';
+
+export const setLoggedToFalse = () => (
+  {
+    type: SET_LOGGED_TO_FALSE,
+  }
+);
+
 export const IS_CONNECTED = 'IS_CONNECTED';
 
 export const isConnected = () => (
@@ -32,26 +40,34 @@ export const isConnected = () => (
   }
 );
 
-export const SET_IS_READY_TO_REDIRECT_TO_FALSE = 'SET_IS_READY_TO_REDIRECT_TO_FALSE';
+export const SET_ERROR_LOGIN = 'SET_ERROR_LOGIN';
 
-export const setIsReadyToRedirectToFalse = () => (
+export const setErrorLogin = () => (
   {
-    type: SET_IS_READY_TO_REDIRECT_TO_FALSE,
+    type: SET_ERROR_LOGIN,
   }
 );
 
-export const SET_IS_READY_TO_REDIRECT_TO_TRUE = 'SET_IS_READY_TO_REDIRECT_TO_TRUE';
+export const RESET_ERROR_LOGIN = 'RESET_ERROR_LOGIN';
 
-export const setIsReadyToRedirectToTrue = () => (
+export const resetErrorLogin = () => (
   {
-    type: SET_IS_READY_TO_REDIRECT_TO_TRUE,
+    type: RESET_ERROR_LOGIN,
   }
 );
 
-export const SET_LOGGED_TO_FALSE = 'SET_LOGGED_TO_FALSE';
+export const SET_READY_TO_REDIRECT_LOGIN = 'SET_READY_TO_REDIRECT_LOGIN';
 
-export const setLoggedToFalse = () => (
+export const setReadyToRedirectLogin = () => (
   {
-    type: SET_LOGGED_TO_FALSE,
+    type: SET_READY_TO_REDIRECT_LOGIN,
+  }
+);
+
+export const RESET_READY_TO_REDIRECT_LOGIN = 'RESET_READY_TO_REDIRECT_LOGIN';
+
+export const resetReadyToRedirectLogin = () => (
+  {
+    type: RESET_READY_TO_REDIRECT_LOGIN,
   }
 );

@@ -1,11 +1,16 @@
 import {
+  resetEmptyRegisterField,
+  resetErrorEmailRegister,
   resetRegisterInfo,
   SEND_REGISTER_FORM,
+  setEmptyRegisterField,
+  setErrorEmailRegister,
   setIsConfirmedToFalse,
   setIsConfirmedToTrue,
-  setIsReadyToRedirectToLoginToTrue,
+  setReadyToSendToTrue,
 } from '../actions/register';
 import { axiosInstance } from '../../services/axios';
+import validateEmail from '../../utils/validateEmail';
 
 export default (store) => (next) => async (action) => {
   switch (action.type) {
@@ -13,25 +18,35 @@ export default (store) => (next) => async (action) => {
       try {
         const {
           register: {
-            password, confirmPassword, username, email,
+            password, username, email, confirmPassword,
           },
         } = store.getState();
-        if (password === confirmPassword) {
-          store.dispatch(setIsConfirmedToTrue());
-          const response = await axiosInstance.post('/register', {
-            username: username,
-            email: email,
-            password: password,
-          });
-          store.dispatch(resetRegisterInfo());
-          store.dispatch(setIsReadyToRedirectToLoginToTrue());
+        if (!validateEmail(email)) {
+          store.dispatch(setErrorEmailRegister());
         }
-        else {
-          store.dispatch(setIsConfirmedToFalse());
+        if (validateEmail(email)) {
+          store.dispatch(resetErrorEmailRegister());
+        }
+        if (password === '' || username === '' || email === '' || confirmPassword === '') {
+          store.dispatch(setEmptyRegisterField());
+        }
+        if (password !== '' && username !== '' && email !== '' && confirmPassword !== '') {
+          store.dispatch(resetEmptyRegisterField());
+        }
+        const response = await axiosInstance.post('/register', {
+          username: username,
+          email: email,
+          password: password,
+        });
+        console.log(response.data);
+        console.log(response);
+        if (!response.data.errors) {
+          store.dispatch(setReadyToSendToTrue());
         }
       }
       catch (error) {
-        console.log(error);
+        console.log('test');
+        console.log(error.response);
       }
       next(action);
       break;

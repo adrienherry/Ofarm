@@ -1,40 +1,29 @@
+@use '../../../styles/vars';
+
 .legalnotice {
-background-color: #a7bbac;    
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	&__title {
+		
+		text-transform: uppercase;
+		font-weight: bold;
+		color: vars.$secondary-color;
 
+		margin: 2rem 0; 
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		text-align: center;
+		font-size: 1.7rem;
+		border-radius: 1rem;
+	}
 
-
-&__titre {
-    background-color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #bdbdbd;;
-    margin-left: 10rem;
-    margin-right: 10rem;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    text-align: center;
-    font-size: 1.7rem;
-    border: solid black 1px;
-    border-radius: 1rem;
-   
-};
-
-&__content {
-    background-color: white;
-    width: 80%;
-    border:solid black 1px;
-    padding:1rem ;
-    margin: 1em auto 2em;
-    border-radius: 1rem;
-
-   
-    width: 80%;
-    height: 38rem;
-    overflow-y: scroll;
-    scrollbar-color: rebeccapurple green;
-    scrollbar-width: thin;
-};
-
+	&__content {
+		background-color: white;
+		padding: 1rem;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		max-width: 50rem;
+		box-shadow: vars.$shadow-card-item;
+	}
 }

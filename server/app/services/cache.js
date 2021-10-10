@@ -9,7 +9,7 @@ const asyncClient = {
 	exists: promisify(redisClient.exists).bind(redisClient),
 };
 
-const TIMEOUT = 60 * 60; // 1 hour = 60 * 60 sec
+const TIMEOUT = 60 * 60; // 1 hou-r = 60 * 60 sec
 
 const DB_PREFIX = "ofarm";
 

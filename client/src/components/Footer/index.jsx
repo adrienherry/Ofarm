@@ -67,7 +67,7 @@ const Footer = () => {
           >
             <NavigationLink path="/team" name="Équipe" />
             <NavigationLink path="/about" name="À propos" />
-            <NavigationLink path="/terms" name="Mention légales" />
+            <NavigationLink path="/terms" name="Mentions légales" />
 
           </Grid>
           <Grid

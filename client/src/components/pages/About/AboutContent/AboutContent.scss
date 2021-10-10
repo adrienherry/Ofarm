@@ -1,17 +1,20 @@
-.content__titre {
-    // background-color:darkorange;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    font-size:18px;
+@use '../../../../styles/vars';
+
+.content {
+    padding: 1rem;
+
+    &__titre {
+        margin-bottom: 1rem;
+        font-weight: bold;
+        font-size:1.2rem;
+        color: vars.$header-color;
+    }
     
+    &__text {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        text-align: justify;
+        word-wrap: break-word;
+    }
 }
 
-.content__text {
-text-align : left;
-margin-left: 13rem;
-margin-right: 2rem;
-margin-bottom: 4rem;
-font-size: 18px;
-line-height: 1.5rem;
-
-}

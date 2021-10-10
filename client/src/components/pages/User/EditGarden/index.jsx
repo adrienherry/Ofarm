@@ -396,9 +396,9 @@ const EditGarden = () => {
 			</Grid>
 
 			<Grid container justifyContent="center">
-				<Grid item xs={5}>
+				{/* <Grid item xs={5}>
 					<GardenCalendar gardenData={data} onDayClick={handleOnDayClick} />
-				</Grid>
+				</Grid> */}
 
 				<Grid item xs={5}>
 					<GardenMap gardenData={data} />

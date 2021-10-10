@@ -58,7 +58,6 @@ Species.init(
 		underscored: true,
 		modelName: "Species",
 		tableName: "species",
-		timestamps: true,
 	},
 );
 

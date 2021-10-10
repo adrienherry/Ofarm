@@ -1,3 +1,5 @@
+@use '../../../styles/vars';
+
 .team {
     // background-color: cornflowerblue;
     flex-direction: row;
@@ -6,24 +8,24 @@
 }
 
 
-.team__titre {
-    // background-color: crimson; 
+.team__title {
     text-transform: uppercase;
     text-align: center;
     padding-top:2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     font-weight: bold;
-    color: white;
-    font-size: xx-large;
+    color: vars.$secondary-color;
+    font-size: 1.8rem;
     
 }
 
 
 .team__content {
     display:flex;
-    // background-color: darkgreen;
-    width: 40%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    gap: 2rem;
+    width: 100%;
     text-align: center;
-    
-
 }

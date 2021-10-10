@@ -11,3 +11,23 @@
         font-size: 1.2rem;
     }
 }
+
+.profile-image {
+    height: 75px;
+    width: 75px;
+    min-width: 75px;
+    min-height: 75px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: #eee;
+    filter: grayscale(40%);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        filter: grayscale(0%); //saturate(100%);
+    }
+}

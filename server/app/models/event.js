@@ -22,11 +22,11 @@ Event.init(
 			defaultValue: "default"
 		},
 		fromDate: {
-			type: DataTypes.DATE,
+			type: DataTypes.DATEONLY,
 			allowNull: false,
 		},
 		untilDate: {
-			type: DataTypes.DATE,
+			type: DataTypes.DATEONLY,
 			allowNull: false,
 		},
 	},
@@ -35,7 +35,6 @@ Event.init(
 		underscored: true,
 		modelName: "Event",
 		tableName: "event",
-		timestamps: true,
 	},
 );
 

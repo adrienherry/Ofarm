@@ -1,9 +1,68 @@
+@use "../../../styles/vars";
+
 .NotFound {
+	text-align: center;
+	margin-top: 2em;
+	border-radius: 10%;
 
-background-color: #a7bbac;
-text-align: center;
-margin-top: 2em;
-border-radius: 10%;
+	position: relative;
+    padding-top: 5rem;
 
+    &__title {
+        font-weight: 700;
+        font-size: 2rem;
+        padding-top: 2rem;
+    }
+
+    &__text-content {
+        margin: 3rem 0 2rem;
+        font-size: 1rem;
+    }
+
+	&__image-container {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+
+		// max-width: 300px;
+		// max-height: 300px;
+
+		height: 250px;
+		width: 250px;
+
+		border-radius: 150px;
+		overflow: hidden;
+
+		&__image {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&__text {
+		position: absolute;
+		top: 5rem;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 2rem;
+        color: #173C70; //#A2BD6A;
+        transform: rotate(30deg) translateX(50px) translateY(-50px);
+        background-color: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 0px 5px #D152A4, 0 0 0 2px white;
+	}
+
+	&__redirect-btn {
+		width: 300px;
+		margin: auto;
+		padding: 1rem;
+		background-color: vars.$background-card-color;
+		border-radius: 0.5rem;
+		cursor: pointer;
+		box-shadow: vars.$shadow;
+		color: vars.$header-color;
+		font-size: 1.2rem;
+		font-weight: 700;
+	}
 }
-

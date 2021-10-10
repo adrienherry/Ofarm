@@ -26,3 +26,51 @@ export const setNewSpeciesChoosenList = (speciesChoosenList) => (
     speciesChoosenList,
   }
 );
+
+export const CREATE_GARDEN = 'CREATE_GARDEN';
+
+export const createGarden = () => (
+  {
+    type: CREATE_GARDEN,
+  }
+);
+
+export const RESET_GARDEN_INFO = 'RESET_GARDEN_INFO';
+
+export const resetGardenInfo = () => (
+  {
+    type: RESET_GARDEN_INFO,
+  }
+);
+
+export const SET_CREATE_GARDEN_ERROR = 'SET_CREATE_GARDEN_ERROR';
+
+export const setCreateGardenError = () => (
+  {
+    type: SET_CREATE_GARDEN_ERROR,
+  }
+);
+
+export const SET_ERROR_NO_NAME = 'SET_ERROR_NO_NAME';
+
+export const setErrorNoName = () => (
+  {
+    type: SET_ERROR_NO_NAME,
+  }
+);
+
+export const SET_READY_TO_REDIRECT_TO_TRUE = 'SET_READY_TO_REDIRECT_TO_TRUE';
+
+export const setReadyToRedirectToTrue = () => (
+  {
+    type: SET_READY_TO_REDIRECT_TO_TRUE,
+  }
+);
+
+export const SET_READY_TO_REDIRECT_TO_FALSE = 'SET_READY_TO_REDIRECT_TO_FALSE';
+
+export const setReadyToRedirectToFalse = () => (
+  {
+    type: SET_READY_TO_REDIRECT_TO_FALSE,
+  }
+);

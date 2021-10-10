@@ -36,7 +36,9 @@ const DisplaySpeciesChoosen = () => {
             key={species.id}
             onDelete={handleDelete}
             sx={{
-              marginBottom: '1rem', marginRight: '0.5rem',
+              marginBottom: '1rem',
+              marginRight: '0.5rem',
+              color: '#244435',
             }}
           />
         ))}
