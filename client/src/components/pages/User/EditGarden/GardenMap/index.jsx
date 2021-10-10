@@ -148,8 +148,8 @@ const GardenMap = () => {
 					</Popup>
 				</FeatureGroup>
 				<TileLayer
-					url={providers.googleMaps.url}
-					attribution={providers.googleMaps.attribution}
+					url={providers.mapTiler.url}
+					attribution={providers.mapTiler.attribution}
 					maxNativeZoom={19}
 					maxZoom={25}
 				/>

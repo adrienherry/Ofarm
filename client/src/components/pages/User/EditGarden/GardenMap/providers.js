@@ -1,5 +1,5 @@
 export default {
-	googleMaps: {
+	mapTiler: {
 		// url: "https://api.maptiler.com/maps/pastel/256/{z}/{x}/{y}.png?key=YBWqzknWCfDig2Rzqe54",
 		// url: "https://api.maptiler.com/maps/voyager/256/{z}/{x}/{y}.png?key=YBWqzknWCfDig2Rzqe54",
 		// url: "http://mt0.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",

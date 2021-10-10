@@ -223,9 +223,9 @@ const App = () => {
 						</Route>
 					)}
 					<Redirect from="/logout" to="/login" />
-					<Route path={`/leaflet`} exact>
+					{/* <Route path={`/leaflet`} exact>
 						<EditGarden />
-					</Route>
+					</Route> */}
 					<Route>
 						<NotFound />
 					</Route>
