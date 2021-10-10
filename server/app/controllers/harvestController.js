@@ -169,7 +169,6 @@ const harvestController = {
 
 			const nbDeleted = await garden.destroy({ returning: true });
 
-			console.log(nbDeleted);
 			if (nbDeleted.length !== 0) {
 				res.status(500).json(standardErrors.FailedDeleteError(nbDeleted));
 				return;

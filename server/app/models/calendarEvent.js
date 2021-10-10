@@ -13,7 +13,7 @@ class CalendarEvent extends Model {}
 CalendarEvent.init(
 	{
 		id: {
-			type: DataTypes.INTEGER, // 指定值的类型
+			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true,
 		},
