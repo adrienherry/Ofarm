@@ -4,6 +4,6 @@ BEGIN;
 
 SELECT PostGIS_version();
 SELECT id FROM "field" WHERE false;
-SELECT * FROM "field_species" WHERE false;
+SELECT * FROM "field_garden_species" WHERE false;
 
 ROLLBACK;

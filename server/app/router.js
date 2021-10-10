@@ -8,6 +8,7 @@ const searchController = require("./controllers/searchController");
 const calendarEventController = require("./controllers/calendarEventController");
 
 const harvestController = require("./controllers/harvestController");
+const fieldController = require("./controllers/fieldController.js");
 
 const jwtService = require("./services/jwtService");
 const authController = require("./controllers/authController");
@@ -20,7 +21,7 @@ const { cache, flush } = require("./services/cache");
  * @route GET /search
  * @group Search
  * @summary Search among species with a query string
- * @param {string} text.query - query string (ex: tomate)
+ * @param {string} text.query - query string - eg: tomate
  * @returns {Array.<Species>} 200 - An array of matching results (species) ordered by name.
  * @returns {string} 500 - Internal Server Error
  */
@@ -343,6 +344,72 @@ router.delete(
 	"/harvest",
 	jwtService.verifyAndDecodeTokenMiddleware,
 	harvestController.deleteHarvest,
+);
+
+/**
+ * @route GET /field
+ * @group Field
+ * @summary Returns all fields associated to a user's garden.
+ * @param {integer} garden_id.params.required - ID of the garden
+ * @returns {Array.<Field>} 200 - the created field
+ * @returns {string} 403 - Forbidden
+ * @returns {string} 500 - Internal Server Error
+ */
+router.get(
+	"/garden/:garden_id/field",
+	jwtService.verifyAndDecodeTokenMiddleware,
+	fieldController.findGardenFields,
+);
+
+/**
+ * @route POST /field
+ * @group Field
+ * @summary Creates a new field in a garden.
+ * @param {integer} gardenId.params.required - ID of the garden
+ * @param {Array.integer} speciesIds.body - optional array of the species to transfer from the garden to the field, or to directly add to the field.
+ * @param {object} shape.body.required - polygon object - eg:[{"lat": lat1, "lng": lng1}, {...}, {"lat":latN, "lng":lngN}]
+ * @returns {Field} 200 - the created field
+ * @returns {string} 403 - Forbidden
+ * @returns {string} 500 - Internal Server Error
+ */
+router.post(
+	"/garden/:garden_id/field",
+	jwtService.verifyAndDecodeTokenMiddleware,
+	fieldController.addFieldToGarden,
+);
+
+/**
+ * @route PATCH /field
+ * @group Field
+ * @summary Update a field belonging to a garden.
+ * @param {integer} gardenId.params.required - ID of the garden.
+ * @param {integer} fieldId.body.required - ID of the field to modify.
+ * @param {Array.integer} speciesIds.body - optional array of the species to transfer from the garden to the field, or to directly add to the field.
+ * @param {object} shape.body.required - polygon object - eg:[{"lat": lat1, "lng": lng1}, {...}, {"lat":latN, "lng":lngN}]
+ * @returns {boolean} 200 - updated - true if successful
+ * @returns {string} 403 - Forbidden
+ * @returns {string} 500 - Internal Server Error
+ */
+router.patch(
+	"/garden/:garden_id/field",
+	jwtService.verifyAndDecodeTokenMiddleware,
+	fieldController.updateField,
+);
+
+/**
+ * @route DELETE /field
+ * @group Field
+ * @summary Delete a field belonging to a garden.
+ * @param {integer} gardenId.params.required - ID of the garden.
+ * @param {integer} fieldId.body.required - ID of the field to modify.
+ * @returns {boolean} 200 - deleted - true if successful
+ * @returns {string} 403 - Forbidden
+ * @returns {string} 500 - Internal Server Error
+ */
+router.delete(
+	"/garden/:garden_id/field/",
+	jwtService.verifyAndDecodeTokenMiddleware,
+	fieldController.removeFieldFromGarden,
 );
 
 module.exports = router;
