@@ -36,6 +36,7 @@ import IndividualGarden from '../pages/User/IndividualGarden';
 import RedesignHeaderContainer from '../RedesignHeaderContainer';
 import UserMenuRedesign from '../UserMenuRedesign';
 import RedesignFooter from '../RedesignFooter';
+import { setSelectedEventType, setSelectedSpecies } from '../../store/actions/gardens';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ const App = () => {
     dispatch(resetErrorLogin());
     dispatch(resetRegisterInfo());
     dispatch(resetLoginForm());
+    dispatch(setSelectedEventType('Tous'));
 
     window.scrollTo({
       top: 0,
@@ -81,7 +83,7 @@ const App = () => {
   return (
     <SnackbarProvider maxSnack={3}>
       <div className="app">
-        <div className="app__container" style={userMenuIsOpen ? { filter: 'blur(3px) grayscale(90%)', pointerEvents: 'none' } : {}}>
+        <div className="app__container" style={userMenuIsOpen ? { filter: 'blur(3px) grayscale(90%)', pointerEvents: 'none', height: '100vh' } : {}}>
           <RedesignHeaderContainer />
           <Switch>
             <Route path="/" exact>
@@ -107,31 +109,26 @@ const App = () => {
             </Route>
             <Route path="/species/:slug" exact component={IndividualSpecies} />
             {logged && (
-            <Route path={`/${usernameSlug}/createGarden`} exact>
-              <CreateGarden />
-            </Route>
-            )}
-            {logged && (
-            <Route path={`/${usernameSlug}/profile`} exact>
-              <UserProfil />
-            </Route>
-            )}
-            {logged && (
-            <Route path={`/${usernameSlug}/gardens`} exact>
-              <Gardens />
-            </Route>
-            )}
-            {logged && (
-            <Route path={`/${usernameSlug}/gardens/:slug`} exact>
-              <IndividualGarden />
-            </Route>
+              <>
+                <Route path="/createGarden" exact>
+                  <CreateGarden />
+                </Route>
+                <Route path="/profile" exact>
+                  <UserProfil />
+                </Route>
+                <Route path="/gardens" exact>
+                  <Gardens />
+                </Route>
+                <Route path="/gardens/:slug" exact>
+                  <IndividualGarden />
+                </Route>
+              </>
             )}
             <Redirect from="/logout" to="/login" />
             <Route>
               <NotFound />
             </Route>
           </Switch>
-          {/* <Footer /> */}
           <RedesignFooter />
         </div>
         <UserMenuRedesign />

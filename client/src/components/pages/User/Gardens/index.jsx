@@ -35,7 +35,7 @@ const Gardens = () => {
               </Grid>
             ))
           )}
-          {isGardensLoading && (
+          {isGardensLoading && !gardens[0] && (
             <div className="myGarden__container-loader">
               <CircleLoader color="#3d3b2c" size={120} />
             </div>
