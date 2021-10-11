@@ -8,7 +8,7 @@ import searchbarMiddleware from "./middlewares/searchbar";
 import userMiddleware from "./middlewares/user";
 import logoutMiddleware from "./middlewares/logout";
 import gardenMiddleware from "./middlewares/garden";
-import fieldMiddleware from "./middlewares/field";
+// import fieldMiddleware from "./middlewares/field";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -20,7 +20,7 @@ const middlewares = [
 	searchbarMiddleware,
 	userMiddleware,
 	logoutMiddleware,
-	fieldMiddleware,
+	// fieldMiddleware,
 	gardenMiddleware,
 ];
 
