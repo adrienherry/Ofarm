@@ -47,7 +47,7 @@ const GardensCard = ({
           </CardContent>
         </CardActionArea>
         <CardActions sx={{ justifyContent: 'space-between' }}>
-          <Link to={`/${usernameSlug}/gardens/${titleSlug}`}>
+          <Link to={`/gardens/${titleSlug}`}>
             <ButtonUserSection name="Voir le jardin" />
           </Link>
           <img src={deleteIcon} alt="trash bin" className="delete-icon" onClick={handleDeleteGarden} />

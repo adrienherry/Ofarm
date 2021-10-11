@@ -14,7 +14,7 @@ const HomePage = () => {
     <div className="homepage">
       <div className="homepage__header" style={!is1075 ? { flexDirection: 'column', alignItems: 'center', margin: '4rem 0' } : {}}>
         <div className="homepage__title-container" style={!is1075 ? { width: '100%', justifyContent: 'center', marginBottom: '3rem' } : {}}>
-          <h1 className="homepage__title" style={!is1075 ? { fontSize: '3rem' } : {}}>Vous <br />
+          <h1 className="homepage__title" style={!is1075 ? { fontSize: '3rem' } : {}}>Vous
             aussi, <br />
             rejoignez <br />
             notre <br />

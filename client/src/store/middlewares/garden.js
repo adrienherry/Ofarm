@@ -1,10 +1,14 @@
 import { axiosInstance } from '../../services/axios';
 import {
-  CREATE_GARDEN, resetGardenInfo, setCreateGardenError, setReadyToRedirectToTrue,
+  CREATE_GARDEN, setCreateGardenError, setReadyToRedirectToTrue,
 } from '../actions/createGarden';
 import {
   DELETE_GARDEN,
-  FETCH_GARDENS, setIsGardensLoadingToFalse, setIsGardensLoadingToTrue, setNewGardens, setUserGardens,
+  FETCH_GARDENS,
+  setIsGardensLoadingToFalse,
+  setIsGardensLoadingToTrue,
+  setNewGardens,
+  setUserGardens,
 } from '../actions/gardens';
 
 export default (store) => (next) => async (action) => {

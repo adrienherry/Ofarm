@@ -36,10 +36,6 @@ export default (store) => (next) => async (action) => {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(response.data);
-        // localStorage.setItem('username', response.data.username);
-        // localStorage.setItem('usernameSlug', response.data.usernameSlug);
-        // localStorage.setItem('email', response.data.email);
         store.dispatch(fetchUserInfo());
       }
       catch (error) {

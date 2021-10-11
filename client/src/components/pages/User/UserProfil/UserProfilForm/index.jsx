@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Grid } from '@material-ui/core';
+import { useSnackbar } from 'notistack';
 import { useHistory } from 'react-router-dom';
 import {
   updateProfilInfo,
@@ -18,12 +19,11 @@ const UserProfilForm = ({
   button, usernameProfil, emailProfil,
 }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
+  const { enqueueSnackbar } = useSnackbar();
   const inputUsername = useRef();
   const inputEmail = useRef();
   const disabled = useSelector((state) => state.profil.disabled);
   const disabled2 = useSelector((state) => state.profil.disabled2);
-  const usernameSlug = useSelector((state) => state.user.usernameSlug);
 
   const handleChangeFieldUsernameProfil = (event) => {
     dispatch(setUsernameProfil(event.target.value));
@@ -36,6 +36,7 @@ const UserProfilForm = ({
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(updateProfilInfo());
+    enqueueSnackbar('Modification réussite', { variant: 'success' });
   };
   const handleClick = () => {
     dispatch(setUserDisabled());

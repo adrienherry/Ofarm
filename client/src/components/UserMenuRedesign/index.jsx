@@ -112,7 +112,7 @@ const UserMenuRedesign = () => {
               {logged && (
               <>
                 <Link
-                  to={`/${username}/createGarden`}
+                  to="/createGarden"
                   exact
                 >
                   <div className="user-menu-redesign__link">
@@ -120,7 +120,7 @@ const UserMenuRedesign = () => {
                   </div>
                 </Link>
                 <Link
-                  to={`/${username}/gardens`}
+                  to="/gardens"
                   exact
                 >
                   <div className="user-menu-redesign__link">
@@ -128,7 +128,7 @@ const UserMenuRedesign = () => {
                   </div>
                 </Link>
                 <Link
-                  to={`/${username}/profile`}
+                  to="/profile"
                   exact
                 >
                   <div className="user-menu-redesign__link">

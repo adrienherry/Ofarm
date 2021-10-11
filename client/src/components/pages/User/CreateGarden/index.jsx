@@ -17,7 +17,6 @@ const CreateGarden = () => {
   const gardenName = useSelector((state) => state.createGarden.gardenName);
   const error = useSelector((state) => state.createGarden.error);
   const readyToRedirect = useSelector((state) => state.createGarden.readyToRedirect);
-  const username = useSelector((state) => state.user.username);
 
   const theme = useTheme();
   const isMedium = useMediaQuery(theme.breakpoints.down('md'));
@@ -38,7 +37,7 @@ const CreateGarden = () => {
 
   useEffect(() => {
     if (readyToRedirect) {
-      history.push(`/${username}/gardens`);
+      history.push('/gardens');
       dispatch(resetGardenInfo());
       dispatch(setReadyToRedirectToFalse());
     }
