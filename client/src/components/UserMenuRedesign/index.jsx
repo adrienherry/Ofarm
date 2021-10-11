@@ -5,12 +5,14 @@ import { useTransition, animated } from 'react-spring';
 import { useTheme, useMediaQuery } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useSnackbar } from 'notistack';
 import { collapseUserMenu } from '../../store/actions/user';
 import SearchBar from '../HeaderContainer/SearchBar';
 import farmerImage from '/icons8-farmer-60.png';
 import { logout } from '../../store/actions/logout';
 
 const UserMenuRedesign = () => {
+  const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
   const username = useSelector((state) => state.user.username);
   const userMenuIsOpen = useSelector((state) => state.user.userMenuIsOpen);
@@ -33,6 +35,7 @@ const UserMenuRedesign = () => {
 
   const handleClickLogout = () => {
     dispatch(logout());
+    enqueueSnackbar('Déconnexion réussite', { variant: 'success' });
   };
 
   useEffect(() => {

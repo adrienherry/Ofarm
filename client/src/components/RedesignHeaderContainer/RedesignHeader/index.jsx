@@ -56,11 +56,14 @@ const RedesignHeader = () => {
         <SearchBar />
       </div>
       {logged && (
-        <div
-          onClick={handleUserIconClick}
-          className="redesign-header__profile-image"
-          style={{ backgroundImage: `url(${farmerImage})` }}
-        />
+        <div className="redesign-header__profile-container">
+          <div
+            onClick={handleUserIconClick}
+            className="redesign-header__profile-image"
+            style={{ backgroundImage: `url(${farmerImage})` }}
+          />
+          <div className="redesign-header__profile-menu-title">MENU</div>
+        </div>
       )}
       {!logged && (
       <div className="redesign-header__connection" style={is1360 ? {} : { right: '0' }}>

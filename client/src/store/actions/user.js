@@ -40,3 +40,19 @@ export const setNewUsernameSlug = (slug) => (
     slug,
   }
 );
+
+export const OPEN_POPUP_ALERT = 'OPEN_POPUP_ALERT';
+
+export const openPopUpAlert = () => (
+  {
+    type: OPEN_POPUP_ALERT,
+  }
+);
+
+export const CLOSE_POPUP_ALERT = 'CLOSE_POPUP_ALERT';
+
+export const closePopUpAlert = () => (
+  {
+    type: CLOSE_POPUP_ALERT,
+  }
+);

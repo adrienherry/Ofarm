@@ -1,4 +1,6 @@
-import { SET_IS_GARDENS_LOADING_TO_FALSE, SET_IS_GARDENS_LOADING_TO_TRUE, SET_USER_GARDENS } from '../actions/gardens';
+import {
+  SET_IS_GARDENS_LOADING_TO_FALSE, SET_IS_GARDENS_LOADING_TO_TRUE, SET_NEW_GARDENS, SET_USER_GARDENS,
+} from '../actions/gardens';
 import {
   SET_USER_INFO, COLLAPSE_USER_MENU, OPEN_USER_MENU, SET_USER_TOKEN, SET_NEW_USERNAMESLUG,
 } from '../actions/user';
@@ -10,6 +12,7 @@ const initialState = {
   gardens: [],
   isGardensLoading: false,
   token: '',
+  isAlertPopUpOpen: false,
 };
 
 const UserReducer = (state = initialState, action = {}) => {
@@ -49,6 +52,11 @@ const UserReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         token: action.token,
+      };
+    case SET_NEW_GARDENS:
+      return {
+        ...state,
+        gardens: action.gardens,
       };
     default:
       return state;

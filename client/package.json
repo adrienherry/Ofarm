@@ -19,6 +19,7 @@
     "axios": "^0.21.4",
     "dayjs": "^1.10.7",
     "framer-motion": "^4.1.17",
+    "notistack": "^2.0.2",
     "prop-types": "^15.7.2",
     "rc-year-calendar": "^1.0.2",
     "react": "^17.0.0",

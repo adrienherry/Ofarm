@@ -100,3 +100,21 @@ export const setModalEvents = (events) => (
     events,
   }
 );
+
+export const DELETE_GARDEN = 'DELETE_GARDEN';
+
+export const deleteGarden = (id) => (
+  {
+    type: DELETE_GARDEN,
+    id,
+  }
+);
+
+export const SET_NEW_GARDENS = 'SET_NEW_GARDENS';
+
+export const setNewGardens = (gardens) => (
+  {
+    type: SET_NEW_GARDENS,
+    gardens,
+  }
+);

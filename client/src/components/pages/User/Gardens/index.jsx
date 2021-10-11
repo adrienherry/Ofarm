@@ -30,14 +30,20 @@ const Gardens = () => {
                   title={garden.name}
                   description="Je ne plante rien mais je récolte tout !!"
                   titleSlug={garden.nameSlug}
+                  id={garden.id}
                 />
               </Grid>
             ))
           )}
           {isGardensLoading && (
-          <div className="myGarden__container-loader">
-            <CircleLoader color="#3d3b2c" size={120} />
-          </div>
+            <div className="myGarden__container-loader">
+              <CircleLoader color="#3d3b2c" size={120} />
+            </div>
+          )}
+          {!gardens[0] && (
+            <Grid item>
+              <div className="myGarden__no-garden">Vous n'avez pas encore de jardin</div>
+            </Grid>
           )}
         </Grid>
       </div>

@@ -71,3 +71,11 @@ export const resetReadyToRedirectLogin = () => (
     type: RESET_READY_TO_REDIRECT_LOGIN,
   }
 );
+
+export const RESET_LOGIN_FORM = 'RESET_LOGIN_FORM';
+
+export const resetLoginForm = () => (
+  {
+    type: RESET_LOGIN_FORM,
+  }
+);

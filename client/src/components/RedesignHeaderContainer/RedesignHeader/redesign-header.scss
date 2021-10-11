@@ -117,8 +117,8 @@
         width: 75px;
         min-width: 75px;
         min-height: 75px;
-        margin-right: 2rem;
-        margin-left: 1rem;
+        // margin-right: 2rem;
+        // margin-left: 1rem;
         cursor: pointer;
         background-position: center;
         background-repeat: no-repeat;
@@ -128,10 +128,24 @@
         background-color: #eee;
         filter: grayscale(40%);
         transition: all 0.3s ease-in-out;
-    
+        
         &:hover {
             filter: grayscale(0%); //saturate(100%);
         }
+    }
+    
+    &__profile-menu-title {
+        color: #462100;
+        margin-top: 0.3rem;
+        font-weight: 500;
+    }
+    
+    &__profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 2rem;
+        margin-left: 1rem;
     }
 }
 

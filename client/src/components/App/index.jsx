@@ -4,6 +4,7 @@ import './app.scss';
 import {
   Switch, Route, useLocation, Redirect,
 } from 'react-router-dom';
+import { SnackbarProvider } from 'notistack';
 import { useDispatch, useSelector } from 'react-redux';
 import HeaderContainer from '../HeaderContainer';
 import HomePage from '../pages/Homepage';
@@ -19,11 +20,14 @@ import About from '../pages/About';
 import LegalNotice from '../pages/LegalNotice';
 import { collapseUserMenu, setUserInfo, setUserToken } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
-import { isConnected, resetErrorLogin, setLoggedToTrue } from '../../store/actions/authentification';
+import {
+  isConnected, resetErrorLogin, resetLoginForm, setLoggedToTrue,
+} from '../../store/actions/authentification';
 import IndividualSpecies from '../pages/IndividualSpecies';
 import {
   resetEmptyRegisterField,
   resetErrorEmailRegister,
+  resetRegisterInfo,
   setIsConfirmedToTrue,
   setIsReadyToRedirectToLoginToFalse,
 } from '../../store/actions/register';
@@ -48,6 +52,8 @@ const App = () => {
     dispatch(resetEmptyRegisterField());
     dispatch(setIsConfirmedToTrue());
     dispatch(resetErrorLogin());
+    dispatch(resetRegisterInfo());
+    dispatch(resetLoginForm());
 
     window.scrollTo({
       top: 0,
@@ -73,62 +79,64 @@ const App = () => {
   }, [userMenuIsOpen]);
 
   return (
-    <div className="app">
-      <div className="app__container" style={userMenuIsOpen ? { filter: 'blur(3px) grayscale(90%)', pointerEvents: 'none' } : {}}>
-        <RedesignHeaderContainer />
-        <Switch>
-          <Route path="/" exact>
-            <HomePage />
-          </Route>
-          <Route path="/species" exact>
-            <Species />
-          </Route>
-          <Route path="/about" exact>
-            <About />
-          </Route>
-          <Route path="/login" exact>
-            <Login />
-          </Route>
-          <Route path="/register" exact>
-            <Register />
-          </Route>
-          <Route path="/team" exact>
-            <Team />
-          </Route>
-          <Route path="/terms" exact>
-            <LegalNotice />
-          </Route>
-          <Route path="/species/:slug" exact component={IndividualSpecies} />
-          {logged && (
-          <Route path={`/${usernameSlug}/createGarden`} exact>
-            <CreateGarden />
-          </Route>
-          )}
-          {logged && (
-          <Route path={`/${usernameSlug}/profile`} exact>
-            <UserProfil />
-          </Route>
-          )}
-          {logged && (
-          <Route path={`/${usernameSlug}/gardens`} exact>
-            <Gardens />
-          </Route>
-          )}
-          {logged && (
-          <Route path={`/${usernameSlug}/gardens/:slug`} exact>
-            <IndividualGarden />
-          </Route>
-          )}
-          <Redirect from="/logout" to="/login" />
-          <Route>
-            <NotFound />
-          </Route>
-        </Switch>
-        {/* <Footer /> */}
-        <RedesignFooter />
+    <SnackbarProvider maxSnack={3}>
+      <div className="app">
+        <div className="app__container" style={userMenuIsOpen ? { filter: 'blur(3px) grayscale(90%)', pointerEvents: 'none' } : {}}>
+          <RedesignHeaderContainer />
+          <Switch>
+            <Route path="/" exact>
+              <HomePage />
+            </Route>
+            <Route path="/species" exact>
+              <Species />
+            </Route>
+            <Route path="/about" exact>
+              <About />
+            </Route>
+            <Route path="/login" exact>
+              <Login />
+            </Route>
+            <Route path="/register" exact>
+              <Register />
+            </Route>
+            <Route path="/team" exact>
+              <Team />
+            </Route>
+            <Route path="/terms" exact>
+              <LegalNotice />
+            </Route>
+            <Route path="/species/:slug" exact component={IndividualSpecies} />
+            {logged && (
+            <Route path={`/${usernameSlug}/createGarden`} exact>
+              <CreateGarden />
+            </Route>
+            )}
+            {logged && (
+            <Route path={`/${usernameSlug}/profile`} exact>
+              <UserProfil />
+            </Route>
+            )}
+            {logged && (
+            <Route path={`/${usernameSlug}/gardens`} exact>
+              <Gardens />
+            </Route>
+            )}
+            {logged && (
+            <Route path={`/${usernameSlug}/gardens/:slug`} exact>
+              <IndividualGarden />
+            </Route>
+            )}
+            <Redirect from="/logout" to="/login" />
+            <Route>
+              <NotFound />
+            </Route>
+          </Switch>
+          {/* <Footer /> */}
+          <RedesignFooter />
+        </div>
+        <UserMenuRedesign />
       </div>
-      <UserMenuRedesign />
-    </div>
+    </SnackbarProvider>
   );
 };
 

@@ -3,8 +3,8 @@ import { Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import './button-user-section.scss';
 
-const ButtonUserSection = ({ name }) => (
-  <div className="button-user-section">{ name }</div>
+const ButtonUserSection = ({ name, style }) => (
+  <div className="button-user-section" style={style}>{name}</div>
 );
 
 ButtonUserSection.propTypes = {

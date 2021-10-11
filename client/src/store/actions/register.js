@@ -103,3 +103,19 @@ export const setReadyToSendToFalse = () => (
     type: SET_READY_TO_SEND_TO_FALSE,
   }
 );
+
+export const SET_ALREADY_EXIST_ERROR = 'SET_ALREADY_EXIST_ERROR';
+
+export const setAlreadyExistError = () => (
+  {
+    type: SET_ALREADY_EXIST_ERROR,
+  }
+);
+
+export const RESET_ALREADY_EXIST_ERROR = 'RESET_ALREADY_EXIST_ERROR';
+
+export const resetAlreadyExistError = () => (
+  {
+    type: RESET_ALREADY_EXIST_ERROR,
+  }
+);

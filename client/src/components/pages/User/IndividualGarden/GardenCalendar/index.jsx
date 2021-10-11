@@ -108,6 +108,9 @@ const GardenCalendar = ({ onDayClick }) => {
             <div className="garden-calendar__menu">
               <Grid item container>
                 <Grid item container lg={6} md={6} sm={6} xs={10} direction="column" mb={isMobile ? 3 : 0}>
+                  <div className="garden-calendar__select-title">
+                    Sélectionnez une espèce:
+                  </div>
                   <select
                     onClick={handleClickSelectSpecies}
                     id="species"
@@ -132,6 +135,9 @@ const GardenCalendar = ({ onDayClick }) => {
                   ))}
                 </Grid>
                 <Grid item container lg={6} md={6} sm={6} xs={10} direction="column">
+                  <div className="garden-calendar__select-title">
+                    Sélectionnez un évènement:
+                  </div>
                   <select
                     onClick={handleClickSelectEventType}
                     id="eventType"
