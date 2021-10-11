@@ -25,6 +25,11 @@ Field.init(
 		underscored: true,
 		modelName: "Field",
 		tableName: "field",
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

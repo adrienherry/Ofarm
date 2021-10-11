@@ -43,6 +43,11 @@ Garden.init(
 
 		modelName: "Garden",
 		tableName: "garden",
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

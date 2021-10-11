@@ -26,6 +26,11 @@ Exposition.init(
 		underscored: true,
 		modelName: "Exposition",
 		tableName: "exposition",
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

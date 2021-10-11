@@ -70,6 +70,7 @@ const gardenController = {
 
 			const garden = await Garden.findOne({
 				where: {
+					userId: user_id,
 					[Op.or]: [
 						{
 							name: {

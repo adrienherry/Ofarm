@@ -11,16 +11,30 @@ const fieldController = {
 
 			const gardenId = req.params.garden_id;
 
-			const garden = await Field.findAll({
+			const field = await Field.findAll({
 				where: {
 					gardenId: gardenId,
+					"$garden.user_id$": res.locals.id,
 				},
+				include: [
+					"garden",
+					{
+						association: "garden",
+						include: {
+							model: Species,
+							as: "species",
+							through: {
+								attributes: [],
+							},
+						},
+					},
+				],
 				attributes: {
 					exclude: ["createdAt", "updatedAt"],
 				},
 			});
 
-			res.json(garden);
+			res.json(field);
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(error);

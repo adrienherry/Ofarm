@@ -23,10 +23,12 @@ const authController = {
 				where: {
 					[Op.or]: {
 						email: req.body.email.toLowerCase(),
-						username: req.body.email.toLowerCase(),
+						username: req.body.username.toLowerCase(),
 					},
 				},
 			});
+
+			console.log(foundUser)
 
 			if (foundUser) {
 				res.status(400).json(standardErrors.UserAlreadyExistsError);
