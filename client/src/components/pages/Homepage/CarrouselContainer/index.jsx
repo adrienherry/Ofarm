@@ -45,23 +45,10 @@ const CarrouselContainer = () => {
     <Grid
       item
       className="carrousel-container"
-      style={
-				isMedium
-				  ? {
-				    // display: "flex",
-				    flexDirection: 'column',
-					  }
-				  : { flexDirection: 'column' }
-			}
+      style={isMedium ? { flexDirection: 'column' } : { flexDirection: 'column' }}
     >
       <div
-        style={
-					isMedium
-					  ? {
-					    width: '100%',
-						  }
-					  : { width: '100%' }
-				}
+        style={isMedium ? { width: '100%' } : { width: '100%' }}
       >
         <Carrousel pictures={pictures} />
       </div>

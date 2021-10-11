@@ -13,7 +13,7 @@ const PitchSection = ({ title, text, img }) => {
         <div className="pitch-section__content__left" style={{ backgroundImage: `url(${img})` }} />
         <p
           className="pitch-section__content__right"
-          style={isMedium ? { marginLeft: '2rem' } : {}}
+          style={isMedium ? {} : {}}
         >
           {text}
         </p>

@@ -4,6 +4,7 @@ import {
   SET_LOGGED_TO_FALSE,
   SET_LOGGED_TO_TRUE, SET_LOGIN_FIELD, SET_READY_TO_REDIRECT_LOGIN,
   RESET_READY_TO_REDIRECT_LOGIN,
+  RESET_LOGIN_FORM,
 } from '../actions/authentification';
 
 const initialState = {
@@ -52,6 +53,13 @@ const authentificationReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         readyToRedirect: false,
+      };
+    case RESET_LOGIN_FORM:
+      return {
+        ...state,
+        emailLogin: '',
+        passwordLogin: '',
+        errorLogin: '',
       };
     default:
       return state;

@@ -3,7 +3,8 @@ import {
   CREATE_GARDEN, resetGardenInfo, setCreateGardenError, setReadyToRedirectToTrue,
 } from '../actions/createGarden';
 import {
-  FETCH_GARDENS, setIsGardensLoadingToFalse, setIsGardensLoadingToTrue, setUserGardens,
+  DELETE_GARDEN,
+  FETCH_GARDENS, setIsGardensLoadingToFalse, setIsGardensLoadingToTrue, setNewGardens, setUserGardens,
 } from '../actions/gardens';
 
 export default (store) => (next) => async (action) => {
@@ -42,6 +43,23 @@ export default (store) => (next) => async (action) => {
         });
         store.dispatch(setUserGardens(response.data.gardens));
         store.dispatch(setIsGardensLoadingToFalse());
+      }
+      catch (error) {
+        console.log(error);
+      }
+      next(action);
+      break;
+    case DELETE_GARDEN:
+      try {
+        const { user: { token, gardens } } = store.getState();
+        const newGardens = gardens.filter((garden) => garden.id !== action.id);
+        const response = await axiosInstance.delete(`/garden/${action.id}`, {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        store.dispatch(setNewGardens(newGardens));
       }
       catch (error) {
         console.log(error);

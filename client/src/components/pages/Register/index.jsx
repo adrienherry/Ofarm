@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { useSnackbar } from 'notistack';
 import { Grid } from '@material-ui/core';
 import './register.scss';
 import Field from '../../Field';
@@ -20,6 +21,7 @@ import validateEmail from '../../../utils/validateEmail';
 
 const Login = () => {
   const dispatch = useDispatch();
+  const { enqueueSnackbar } = useSnackbar();
   const history = useHistory();
   const username = useSelector((state) => state.register.username);
   const email = useSelector((state) => state.register.email);
@@ -29,6 +31,7 @@ const Login = () => {
   const errorEmail = useSelector((state) => state.register.errorEmail);
   const emptyField = useSelector((state) => state.register.emptyField);
   const readyToSend = useSelector((state) => state.register.readyToSend);
+  const alreadyExistError = useSelector((state) => state.register.alreadyExistError);
 
   const handleChangeField = (value, name) => {
     dispatch(setRegisterField(value, name));
@@ -36,20 +39,15 @@ const Login = () => {
 
   const handleRegisterFormSubmit = (event) => {
     event.preventDefault();
-    if (password !== confirmPassword) {
-      dispatch(setIsConfirmedToFalse());
-    }
-    else {
-      dispatch(sendRegisterForm());
-      dispatch(setIsConfirmedToTrue());
-    }
+    dispatch(sendRegisterForm());
   };
 
   useEffect(() => {
     if (readyToSend) {
-      history.push('/login');
+      history.push('/');
       dispatch(resetRegisterInfo());
       dispatch(setReadyToSendToFalse());
+      enqueueSnackbar(`Inscription réussite, bienvenue ${username}`, { variant: 'success' });
     }
   }, [readyToSend]);
 
@@ -115,12 +113,20 @@ const Login = () => {
                   <p style={{ color: 'red' }}>Votre mot de passe n'est pas le même</p>
                 </Grid>
               )}
-              <Grid item>
+              {alreadyExistError && (
+                <Grid item>
+                  <p style={{ color: 'red' }}>{alreadyExistError}</p>
+                </Grid>
+              )}
+              <Grid item container justifyContent="space-between" alignItems="center">
                 <button
                   type="submit"
                   className="register__submit-btn"
                 > S'inscrire
                 </button>
+                <Link to="/login">
+                  <p className="register__redirect">Vous avez déjà un compte ? Se connecter</p>
+                </Link>
               </Grid>
             </Grid>
           </form>

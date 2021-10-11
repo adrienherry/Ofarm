@@ -11,6 +11,8 @@ import {
   RESET_EMPTY_REGISTER_FIELD,
   SET_READY_TO_SEND_TO_FALSE,
   SET_READY_TO_SEND_TO_TRUE,
+  SET_ALREADY_EXIST_ERROR,
+  RESET_ALREADY_EXIST_ERROR,
 } from '../actions/register';
 
 const initialState = {
@@ -23,6 +25,7 @@ const initialState = {
   errorEmail: '',
   emptyField: '',
   readyToSend: false,
+  alreadyExistError: '',
 };
 
 const RegisterReducer = (state = initialState, action = {}) => {
@@ -89,6 +92,16 @@ const RegisterReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         readyToSend: true,
+      };
+    case SET_ALREADY_EXIST_ERROR:
+      return {
+        ...state,
+        alreadyExistError: 'Cet email ou cet identifiant est déjà pris',
+      };
+    case RESET_ALREADY_EXIST_ERROR:
+      return {
+        ...state,
+        alreadyExistError: '',
       };
     default:
       return state;

@@ -69,7 +69,7 @@ const IndividualSpecies = () => {
       <div className="individual-species" style={style}>
         <>
           <Grid container direction="row" justifyContent={isMedium ? 'center' : 'space-between'}>
-            <Grid item lg={4} md={4} sm={9} xs={12} container justifyContent="center" data-aos="fade-right" data-aos-delay={isMedium ? '100' : '1700'}>
+            <Grid item lg={4} md={4} sm={9} xs={12} container justifyContent="center" data-aos={isMedium ? '' : 'fade-right'} data-aos-delay={isMedium ? '100' : '1700'}>
               <div
                 className="individual-species__image-container"
                 style={isMedium ? { marginBottom: '1rem' } : {}}
@@ -88,7 +88,7 @@ const IndividualSpecies = () => {
                   {species.name}
                 </div>
               </Grid>
-              <Grid item lg={12} md={12} sm={12} xs={12} data-aos="fade-left" data-aos-delay="100">
+              <Grid item lg={12} md={12} sm={12} xs={12} data-aos={isMedium ? '' : 'fade-left'} data-aos-delay="100">
                 <p className="individual-species__description">
                   <span className="individual-species__span">Description : </span>
                   <br />
@@ -109,7 +109,7 @@ const IndividualSpecies = () => {
                 xs={10}
                 justifyContent="center"
                 className="individual-species__info-co2"
-                data-aos="fade-right"
+                data-aos={isMedium ? '' : 'fade-right'}
                 data-aos-delay={isMedium ? '100' : '700'}
               >
                 {species.co2Data && (
@@ -141,7 +141,7 @@ const IndividualSpecies = () => {
               <Grid
                 item
                 container
-                data-aos="fade-left"
+                data-aos={isMedium ? '' : 'fade-left'}
                 data-aos-delay={isMedium ? '100' : '1200'}
                 direction="row"
                 lg={7}

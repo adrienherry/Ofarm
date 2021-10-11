@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useSnackbar } from 'notistack';
 import { Grid } from '@material-ui/core';
 import './login.scss';
 import Field from '../../Field';
@@ -10,10 +11,12 @@ import {
 
 const Login = () => {
   const dispatch = useDispatch();
+  const { enqueueSnackbar } = useSnackbar();
   const emailLogin = useSelector((state) => state.auth.emailLogin);
   const passwordLogin = useSelector((state) => state.auth.passwordLogin);
   const errorLogin = useSelector((state) => state.auth.errorLogin);
   const readyToRedirect = useSelector((state) => state.auth.readyToRedirect);
+  const username = useSelector((state) => state.user.username);
 
   const history = useHistory();
 
@@ -31,6 +34,7 @@ const Login = () => {
       history.goBack();
       dispatch(resetReadyToRedirectLogin());
       dispatch(resetErrorLogin());
+      enqueueSnackbar(`Connection réussite, bienvenue ${username}`, { variant: 'success' });
     }
   }, [readyToRedirect]);
   return (
@@ -65,12 +69,15 @@ const Login = () => {
               <Grid item>
                 <div className="login__error" style={{ color: 'red' }}>{errorLogin}</div>
               </Grid>
-              <Grid item>
+              <Grid item container justifyContent="space-between" alignItems="center">
                 <button
                   type="submit"
                   className="login__submit-btn"
                 > Se connecter
                 </button>
+                <Link to="/register">
+                  <p className="login__redirect">Vous n'avez pas de compte ? S'inscrire</p>
+                </Link>
               </Grid>
             </Grid>
 
