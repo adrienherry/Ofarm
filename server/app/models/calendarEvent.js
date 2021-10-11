@@ -46,6 +46,11 @@ CalendarEvent.init(
 		underscored: true,
 		modelName: "CalendarEvent",
 		tableName: "calendar_event",
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

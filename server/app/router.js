@@ -104,7 +104,7 @@ router.get(
 router.get(
 	"/user",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	cache,
+	// cache,
 	userController.findOne,
 );
 
@@ -136,7 +136,7 @@ router.patch(
 router.get(
 	"/garden/:garden_id",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	cache,
+	// cache,
 	gardenController.findOneWithUserId,
 );
 

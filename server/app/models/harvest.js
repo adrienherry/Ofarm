@@ -23,11 +23,11 @@ Harvest.init(
 		quantity: {
 			type: DataTypes.DOUBLE,
 			allowNull: false,
-        },
-        date: {
-            type: DataTypes.DATEONLY,
-            allowNull: false,
-        },
+		},
+		date: {
+			type: DataTypes.DATEONLY,
+			allowNull: false,
+		},
 		comment: {
 			type: DataTypes.STRING,
 			allowNull: true,
@@ -39,6 +39,11 @@ Harvest.init(
 
 		modelName: "Harvest",
 		tableName: "harvest",
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

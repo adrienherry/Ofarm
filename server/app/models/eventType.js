@@ -35,6 +35,11 @@ EventType.init(
 		underscored: true,
 		modelName: "EventType",
 		tableName: "event_type",
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

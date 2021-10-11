@@ -19,7 +19,7 @@ Event.init(
 		optionName: {
 			type: DataTypes.TEXT,
 			allowNull: false,
-			defaultValue: "default"
+			defaultValue: "default",
 		},
 		fromDate: {
 			type: DataTypes.DATEONLY,
@@ -35,6 +35,11 @@ Event.init(
 		underscored: true,
 		modelName: "Event",
 		tableName: "event",
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

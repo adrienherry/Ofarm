@@ -21,6 +21,11 @@ CultureType.init(
 		underscored: true,
 		modelName: "CultureType",
 		tableName: "culture_type",
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

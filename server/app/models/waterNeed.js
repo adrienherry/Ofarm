@@ -26,6 +26,11 @@ WaterNeed.init(
 		underscored: true,
 		modelName: "WaterNeed",
 		tableName: "water_need",
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 
