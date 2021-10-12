@@ -25,7 +25,6 @@ User.init(
 		usernameSlug: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			unique: true,
 		},
 		hashedPassword: {
 			type: DataTypes.STRING,
