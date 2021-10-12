@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const slugify = require("../helpers/slugify");
 
-const { User } = require("../models");
+const { User, Harvest } = require("../models");
 const { standardErrors } = require("../helpers");
 
 const userController = {
@@ -17,14 +17,29 @@ const userController = {
 			const id = res.locals.id;
 			const userItem = await User.findByPk(id, {
 				include: [
+					"gardens",
 					{
 						association: "gardens",
 						include: [
 							"species",
 							{
 								association: "species",
+								include: {
+									model: Harvest,
+									as: "harvests",
+									attributes: {
+										exclude: [
+											// "speciesId",
+											"gardenId",
+											"createdAt",
+											"updatedAt",
+										],
+									},
+								},
+							},
+							{
+								association: "species",
 								include: [
-									"events",
 									{
 										association: "events",
 										include: "eventType",
@@ -52,6 +67,7 @@ const userController = {
 
 			res.json(userItem);
 		} catch (error) {
+			console.log(error);
 			res.status(500).json(error);
 		}
 	},
