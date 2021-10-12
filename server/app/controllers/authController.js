@@ -21,14 +21,11 @@ const authController = {
 
 			const foundUser = await User.findOne({
 				where: {
-					[Op.or]: {
-						email: req.body.email.toLowerCase(),
-						username: req.body.username.toLowerCase(),
-					},
+					email: req.body.email.toLowerCase(),
 				},
 			});
 
-			console.log(foundUser)
+			console.log(foundUser);
 
 			if (foundUser) {
 				res.status(400).json(standardErrors.UserAlreadyExistsError);
@@ -52,7 +49,6 @@ const authController = {
 
 	login: async (req, res) => {
 		try {
-
 			if (!req.body.password || !req.body.email) {
 				res.status(400).json(standardErrors.BadRequestError);
 				return;
@@ -100,11 +96,10 @@ const authController = {
 
 			await blacklist.addToBlacklist(res.locals.id, res.locals.token);
 			res.json({ redirect: true });
-
 		} catch (error) {
 			res.json(error);
 		}
-	}
+	},
 };
 
 module.exports = authController;

@@ -62,7 +62,6 @@ SET
    username_slug = slugify (username);
 
 ALTER TABLE "user"
-   ADD CONSTRAINT user_username_slug_unique UNIQUE (username_slug),
    ALTER COLUMN username_slug SET NOT NULL;
 
 UPDATE
