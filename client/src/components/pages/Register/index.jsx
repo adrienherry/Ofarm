@@ -47,7 +47,7 @@ const Login = () => {
       history.push('/');
       dispatch(resetRegisterInfo());
       dispatch(setReadyToSendToFalse());
-      enqueueSnackbar(`Inscription réussite, bienvenue ${username}`, { variant: 'success' });
+      enqueueSnackbar(`Inscription réussie, bienvenue ${username}`, { variant: 'success' });
     }
   }, [readyToSend]);
 

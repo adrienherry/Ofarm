@@ -35,7 +35,7 @@ const UserMenuRedesign = () => {
 
   const handleClickLogout = () => {
     dispatch(logout());
-    enqueueSnackbar('Déconnexion réussite', { variant: 'success' });
+    enqueueSnackbar('Déconnexion réussie', { variant: 'success' });
   };
 
   useEffect(() => {

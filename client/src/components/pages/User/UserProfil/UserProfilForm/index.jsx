@@ -36,7 +36,7 @@ const UserProfilForm = ({
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(updateProfilInfo());
-    enqueueSnackbar('Modification réussite', { variant: 'success' });
+    enqueueSnackbar('Modification réussie', { variant: 'success' });
   };
   const handleClick = () => {
     dispatch(setUserDisabled());
