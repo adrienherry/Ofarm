@@ -141,12 +141,12 @@ router.get(
 );
 
 /**
- * @route POST /garden
+ * @route POST /garden/:garden_id/species
  * @group Garden
  * @summary Add a new species to a garden
- * @param {integer} garden_id.params - ID of the garden
- * @param {integer} speciesId.body - ID of the new species
- * @returns {boolean} 200 - updated - true if successful
+ * @param {integer} garden_id.params.required - ID of the garden
+ * @param {integer} speciesId.body.required - ID of the new species
+ * @returns {boolean} 200 - updated (true if successful)
  * @returns {string} 403 - Forbidden
  * @returns {string} 500 - Internal Server Error
  */

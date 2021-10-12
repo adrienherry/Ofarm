@@ -25,8 +25,6 @@ const authController = {
 				},
 			});
 
-			console.log(foundUser);
-
 			if (foundUser) {
 				res.status(400).json(standardErrors.UserAlreadyExistsError);
 				return;
@@ -34,7 +32,7 @@ const authController = {
 
 			await User.create({
 				username: req.body.username,
-				email: req.body.email,
+				email: req.body.email.toLowerCase(),
 				hashedPassword: bcrypt.hashSync(req.body.password, 10),
 				usernameSlug: slugify(req.body.username),
 			});
@@ -43,7 +41,8 @@ const authController = {
 				created: true,
 			});
 		} catch (error) {
-			res.json(error);
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
@@ -83,7 +82,8 @@ const authController = {
 				token: jwt.generateTokenWith(foundUser.id, foundUser.username),
 			});
 		} catch (error) {
-			res.json(error);
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
@@ -97,7 +97,8 @@ const authController = {
 			await blacklist.addToBlacklist(res.locals.id, res.locals.token);
 			res.json({ redirect: true });
 		} catch (error) {
-			res.json(error);
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 };
