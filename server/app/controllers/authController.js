@@ -41,7 +41,8 @@ const authController = {
 				created: true,
 			});
 		} catch (error) {
-			res.json(error);
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
@@ -81,7 +82,8 @@ const authController = {
 				token: jwt.generateTokenWith(foundUser.id, foundUser.username),
 			});
 		} catch (error) {
-			res.json(error);
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
@@ -95,7 +97,8 @@ const authController = {
 			await blacklist.addToBlacklist(res.locals.id, res.locals.token);
 			res.json({ redirect: true });
 		} catch (error) {
-			res.json(error);
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 };

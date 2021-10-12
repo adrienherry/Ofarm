@@ -8,11 +8,17 @@ const {
 	EventType,
 	User,
 } = require("../models");
-const { standardErrors, slugify } = require("../helpers");
+const { standardErrors, slugify, validate } = require("../helpers");
 
 const calendarEventController = {
 	getCalendarEvents: async (req, res) => {
 		try {
+		
+			if (!validate.isValidAsInt(req.params.garden_id)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
 			const gardenId = parseInt(req.params.garden_id);
 
 			if (!res.locals.id) {
@@ -91,7 +97,13 @@ const calendarEventController = {
 
 			const userId = res.locals.id;
 
+			if (!validate.isValidAsInt(req.params.garden_id)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
 			const gardenId = req.params.garden_id;
+
 			const { speciesId, fromDate, untilDate, name, comment } = req.body;
 
 			if (!name || !gardenId || !speciesId || !fromDate || !untilDate) {
@@ -142,7 +154,7 @@ const calendarEventController = {
 			res.json(newCalendarEvent);
 		} catch (error) {
 			console.log(error);
-			res.status(500).json(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
@@ -159,7 +171,17 @@ const calendarEventController = {
 			}
 
 			const userId = res.locals.id;
+
+			if (
+				!validate.isValidAsInt(req.params.garden_id) ||
+				!validate.isValidAsInt(req.body.calendarEventId)
+			) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
 			const gardenId = req.params.garden_id;
+
 			const { calendarEventId } = req.body;
 
 			const calendarEvent = await CalendarEvent.findOne({
@@ -214,12 +236,21 @@ const calendarEventController = {
 			res.json({ updated: true });
 		} catch (error) {
 			console.log(error);
-			res.status(500).json(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
 	deleteCalendarEvent: async (req, res) => {
 		try {
+
+			if (
+				!validate.isValidAsInt(req.body.calendarEventId) ||
+				!validate.isValidAsInt(req.params.garden_id)
+			) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
 			const gardenId = req.params.garden_id;
 			const calendarEventId = req.body.calendarEventId;
 
@@ -273,7 +304,7 @@ const calendarEventController = {
 			});
 		} catch (error) {
 			console.log(error);
-			res.status(500).json(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 };

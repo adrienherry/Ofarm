@@ -1,11 +1,15 @@
 const db = require("../services/sequelize");
 const { Op, transaction } = require("sequelize");
 const { Garden, Species, EventType } = require("../models");
-const { standardErrors, slugify } = require("../helpers");
+const { standardErrors, slugify, validate } = require("../helpers");
 
 const gardenController = {
 	findOneWithUserId: async (req, res) => {
 		try {
+			if (!validate.isValidAsInt(req.params.garden_id)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
 			const garden_id = parseInt(req.params.garden_id);
 
 			if (!res.locals.id) {
@@ -113,12 +117,16 @@ const gardenController = {
 			});
 		} catch (error) {
 			console.log(error);
-			res.status(500).json(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
 	removeGarden: async (req, res) => {
 		try {
+			if (!validate.isValidAsInt(req.params.garden_id)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
 			const garden_id = req.params.garden_id;
 
 			const garden = await Garden.findOne({
@@ -154,7 +162,7 @@ const gardenController = {
 				deleted: nbDeleted === 0,
 			});
 		} catch (error) {
-			res.status(500).json(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 };
