@@ -52,7 +52,7 @@ const speciesController = {
 						as: "events",
 						include: "eventType",
 						attributes: {
-							exclude: ["eventTypeId"]
+							exclude: ["eventTypeId", "speciesId", "createdAt", "updatedAt"]
 						}
 					}
 				],
