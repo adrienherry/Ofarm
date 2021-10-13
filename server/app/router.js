@@ -104,7 +104,6 @@ router.get(
 router.get(
 	"/user",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	cache,
 	userController.findOne,
 );
 
@@ -122,7 +121,6 @@ router.get(
 router.patch(
 	"/user",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	//flush,
 	userController.save,
 );
 
@@ -136,7 +134,6 @@ router.patch(
 router.get(
 	"/garden/:garden_id",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	cache,
 	gardenController.findOneWithUserId,
 );
 
@@ -153,7 +150,6 @@ router.get(
 router.post(
 	"/garden/:garden_id/species",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	//flush,
 	speciesController.addOneToGarden,
 );
 
@@ -168,7 +164,6 @@ router.post(
 router.delete(
 	"/garden/:garden_id/species",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	//flush,
 	speciesController.removeOneFromGarden,
 );
 
@@ -185,7 +180,6 @@ router.delete(
 router.post(
 	"/garden",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	//flush,
 	gardenController.createGarden,
 );
 
@@ -201,7 +195,6 @@ router.post(
 router.delete(
 	"/garden/:garden_id",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	//flush,
 	gardenController.removeGarden,
 );
 
@@ -291,25 +284,12 @@ router.get(
 );
 
 /**
- * @route GET /garden/:garden_id/harvest
- * @group Harvest
- * @summary Returns all the harvests of the user's garden matching the given ID.
- * @returns {Array.<Harvest>} 200 - an array of harvests
- * @returns {string} 403 - Forbidden
- * @returns {string} 500 - Internal Server Error
- */
-router.get(
-	"/garden/:garden_id/harvest",
-	jwtService.verifyAndDecodeTokenMiddleware,
-	harvestController.getHarvestByGardenId,
-);
-
-/**
  * @route POST /harvest
  * @group Harvest
  * @summary Creates a new harvest.
  * @param {integer} gardenId.body.required - ID of the garden
  * @param {integer} speciesId.body.required - ID of the species
+ * @param {string} name.body.required - name of the event
  * @param {string} comment.body - optional comment associated to the calendar Event
  * @param {number} quantity.body.required - harvest quantity in kilogram (double precision)
  * @param {string} date.body.required - date the harvest was performed
