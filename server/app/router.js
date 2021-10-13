@@ -104,7 +104,6 @@ router.get(
 router.get(
 	"/user",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	// cache,
 	userController.findOne,
 );
 
@@ -122,7 +121,6 @@ router.get(
 router.patch(
 	"/user",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	flush,
 	userController.save,
 );
 
@@ -136,7 +134,6 @@ router.patch(
 router.get(
 	"/garden/:garden_id",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	// cache,
 	gardenController.findOneWithUserId,
 );
 
@@ -153,7 +150,6 @@ router.get(
 router.post(
 	"/garden/:garden_id/species",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	flush,
 	speciesController.addOneToGarden,
 );
 
@@ -168,7 +164,6 @@ router.post(
 router.delete(
 	"/garden/:garden_id/species",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	flush,
 	speciesController.removeOneFromGarden,
 );
 
@@ -185,7 +180,6 @@ router.delete(
 router.post(
 	"/garden",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	flush,
 	gardenController.createGarden,
 );
 
@@ -201,7 +195,6 @@ router.post(
 router.delete(
 	"/garden/:garden_id",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	flush,
 	gardenController.removeGarden,
 );
 

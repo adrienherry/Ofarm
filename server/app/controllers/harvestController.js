@@ -1,4 +1,4 @@
-const { Harvest, Garden } = require("../models");
+const { Harvest, Garden, Species } = require("../models");
 const { standardErrors, validate } = require("../helpers");
 const { where, col, Op } = require("sequelize");
 
@@ -20,6 +20,42 @@ const harvestController = {
 					required: true,
 					as: "garden",
 				},
+			});
+			res.json(harvests);
+		} catch (error) {
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
+		}
+	},
+
+	getHarvestByGardenId: async (req, res) => {
+		try {
+			if (!res.locals.id) {
+				res.status(403).json(standardErrors.UserNotLoggedError);
+				return;
+			}
+			const userId = res.locals.id;
+
+			if (!validate.isValidAsInt(req.params.garden_id)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+			const garden_id = parseInt(req.params.garden_id);
+
+			const harvests = await Harvest.findAll({
+				where: {
+					gardenId: garden_id,
+					"$garden.user_id$": userId,
+				},
+				include: [
+					{
+						model: Garden,
+						required: true,
+						as: "garden",
+					},
+					{ model: Species, as: "species" },
+				],
+				order: [["date", "DESC"]],
 			});
 			res.json(harvests);
 		} catch (error) {

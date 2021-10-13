@@ -50,13 +50,11 @@ const speciesController = {
 					{
 						model: Event,
 						as: "events",
-						attributes: {
-							exclude: ["createdAt", "updatedAt", "eventTypeId", "speciesId"],
-						},
 						include: "eventType",
-						// through: { attributes: [] },
-						// include: "eventType"
-					},
+						attributes: {
+							exclude: ["eventTypeId", "speciesId", "createdAt", "updatedAt"]
+						}
+					}
 				],
 				order: [["name", "ASC"]],
 				attributes: { exclude: ["createdAt", "updatedAt"] },

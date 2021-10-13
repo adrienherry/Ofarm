@@ -149,4 +149,5 @@ CREATE TABLE "soil_type_species" (
    updated_at timestamptz NOT NULL DEFAULT (now())
 );
 
+
 COMMIT;

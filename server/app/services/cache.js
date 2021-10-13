@@ -9,7 +9,7 @@ const asyncClient = {
 	exists: promisify(redisClient.exists).bind(redisClient),
 };
 
-const TIMEOUT = 60 * 60; // 1 hou-r = 60 * 60 sec
+const TIMEOUT = 60*60; // 1 hour = 60 * 60 sec
 
 const DB_PREFIX = "ofarm";
 
@@ -22,9 +22,9 @@ const cache = async (req, res, next) => {
 		(req.url === "/search" && req.query.text
 			? `?text=${req.query.text.toLowerCase()}`
 			: "");
-	
-	if (keys.includes(key)) {
-		const jsonData = await asyncClient.get(key);
+
+	const jsonData = await asyncClient.get(key);
+	if (jsonData) {
 		const value = JSON.parse(jsonData);
 		res.json(value);
 	} else {
@@ -33,7 +33,9 @@ const cache = async (req, res, next) => {
 		res.json = async (data) => {
 			const jsonData = JSON.stringify(data);
 			await asyncClient.setex(key, TIMEOUT, jsonData);
-			keys.push(key);
+			if (!keys.includes(key)) {
+				keys.push(key);
+			}
 
 			const check = await asyncClient.get(key);
 			originalJson(data);
@@ -44,14 +46,11 @@ const cache = async (req, res, next) => {
 };
 
 const flush = async (_, __, next) => {
-	console.log(keys);
-
 	for (const key of keys) {
 		await asyncClient.del(key);
 	}
 
 	keys.length = 0;
-	console.log(keys);
 	next();
 };
 

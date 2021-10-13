@@ -16,7 +16,7 @@ const DB_PREFIX = "ofarm-blacklist";
 const keys = [];
 
 const addToBlacklist = async (id, token) => {
-	const key = `${DB_PREFIX}:${id}-${token}`;
+	const key = `${DB_PREFIX}:${token}`;
 
 	if (!keys.includes(key)) {
 		await asyncClient.setex(key, TIMEOUT, JSON.stringify(token));
@@ -27,28 +27,23 @@ const addToBlacklist = async (id, token) => {
     return;
 };
 
-// const add = async (req, res, next) => await asyncClient.setex;
-
-const verify = async (id, token) => {
+const isBlacklisted = (id, token) => {
 	// Vérifier si le token est dans la liste ou pas
-    const key = `${DB_PREFIX}:${id}-${token}`;
+    const key = `${DB_PREFIX}:${token}`;
     if (keys.find(item => key === item)) {
+		return true;
+	} else {
         return false;
-    } else {
-        return true;
     }
 };
 
-const flush = async (_, __, next) => {
-	console.log(keys);
-
+const cleanBlacklist = async (_, __, next) => {
 	for (const key of keys) {
 		await asyncClient.del(key);
 	}
 
 	keys.length = 0;
-	console.log(keys);
 	next();
 };
 
-module.exports = {addToBlacklist, verify, flush };
+module.exports = {addToBlacklist, isBlacklisted, cleanBlacklist};
