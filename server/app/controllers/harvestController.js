@@ -1,5 +1,5 @@
 const { Harvest, Garden } = require("../models");
-const { standardErrors } = require("../helpers");
+const { standardErrors, validate } = require("../helpers");
 const { where, col, Op } = require("sequelize");
 
 const harvestController = {
@@ -35,6 +35,14 @@ const harvestController = {
 				return;
 			}
 			const userId = res.locals.id;
+
+			if (
+				!validate.isValidAsInt(req.body.speciesId) ||
+				!validate.isValidAsInt(req.body.gardenId)
+			) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
 
 			const { speciesId, gardenId, quantity, date } = req.body;
 
@@ -96,6 +104,11 @@ const harvestController = {
 				return;
 			}
 
+			if (!validate.isValidAsInt(req.body.harvestId)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
 			const harvestId = parseInt(req.body.harvestId);
 
 			const harvest = await Harvest.findOne({
@@ -148,7 +161,13 @@ const harvestController = {
 				res.status(403).json(standardErrors.BadRequestError);
 				return;
 			}
-			const harvestId = parseInt(req.body.id);
+
+			if (!validate.isValidAsInt(req.body.harvestId)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
+			const harvestId = parseInt(req.body.harvestId);
 
 			const garden = await Harvest.findOne({
 				where: {
@@ -178,7 +197,7 @@ const harvestController = {
 				deleted: nbDeleted.length === 0,
 			});
 		} catch (error) {
-			res.status(500).json(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 };

@@ -34,7 +34,7 @@ const Login = () => {
       history.goBack();
       dispatch(resetReadyToRedirectLogin());
       dispatch(resetErrorLogin());
-      enqueueSnackbar(`Connection réussite, bienvenue ${username}`, { variant: 'success' });
+      enqueueSnackbar(`Connection réussie, bienvenue ${username}`, { variant: 'success' });
     }
   }, [readyToRedirect]);
   return (

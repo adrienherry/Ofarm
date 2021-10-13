@@ -1,5 +1,5 @@
 const { Garden, User, Field, Species } = require("../models");
-const { standardErrors } = require("../helpers");
+const { standardErrors, validate } = require("../helpers");
 
 const fieldController = {
 	findGardenFields: async (req, res) => {
@@ -9,6 +9,10 @@ const fieldController = {
 				return;
 			}
 
+			if (!validate.isValidAsInt(req.params.garden_id)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
 			const gardenId = req.params.garden_id;
 
 			const field = await Field.findAll({
@@ -37,7 +41,7 @@ const fieldController = {
 			res.json(field);
 		} catch (error) {
 			console.log(error);
-			res.status(500).json(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
@@ -54,6 +58,12 @@ const fieldController = {
 			}
 
 			const userId = res.locals.id;
+
+			if (!validate.isValidAsInt(req.params.garden_id)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
 			const gardenId = req.params.garden_id;
 			const { shape, speciesIds } = req.body;
 
@@ -87,7 +97,7 @@ const fieldController = {
 			res.json(newField);
 		} catch (error) {
 			console.log(error);
-			res.status(500).json(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
@@ -99,6 +109,14 @@ const fieldController = {
 			}
 
 			if (!req.body.fieldId) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
+			if (
+				!validate.isValidAsInt(req.params.garden_id) ||
+				!validate.isValidAsInt(req.body.fieldId)
+			) {
 				res.status(403).json(standardErrors.BadRequestError);
 				return;
 			}
@@ -144,7 +162,7 @@ const fieldController = {
 			res.json({ updated: true });
 		} catch (error) {
 			console.log(error);
-			res.status(500).json(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
@@ -160,6 +178,14 @@ const fieldController = {
 				return;
 			}
 
+			if (
+				!validate.isValidAsInt(req.params.garden_id) ||
+				!validate.isValidAsInt(req.body.fieldId)
+			) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+			
 			const field = await Field.findOne({
 				where: {
 					id: req.body.fieldId,
@@ -190,7 +216,7 @@ const fieldController = {
 			});
 		} catch (error) {
 			console.log(error);
-			res.status(500).json(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 };
