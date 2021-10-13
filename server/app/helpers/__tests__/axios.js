@@ -9,10 +9,12 @@
 // 	return response.data;
 // };
 
-const axios = require("axios");
+const mockAxios = require("axios");
 
 describe("mock axios", () => {
 	it("calls mock axios with no params", async () => {
-		const data = await axios.get("");
+		const { data } = await mockAxios.get("");
+		console.log(data)
+		// expect(data).toBe({ results: ["photoDeChat.png"] });
 	});
 });

@@ -1,7 +1,7 @@
 const validate = {
-	isValidAsInt: (str) => {
+	isValidAsInt: (strOrNumber) => {
 		// if (typeof str != "string") return false;
-		return !isNaN(str) && !isNaN(parseFloat(str));
+		return !isNaN(strOrNumber) && !isNaN(parseFloat(strOrNumber));
     },
 };
 
