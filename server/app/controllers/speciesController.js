@@ -47,6 +47,14 @@ const speciesController = {
 						},
 						through: { attributes: [] },
 					},
+					{
+						model: Event,
+						as: "events",
+						include: "eventType",
+						attributes: {
+							exclude: ["eventTypeId", "speciesId", "createdAt", "updatedAt"]
+						}
+					}
 				],
 				order: [["name", "ASC"]],
 				attributes: { exclude: ["createdAt", "updatedAt"] },
