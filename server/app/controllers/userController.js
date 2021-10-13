@@ -66,12 +66,8 @@ const userController = {
 
 			return res.json(userItem);
 		} catch (error) {
-<<<<<<< HEAD
-			return res.status(500).json(error);
-=======
 			console.log(error);
-			res.status(500).json(error);
->>>>>>> 131338e0d321997b358a23eb12ef2a77e21650e3
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
@@ -113,17 +109,10 @@ const userController = {
 				if (!isEqual)
 					user.hashedPassword = bcrypt.hashSync(password, saltRounds);
 			}
-<<<<<<< HEAD
 			await user.save();
-			return res.json({ updated: true });
-=======
-
-			await user.save();
-
 			res.json({ updated: true });
->>>>>>> 131338e0d321997b358a23eb12ef2a77e21650e3
 		} catch (error) {
-			return res.status(500).json(error);
+			return res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 };

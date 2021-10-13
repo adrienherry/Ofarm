@@ -57,7 +57,9 @@ const authController = {
 			});
 
 			if (!foundUser) {
-				return res.status(400).json(standardErrors.WrongUsernameOrPasswordError);
+				return res
+					.status(400)
+					.json(standardErrors.WrongUsernameOrPasswordError);
 			}
 
 			const passwordIsCorrect = bcrypt.compareSync(
@@ -66,10 +68,12 @@ const authController = {
 			);
 
 			if (!passwordIsCorrect) {
-				return res.status(400).json(standardErrors.WrongUsernameOrPasswordError);
+				return res
+					.status(400)
+					.json(standardErrors.WrongUsernameOrPasswordError);
 			}
 
-			console.log()
+			console.log();
 			res.json({
 				logged: true,
 				username: foundUser.username,
@@ -90,17 +94,11 @@ const authController = {
 			}
 
 			await blacklist.addToBlacklist(res.locals.id, res.locals.token);
-<<<<<<< HEAD
-			return res.json({ redirect: true });
 
-		} catch (error) {
-			return res.json(error);
-=======
 			res.json({ redirect: true });
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(standardErrors.InternalServerError);
->>>>>>> 131338e0d321997b358a23eb12ef2a77e21650e3
 		}
 	},
 };
