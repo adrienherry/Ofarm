@@ -284,12 +284,26 @@ router.get(
 );
 
 /**
+ * @route GET /garden/:garden_id/harvest
+ * @group Harvest
+ * @summary Returns all the harvests of the user's garden matching the given ID.
+ * @returns {Array.<Harvest>} 200 - an array of harvests
+ * @returns {string} 403 - Forbidden
+ * @returns {string} 500 - Internal Server Error
+ */
+router.get(
+	"/garden/:garden_id/harvest",
+	jwtService.verifyAndDecodeTokenMiddleware,
+	harvestController.getHarvestByGardenId,
+);
+
+
+/**
  * @route POST /harvest
  * @group Harvest
  * @summary Creates a new harvest.
  * @param {integer} gardenId.body.required - ID of the garden
  * @param {integer} speciesId.body.required - ID of the species
- * @param {string} name.body.required - name of the event
  * @param {string} comment.body - optional comment associated to the calendar Event
  * @param {number} quantity.body.required - harvest quantity in kilogram (double precision)
  * @param {string} date.body.required - date the harvest was performed
