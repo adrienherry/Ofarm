@@ -122,7 +122,7 @@ router.get(
 router.patch(
 	"/user",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	flush,
+	//flush,
 	userController.save,
 );
 
@@ -153,7 +153,7 @@ router.get(
 router.post(
 	"/garden/:garden_id/species",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	flush,
+	//flush,
 	speciesController.addOneToGarden,
 );
 
@@ -168,7 +168,7 @@ router.post(
 router.delete(
 	"/garden/:garden_id/species",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	flush,
+	//flush,
 	speciesController.removeOneFromGarden,
 );
 
@@ -185,7 +185,7 @@ router.delete(
 router.post(
 	"/garden",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	flush,
+	//flush,
 	gardenController.createGarden,
 );
 
@@ -201,7 +201,7 @@ router.post(
 router.delete(
 	"/garden/:garden_id",
 	jwtService.verifyAndDecodeTokenMiddleware,
-	flush,
+	//flush,
 	gardenController.removeGarden,
 );
 

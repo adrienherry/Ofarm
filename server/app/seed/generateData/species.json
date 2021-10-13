@@ -1389,30 +1389,30 @@
         "description": "La fraise est un fruit rouge issu des fraisiers, espèces de plantes herbacées appartenant au genre Fragaria (famille des Rosacées), dont plusieurs variétés sont cultivées. Les fraises se développent à partir du réceptacle charnu des fleurs. Ce sont donc des faux fruits. De forme ovoïde oblongues plus ou moins arrondies, elles sont de couleur rouge ou jaune blanchâtre selon les variétés. Au sens botanique du terme, les « vrais » fruits des fraisiers sont en fait les akènes, ces petits grains secs disposés dans des alvéoles sur les fraises. Ils sont de couleur verte à brune, et renferment chacun soit un ovule (non fécondé), soit une graine (ovule fécondé) qui contient elle-même un germe.",
         "saw_in": [
             [
-                "01-11-2000",
-                "01-04-2000"
+                "01-01-2000",
+                "01-03-2000"
             ]
         ],
         "saw_out": [
             [
-                "01-11-2000",
-                "01-04-2000"
+                "01-04-2000",
+                "01-06-2000"
             ]
         ],
         "transplant": [
             [
-                "01-11-2000",
-                "01-04-2000"
+                "01-03-2000",
+                "01-06-2000"
             ],
-            [
-                "01-11-2000",
-                "01-04-2000"
-            ]
         ],
         "harvest": [
             [
-                "01-11-2000",
-                "01-04-2000"
+                "01-05-2000",
+                "01-07-2000"
+            ],
+            [
+                "01-09-2000",
+                "01-11-2000"
             ]
         ]
     },
