@@ -2,15 +2,8 @@
 
 .individual-species {
     
-    // padding: 2rem;
     margin: 0 3rem;
     margin-top: 3rem;
-    // background-color: #ffffff;
-    // border-radius: vars.$gutter;
-    // box-shadow: vars.$shadow;
-
-   
-
 
     &__image-container {
         height: 22rem;
@@ -23,7 +16,6 @@
     &__image {
         width: 100%;
         height: 100%;
-        // border-radius: 0.5rem;
         box-shadow: vars.$shadow-card-item;
     }
 
@@ -47,7 +39,6 @@
     &__info {
         box-shadow: vars.$shadow-card-item;
         padding: 2rem;
-        // border-radius: 0.5rem;
         background: vars.$background-card-color;
 
         
@@ -67,7 +58,6 @@
         }
 
         &-co2 {
-            // border-radius: 0.5rem;
             box-shadow: vars.$shadow-card-item;
             padding: 2rem;
             background: vars.$background-card-color;
@@ -90,7 +80,6 @@
         text-align: justify;
         padding: 2rem;
         margin-bottom: 3rem;
-        // border-radius: 0.5rem;
         box-shadow: vars.$shadow-card-item;
         background: vars.$background-card-color;
     }
@@ -114,7 +103,6 @@
         }
 
         &__item {
-            // border: 1px solid #000000;
             padding: 0.3rem;
             border-radius: 0.3rem;
             margin-left: 0.3rem;
@@ -130,9 +118,7 @@
     }
 
     &__no-co2 {
-        // box-shadow: vars.$shadow-card-item;
         padding: 2rem;
-        // border-radius: 0.5rem;
     }
 
     
