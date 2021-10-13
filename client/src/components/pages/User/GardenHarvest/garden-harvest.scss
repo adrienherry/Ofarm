@@ -1,0 +1,16 @@
+@use '../../../../styles/vars';
+
+.garden-harvest {
+    &__content {
+        margin: 2rem 2rem;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    &__title {
+        margin: 2rem;
+        color: vars.$secondary-color;
+        font-size: 2rem;
+    }
+}

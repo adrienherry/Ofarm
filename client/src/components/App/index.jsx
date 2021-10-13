@@ -25,6 +25,7 @@ import {
 } from '../../store/actions/authentification';
 import IndividualSpecies from '../pages/IndividualSpecies';
 import {
+  resetAlreadyExistError,
   resetEmptyRegisterField,
   resetErrorEmailRegister,
   resetRegisterInfo,
@@ -37,6 +38,7 @@ import RedesignHeaderContainer from '../RedesignHeaderContainer';
 import UserMenuRedesign from '../UserMenuRedesign';
 import RedesignFooter from '../RedesignFooter';
 import { setSelectedEventType, setSelectedSpecies } from '../../store/actions/gardens';
+import GardenHarvest from '../pages/User/GardenHarvest';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -56,6 +58,7 @@ const App = () => {
     dispatch(resetRegisterInfo());
     dispatch(resetLoginForm());
     dispatch(setSelectedEventType('Tous'));
+    dispatch(resetAlreadyExistError());
 
     window.scrollTo({
       top: 0,
@@ -121,6 +124,9 @@ const App = () => {
                 </Route>
                 <Route path="/gardens/:slug" exact>
                   <IndividualGarden />
+                </Route>
+                <Route path="/gardens/:slug/harvest" exact>
+                  <GardenHarvest />
                 </Route>
               </>
             )}

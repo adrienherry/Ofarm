@@ -89,6 +89,14 @@ const UserMenuRedesign = () => {
                   ESPECES
                 </div>
               </Link>
+              <Link
+                to="/advice"
+                exact
+              >
+                <div className="user-menu-redesign__link">
+                  CONSEILS
+                </div>
+              </Link>
               {isMedium && !logged && (
               <>
                 <Link

@@ -6,13 +6,21 @@ import ModalUnstyled from '@mui/core/ModalUnstyled';
 import UserHeader from '../UserHeader';
 import { findGarden } from '../../../../selectors/garden';
 import {
-  closeModal, fetchGardens, openModal, setModalDate, setModalEvents, setUserGarden,
+  addSpeciesToGarden,
+  closeModal,
+  fetchGardens,
+  openModal,
+  setModalDate,
+  setModalEvents,
+  setNewGarden,
+  setReadyToAddToFalse,
+  setUserGarden,
 } from '../../../../store/actions/gardens';
 import GardenCalendar from './GardenCalendar';
 import './individual-garden.scss';
 import { convertModalDate } from '../../../../utils/convertDate';
 import ModalItem from './ModalItem';
-import garden from '../../../../store/middlewares/garden';
+import Navigation from './Navigation';
 
 const IndividualGarden = () => {
   const dispatch = useDispatch();
@@ -77,12 +85,14 @@ const IndividualGarden = () => {
       dispatch(fetchGardens());
     }
   }, []);
+
   return (
     <>
       <UserHeader />
       {userGarden && (
         <>
           <div className="individual-garden__name">{userGarden.name}</div>
+          <Navigation gardenName={userGarden.name} />
           <div className="individual-garden">
             <GardenCalendar onDayClick={handleOnDayClick} />
           </div>

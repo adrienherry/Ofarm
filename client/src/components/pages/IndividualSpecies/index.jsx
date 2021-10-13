@@ -97,7 +97,7 @@ const IndividualSpecies = () => {
               </Grid>
 
             </Grid>
-            <Grid container item lg={12} md={12} sm={12} xs={12} className="individual-species__info-co2-container" mt={2} justifyContent={isMedium ? 'center' : 'space-between'} direction={isMedium ? 'column-reverse' : 'row'}>
+            <Grid container item lg={12} md={12} sm={12} xs={12} className="individual-species__info-co2-container" mt={2} direction={isMedium ? 'column-reverse' : 'row'} justifyContent={isMedium ? 'center' : 'space-between'}>
               <Grid
                 item
                 container
@@ -106,7 +106,7 @@ const IndividualSpecies = () => {
                 lg={4}
                 md={5}
                 sm={11}
-                xs={10}
+                xs={12}
                 justifyContent="center"
                 className="individual-species__info-co2"
                 data-aos={isMedium ? '' : 'fade-right'}
@@ -142,7 +142,7 @@ const IndividualSpecies = () => {
                 item
                 container
                 data-aos={isMedium ? '' : 'fade-left'}
-                data-aos-delay={isMedium ? '100' : '1200'}
+                data-aos-delay={isMedium ? '' : '1200'}
                 direction="row"
                 lg={7}
                 md={6}

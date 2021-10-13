@@ -8,6 +8,7 @@ import searchbarMiddleware from './middlewares/searchbar';
 import userMiddleware from './middlewares/user';
 import logoutMiddleware from './middlewares/logout';
 import gardenMiddleware from './middlewares/garden';
+import harvestMiddleware from './middlewares/harvest';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -20,6 +21,7 @@ const middlewares = [
   userMiddleware,
   logoutMiddleware,
   gardenMiddleware,
+  harvestMiddleware,
 ];
 
 const enhancers = composeEnhancers(

@@ -1,0 +1,38 @@
+@use '../../../../../styles/vars';
+
+.harvest-card {
+    display: flex;
+    flex-direction: column;
+    background-color: vars.$background-card-color;
+    max-width: 20rem;
+    padding: 2rem;
+    box-shadow: vars.$shadow-card-item;
+    margin: 0.5rem;
+    &__name {
+        margin-bottom: 1rem;
+    }
+
+    &__date {
+        margin-bottom: 1rem;
+    }
+
+    &__quantity {
+        margin-bottom: 1rem;
+    }
+
+    &__comment {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__span {
+        font-weight: 500;
+        font-size: 1.1rem;
+
+        &-comment {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+
+}

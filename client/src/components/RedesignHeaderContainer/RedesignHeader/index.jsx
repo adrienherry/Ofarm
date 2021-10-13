@@ -50,6 +50,16 @@ const RedesignHeader = () => {
               Espèces
             </div>
           </NavLink>
+          <NavLink
+            className="redesign-header__navbar-link"
+            activeClassName="redesign-header__navbar-link--active"
+            to="/advice"
+            exact
+          >
+            <div className="redesign-header__navbar-item">
+              Conseils
+            </div>
+          </NavLink>
         </nav>
       </div>
       <div className="redesign-header__searchbar-container">
