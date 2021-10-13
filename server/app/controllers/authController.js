@@ -20,10 +20,7 @@ const authController = {
 
 			const foundUser = await User.findOne({
 				where: {
-					[Op.or]: {
-						email: req.body.email.toLowerCase(),
-						username: req.body.email.toLowerCase(),
-					},
+					email: req.body.email.toLowerCase(),
 				},
 			});
 
@@ -33,7 +30,7 @@ const authController = {
 
 			await User.create({
 				username: req.body.username,
-				email: req.body.email,
+				email: req.body.email.toLowerCase(),
 				hashedPassword: bcrypt.hashSync(req.body.password, 10),
 				usernameSlug: slugify(req.body.username),
 			});
@@ -42,13 +39,13 @@ const authController = {
 				created: true,
 			});
 		} catch (error) {
-			res.json(error);
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
 	login: async (req, res) => {
 		try {
-
 			if (!req.body.password || !req.body.email) {
 				return res.status(400).json(standardErrors.BadRequestError);
 			}
@@ -76,11 +73,13 @@ const authController = {
 			res.json({
 				logged: true,
 				username: foundUser.username,
+				email: foundUser.email,
 				usernameSlug: foundUser.usernameSlug,
 				token: jwt.generateTokenWith(foundUser.id, foundUser.username),
 			});
 		} catch (error) {
-			res.json(error);
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
@@ -91,12 +90,19 @@ const authController = {
 			}
 
 			await blacklist.addToBlacklist(res.locals.id, res.locals.token);
+<<<<<<< HEAD
 			return res.json({ redirect: true });
 
 		} catch (error) {
 			return res.json(error);
+=======
+			res.json({ redirect: true });
+		} catch (error) {
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
+>>>>>>> 131338e0d321997b358a23eb12ef2a77e21650e3
 		}
-	}
+	},
 };
 
 module.exports = authController;

@@ -19,14 +19,14 @@ Event.init(
 		optionName: {
 			type: DataTypes.TEXT,
 			allowNull: false,
-			defaultValue: "default"
+			defaultValue: "default",
 		},
 		fromDate: {
-			type: DataTypes.DATE,
+			type: DataTypes.DATEONLY,
 			allowNull: false,
 		},
 		untilDate: {
-			type: DataTypes.DATE,
+			type: DataTypes.DATEONLY,
 			allowNull: false,
 		},
 	},
@@ -35,7 +35,11 @@ Event.init(
 		underscored: true,
 		modelName: "Event",
 		tableName: "event",
-		timestamps: true,
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

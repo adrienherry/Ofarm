@@ -21,12 +21,10 @@ User.init(
 		username: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			unique: true,
 		},
 		usernameSlug: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			unique: true,
 		},
 		hashedPassword: {
 			type: DataTypes.STRING,
@@ -46,7 +44,6 @@ User.init(
 		underscored: true,
 		modelName: "User",
 		tableName: "user",
-		timestamps: true,
 	},
 );
 

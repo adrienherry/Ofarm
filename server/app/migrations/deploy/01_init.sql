@@ -25,7 +25,7 @@ CREATE TABLE "user" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    email text NOT NULL UNIQUE,
    hashed_password text NOT NULL,
-   username text NOT NULL UNIQUE,
+   username text NOT NULL,
    username_slug text,
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now())
@@ -92,6 +92,7 @@ CREATE TABLE "event_type" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    name text NOT NULL UNIQUE,
    name_slug text,
+   color text NOT NULL,
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now())
 );
@@ -147,5 +148,6 @@ CREATE TABLE "soil_type_species" (
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now())
 );
+
 
 COMMIT;

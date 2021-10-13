@@ -6,8 +6,14 @@ export default (store) => (next) => async (action) => {
   switch (action.type) {
     case LOGOUT:
       try {
-        const response = axiosInstance.get('/logout');
-        localStorage.removeItem('jwt');
+        const { user: { token } } = store.getState();
+        const response = axiosInstance.get('/logout', {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        localStorage.clear();
         store.dispatch(setLoggedToFalse());
       }
       catch (error) {

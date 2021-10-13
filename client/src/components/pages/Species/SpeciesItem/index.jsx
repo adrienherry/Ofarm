@@ -12,11 +12,12 @@ import { makeStyles } from '@mui/styles';
 const SpeciesItem = ({ name, nameSlug, imageUrl }) => {
   const useStyles = makeStyles(() => ({
     root: {
-      boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
+      boxShadow: 'rgba(0, 0, 0, 0.15) 0px 3px 3px 0px',
+      borderRadius: '0rem',
       textAlign: 'center',
-      fontFamily: '"Dosis", sans-serif',
+      fontFamily: 'Poppins',
       '&:hover': {
-        boxShadow: '0px 9px 23px 1px rgba(61,59,44,0.84)',
+        boxShadow: 'rgba(36, 68, 53, 0.4) 0px 0px 0px 2px, rgba(36, 68, 53, 0.65) 0px 4px 6px -1px, rgba(36, 68, 53, 0.08) 0px 1px 0px inset',
       },
     },
   }));

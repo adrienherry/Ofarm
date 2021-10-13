@@ -131,6 +131,7 @@ table {
 
 html {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *,
@@ -158,3 +159,15 @@ button {
   outline: 0;
 }
 
+body::-webkit-scrollbar {
+  width: 0.7em;
+}
+ 
+body::-webkit-scrollbar-track {
+  background: #fdf1e5;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #244435;
+  border-radius: 0.5rem;
+}

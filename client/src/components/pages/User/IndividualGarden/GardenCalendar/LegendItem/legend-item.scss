@@ -1,0 +1,10 @@
+.legend-item {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    &__color {
+        height: 3rem;
+        width: 5px;
+        margin-right: 1rem;
+    }
+}

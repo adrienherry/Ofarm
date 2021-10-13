@@ -1,7 +1,7 @@
 const standardErrors = {
-	InternalServerError: {error: "Erreur serveur interne."},
+	InternalServerError: { error: "Erreur serveur interne." },
 	BadRequestError: { error: "Requête incorrecte." },
-	
+
 	UserAlreadyExistsError: {
 		error: "Cet identifiant ou cet email sont déjà pris.",
 	},
@@ -16,20 +16,30 @@ const standardErrors = {
 
 	GardenNotFoundError: { error: "Aucun jardin ne correspond à cet ID." },
 
-	GardenNameAlreadyExists: {error: "Vous possédez déjà un jardin avec ce nom."},
-	
+	HarvestNotFoundError: {
+		error: "Aucune récolte ne correspond à cet ID.",
+	},
+
+	FieldNotFoundError: {
+		error: "Aucune récolte ne correspond à cet ID.",
+	},
+
+	GardenNameAlreadyExists: {
+		error: "Vous possédez déjà un jardin avec ce nom.",
+	},
+
 	SpeciesAlreadyExistsInGardenError: {
 		error: "Ce jardin contient déjà cette espèce.",
 	},
-	
+
 	SpeciesDoesNotExistError: { error: "Cette espèce n'existe pas." },
-	
+
 	FailedCreateError: {
-		error: "Echec durant la création."
+		error: "Echec durant la création.",
 	},
 
 	UserTokenExpired: {
-		error : "Session expirée. Veuillez vous reconnecter."
+		error: "Session expirée. Veuillez vous reconnecter.",
 	},
 
 	FailedUpdateError: (param) => {

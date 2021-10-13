@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const slugify = require("../helpers/slugify");
 
-const { User } = require("../models");
+const { User, Harvest } = require("../models");
 const { standardErrors } = require("../helpers");
 
 const userController = {
@@ -16,19 +16,39 @@ const userController = {
 			const id = res.locals.id;
 			const userItem = await User.findByPk(id, {
 				include: [
+					"gardens",
 					{
 						association: "gardens",
 						include: [
 							"species",
 							{
 								association: "species",
+								include: {
+									model: Harvest,
+									as: "harvests",
+									attributes: {
+										exclude: [
+											// "speciesId",
+											"gardenId",
+											"createdAt",
+											"updatedAt",
+										],
+									},
+								},
+							},
+							{
+								association: "species",
 								include: [
-									"events",
 									{
 										association: "events",
 										include: "eventType",
 										attributes: {
-											exclude: ["createdAt", "updatedAt", "eventTypeId","speciesId"],
+											exclude: [
+												"createdAt",
+												"updatedAt",
+												"eventTypeId",
+												"speciesId",
+											],
 										},
 									},
 								],
@@ -40,19 +60,18 @@ const userController = {
 								},
 							},
 						],
-						attributes: {
-							exclude: ["createdAt", "updatedAt"],
-						},
 					},
 				],
-				attributes: {
-					exclude: ["createdAt", "updatedAt"],
-				},
 			});
 
 			return res.json(userItem);
 		} catch (error) {
+<<<<<<< HEAD
 			return res.status(500).json(error);
+=======
+			console.log(error);
+			res.status(500).json(error);
+>>>>>>> 131338e0d321997b358a23eb12ef2a77e21650e3
 		}
 	},
 
@@ -91,11 +110,18 @@ const userController = {
 					user.hashedPassword,
 				);
 
-				if (password !== user.hashedPassword)
+				if (!isEqual)
 					user.hashedPassword = bcrypt.hashSync(password, saltRounds);
 			}
+<<<<<<< HEAD
 			await user.save();
 			return res.json({ updated: true });
+=======
+
+			await user.save();
+
+			res.json({ updated: true });
+>>>>>>> 131338e0d321997b358a23eb12ef2a77e21650e3
 		} catch (error) {
 			return res.status(500).json(error);
 		}

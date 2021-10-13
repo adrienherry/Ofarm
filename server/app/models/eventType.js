@@ -21,13 +21,25 @@ EventType.init(
 			allowNull: false,
 			unique: true,
 		},
+		color: {
+			type: DataTypes.STRING,
+			allowNull: true,
+			defaultValue: "#ffffff00",
+			validate: {
+				is: ["^(#([0-9a-fA-F]{6,8}))"],
+			},
+		},
 	},
 	{
 		sequelize,
 		underscored: true,
 		modelName: "EventType",
 		tableName: "event_type",
-		timestamps: false,
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

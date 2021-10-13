@@ -55,3 +55,67 @@ export const resetRegisterInfo = () => (
     type: RESET_REGISTER_INFO,
   }
 );
+
+export const SET_ERROR_EMAIL_REGISTER = 'SET_ERROR_EMAIL_REGISTER';
+
+export const setErrorEmailRegister = () => (
+  {
+    type: SET_ERROR_EMAIL_REGISTER,
+  }
+);
+
+export const RESET_ERROR_EMAIL_REGISTER = 'RESET_ERROR_EMAIL_REGISTER';
+
+export const resetErrorEmailRegister = () => (
+  {
+    type: RESET_ERROR_EMAIL_REGISTER,
+  }
+);
+
+export const SET_EMPTY_REGISTER_FIELD = 'SET_EMPTY_REGISTER_FIELD';
+
+export const setEmptyRegisterField = () => (
+  {
+    type: SET_EMPTY_REGISTER_FIELD,
+  }
+);
+
+export const RESET_EMPTY_REGISTER_FIELD = 'RESET_EMPTY_REGISTER_FIELD';
+
+export const resetEmptyRegisterField = () => (
+  {
+    type: RESET_EMPTY_REGISTER_FIELD,
+  }
+);
+
+export const SET_READY_TO_SEND_TO_TRUE = 'SET_READY_TO_SEND_TO_TRUE';
+
+export const setReadyToSendToTrue = () => (
+  {
+    type: SET_READY_TO_SEND_TO_TRUE,
+  }
+);
+
+export const SET_READY_TO_SEND_TO_FALSE = 'SET_READY_TO_SEND_TO_FALSE';
+
+export const setReadyToSendToFalse = () => (
+  {
+    type: SET_READY_TO_SEND_TO_FALSE,
+  }
+);
+
+export const SET_ALREADY_EXIST_ERROR = 'SET_ALREADY_EXIST_ERROR';
+
+export const setAlreadyExistError = () => (
+  {
+    type: SET_ALREADY_EXIST_ERROR,
+  }
+);
+
+export const RESET_ALREADY_EXIST_ERROR = 'RESET_ALREADY_EXIST_ERROR';
+
+export const resetAlreadyExistError = () => (
+  {
+    type: RESET_ALREADY_EXIST_ERROR,
+  }
+);

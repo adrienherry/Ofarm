@@ -1,0 +1,18 @@
+@use "../../../../styles/vars";
+
+.myGarden {
+  padding: 3rem 1rem 0 1rem;
+
+  &__container-loader {
+    height: 20vh;
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__no-garden {
+    margin: 9rem 0;
+    font-size: 1.5rem;
+    color: vars.$secondary-color;
+  }
+}

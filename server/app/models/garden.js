@@ -6,7 +6,7 @@ class Garden extends Model {}
 /**
  * @typedef Garden
  * @property {integer} id - id of the garden
- * @property {string} userId - id of the owner of the garden
+ * @property {integer} userId - id of the owner of the garden
  * @property {string} name.required - name of the garden
  * @property {string} nameSlug.required - slug name of the garden
  */
@@ -43,7 +43,11 @@ Garden.init(
 
 		modelName: "Garden",
 		tableName: "garden",
-		timestamps: true,
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

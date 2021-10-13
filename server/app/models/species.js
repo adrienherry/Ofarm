@@ -58,7 +58,11 @@ Species.init(
 		underscored: true,
 		modelName: "Species",
 		tableName: "species",
-		timestamps: true,
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

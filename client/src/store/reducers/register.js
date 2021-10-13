@@ -1,10 +1,18 @@
 import {
   RESET_REGISTER_INFO,
+  SET_ERROR_EMAIL_REGISTER,
+  RESET_ERROR_EMAIL_REGISTER,
   SET_IS_CONFIRMED_TO_FALSE,
   SET_IS_CONFIRMED_TO_TRUE,
   SET_IS_READY_TO_REDIRECT_TO_LOGIN_TO_FALSE,
   SET_IS_READY_TO_REDIRECT_TO_LOGIN_TO_TRUE,
   SET_REGISTER_FIELD,
+  SET_EMPTY_REGISTER_FIELD,
+  RESET_EMPTY_REGISTER_FIELD,
+  SET_READY_TO_SEND_TO_FALSE,
+  SET_READY_TO_SEND_TO_TRUE,
+  SET_ALREADY_EXIST_ERROR,
+  RESET_ALREADY_EXIST_ERROR,
 } from '../actions/register';
 
 const initialState = {
@@ -14,6 +22,10 @@ const initialState = {
   confirmPassword: '',
   isConfirmed: true,
   isReadyToRedirectToLogin: false,
+  errorEmail: '',
+  emptyField: '',
+  readyToSend: false,
+  alreadyExistError: '',
 };
 
 const RegisterReducer = (state = initialState, action = {}) => {
@@ -50,6 +62,46 @@ const RegisterReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isReadyToRedirectToLogin: false,
+      };
+    case SET_ERROR_EMAIL_REGISTER:
+      return {
+        ...state,
+        errorEmail: "L'email n'est pas valide",
+      };
+    case RESET_ERROR_EMAIL_REGISTER:
+      return {
+        ...state,
+        errorEmail: '',
+      };
+    case SET_EMPTY_REGISTER_FIELD:
+      return {
+        ...state,
+        emptyField: 'Veuillez remplir tous les champs',
+      };
+    case RESET_EMPTY_REGISTER_FIELD:
+      return {
+        ...state,
+        emptyField: '',
+      };
+    case SET_READY_TO_SEND_TO_FALSE:
+      return {
+        ...state,
+        readyToSend: false,
+      };
+    case SET_READY_TO_SEND_TO_TRUE:
+      return {
+        ...state,
+        readyToSend: true,
+      };
+    case SET_ALREADY_EXIST_ERROR:
+      return {
+        ...state,
+        alreadyExistError: 'Cet email ou cet identifiant est déjà pris',
+      };
+    case RESET_ALREADY_EXIST_ERROR:
+      return {
+        ...state,
+        alreadyExistError: '',
       };
     default:
       return state;
