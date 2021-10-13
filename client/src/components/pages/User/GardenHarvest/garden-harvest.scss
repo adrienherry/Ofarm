@@ -13,4 +13,10 @@
         color: vars.$secondary-color;
         font-size: 2rem;
     }
+
+    &__no-harvest {
+        margin: 4rem;
+        color: vars.$secondary-color;
+        font-size: 1.5rem;
+    }
 }

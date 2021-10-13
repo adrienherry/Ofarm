@@ -14,7 +14,7 @@ export default function SimpleAccordion() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>S'informer avant de démarrer</Typography>
+          <Typography sx={{ fontSize: '1.1rem', fontWeight: '500', fontFamily: 'Poppins' }}>S'informer avant de démarrer</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography sx={{ textJustify: 'inter-word', textAlign: 'justify' }}>
@@ -29,7 +29,7 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Commencer petit</Typography>
+          <Typography sx={{ fontSize: '1.1rem', fontWeight: '500', fontFamily: 'Poppins' }}>Commencer petit</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography sx={{ textJustify: 'inter-word', textAlign: 'justify' }}>
@@ -44,7 +44,7 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Évaluer le temps qu'on peut y consacrer</Typography>
+          <Typography sx={{ fontSize: '1.1rem', fontWeight: '500', fontFamily: 'Poppins' }}>Évaluer le temps qu'on peut y consacrer</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography sx={{ textJustify: 'inter-word', textAlign: 'justify' }}>
@@ -59,11 +59,11 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Planter ce que l'on aime manger</Typography>
+          <Typography sx={{ fontSize: '1.1rem', fontWeight: '500', fontFamily: 'Poppins' }}>Planter ce que l'on aime manger</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography sx={{ textJustify: 'inter-word', textAlign: 'justify' }}>
-            Le but c'est de se nourrir. Alors on résiste aux promos 5+1 gratuit 
+            Le but c'est de se nourrir. Alors on résiste aux promos 5+1 gratuit
             sur les choux ou les radis si on n'est pas fan.
           </Typography>
         </AccordionDetails>
@@ -74,7 +74,7 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Jardiner au naturel</Typography>
+          <Typography sx={{ fontSize: '1.1rem', fontWeight: '500', fontFamily: 'Poppins' }}>Jardiner au naturel</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography sx={{ textJustify: 'inter-word', textAlign: 'justify' }}>
@@ -89,7 +89,7 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Faire un carnet de suivi</Typography>
+          <Typography sx={{ fontSize: '1.1rem', fontWeight: '500', fontFamily: 'Poppins' }}>Faire un carnet de suivi</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography sx={{ textJustify: 'inter-word', textAlign: 'justify' }}>

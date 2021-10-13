@@ -39,14 +39,30 @@ const rows = [
 
 const BasicTable = () => (
   <TableContainer component={Paper} sx={{ maxWidth: 1200 }}>
-    <Table sx={{ minWidth: 450, maxWidth: 1200 }} aria-label="simple table">
+    <Table sx={{ minWidth: 300, maxWidth: 1200 }} aria-label="simple table">
       <TableHead sx={{ backgroundColor: '#244436', width: '100vw' }}>
         <TableRow>
-          {/* <TableCell>Dessert (100g serving)</TableCell> */}
-          <TableCell align="left" sx={{ color: 'white', textAlign: 'center' }}>Débutant</TableCell>
-          <TableCell align="center" sx={{ color: 'white', textAlign: 'center' }}>Intermédiaire</TableCell>
-          <TableCell align="right" sx={{ color: 'white', textAlign: 'center' }}>Avancé</TableCell>
-          {/* <TableCell align="right">Protein&nbsp;(g)</TableCell> */}
+          <TableCell
+            align="left"
+            sx={{
+              color: 'white', textAlign: 'center', fontSize: '1.1rem', fontFamily: 'Poppins',
+            }}
+          >Débutant
+          </TableCell>
+          <TableCell
+            align="center"
+            sx={{
+              color: 'white', textAlign: 'center', fontSize: '1.1rem', fontFamily: 'Poppins',
+            }}
+          >Intermédiaire
+          </TableCell>
+          <TableCell
+            align="right"
+            sx={{
+              color: 'white', textAlign: 'center', fontSize: '1.1rem', fontFamily: 'Poppins',
+            }}
+          >Avancé
+          </TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -55,13 +71,9 @@ const BasicTable = () => (
             key={row.name}
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
           >
-            {/* <TableCell component="th" scope="row">
-              {row.name}
-            </TableCell> */}
             <TableCell align="center" sx={{ alignItems: 'center', justifyContent: 'center' }}> <img src={row.img} alt="légume" className="legume" /> {row.name}</TableCell>
             <TableCell align="center" sx={{ alignItems: 'center', justifyContent: 'center' }}> <img src={row.icon} alt="légume" className="legume" /> {row.nom} </TableCell>
             <TableCell align="center" sx={{ alignItems: 'center', justifyContent: 'center' }}> <img src={row.picture} alt="légume" className="legume" /> {row.noun}</TableCell>
-            {/* <TableCell align="right">{row.protein}</TableCell> */}
           </TableRow>
         ))}
       </TableBody>
