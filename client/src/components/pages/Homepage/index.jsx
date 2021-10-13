@@ -6,7 +6,7 @@ import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
 import PitchContainer from './PitchContainer';
 import calendarPicture from '/calendar.png';
-import Table from '../../table';
+import TableContainer from '../../TableContainer';
 
 const HomePage = () => {
   const is1075 = useMediaQuery('(min-width:1075px)');
@@ -61,7 +61,7 @@ const HomePage = () => {
           <PitchContainer />
         </Grid>
       </Grid>
-      <Table />
+      <TableContainer />
     </div>
   );
 };
