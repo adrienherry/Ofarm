@@ -30,6 +30,7 @@ const IndividualGarden = () => {
   const isModalOpen = useSelector((state) => state.garden.isModalOpen);
   const modalDate = useSelector((state) => state.garden.modalDate);
   const modalEvents = useSelector((state) => state.garden.modalEvents);
+  console.log(userGarden);
 
   const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -92,7 +93,7 @@ const IndividualGarden = () => {
       {userGarden && (
         <>
           <div className="individual-garden__name">{userGarden.name}</div>
-          <Navigation gardenName={userGarden.name} />
+          <Navigation gardenName={userGarden.nameSlug} />
           <div className="individual-garden">
             <GardenCalendar onDayClick={handleOnDayClick} />
           </div>

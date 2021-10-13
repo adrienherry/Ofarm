@@ -39,7 +39,7 @@ const GardenHarvest = () => {
       {userGarden && (
         <>
           <div className="individual-garden__name">{userGarden.name}</div>
-          <Navigation gardenName={userGarden.name} />
+          <Navigation gardenName={userGarden.nameSlug} />
           <div className="garden-harvest__title">
             Mes Récoltes
           </div>
@@ -47,7 +47,9 @@ const GardenHarvest = () => {
             {harvest && harvest.map((harvest) => (
               <HarvestCard key={harvest.id} {...harvest} />
             ))}
-
+            {!harvest[0] && (
+              <div className="garden-harvest__no-harvest">Vous n'avez encore rien récolté</div>
+            )}
           </div>
         </>
       )}

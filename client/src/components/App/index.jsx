@@ -18,6 +18,7 @@ import Login from '../pages/Login';
 import Gardens from '../pages/User/Gardens';
 import About from '../pages/About';
 import LegalNotice from '../pages/LegalNotice';
+import TableContainer from '../TableContainer';
 import { collapseUserMenu, setUserInfo, setUserToken } from '../../store/actions/user';
 import CreateGarden from '../pages/User/CreateGarden';
 import {
@@ -109,6 +110,9 @@ const App = () => {
             </Route>
             <Route path="/terms" exact>
               <LegalNotice />
+            </Route>
+            <Route path="/advice" exact>
+              <TableContainer />
             </Route>
             <Route path="/species/:slug" exact component={IndividualSpecies} />
             {logged && (
