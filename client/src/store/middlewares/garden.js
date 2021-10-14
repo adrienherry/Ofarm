@@ -9,6 +9,7 @@ import {
   ADD_SPECIES_TO_GARDEN,
   DELETE_GARDEN,
   DELETE_GARDEN_SPECIES,
+  fetchGardens,
   FETCH_GARDENS,
   resetHarvest,
   setIsGardensLoadingToFalse,
@@ -98,6 +99,7 @@ export default (store) => (next) => async (action) => {
         });
         const newSelectedSpeciesList = [...selectedSpeciesList, speciesToAdd];
         store.dispatch(setSelectedSpeciesList(newSelectedSpeciesList));
+        store.dispatch(fetchGardens());
       }
       catch (error) {
         console.log(error);
@@ -122,6 +124,7 @@ export default (store) => (next) => async (action) => {
         console.log(response);
         const newSelectedSpeciesList = filterSpecies(selectedSpeciesList, id);
         store.dispatch(setSelectedSpeciesList(newSelectedSpeciesList));
+        store.dispatch(fetchGardens());
       }
       catch (error) {
         console.log(error);
