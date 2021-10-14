@@ -13,6 +13,8 @@ export default (store) => (next) => async (action) => {
             Authorization: `Bearer ${token}`,
           },
         });
+        console.log("FETCH HARVEST")
+        console.log(response.data)
         store.dispatch(setGardenHarvest(response.data));
       }
       catch (error) {

@@ -86,13 +86,14 @@ const IndividualGarden = () => {
     }
   }, []);
 
+  
   return (
     <>
       <UserHeader />
       {userGarden && (
         <>
           <div className="individual-garden__name">{userGarden.name}</div>
-          <Navigation gardenName={userGarden.name} />
+          <Navigation gardenName={userGarden.nameSlug} />
           <div className="individual-garden">
             <GardenCalendar onDayClick={handleOnDayClick} />
           </div>

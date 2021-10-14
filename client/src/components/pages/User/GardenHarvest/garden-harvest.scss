@@ -1,16 +1,37 @@
-@use '../../../../styles/vars';
+@use "../../../../styles/vars";
 
 .garden-harvest {
-    &__content {
-        margin: 2rem 2rem;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
+	&__content {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		justify-content: space-between;
 
-    &__title {
-        margin: 2rem;
-        color: vars.$secondary-color;
-        font-size: 2rem;
-    }
+		margin: 2rem 2rem;
+		padding: 0;
+
+		flex-wrap: wrap;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+
+	&__title {
+		margin: 2rem;
+		color: vars.$secondary-color;
+		font-size: 2rem;
+	}
+
+	&__no-harvest {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+
+		font-size: 1.1rem;
+
+		background-color: vars.$background-card-color;
+		box-shadow: vars.$shadow-card-item;
+		margin: 0;
+		padding: 2rem;
+	}
 }
