@@ -1,31 +1,61 @@
-@use '../../../styles/vars';
+@use "../../../styles/vars";
 
 .team {
-    // background-color: cornflowerblue;
-    flex-direction: row;
-    width: 100%;
-
+	// background-color: cornflowerblue;
+	flex-direction: row;
+	width: 100%;
 }
-
 
 .team__title {
-    text-transform: uppercase;
-    text-align: center;
-    padding-top:2rem;
-    padding-bottom: 4rem;
-    font-weight: bold;
-    color: vars.$secondary-color;
-    font-size: 1.8rem;
-    
+	text-transform: uppercase;
+	text-align: center;
+	padding-top: 2rem;
+	padding-bottom: 4rem;
+	font-weight: bold;
+	color: vars.$secondary-color;
+	font-size: 1.8rem;
 }
 
-
 .team__content {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items:center;
-    gap: 2rem;
-    width: 100%;
-    text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 4rem;
+	width: 100%;
+	text-align: center;
+
+	&__front,
+	&__back {
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+
+		border: 2px solid vars.$secondary-color;
+        box-shadow: 0 2px 3px rgba(1,1,1,0.2);
+		border-radius: 10px;
+		padding: 2rem;
+
+		&__title {
+			position: absolute;
+			top: -1rem;
+            left: 2rem;
+
+            padding: 0 0.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: vars.$secondary-color;
+            background-color: vars.$background-app-color;
+			// font-weight: 00;
+		}
+
+		&__members {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 2rem;
+			flex-wrap: wrap;
+		}
+	}
 }
