@@ -66,7 +66,7 @@ const UserMenuRedesign = () => {
               className="user-menu-redesign__profile-image"
               style={{ backgroundImage: `url(${farmerImage})` }}
             />
-            <div className="user-menu-redesign__username">{username}</div>
+            {logged && (<div className="user-menu-redesign__username">{username}</div>)}
             {isMedium && (
             <div className="user-menu-redesign__searchbar-container">
               <SearchBar />
