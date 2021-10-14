@@ -1,21 +1,21 @@
 import React from 'react';
 import { Grid, useMediaQuery } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import CarrouselContainer from './CarrouselContainer';
 import './homepage.scss';
 import 'aos/dist/aos.css';
-import { Link } from 'react-router-dom';
 import PitchContainer from './PitchContainer';
-import calendarPicture from '/calendar.png';
-import TableContainer from '../../TableContainer';
+import calendarPicture from '/img-homepage.png';
 
 const HomePage = () => {
   const is1075 = useMediaQuery('(min-width:1075px)');
+  const is1250 = useMediaQuery('(min-width:1250px)');
 
   return (
     <div className="homepage">
       <div className="homepage__header" style={!is1075 ? { flexDirection: 'column', alignItems: 'center', margin: '4rem 0' } : {}}>
         <div className="homepage__title-container" style={!is1075 ? { width: '100%', justifyContent: 'center', marginBottom: '3rem' } : {}}>
-          <h1 className="homepage__title" style={!is1075 ? { fontSize: '3rem' } : {}}>Vous
+          <h1 className="homepage__title" style={!is1250 ? { fontSize: '3rem' } : {}}>Vous
             aussi, <br />
             rejoignez <br />
             notre <br />
@@ -61,7 +61,6 @@ const HomePage = () => {
           <PitchContainer />
         </Grid>
       </Grid>
-      <TableContainer />
     </div>
   );
 };

@@ -270,7 +270,6 @@ const GardenCalendar = ({ onDayClick }) => {
                 <Grid item container justifyContent="flex-end">
                   <div className="garden-calendar__menu__add-species" onClick={handleClickAddSpecies}>
                     Ajoutez une espèce
-                    <BsPlusSquare className="garden-calendar__menu__add-species-btn" />
                   </div>
                   {errorAddSpecies && (
                     <div style={{ color: 'red', marginTop: '0.5rem' }}>{errorAddSpecies}</div>

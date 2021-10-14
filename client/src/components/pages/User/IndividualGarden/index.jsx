@@ -30,6 +30,7 @@ const IndividualGarden = () => {
   const isModalOpen = useSelector((state) => state.garden.isModalOpen);
   const modalDate = useSelector((state) => state.garden.modalDate);
   const modalEvents = useSelector((state) => state.garden.modalEvents);
+  console.log(userGarden);
 
   const StyledModal = styled(ModalUnstyled)`
   position: fixed;
