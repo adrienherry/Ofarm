@@ -66,11 +66,6 @@ const IndividualGarden = () => {
     borderRadius: '0.5rem',
   };
 
-  if (gardens[0]) {
-    const garden = findGarden(gardens, slug);
-    dispatch(setUserGarden(garden));
-  }
-
   const handleOnDayClick = (date, events) => {
     dispatch(setModalDate(date));
     dispatch(setModalEvents(events));
@@ -87,7 +82,11 @@ const IndividualGarden = () => {
     }
   }, []);
 
-  
+  if (gardens[0]) {
+    const garden = findGarden(gardens, slug);
+    dispatch(setUserGarden(garden));
+  }
+
   return (
     <>
       <UserHeader />
