@@ -7,22 +7,27 @@ const TeamInfos = ({ name, role, linkGit, linkLinkedin, pic }) => (
 	<div className="infos">
 		<div className="infos__headline">
 			<p className="infos__name">{name}</p>
-			<p className="infos__role">{role}</p>
+
+			<div className="infos__content">
+				<p className="infos__content__role">{role}</p>
+
+				<div className="infos__content__links">
+					<a className="infos__link" target="_blank" href={linkLinkedin}>
+						<IoLogoLinkedin size={"1.5rem"} />
+						{/* <span></span> */}
+					</a>
+					<a className="infos__link" target="_blank" href={linkGit}>
+						<IoLogoGithub size={"1.5rem"} />
+						{/* <span></span> */}
+					</a>
+				</div>
+			</div>
 		</div>
+
 		<div
 			className="infos__picture"
 			style={{ backgroundImage: "url(" + pic + ")" }}
 		></div>
-		<div className="infos__links">
-			<a className="infos__link" href={linkLinkedin}>
-				<IoLogoLinkedin size={"1.2rem"} />
-				<span>Profil Linkedin</span>
-			</a>
-			<a className="infos__link" href={linkGit}>
-				<IoLogoGithub size={"1.2rem"} />
-				<span>Page Github</span>
-			</a>
-		</div>
 	</div>
 );
 

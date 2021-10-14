@@ -1,0 +1,24 @@
+@use '../../styles/vars';
+
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 1rem;
+
+  &__title {
+    margin: 3rem 0;
+    font-size: 1.5rem;
+    color: vars.$secondary-color;
+    font-weight: 500;
+  }
+
+  &__subtitle {
+    margin: 3rem 0;
+    font-size: 1.5rem;
+    color: vars.$secondary-color;
+    font-weight: 500;
+  }
+}

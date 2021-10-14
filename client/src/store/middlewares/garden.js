@@ -1,13 +1,25 @@
 import { axiosInstance } from '../../services/axios';
+import filterSpecies from '../../utils/filterSpecies';
+import findSpeciesId from '../../utils/findSpeciesId';
 import {
   CREATE_GARDEN, setCreateGardenError, setReadyToRedirectToTrue,
 } from '../actions/createGarden';
 import {
+  ADD_HARVEST,
+  ADD_SPECIES_TO_GARDEN,
   DELETE_GARDEN,
+  DELETE_GARDEN_SPECIES,
+  fetchGardens,
   FETCH_GARDENS,
+  resetHarvest,
   setIsGardensLoadingToFalse,
   setIsGardensLoadingToTrue,
+  setNewGarden,
   setNewGardens,
+  setNewSelectedSpeciesList,
+  setReadyToAddToTrue,
+  setSelectedSpeciesList,
+  setSpeciesToGarden,
   setUserGardens,
 } from '../actions/gardens';
 
@@ -64,6 +76,88 @@ export default (store) => (next) => async (action) => {
           },
         });
         store.dispatch(setNewGardens(newGardens));
+      }
+      catch (error) {
+        console.log(error);
+      }
+      next(action);
+      break;
+
+    case ADD_SPECIES_TO_GARDEN:
+      try {
+        const { garden: { garden, selectedSpeciesToAdd, selectedSpeciesList } } = store.getState();
+        const { species: { speciesList } } = store.getState();
+        const { user: { token } } = store.getState();
+        const speciesToAdd = findSpeciesId(speciesList, selectedSpeciesToAdd);
+        const response = await axiosInstance.post(`/garden/${garden.id}/species`, {
+          speciesId: speciesToAdd.id,
+        }, {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const newSelectedSpeciesList = [...selectedSpeciesList, speciesToAdd];
+        store.dispatch(setSelectedSpeciesList(newSelectedSpeciesList));
+        store.dispatch(fetchGardens());
+      }
+      catch (error) {
+        console.log(error);
+      }
+      next(action);
+      break;
+    case DELETE_GARDEN_SPECIES:
+      try {
+        const { garden: { garden, selectedSpeciesList } } = store.getState();
+        const { species: { speciesList } } = store.getState();
+        const { user: { token } } = store.getState();
+        const { id } = findSpeciesId(speciesList, action.name);
+        const response = await axiosInstance.delete(`/garden/${garden.id}/species`, {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            Authorization: `Bearer ${token}`,
+          },
+          data: {
+            speciesId: id,
+          },
+        });
+        console.log(response);
+        const newSelectedSpeciesList = filterSpecies(selectedSpeciesList, id);
+        store.dispatch(setSelectedSpeciesList(newSelectedSpeciesList));
+        store.dispatch(fetchGardens());
+      }
+      catch (error) {
+        console.log(error);
+      }
+      next(action);
+      break;
+    case ADD_HARVEST:
+      try {
+        const {
+          garden: {
+            garden,
+            selectedSpeciesFormHarvest,
+            selectedDateFormHarvest,
+            selectedQuantityFormHarvest,
+            selectedCommentFormHarvest,
+          },
+        } = store.getState();
+        const { species: { speciesList } } = store.getState();
+        const { user: { token } } = store.getState();
+        const { id } = findSpeciesId(speciesList, selectedSpeciesFormHarvest);
+        const response = await axiosInstance.post('/harvest', {
+          gardenId: garden.id,
+          speciesId: id,
+          comment: selectedCommentFormHarvest,
+          quantity: selectedQuantityFormHarvest,
+          date: selectedDateFormHarvest,
+        }, {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        store.dispatch(resetHarvest());
       }
       catch (error) {
         console.log(error);

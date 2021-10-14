@@ -6,13 +6,21 @@ import ModalUnstyled from '@mui/core/ModalUnstyled';
 import UserHeader from '../UserHeader';
 import { findGarden } from '../../../../selectors/garden';
 import {
-  closeModal, fetchGardens, openModal, setModalDate, setModalEvents, setUserGarden,
+  addSpeciesToGarden,
+  closeModal,
+  fetchGardens,
+  openModal,
+  setModalDate,
+  setModalEvents,
+  setNewGarden,
+  setReadyToAddToFalse,
+  setUserGarden,
 } from '../../../../store/actions/gardens';
 import GardenCalendar from './GardenCalendar';
 import './individual-garden.scss';
 import { convertModalDate } from '../../../../utils/convertDate';
 import ModalItem from './ModalItem';
-import garden from '../../../../store/middlewares/garden';
+import Navigation from './Navigation';
 
 const IndividualGarden = () => {
   const dispatch = useDispatch();
@@ -22,6 +30,7 @@ const IndividualGarden = () => {
   const isModalOpen = useSelector((state) => state.garden.isModalOpen);
   const modalDate = useSelector((state) => state.garden.modalDate);
   const modalEvents = useSelector((state) => state.garden.modalEvents);
+  console.log(userGarden);
 
   const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -57,11 +66,6 @@ const IndividualGarden = () => {
     borderRadius: '0.5rem',
   };
 
-  if (gardens[0]) {
-    const garden = findGarden(gardens, slug);
-    dispatch(setUserGarden(garden));
-  }
-
   const handleOnDayClick = (date, events) => {
     dispatch(setModalDate(date));
     dispatch(setModalEvents(events));
@@ -77,12 +81,19 @@ const IndividualGarden = () => {
       dispatch(fetchGardens());
     }
   }, []);
+
+  if (gardens[0]) {
+    const garden = findGarden(gardens, slug);
+    dispatch(setUserGarden(garden));
+  }
+
   return (
     <>
       <UserHeader />
       {userGarden && (
         <>
           <div className="individual-garden__name">{userGarden.name}</div>
+          <Navigation gardenName={userGarden.nameSlug} />
           <div className="individual-garden">
             <GardenCalendar onDayClick={handleOnDayClick} />
           </div>

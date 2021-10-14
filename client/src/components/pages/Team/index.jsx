@@ -1,45 +1,81 @@
-import React from 'react';
-import './team.scss';
-import TeamInfos from './TeamInfos';
-import PictureFlorian from '/florian.jpg';
-import PictureNicolas from '/nicolas.jpg';
-import PictureAdrien from '/adrien.jpg';
+import React from "react";
+import "./team.scss";
+import TeamInfos from "./TeamInfos";
+import PictureFlorian from "/florian.jpg";
+import PictureNicolas from "/nicolas.jpg";
+import PictureAdrien from "/adrien.jpg";
 // import Pic4 from '/pic4.jpg';
-import PictureLaurence from '/laurence.jpg';
-import PictureMickael from '/mickael.png';
+import PictureLaurence from "/laurence.jpg";
+import PictureMickael from "/mickael.png";
 
 const Team = () => (
+	<div className="team">
+		<div className="team__title">La fine équipe !</div>
 
-  <div className="team">
+		<div className="team__content">
+			<div className="team__content__back">
+				<h2 className="team__content__back__title">Backend</h2>
 
-    <div className="team__title">La fine équipe !</div>
+				<div className="team__content__back__members">
+					<div>
+						<TeamInfos
+							name="Florian NGUYEN"
+							role="Product Owner"
+							linkGit="https://github.com/florian-nguyen"
+							linkLinkedin="https://www.linkedin.com/in/florian-nguyen-b515a3ab/"
+							pic={PictureFlorian}
+						/>
+					</div>
 
-    <div className="team__content">
+					<div>
+						<TeamInfos
+							name="Nicolas LEONARDON"
+							role="Git Master"
+							linkGit="https://github.com/NicoLeo1030"
+							linkLinkedin="https://www.linkedin.com/in/nicolas-leonardon-27ba10220/"
+							pic={PictureNicolas}
+						/>
+					</div>
+				</div>
+			</div>
 
-      <div>
-        <TeamInfos name="Florian NGUYEN" role="Product Owner" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={PictureFlorian} />
-      </div>
+			<div className="team__content__front">
+				<h2 className="team__content__front__title">Frontend</h2>
 
-      <div>
-        <TeamInfos name="Nicolas LEONARDON" role="Git Master" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={PictureNicolas} />
-      </div>
+				<div className="team__content__front__members">
+					<div>
+						<TeamInfos
+							name="Adrien HERRY"
+							role="Référent technique"
+							linkGit="https://github.com/adrienherry"
+							linkLinkedin="https://www.linkedin.com/in/adrien-herry-9431bb19b/"
+							pic={PictureAdrien}
+						/>
+					</div>
 
-      <div>
-        <TeamInfos name="Adrien HERRY" role="Référent technique" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={PictureAdrien} />
-      </div>
+					<div>
+						<TeamInfos
+							name="Laurence OCCHIPINTI"
+							role="Lead Dev Front"
+							linkGit="https://github.com"
+							linkLinkedin="https://www.linkedin.com/in/laurence-occhipinti/"
+							pic={PictureLaurence}
+						/>
+					</div>
 
-      <div>
-        <TeamInfos name="Laurence OCCHIPINTI" role="Lead Dev Front" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={PictureLaurence} />
-      </div>
-
-      <div>
-        <TeamInfos name="Mickaël BELJIO" role="Scrum Master" linkGit="https://github.com" linkLinkedin="https://linkedin.com" pic={PictureMickael} />
-      </div>
-
-    </div>
-
-  </div>
-
+					<div>
+						<TeamInfos
+							name="Mickaël BELJIO"
+							role="Scrum Master"
+							linkGit="https://github.com/Droomwolk"
+							linkLinkedin="https://linkedin.com/in/mickaël-beljio"
+							pic={PictureMickael}
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 );
 
 export default Team;

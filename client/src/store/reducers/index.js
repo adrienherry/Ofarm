@@ -8,6 +8,7 @@ import speciesReducer from './species';
 import createGardenReducer from './createGarden';
 import profilReducer from './profil';
 import userGardenReducer from './userGarden';
+import harvestReducer from './harvest';
 
 const rootReducer = combineReducers({
   profil: profilReducer,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   species: speciesReducer,
   createGarden: createGardenReducer,
   garden: userGardenReducer,
+  harvest: harvestReducer,
 });
 
 export default rootReducer;
