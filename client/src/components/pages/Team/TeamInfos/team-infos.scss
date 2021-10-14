@@ -1,4 +1,4 @@
-@use '../../../../styles/vars';
+@use "../../../../styles/vars";
 
 .infos {
 	display: flex;
@@ -7,33 +7,51 @@
 	align-items: stretch;
 
 	width: 220px;
-	// padding-left: 1rem;
-	// padding-right: 1rem;
-	// height: 700px;
 
-	margin-bottom: 2rem;
-}
+	.infos__name {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.3rem;
+		width: 100%;
+		height: 3rem;
+		margin: auto;
+		font-weight: 700;
+		color: vars.$secondary-color;
+	}
 
-.infos__name {
-	font-size: 1.3rem;
-	width: 100%;
-	margin: auto;
-	font-weight: 700;
-	padding-bottom: 0.25rem;
-	color: vars.$secondary-color;
-}
+	&__content {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 0.5rem;
+		justify-content: space-between;
 
-.infos__role {
-	font-size: 1.1rem;
-	font-style: italic;
-	padding-top: 0.25rem;
+		width: 100%;
+
+		&__role {
+			font-size: 0.9rem;
+
+			font-weight: 600;
+			text-align: center;
+			text-transform: uppercase;
+			font-style: italic;
+			padding-top: 0.6rem;
+		}
+
+		&__links {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0.75rem;
+		}
+	}
 }
 
 .infos__picture {
 	margin: auto;
 	width: 100%;
 	height: 300px;
-	margin-top: 1rem;
+	margin-top: 0.5rem;
 
 	margin-bottom: 1rem;
 	border-radius: 1rem;
@@ -44,23 +62,11 @@
 	background-size: cover;
 }
 
-.infos__links {
-	width: 53%;
-	margin: auto;
+.infos__link {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 0.5rem;
-}
 
-.infos__link {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	gap: 0.4rem;
-
-	color: black;
 	transition: all 0.3s ease-in-out;
 }
 

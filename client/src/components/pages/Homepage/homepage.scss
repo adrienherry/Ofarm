@@ -55,6 +55,13 @@
 			color: vars.$background-app-color;
 			padding: 1rem;
 			border-radius: 0.5rem;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				transform: scale(1.1);
+				background-color: rgba(255, 68, 0, 0.809);
+				font-weight: 500;
+			}
 		}
 	}
 }

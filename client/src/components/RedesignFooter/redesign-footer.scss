@@ -1,7 +1,22 @@
 @use "../../styles/vars";
 
+.copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+
+  & p {
+    margin-bottom: 0.4rem;
+  }
+  & p > a {
+    text-decoration: underline;
+    // color: white;
+    // font-weight: 500;
+  }
+}
 .redesign-footer {
-  height: 15rem;
+  height: 18rem;
   margin-top: 8rem;
   padding-top: 3rem;
   background-color: vars.$secondary-color;
