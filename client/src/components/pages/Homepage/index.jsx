@@ -5,7 +5,7 @@ import CarrouselContainer from './CarrouselContainer';
 import './homepage.scss';
 import 'aos/dist/aos.css';
 import PitchContainer from './PitchContainer';
-import calendarPicture from '/img-homepage.png';
+import calendarPicture from '/gardenPage.png';
 
 const HomePage = () => {
   const is1075 = useMediaQuery('(min-width:1075px)');
