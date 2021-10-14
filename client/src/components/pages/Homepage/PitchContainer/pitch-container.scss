@@ -1,0 +1,16 @@
+@use "../../../../styles/vars";
+
+.pitch-container {
+	margin-top: 4rem;
+	// padding: 2rem;
+
+	&__title {
+		color: vars.$header-color;
+		font-size: 1.8rem;
+		font-weight: 700;
+		width: 100%;
+		text-align: center;
+		line-height: 3rem;
+		margin-bottom: 3rem;
+	}
+}

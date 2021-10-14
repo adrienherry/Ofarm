@@ -1,0 +1,68 @@
+@use "../../styles/vars";
+
+.redesign-footer {
+  height: 15rem;
+  margin-top: 8rem;
+  padding-top: 3rem;
+  background-color: vars.$secondary-color;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &--returnTop {
+      background-color: vars.$redesign-background-footer-top;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-top: -3rem;
+      margin-bottom: 2rem;
+      height: 3rem;
+      width: 100%;
+    }
+
+    &--navigation {
+      display: flex;
+      justify-content: space-around;
+      // background-color: mediumblue;
+      align-items: center;
+      width: 80vw;
+      &-link1 {
+        // background-color: orangered;
+        display: flex;
+        flex-direction: column;
+        // margin-right: 14rem;
+      }
+
+      &-link2 {
+        // background-color: yellow;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &--logo {
+      // background-color: magenta;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // width: 100vw;
+      padding-top: 0.4rem;
+      // border-top: 0.1rem solid;
+      // border-color: vars.$redesign-background-footer-top;
+      &-title {
+        font-size: 2rem;
+        color: black;
+        &-letter {
+          display: inline-block;
+          color: vars.$background-app-color;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}

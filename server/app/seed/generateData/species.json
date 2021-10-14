@@ -1,0 +1,1544 @@
+[
+    {
+        "id": 1,
+        "name": "Aubergine",
+        "image_id": "DtaCnsYlzSM",
+        "image_url": "https://images.unsplash.com/photo-1613881553903-4543f5f2cac9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1NzgzNTc&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "plein soleil"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "humifère",
+            "drainé",
+            "riche",
+            "réchauffé"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en pot",
+            "en serre"
+        ],
+        "description": "L’aubergine (Solanum melongena L.) est une plante dicotylédone de la famille des Solanaceae. Le terme aubergine désigne la plante et le fruit. Elle est originaire d'Asie et constitue avec les aubergines africaines: S. aethiopicum L., aubergine amère, ou gilo, et S. macrocarpon L., ou gboma, les trois espèces d'aubergines cultivées. L'aubergine est un légume-fruit riche en composés phénoliques et alcaloïdes antioxydants aux effets favorables sur le syndrome métabolique, elle est l'objet de nombreuses publications scientifiques.",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-04-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-11-2000"
+            ]
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Betterave",
+        "image_id": "Xgcq-t-hCt4",
+        "image_url": "https://images.unsplash.com/photo-1573426667638-18ccdd988a39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "tout type",
+            "drainé",
+            "léger",
+            "frais"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "La betterave, Beta vulgaris subsp. vulgaris, est une sous-espèce de plantes de la famille des Amaranthaceae, cultivées pour leurs racines charnues, et utilisées pour la production du sucre, comme légume dans l'alimentation humaine, comme plantes fourragères, et plus récemment comme carburant avec le bioéthanol. Il existe de nombreuses variétés, classées différemment selon les types: Les betteraves sucrières sont les plus riches en sucres, de couleur blanche et très enterrées. Les betteraves fourragères très productives, de différentes couleurs, de différentes formes et plus ou moins enterrées, les betteraves potagères, également appelées betterave rouge, “racine rouge",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-03-2000",
+                "01-08-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-11-2000"
+            ]
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Carotte",
+        "image_id": "iPiXhoMUcV8",
+        "image_url": "https://images.unsplash.com/photo-1602496875335-b0fc93069cf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "drainé",
+            "meuble",
+            "riche",
+            "tout type"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "La Carotte (Daucus carota subsp. sativus) est une plante bisannuelle de la famille des Apiacées (aussi appelées Ombellifères), largement cultivée pour sa racine pivotante charnue, comestible, de couleur généralement orangée, consommée comme légume. La carotte représente, après la pomme de terre, le principal légume-racine cultivé dans le monde. C'est une racine riche en carotène.",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-04-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-03-2000",
+                "01-08-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-12-2000"
+            ]
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Céleri-rave",
+        "image_id": "KluF3bl0VEU",
+        "image_url": "https://images.unsplash.com/photo-1575286368486-a9bd023a3d1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "humifère",
+            "meuble",
+            "frais",
+            "léger"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "Le céleri-rave (Apium graveolens L. var. rapaceum (Mill.) Gaudin), est une plante herbacée biannuelle de la famille des Apiacées (ou Ombellifères), tribu des Apieae. Elle est cultivée comme plante potagère pour la base de sa tige tubérisée consommée comme légume. C'est une variété de céleri. Le céleri-rave préfère un sol frais, riche en humus et bien ameubli et un climat tempéré, sans chaleur excessive, ni gelées précoces. Il ne supporte pas le manque d'eau.",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-04-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-09-2000",
+                "01-12-2000"
+            ]
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Chou-fleur",
+        "image_id": "D8ZrftlvNDE",
+        "image_url": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "argileux",
+            "calcaire",
+            "humifère",
+            "frais",
+            "riche",
+            "humide"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre"
+        ],
+        "description": "Le chou-fleur est une variété de choux de la famille des Brassicacées, cultivée comme plante potagère pour son méristème floral hypertrophié et charnu, consommé comme légume. Le terme désigne aussi ce légume. Il s'agit d'une variété du chou commun (Brassica oleracea), issue de plusieurs siècles de sélection. Le chou-fleur est une plante herbacée bisannuelle qui produit une boule blanche tendre et compacte.Cette boule est un méristème, un organe pré-floral qui, si on le laisse évoluer, continue sa croissance en tiges florales qui porteront des fleurs jaunes ou blanches, typiques du genre Brassica, puis finalement les graines.",
+        "saw_in": [
+            [
+                "01-01-2000",
+                "01-03-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-03-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-03-2000",
+                "01-05-2000"
+            ],
+            [
+                "01-06-2000",
+                "01-09-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-01-2000"
+            ]
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Concombre",
+        "image_id": "fPLSD4mz7II",
+        "image_url": "https://images.unsplash.com/photo-1523349462262-054f5b3aa500?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "sableux",
+            "humifère",
+            "drainé",
+            "réchauffé"
+        ],
+        "culture": [
+            "en serre",
+            "en pleine terre"
+        ],
+        "description": "Le concombre (Cucumis sativus) est une plante potagère herbacée, rampante, de la même famille que la calebasse africaine, le melon ou la courge (famille des Cucurbitacées). C'est botaniquement un fruit qui est consommé comme un légume. Il est de la même espèce (Cucumis sativus) que le cornichon, consommé lui comme condiment. La plante, qui poussait naturellement au pied de l'Himalaya, aurait été domestiquée pour la première fois en Inde il y a au moins 3 000 ans.",
+        "saw_in": [
+            [
+                "01-03-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "15-03-2000",
+                "16-05-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-11-2000"
+            ]
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Courgette",
+        "image_id": "7OQ4oekzMzY",
+        "image_url": "https://images.unsplash.com/photo-1563252722-6434563a985d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "riche",
+            "meuble",
+            "lourd",
+            "humifère"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre"
+        ],
+        "description": "La courgette est une plante herbacée de la famille des Cucurbitaceae, c'est aussi le fruit comestible de la plante du même nom. C'est un fruit courant en été, la fleur de courgette est aussi utilisée en cuisine. Les différentes variétés de courgettes sont des cultivars de l'espèce Cucurbita pepo, et de la sous-espèce Cucurbita pepo subsp. pepo dont fait partie aussi la citrouille véritable. La courgette appartient à la famille des cucurbitacées. C'est une plante potagère qui pousse au sol ; elle possède de grandes feuilles. Elle a des fleurs de couleur jaune, qui donnent le fruit appelé également courgette. On la cultive en potager ou en serre, selon le mode de production.",
+        "saw_in": [
+            [
+                "01-04-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-05-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-05-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-12-2000"
+            ]
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Epinard",
+        "image_id": "4jpNPu7IW8k",
+        "image_url": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "argileux",
+            "humifère",
+            "frais",
+            "riche",
+            "humide"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "L'épinard (Spinacia oleracea) est une plante potagère, annuelle ou bisannuelle, de la famille des Chenopodiaceae ou des Amaranthaceae selon les classifications. Originaire d'Iran (il tire son nom du persan اسفناج āsfanāǧ), il est aujourd'hui cultivé dans toutes les régions tempérées pour ses qualités nutritionnelles. Il est célébré dans la bande dessinée Popeye comme un légume riche en fer qui donne sa force au héros, bien qu'en réalité sa teneur en fer ne soit pas particulièrement élevée.",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ],
+            [
+                "01-09-2000",
+                "01-12-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-10-2000",
+                "01-04-2000"
+            ]
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Fève",
+        "image_id": "vSYo3T4AR5Y",
+        "image_url": "https://images.unsplash.com/photo-1605402966404-ec40b9bd5009?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "argileux",
+            "calcaire",
+            "humifère"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "Les fèves sont des plantes annuelles légumineuses de la famille des Fabaceae, sous-famille des Faboideae, tribu des Fabeae. Comme les fèveroles, les fèves cultivées ont comme origine l'espèce botanique Vicia faba. Le terme désigne aussi la graine qui, consommée à l'état frais ou sec, est l'un des légumes les plus anciennement cultivés. On la cultive pour ses graines comestibles, tout particulièrement autour du Bassin méditerranéen ainsi que maintenant dans de nombreux pays où elle est utilisée fraîche ou sèche.",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-10-2000",
+                "01-05-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-08-2000",
+                "01-11-2000"
+            ],
+            [
+                "01-03-2000",
+                "01-07-2000"
+            ]
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Haricot nain",
+        "image_id": "rNSg5Yo1k20",
+        "image_url": "https://images.unsplash.com/photo-1594404124434-719a41b02af5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "tout type",
+            "réchauffé",
+            "riche",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "Le haricot nain fait partie de la famille des haricots, idéal pour son potager! Il en existe de toutes les couleurs: jaune, blanc, vert, pourpre, beige. On peut tout à fait le semer près de certains légumes comme les carottes ou les choux. L'idéal est de le récolter suffisamment tôt pour ne récupérer aucun fil. Sa taille pourra atteindre une quarantaine de centimètres au maximum.",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-09-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-11-2000"
+            ]
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Laitue",
+        "image_id": "WOrgNVcptD8",
+        "image_url": "https://images.unsplash.com/photo-1549736624-81a2ca809ad7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "mi-ombre",
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humifère",
+            "humide",
+            "drainé",
+            "meuble"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en pot"
+        ],
+        "description": "La Laitue (Lactuca), au sens botanique du terme, est un genre de plantes annuelles et bisannuelles de la famille des Astéracées (Composées) dont certaines espèces sont cultivées pour leurs feuilles tendres consommées comme salade verte. Ce genre comprend plus de 100 espèces. La laitue la plus cultivée est la laitue cultivée (Lactuca sativa) à partir de laquelle les jardiniers ont sélectionné de nombreuses variétés et cultivars.",
+        "options": [
+            {
+                "name": "printemps",
+                "saw_in": [
+                    [
+                        "01-02-2000",
+                        "01-05-2000"
+                    ]
+                ],
+                "saw_out": [],
+                "transplant": [
+                    [
+                        "01-04-2000",
+                        "16-05-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "01-05-2000",
+                        "01-07-2000"
+                    ]
+                ]
+            },
+            {
+                "name": "été",
+                "saw_in": [],
+                "saw_out": [
+                    [
+                        "01-04-2000",
+                        "01-07-2000"
+                    ]
+                ],
+                "transplant": [
+                    [
+                        "01-06-2000",
+                        "01-08-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "01-07-2000",
+                        "01-09-2000"
+                    ]
+                ]
+            },
+            {
+                "name": "automne",
+                "saw_in": [],
+                "saw_out": [
+                    [
+                        "01-07-2000",
+                        "01-09-2000"
+                    ]
+                ],
+                "transplant": [
+                    [
+                        "01-08-2000",
+                        "01-09-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "01-09-2000",
+                        "01-11-2000"
+                    ]
+                ]
+            },
+            {
+                "name": "hiver",
+                "saw_in": [],
+                "saw_out": [
+                    [
+                        "01-08-2000",
+                        "01-11-2000"
+                    ]
+                ],
+                "transplant": [
+                    [
+                        "01-10-2000",
+                        "01-11-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "01-03-2000",
+                        "01-06-2000"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Mâche",
+        "image_url": "https://cdn.pixabay.com/photo/2014/02/12/18/11/lettuce-264826_960_720.jpg",
+        "exposition": [
+            "mi-ombre",
+            "ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "argileux",
+            "humifère",
+            "frais",
+            "drainé"
+        ],
+        "culture": [
+            "en pot",
+            "en pleine terre"
+        ],
+        "description": "La mâche (Valerianella locusta) est une petite plante herbacée annuelle de la famille des Caprifoliaceae (anciennement Valerianaceae), originaire de l’Afrique, de l’Amérique du Nord et de l’Eurasie. C'est de cette espèce que sont issues les variétés cultivées consommées le plus souvent crues en salades.",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-08-2000",
+                "01-11-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-09-2000",
+                "01-04-2000"
+            ]
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Melon",
+        "image_id": "cE1gDLMsgEM",
+        "image_url": "https://images.unsplash.com/photo-1630526909851-196624edbbcd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "calcaire",
+            "humifère",
+            "riche",
+            "drainé",
+            "réchauffé",
+            "léger"
+        ],
+        "culture": [
+            "en serre",
+            "en pleine terre"
+        ],
+        "description": "Le melon (Cucumis melo) est une plante herbacée annuelle originaire d'Afrique intertropicale, appartenant à la famille des Cucurbitacées et largement cultivée comme plante potagère pour son faux-fruit comestible. La tige n'est pas volubile mais la plante peut grimper en s'accrochant à des supports grâce à des vrilles simples. Les feuilles sont généralement entières assez arrondies, parfois assez fortement découpées. Le terme désigne aussi le fruit climactérique lui-même très savoureux, sucré et parfumé.",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-05-2000",
+                "01-06-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "15-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-10-2000"
+            ]
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Navet d'automne",
+        "image_id": "Fz49Hl-Pg08",
+        "image_url": "https://images.unsplash.com/photo-1631909808696-969b7aa7ade9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "mi-ombre",
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humide",
+            "humifère",
+            "riche",
+            "frais"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "Le navet, Brassica rapa L. subsp. rapa (du latin napus : chou-navet, rapum : rave, bulbe de racine ; du grec ράπυς, ράπυος : rave, navet), est une plante herbacée de la famille des Brassicacées, cultivée comme plante potagère ou fourragère pour sa racine charnue allongée ou arrondie, consommée comme légume. Les navets d’automne se sèment de juillet à septembre et se récoltent une fois murs.",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-07-2000",
+                "01-10-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-09-2000",
+                "01-12-2000"
+            ]
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Oignon",
+        "image_id": "atQQQjJk8ok",
+        "image_url": "https://images.unsplash.com/photo-1536235551740-15dc337df024?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "faible"
+        ],
+        "soil_type": [
+            "léger",
+            "meuble",
+            "drainé",
+            "humifère"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "L'oignon ou ognon (Allium cepa) est une espèce de plantes herbacées bisannuelles de la famille des Amaryllidaceae, longtemps cultivée comme plante potagère pour ses bulbes de saveur et d'odeur fortes ou pour ses feuilles. Le terme désigne aussi le bulbe de cette plante récolté comme légume. L'oignon est utilisé à la fois comme légume et comme condiment.Le bulbe de l'oignon se compose de bases épaissies de feuilles s'enveloppant les unes dans les autres. De façon générale on parle d'oignon pour tous les bulbes de Liliacées, comme les tulipes.",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ],
+            [
+                "01-08-2000",
+                "01-10-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-10-2000",
+                "01-12-2000"
+            ],
+            [
+                "01-01-2000",
+                "01-03-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-04-2000",
+                "01-09-2000"
+            ]
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Panais",
+        "image_url": "https://cdn.pixabay.com/photo/2018/12/07/02/06/parsnips-3860993_960_720.jpg",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "calcaire",
+            "argileux",
+            "humifère",
+            "frais",
+            "riche",
+            "meuble"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "Le Panais (Pastinaca sativa L.) est une espèce de plante herbacée bisannuelle à racine charnue originaire d'Europe1, appartenant à la famille des Apiacées. Il fut autrefois très cultivé comme légume et comme plante fourragère. Le panais, détrôné par la pomme de terre, est de retour sur la table française depuis la fin du xxe siècle à la suite de sa réintroduction sur les étals par les maraîchers biologiques et l'engouement pour les légumes anciens. Le panais, d'une couleur blanc ivoire, a une forme proche de celle de la carotte, et un goût légèrement sucré, noiseté, avec un arôme épicé.",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "15-02-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-05-2000",
+                "01-10-2000"
+            ]
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Petit pois",
+        "image_id": "bwKUJ3Y5JS4",
+        "image_url": "https://images.unsplash.com/photo-1596564823703-d28706a620e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humifère",
+            "frais",
+            "léger",
+            "meuble"
+        ],
+        "culture": ["en pleine terre"],
+        "description": "Les petits pois, pois de jardins, ou pois potagers sont les jeunes graines vertes de variétés cultivées du pois, récoltées après leur développement dans les gousses et avant leur maturité. Lorsque ces graines sont récoltées à leur maturité, elles sont appelées pois cassés. Les petits pois sont consommés comme légumes frais. Ils sont plus énergétiques (81 cal/100 g) que la majorité des légumes verts. Ils sont aussi intéressants pour leur apport en sucres solubles, en lysine et en fibres, composées en majorité d'hémicelluloses lorsqu'ils sont jeunes. Les petits pois sont aussi une bonne source de vitamine C (acide ascorbique) avec 25 mg/100 g.",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "15-02-2000",
+                "16-06-2000"
+            ],
+            [
+                "01-10-2000",
+                "01-12-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ],
+            [
+                "01-05-2000",
+                "01-10-2000"
+            ]
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Poireau",
+        "image_id": "uO-ukEbpwQ0",
+        "image_url": "https://images.unsplash.com/photo-1599776764145-bcc16b4e3815?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "tout type",
+            "frais",
+            "meuble",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "Le poireau cultivé (Allium ampeloprasum var. porrum, anciennement Allium porrum) est une espèce de plante herbacée vivace largement cultivée comme plante potagère pour ses feuilles (pseudo-tiges) consommées comme légumes. Issu de la domestication du poireau perpétuel (Allium ampeloprasum) et sélectionné pour son feuillage, il appartient à la famille des Amaryllidacées. Noms communs : poireau, porreau, poirée, poirette, asperge du pauvre.",
+        "options": [
+            {
+                "name": "été",
+                "saw_in": [
+                    [
+                        "15-01-2000",
+                        "01-04-2000"
+                    ]
+                ],
+                "saw_out": [],
+                "transplant": [
+                    [
+                        "01-05-2000",
+                        "01-06-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "15-06-2000",
+                        "01-10-2000"
+                    ]
+                ]
+            },
+            {
+                "name": "automne ou hiver",
+                "saw_in": [
+                    [
+                        "01-03-2000",
+                        "01-06-2000"
+                    ]
+                ],
+                "saw_out": [],
+                "transplant": [
+                    [
+                        "01-05-2000",
+                        "01-08-2000"
+                    ]
+                ],
+                "harvest": [
+                    [
+                        "01-10-2000",
+                        "01-05-2000"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Potiron",
+        "image_id": "w5DqWoZ5_YM",
+        "image_url": "https://images.unsplash.com/photo-1522223829476-5d8ce6672c46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "humifère",
+            "riche",
+            "lourd"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "Le potiron (Cucurbita maxima) est une plante de la famille des Cucurbitacées originaire des régions tropicales d'Amérique du Sud. Le potiron est largement cultivé comme plante potagère pour son fruit comestible à maturité. Le terme désigne aussi ce fruit consommé comme légume. C'est l'une des cinq espèces de courges les plus couramment cultivées.",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-09-2000",
+                "01-12-2000"
+            ]
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Radis",
+        "image_id": "MLzEKo9rZ3A",
+        "image_url": "https://images.unsplash.com/photo-1592346520936-9444037b2e28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "humifère",
+            "sableux",
+            "argileux",
+            "frais",
+            "meuble",
+            "drainé"
+        ],
+        "culture": [
+            "en pot",
+            "en pleine terre"
+        ],
+        "description": "Le radis cultivé, Raphanus sativus (du latin radix, radicis, « racine, raifort », du grec ῥαπυς, ῥαπυος, « rave, navet ») est une plante potagère annuelle ou bisannuelle de la famille des Brassicacées, principalement cultivée pour son hypocotyle charnu, souvent consommé cru, comme légume. Toutes les parties de la plante sont comestibles, bien que sa racine pivot soit plus populaire. La peau et la chair du radis peuvent être de différentes couleurs, dont la plus courante est le rouge. Certaines variétés peuvent être bicolores, roses, violettes, vertes, blanches ou noires.",
+        "saw_in": [
+            [
+                "15-02-2000",
+                "16-03-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "15-03-2000",
+                "01-10-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "15-03-2000",
+                "01-12-2000"
+            ]
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Tomate",
+        "image_id": "zRqRhIJqdnI",
+        "image_url": "https://images.unsplash.com/photo-1596199050105-6d5d32222916?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "plein soleil"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "tout type",
+            "drainé",
+            "riche",
+            "réchauffé"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre"
+        ],
+        "description": "La tomate (Solanum lycopersicum L.) est une espèce de plantes herbacées du genre Solanum de la famille des Solanacées, originaire du Nord-Ouest de l'Amérique du Sud, largement cultivée pour son fruit. Le terme désigne aussi ce fruit charnu. La tomate se consomme comme un légume-fruit, crue ou cuite. Elle est devenue un élément incontournable de la gastronomie dans de nombreux pays, et tout particulièrement dans le bassin méditerranéen. L'espèce compte quelques variétés botaniques, dont la tomate-cerise et plusieurs milliers de variétés cultivées.",
+        "saw_in": [
+            [
+                "01-01-2000",
+                "16-05-2000"
+            ]
+        ],
+        "saw_out": [],
+        "transplant": [
+            [
+                "01-05-2000",
+                "01-06-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-11-2000"
+            ]
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Artichaut",
+        "image_id": "mTM84eo4Tew",
+        "image_url": "https://images.unsplash.com/photo-1621762556022-ddb311f5392f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "argileux",
+            "humifère",
+            "drainé",
+            "riche",
+            "meuble",
+            "léger",
+            "frais"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "L’artichaut (Cynara cardunculus var. scolymus (L.) Benth.) est une plante dicotylédone de la famille des Astéracées (ou Composées) appartenant au genre Cynara. L'artichaut lui-même est un chardon domestiqué et cultivé, de l'espèce Cynara cardunculus, dont la variété sauvage est sans doute Cynara cardunculus var. sylvestris (Lamk.) Fiori, ayant donné naissance à deux formes : C. cardunculus f. cardunculus, le cardon, et C. cardunculus f. scolymus, l'artichaut. Ces deux formes ont longtemps été considérées comme des espèces différentes. On désigne sous le nom d'artichaut à la fois la plante entière et sa partie comestible, l'inflorescence en capitule, appelée aussi tête d'artichaut.",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-04-2000"
+            ]
+        ],
+        "saw_out": [],
+        "transplant": [
+            [
+                "01-03-2000",
+                "01-05-2000"
+            ],
+            [
+                "01-09-2000",
+                "01-11-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-05-2000",
+                "01-09-2000"
+            ]
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Cornichon",
+        "image_id": "4DTzukt0Ozs",
+        "image_url": "https://images.unsplash.com/photo-1591340270341-00a786ffc0aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humifère",
+            "meuble",
+            "humide"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en pot"
+        ],
+        "description": "Le cornichon est une plante herbacée annuelle de la famille des Cucurbitaceae, cultivée pour ses fruits, récoltés avant maturité et consommés principalement comme condiment. Le nom scientifique est Cucumis sativus, le même que celui du concombre (ils sont tous deux de la même espèce). Historiquement, le concombre était récolté à maturité, à la différence du cornichon, puis des variétés ont été sélectionnées pour produire des cornichons et d'autres des concombres. Les sélections effectuées par l'homme ont accentué les caractères propres à chacun, pour obtenir des cultivars distincts.",
+        "saw_in": [
+            [
+                "01-03-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "15-03-2000",
+                "16-05-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-06-2000",
+                "01-11-2000"
+            ]
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Potimarron",
+        "image_id": "jHe6ragO2a0",
+        "image_url": "https://images.unsplash.com/photo-1570142056130-9f6b59c6287a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "humifère",
+            "riche",
+            "lourd",
+            "meuble"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "Les potimarrons sont un groupe de cultivars eurasiatiques du potiron, une plante d'origine mésoaméricaine arrivée dans l'Ancien Monde lors de l'échange colombien. Ils auraient été introduits au Japon par des navigateurs portugais, et n'auraient gagné l'Europe depuis le Japon que tardivement. Ces premiers potimarrons, appelés alors « potiron doux de Hokkaido » se sont rapidement diffusés dans les jardins d'Europe. C'est à partir de ce dernier que se développe la variété appelée « Potimarron français ». Les potimarrons peuvent être consommés en potage, au four avec de l'ail, frits, en tourte ou en purée. À la différence du potiron classique, il n'est pas nécessaire de retirer la peau du potimarron avant la cuisson. Il peut aussi être consommé cru. Les graines peuvent être conservées et grillées pour l'apéritif.",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-06-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-03-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-03-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-12-2000"
+            ]
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Poivron",
+        "image_id": "LiXUoupJxM8",
+        "image_url": "https://images.unsplash.com/photo-1527276709728-d5a946ba727b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "plein soleil"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humifère",
+            "caillouteux",
+            "drainé",
+            "meuble",
+            "riche",
+            "réchauffé"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre",
+            "en pot"
+        ],
+        "description": "Le poivron est un terme souvent utilisé pour caractériser des variétés de piments doux de l'espèce Capsicum annuum à très gros fruits (parfois appelé piment au Québec). C'est une plante annuelle de la famille des Solanacées originaire du Mexique, d'Amérique centrale et d'Amérique du Sud. La plante est cultivée comme plante potagère pour ses fruits consommés, crus ou cuits, comme légumes. Le terme désigne à la fois le fruit et la plante. Les graines de poivrons ont été importées en Espagne pour la première fois en 1493, et se sont propagées vers l'Europe et l'Asie. L'appellation poivron est dérivée du mot poivre, et fait son apparition à l'écrit en 1785.",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [],
+        "transplant": [
+            [
+                "01-04-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-10-2000"
+            ]
+        ]
+    },
+    {
+        "id": 26,
+        "name": "Piment",
+        "image_id": "PnFgNgCkBXY",
+        "image_url": "https://images.unsplash.com/photo-1505725513549-477dfcbe55c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "plein soleil"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "humifère",
+            "meuble",
+            "caillouteux",
+            "riche",
+            "réchauffé",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre",
+            "en pot"
+        ],
+        "description": "Le terme piment (vert, jaune, orange, rouge, brun, pêche ou violet) est un nom vernaculaire désignant le fruit de cinq espèces de plantes du genre Capsicum de la famille des Solanacées et de plusieurs autres taxons. Le mot désigne plus communément le fruit de ces plantes, utilisés comme condiment ou légume. La notion de piment est généralement associée à la saveur de piquant. Les piments sont aujourd'hui cultivés dans au moins 64 pays, l'Inde produisant à elle seule 38,7 % de la production mondiale (3,4 millions de tonnes). Ils sont de plus en plus utilisés pour leurs aspects décoratifs et pour leurs propriétés médicinales.",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [],
+        "transplant": [
+            [
+                "01-04-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-10-2000"
+            ]
+        ]
+    },
+    {
+        "id": 27,
+        "name": "Chou cabus",
+        "image_id": "AnBKV3nlIZg",
+        "image_url": "https://images.unsplash.com/photo-1508302730834-a3786a6c951d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "argileux",
+            "calcaire",
+            "humifère",
+            "humide",
+            "riche",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "Le chou cabus ou chou pommé (Brassica oleracea var. capitata ou Brassica oleracea Groupe Capitata) est une variété de chou caractérisée par une tête et un feuillage lisse. C'est une plante biannuelle formant une rosette de feuilles, de 30 à 60 cm de haut et de large. Certains choux blanc, comme la variété Coeur de boeuf atteignent parfois de très grande taille. ",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-10-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-05-2000",
+                "01-08-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "01-01-2000",
+                "01-07-2000"
+            ],
+            [
+                "01-10-2000",
+                "01-01-2000"
+            ]
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Chicorée",
+        "image_url": "https://cdn.pixabay.com/photo/2015/10/08/00/12/plants-977005_960_720.jpg",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "tout type",
+            "drainé",
+            "meuble",
+            "frais"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "Les Chicorées (Cichorium) sont un genre botanique qui rassemble des plantes de la famille des Astéracées (composées). Ce genre comporte à la fois des espèces sauvages et des plantes qui sont cultivées, soit des variétés à feuilles (salades, endives), soit des variétés à racines (succédané de café appelé chicorée).",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "16-05-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "15-05-2000",
+                "16-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-05-2000",
+                "01-09-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-05-2000",
+                "01-12-2000"
+            ]
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Chou chinois",
+        "image_url": "https://cdn.pixabay.com/photo/2020/12/02/16/35/chinese-cabbage-5798137_960_720.jpg",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "calcaire",
+            "humifère",
+            "argileux",
+            "meuble",
+            "riche",
+            "frais"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "« Chou chinois » peut désigner deux sous-espèces différentes : Brassica rapa subsp. pekinensis, aussi appelé chou chinois, chou de Pékin, ou pe-tsaï; Brassica rapa subsp. chinensis, aussi appelé chou chinois, chou de Chine, ou bok choy. Il est très consommé en Asie et il existe plus de 30 variétés différentes! Sa meilleure saison est l'automne, car il a besoin de températures fraîches. ",
+        "saw_in": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-06-2000",
+                "01-09-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "15-05-2000",
+                "01-09-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "15-06-2000",
+                "01-01-2000"
+            ]
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Fraise",
+        "image_id": "Qse3AFWnc48",
+        "image_url": "https://images.unsplash.com/photo-1566804770468-867f6158bda5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée",
+            "mi-ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "riche",
+            "humifère",
+            "léger",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en pot",
+            "en serre"
+        ],
+        "description": "La fraise est un fruit rouge issu des fraisiers, espèces de plantes herbacées appartenant au genre Fragaria (famille des Rosacées), dont plusieurs variétés sont cultivées. Les fraises se développent à partir du réceptacle charnu des fleurs. Ce sont donc des faux fruits. De forme ovoïde oblongues plus ou moins arrondies, elles sont de couleur rouge ou jaune blanchâtre selon les variétés. Au sens botanique du terme, les « vrais » fruits des fraisiers sont en fait les akènes, ces petits grains secs disposés dans des alvéoles sur les fraises. Ils sont de couleur verte à brune, et renferment chacun soit un ovule (non fécondé), soit une graine (ovule fécondé) qui contient elle-même un germe.",
+        "saw_in": [
+            [
+                "01-01-2000",
+                "01-03-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "01-04-2000",
+                "01-06-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-03-2000",
+                "01-06-2000"
+            ],
+        ],
+        "harvest": [
+            [
+                "01-05-2000",
+                "01-07-2000"
+            ],
+            [
+                "01-09-2000",
+                "01-11-2000"
+            ]
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Concombre amer",
+        "image_url": "https://cdn.pixabay.com/photo/2016/08/23/17/11/bitter-gourd-1615019_960_720.jpg",
+        "exposition": [
+            "ensoleillée",
+            "plein soleil"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "frais",
+            "riche",
+            "drainé",
+            "léger"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en serre"
+        ],
+        "description": "Le concombre amer qu'on  appelle aussi la margose, melon amer ou momordique (Momordica charantia), est une plante potagère grimpante de la famille des Cucurbitaceae, cultivée dans les climats chauds ou tempérés en plante annuelle. Le terme margose désigne la plante et le fruit. Le fruit, la feuille et les graines sont comestibles et amers. Cette amertume provient des momordicines, substances proches de la quinine. La margose est connue pour ses qualités culinaires et pour ses propriétés thérapeutiques en médecine traditionnelle, notamment dans le traitement du diabète et de certains cancers.",
+        "saw_in": [
+            [
+                "01-02-2000",
+                "01-04-2000"
+            ]
+        ],
+        "saw_out": [
+            [
+                "15-05-2000",
+                "01-07-2000"
+            ]
+        ],
+        "transplant": [
+            [
+                "01-06-2000",
+                "01-07-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-09-2000"
+            ]
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Gombo",
+        "image_id": "CoIJlCZEjnw",
+        "image_url": "https://images.unsplash.com/photo-1425543103986-22abb7d7e8d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "ensoleillée"
+        ],
+        "water_need": [
+            "fort"
+        ],
+        "soil_type": [
+            "tout type",
+            "réchauffé",
+            "léger",
+            "drainé"
+        ],
+        "culture": [
+            "en pleine terre"
+        ],
+        "description": "Le gombo (Abelmoschus esculentus), appelé lalo à l'île de La Réunion et à l'île Maurice, calou en Guyane, calalou en Haïti ou okra en Louisiane et plus généralement dans le sud des États-Unis, est une espèce de plante tropicale à fleurs originaire d'Afrique ou d'Inde, proche de l'hibiscus, appartenant à la famille des Malvaceae. Son fruit est une capsule de forme pyramidale récoltée verte et employée comme légume et comme condiment. Sa section transversale montre cinq carpelles qui forment un pentagone régulier. Sa peau est couverte de soies duveteuses.",
+        "saw_in": [
+            [
+                "01-12-2000",
+                "01-05-2000"
+            ]
+        ],
+        "saw_out": [],
+        "transplant": [
+            [
+                "15-05-2000",
+                "16-08-2000"
+            ]
+        ],
+        "harvest": [
+            [
+                "01-07-2000",
+                "01-11-2000"
+            ]
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Framboise",
+        "image_id": "BM27BzBrhVM",
+        "image_url": "https://images.unsplash.com/photo-1593461802389-d57d73a36913?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjI4MTF8MHwxfGFsbHx8fHx8fHx8fDE2MzI1Nzg5MTU&ixlib=rb-1.2.1&q=80&w=400",
+        "exposition": [
+            "mi-ombre",
+            "ombre"
+        ],
+        "water_need": [
+            "moyen"
+        ],
+        "soil_type": [
+            "léger",
+            "frais",
+            "riche"
+        ],
+        "culture": [
+            "en pleine terre",
+            "en pot"
+        ],
+        "description": "La framboise est un fruit rouge issu du framboisier (Rubus idaeus), un arbrisseau de la famille des rosacées. Selon qu'il s'agit de framboisiers sauvages ou cultivés, la framboise pèse de 4 à 10 g, mesure jusqu'à 2,5 cm et compte de 40 à 80 drupéoles. Ce fruit rouge-rose est issu de la transformation de la quarantaine de minuscules carpelles d'une seule et même fleur, qui se transforment en drupéoles semi-soudées. De forme ovoïde ou conique, elle a une saveur sucrée accompagnée, selon les variétés, d'une pointe d'acidité. Fruit fragile et délicat, il est généralement présenté en barquettes pour le protéger des chocs et des manipulations.",
+        "saw_in": [],
+        "saw_out": [
+            [
+                "01-11-2000",
+                "01-04-2000"
+            ]
+        ],
+        "transplant": [],
+        "harvest": [
+            [
+                "15-06-2000",
+                "16-07-2000"
+            ]
+        ]
+    }
+]

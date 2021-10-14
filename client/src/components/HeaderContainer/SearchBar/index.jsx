@@ -7,14 +7,15 @@ import { useClickOutside } from 'react-click-outside-hook';
 import { useTheme } from '@material-ui/core/styles';
 import { useMediaQuery, Grid } from '@material-ui/core';
 import { MoonLoader } from 'react-spinners';
+import { useLocation } from 'react-router';
 import {
   collapseContainer,
   expandContainer,
   fetchSearchInfo,
   resetSearchValue,
-  resetTvShows,
+  resetResults,
   setIsEmptyToTrue,
-  setNoTvShowsToFalse,
+  setNoResultsToFalse,
   setSearchValue,
 } from '../../../store/actions/searchbar';
 import { useDebounce } from '../../../hooks/debounceHook';
@@ -23,10 +24,12 @@ import SearchBarWarningMessage from './SearchBarWarningMessage';
 
 const containerVariants = {
   expanded: {
-    height: '20rem',
+    height: '21.5rem',
+    width: '100%',
   },
   collapsed: {
     height: '2.5rem',
+    width: '100%',
   },
 };
 
@@ -40,29 +43,36 @@ const SearchBar = () => {
   const isExpanded = useSelector((state) => state.searchbar.isExpanded);
   const searchValue = useSelector((state) => state.searchbar.searchValue);
   const isLoading = useSelector((state) => state.searchbar.isLoading);
-  const tvShows = useSelector((state) => state.searchbar.tvShows);
+  const results = useSelector((state) => state.searchbar.results);
   const isEmpty = useSelector((state) => state.searchbar.isEmpty);
-  const noTvShows = useSelector((state) => state.searchbar.noTvShows);
+  const noResults = useSelector((state) => state.searchbar.noResults);
   const dispatch = useDispatch();
   const [parentRef, isClickedOutside] = useClickOutside();
   const inputRef = useRef();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const is950 = useMediaQuery('(min-width: 950px)');
   const isLarge = useMediaQuery(theme.breakpoints.up('lg'));
+  const location = useLocation();
 
   let style;
 
   if (isLarge) {
     style = {
-      width: '39rem',
+      width: '100%',
+    };
+  }
+  else if (!is950) {
+    style = {
+      width: '100%',
     };
   }
   else if (isMobile) {
-    style = {
-      right: '19%',
-      width: '55%',
-      top: '2rem',
-    };
+    // style = {
+    //   right: '19%',
+    //   width: '55%',
+    //   top: '2rem',
+    // };
   }
   else {
     style = {};
@@ -73,8 +83,8 @@ const SearchBar = () => {
 
   const collapseSearchContainer = () => {
     dispatch(collapseContainer());
-    dispatch(resetTvShows());
-    dispatch(setNoTvShowsToFalse());
+    dispatch(resetResults());
+    dispatch(setNoResultsToFalse());
     dispatch(setIsEmptyToTrue());
     if (inputRef.current) {
       dispatch(resetSearchValue());
@@ -83,8 +93,8 @@ const SearchBar = () => {
 
   const handleSearchInputChange = (event) => {
     if (event.target.value === '') {
-      dispatch(setNoTvShowsToFalse());
-      dispatch(resetTvShows());
+      dispatch(setNoResultsToFalse());
+      dispatch(resetResults());
       dispatch(setIsEmptyToTrue());
     }
     dispatch(setSearchValue(event.target.value));
@@ -94,6 +104,10 @@ const SearchBar = () => {
     if (isClickedOutside) collapseSearchContainer();
   }, [isClickedOutside]);
 
+  useEffect(() => {
+    collapseSearchContainer();
+  }, [location]);
+
   const searchInfoToShow = () => {
     dispatch(fetchSearchInfo());
   };
@@ -101,29 +115,29 @@ const SearchBar = () => {
   useDebounce(searchValue, 300, searchInfoToShow);
 
   return (
-    <Grid container justifyContent="center" alignItems="center">
-      <motion.div
-        className="search-bar"
-        animate={isExpanded ? 'expanded' : 'collapsed'}
-        variants={containerVariants}
-        transition={containerTransition}
-        ref={parentRef}
-        style={style}
-      >
-        <div className="search-bar__input-container">
-          <span className="search-bar__search-icon">
-            <IoSearch />
-          </span>
-          <input
-            className="search-bar__input"
-            placeholder="recherche"
-            onFocus={expandSearchContainer}
-            onChange={handleSearchInputChange}
-            value={searchValue}
-            ref={inputRef}
-          />
-          <AnimatePresence>
-            { isExpanded && (
+
+    <motion.div
+      className="search-bar"
+      animate={isExpanded ? 'expanded' : 'collapsed'}
+      variants={containerVariants}
+      transition={containerTransition}
+      ref={parentRef}
+      style={style}
+    >
+      <div className="search-bar__input-container">
+        <span className="search-bar__search-icon">
+          <IoSearch />
+        </span>
+        <input
+          className="search-bar__input"
+          placeholder="recherche"
+          onFocus={expandSearchContainer}
+          onChange={handleSearchInputChange}
+          value={searchValue}
+          ref={inputRef}
+        />
+        <AnimatePresence>
+          { isExpanded && (
             <motion.span
               className="search-bar__close-icon"
               onClick={collapseSearchContainer}
@@ -135,42 +149,40 @@ const SearchBar = () => {
             >
               <IoClose />
             </motion.span>
-            ) }
-          </AnimatePresence>
-        </div>
-        { isExpanded && <span className="search-bar__seperator" /> }
-        { isExpanded && (
+          ) }
+        </AnimatePresence>
+      </div>
+      { isExpanded && <span className="search-bar__seperator" /> }
+      { isExpanded && (
         <div className="search-bar__content">
           { isLoading && (
           <div className="search-bar__loading-wrapper">
             <MoonLoader loading color="#000000" size={40} />
           </div>
           ) }
-          { !isLoading && isEmpty && !noTvShows && (
+          { !isLoading && isEmpty && !noResults && (
           <div className="search-bar__loading-wrapper">
-            <SearchBarWarningMessage message="Start typing to search !" />
+            <SearchBarWarningMessage message="Écrivez le légume ou le fruit que vous voulez rechercher" />
           </div>
           ) }
-          { !isLoading && noTvShows && (
+          { !isLoading && noResults && (
           <div className="search-bar__loading-wrapper">
-            <SearchBarWarningMessage message="No Tv Shows or Series found !" />
+            <SearchBarWarningMessage message="Pas de résultat" />
           </div>
           ) }
           { !isLoading && !isEmpty && (
           <div>
-            { tvShows.map(({ show }) => (
+            { results.map((item) => (
               <SearchBarItem
-                key={show.id}
-                thumbnailSrc={show.image && show.image.medium}
-                name={show.name}
+                key={item.id}
+                {...item}
               />
             )) }
           </div>
           )}
         </div>
-        ) }
-      </motion.div>
-    </Grid>
+      ) }
+    </motion.div>
 
   );
 };

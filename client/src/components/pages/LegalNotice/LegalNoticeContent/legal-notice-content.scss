@@ -1,0 +1,8 @@
+@use '../../../../styles/vars';
+
+.content__title {
+	font-weight: 600;
+	font-size: 1.2rem;
+	margin: 1rem;
+	color: vars.$secondary-color;
+}

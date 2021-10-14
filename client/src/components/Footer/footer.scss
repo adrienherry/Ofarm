@@ -1,88 +1,44 @@
 @use "../../styles/vars";
 
+
 .footer {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 30vh;
-  position: fixed;
-  bottom: 0;
-  background-color: vars.$header-color;
-  padding: 1em;
+  height: 13rem;
+  margin-top: 5rem;
+  background: vars.$background-footer;
+
+  &__separator {
+    width: 90%;
+    background-color: vars.$header-color;
+    height: 3px;
+    border-radius: 50%;
+    margin: auto;
+  }
+
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: vars.$header-color;
+
+    &:hover {
+      color: vars.$active-color-header;
+    }
+  }
+
+  &__return-top {
+    cursor: pointer;
+    font-weight: 700;
+    color: vars.$header-color;
+
+    &:hover {
+      color: vars.$active-color-header;
+    }
+  }
 
   &__container {
     display: flex;
-    justify-content: space-evenly;
-    // background-color: darkslateblue;
-    padding: 1em;
-    height: 100%;
-    &--logo {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      &-img {
-        width: 8em;
-        height: 6em;
-        margin-bottom: 1em;
-      }
-
-      &-social {
-        display: flex;
-        justify-content: space-between;
-        padding: 1em;
-        box-sizing: content-box;
-        // border: 0.1em;
-        // border-style: solid;
-        // border-color: aqua;
-        // background-color: coral;
-        // height: 4em;
-        &-twitter {
-          padding-left: 1em;
-          padding-right: 1em;
-        }
-        &-phone {
-          padding-left: 1em;
-        }
-      }
-    }
-
-    &--section {
-      // background-color: deeppink;
-      &-title {
-        color: vars.$color-font-header;
-        text-align: center;
-        font-weight: bold;
-        margin-bottom: 0.5em;
-      }
-      &-list {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        color: vars.$color-font-header;
-        &-item {
-          padding: 1em;
-        }
-      }
-    }
-
-    &--copyright {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-bottom: 1.3em;
-      padding-left: 0.5em;
-      padding-right: 0.5em;
-      width: 20em;
-      color: vars.$color-font-header;
-      box-sizing: content-box;
-      &-text {
-        margin-right: 2em;
-      }
-      &-text1 {
-        color: vars.$active-color-header;
-      }
-    }
+    align-items: center;
+    height: 12.8rem;
   }
+
 }

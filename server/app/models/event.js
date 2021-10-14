@@ -3,6 +3,12 @@ const sequelize = require("../services/sequelize");
 
 class Event extends Model {}
 
+/**
+ * @typedef Event
+ * @property {integer} id - id of the event
+ * @property {date} fromDate.required - date at which the event starts
+ * @property {date} untilDate.required - date at which the event ends
+ */
 Event.init(
 	{
 		id: {
@@ -10,15 +16,18 @@ Event.init(
 			primaryKey: true,
 			autoIncrement: true,
 		},
-		fromDate: {
-			type: DataTypes.DATE,
+		optionName: {
+			type: DataTypes.TEXT,
 			allowNull: false,
-			unique: true,
+			defaultValue: "default",
+		},
+		fromDate: {
+			type: DataTypes.DATEONLY,
+			allowNull: false,
 		},
 		untilDate: {
-			type: DataTypes.DATE,
+			type: DataTypes.DATEONLY,
 			allowNull: false,
-			unique: true,
 		},
 	},
 	{
@@ -26,7 +35,11 @@ Event.init(
 		underscored: true,
 		modelName: "Event",
 		tableName: "event",
-		timestamps: true,
+		defaultScope: {
+			attributes: {
+				exclude: ["createdAt", "updatedAt"],
+			},
+		},
 	},
 );
 

@@ -1,0 +1,17 @@
+@use '../../../../../styles/vars';
+
+.display-species-choosen {
+    background: vars.$background-card-color;
+    padding: 3rem;
+    max-width: 30rem;
+    box-shadow: vars.$shadow-card-item;
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: vars.$header-color;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+}

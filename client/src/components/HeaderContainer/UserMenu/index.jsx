@@ -17,21 +17,22 @@ const UserMenu = () => {
 
   const userMenuStyle = {
     width: isMedium ? '100%' : '15rem',
+    height: isMedium ? '15rem' : '12rem',
   };
 
-  useEffect(() => {
-    const maybeHandler = (event) => {
-      if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
-        dispatch(collapseUserMenu());
-      }
-    };
+  // useEffect(() => {
+  //   const maybeHandler = (event) => {
+  //     if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
+  //       dispatch(collapseUserMenu());
+  //     }
+  //   };
 
-    document.addEventListener('mousedown', maybeHandler);
+  //   document.addEventListener('mousedown', maybeHandler);
 
-    return () => {
-      document.removeEventListener('mousedown', maybeHandler);
-    };
-  });
+  //   return () => {
+  //     document.removeEventListener('mousedown', maybeHandler);
+  //   };
+  // });
 
   return (
     <>

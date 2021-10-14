@@ -1,0 +1,24 @@
+@use '../../../styles/vars';
+
+.about {
+    margin-top: 5rem;
+
+    &__titre {
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: vars.$secondary-color;
+
+    }
+    
+    &__content {
+        background-color: white;
+        padding:1rem ;
+        box-shadow: vars.$shadow-card-item;
+    }
+
+
+}
+
+
+
+

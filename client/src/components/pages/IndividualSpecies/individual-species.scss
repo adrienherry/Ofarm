@@ -1,0 +1,139 @@
+@use '../../../styles/vars';
+
+.individual-species {
+    
+    margin: 0 3rem;
+    margin-top: 3rem;
+
+    &__image-container {
+        height: 22rem;
+        width: 22rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        box-shadow: vars.$shadow-card-item;
+    }
+
+    &__span {
+        font-weight: 700;
+        color: vars.$header-color;
+        font-size: 1.1rem;
+    }
+
+    &__name {
+        font-size: 3rem;
+        font-weight: 700;
+        color: vars.$header-color;
+        margin-bottom: 1rem;
+    }
+
+    &__event {
+        margin-bottom: 1rem;
+    }
+
+    &__info {
+        box-shadow: vars.$shadow-card-item;
+        padding: 2rem;
+        background: vars.$background-card-color;
+
+        
+        &-sun {
+            margin-right: 0.3rem;
+            font-weight: 700;
+            color: vars.$header-color;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        &-water {
+            margin-right: 0.3rem;
+            font-weight: 700;
+            color: vars.$header-color;
+            font-size: 1.1rem;
+        }
+
+        &-co2 {
+            box-shadow: vars.$shadow-card-item;
+            padding: 2rem;
+            background: vars.$background-card-color;
+
+
+            &-container {
+                margin-top: 2rem;
+                
+            }
+        }
+    }
+    
+    &__description-container {
+        margin-top: 3rem;
+        
+    }
+    
+    &__description {
+        line-height: 1.4rem;
+        text-align: justify;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        box-shadow: vars.$shadow-card-item;
+        background: vars.$background-card-color;
+    }
+
+    &__co2 {
+        margin-bottom: 1rem;
+        &-total {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__culture-type {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        &__span {
+            font-weight: 700;
+            color: vars.$header-color;
+            font-size: 1.1rem;
+        }
+
+        &__item {
+            padding: 0.3rem;
+            border-radius: 0.3rem;
+            margin-left: 0.3rem;
+            margin-bottom: 0.2rem;
+            color: vars.$background-app-color;
+            background-color: vars.$secondary-color;
+        }
+    }
+
+    &__info-water__image {
+        height: 24px;
+        width: 24px;
+    }
+
+    &__no-co2 {
+        padding: 2rem;
+    }
+
+    
+}
+
+.co2-container {
+    height: 5px;
+    width: 5rem;
+    background-color: #b8b8b8;
+    border-radius: 0.5rem;
+    
+
+    &__percent {
+        height: 5px;
+        border-radius: 0.5rem;
+        background-color: vars.$header-color;
+    }
+}

@@ -30,3 +30,29 @@ export const setLoadingSpeciesToTrue = () => (
     type: SET_LOADING_SPECIES_TO_TRUE,
   }
 );
+
+export const FETCH_ONE_SPECIES = 'FETCH_ONE_SPECIES';
+
+export const fetchOneSpecies = (id) => (
+  {
+    type: FETCH_ONE_SPECIES,
+    id,
+  }
+);
+
+export const SET_ONE_SPECIES = 'SET_ONE_SPECIES';
+
+export const setOneSpecies = (payload) => (
+  {
+    type: SET_ONE_SPECIES,
+    payload,
+  }
+);
+
+export const RESET_SPECIES = 'RESET_SPECIES';
+
+export const resetSpecies = () => (
+  {
+    type: RESET_SPECIES,
+  }
+);

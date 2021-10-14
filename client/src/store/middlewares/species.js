@@ -1,6 +1,11 @@
-import axios from 'axios';
+import { axiosInstance } from '../../services/axios';
 import {
-  FETCH_SPECIES_LIST, setLoadingSpeciesToFalse, setLoadingSpeciesToTrue, setSpeciesList,
+  FETCH_ONE_SPECIES,
+  FETCH_SPECIES_LIST,
+  setLoadingSpeciesToFalse,
+  setLoadingSpeciesToTrue,
+  setOneSpecies,
+  setSpeciesList,
 } from '../actions/species';
 
 export default (store) => (next) => async (action) => {
@@ -8,16 +13,26 @@ export default (store) => (next) => async (action) => {
     case FETCH_SPECIES_LIST: {
       try {
         store.dispatch(setLoadingSpeciesToTrue());
-        const response = await axios.get('https://ln-ofarm-dev.herokuapp.com/api/v1/species');
+        const response = await axiosInstance.get('/species');
         store.dispatch(setSpeciesList(response.data));
         store.dispatch(setLoadingSpeciesToFalse());
       }
       catch (error) {
-        console.log(err);
+        console.log(error);
       }
       next(action);
       break;
     }
+    case FETCH_ONE_SPECIES:
+      try {
+        const response = await axiosInstance.get(`/species/${action.id}`);
+        store.dispatch(setOneSpecies(response.data));
+      }
+      catch (error) {
+        console.log(error);
+      }
+      next(action);
+      break;
     default:
       next(action);
   }

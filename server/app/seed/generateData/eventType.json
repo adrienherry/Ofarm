@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Semis sous abri",
+        "color": "#cc8033"
+    },
+    {
+        "name": "Semis en pleine terre",
+        "color": "#33a6cc"
+    },
+    {
+        "name": "Repiquage",
+        "color": "#cc3333"
+    },
+    {
+        "name": "Récolte",
+        "color": "#a6cc33"
+    }
+]

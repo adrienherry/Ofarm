@@ -1,6 +1,6 @@
 BEGIN;
 
---CREATE EXTENSION IF NOT EXISTS "unaccent";
+CREATE EXTENSION IF NOT EXISTS "unaccent";
 
 CREATE OR REPLACE FUNCTION slugify (value text, sep text)
    RETURNS text
@@ -25,7 +25,7 @@ CREATE TABLE "user" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    email text NOT NULL UNIQUE,
    hashed_password text NOT NULL,
-   username text NOT NULL UNIQUE,
+   username text NOT NULL,
    username_slug text,
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now())
@@ -33,13 +33,48 @@ CREATE TABLE "user" (
 
 CREATE TABLE "garden" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-   user_id int REFERENCES "user" (id) NOT NULL,
+   user_id int REFERENCES "user" (id) ON DELETE CASCADE NOT NULL,
    name text NOT NULL,
    name_slug text,
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now()),
    UNIQUE (user_id, name)
 );
+
+CREATE TABLE "exposition" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   name text NOT NULL UNIQUE,
+   name_slug text UNIQUE,
+   value int NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
+);
+
+CREATE TABLE "water_need" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   name text NOT NULL UNIQUE,
+   name_slug text UNIQUE,
+   value int NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
+);
+
+CREATE TABLE "culture_type" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   name text NOT NULL UNIQUE,
+   name_slug text UNIQUE,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
+);
+
+CREATE TABLE "soil_type" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   name text NOT NULL UNIQUE,
+   name_slug text UNIQUE,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
+);
+
 
 CREATE TABLE "species" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -48,6 +83,7 @@ CREATE TABLE "species" (
    image_url text,
    color text DEFAULT '#ffffff00',
    description text,
+   co2_data json,
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now())
 );
@@ -56,27 +92,62 @@ CREATE TABLE "event_type" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    name text NOT NULL UNIQUE,
    name_slug text,
+   color text NOT NULL,
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now())
 );
 
 CREATE TABLE "event" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-   species_id int REFERENCES "species" (id) NOT NULL,
-   event_type_id int REFERENCES "event_type" (id) NOT NULL,
-   from_date timestamptz NOT NULL,
-   until_date timestamptz NOT NULL,
+   species_id int REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
+   event_type_id int REFERENCES "event_type" (id) ON DELETE CASCADE NOT NULL,
+   from_date date NOT NULL,
+   until_date date NOT NULL,
+   option_name text NOT NULL DEFAULT ('default'),
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now())
 );
 
 CREATE TABLE "garden_species" (
    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-   garden_id int NOT NULL REFERENCES "garden" (id) NOT NULL,
-   species_id int NOT NULL REFERENCES "species" (id) NOT NULL,
+   garden_id int NOT NULL REFERENCES "garden" (id) ON DELETE CASCADE NOT NULL,
+   species_id int NOT NULL REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
    created_at timestamptz NOT NULL DEFAULT (now()),
    updated_at timestamptz NOT NULL DEFAULT (now()),
    UNIQUE (garden_id, species_id)
 );
+
+CREATE TABLE "exposition_species" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   exposition_id int NOT NULL REFERENCES "exposition" (id) ON DELETE CASCADE NOT NULL,
+   species_id int NOT NULL REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
+);
+
+CREATE TABLE "culture_type_species" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   culture_type_id int NOT NULL REFERENCES "culture_type" (id) ON DELETE CASCADE NOT NULL,
+   species_id int NOT NULL REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
+);
+
+CREATE TABLE "species_water_need" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   water_need_id int NOT NULL REFERENCES "water_need" (id) ON DELETE CASCADE NOT NULL,
+   species_id int NOT NULL REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
+);
+
+CREATE TABLE "soil_type_species" (
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   soil_type_id int NOT NULL REFERENCES "soil_type" (id) ON DELETE CASCADE NOT NULL,
+   species_id int NOT NULL REFERENCES "species" (id) ON DELETE CASCADE NOT NULL,
+   created_at timestamptz NOT NULL DEFAULT (now()),
+   updated_at timestamptz NOT NULL DEFAULT (now())
+);
+
 
 COMMIT;

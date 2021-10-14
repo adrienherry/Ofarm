@@ -1,0 +1,31 @@
+@use '../../../styles/vars';
+
+.team {
+    // background-color: cornflowerblue;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+
+.team__title {
+    text-transform: uppercase;
+    text-align: center;
+    padding-top:2rem;
+    padding-bottom: 4rem;
+    font-weight: bold;
+    color: vars.$secondary-color;
+    font-size: 1.8rem;
+    
+}
+
+
+.team__content {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    gap: 2rem;
+    width: 100%;
+    text-align: center;
+}

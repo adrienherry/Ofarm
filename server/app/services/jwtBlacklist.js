@@ -1,5 +1,5 @@
 const redisClient = require("./redisClient");
-const promisify = require("util");
+const { promisify } = require("util");
 
 const asyncClient = {
 	get: promisify(redisClient.get).bind(redisClient),
@@ -9,6 +9,41 @@ const asyncClient = {
 	exists: promisify(redisClient.exists).bind(redisClient),
 };
 
-const PREFIX = 'jwt-blacklist';
-const TIMEOUT = 60 * 60; // 1 hour
+const TIMEOUT = 60 * parseInt(process.env.JWT_TOKEN_DURATION_MIN); // 1 hour = 60 * 60 sec
+
+const DB_PREFIX = "ofarm-blacklist";
+
 const keys = [];
+
+const addToBlacklist = async (id, token) => {
+	const key = `${DB_PREFIX}:${token}`;
+
+	if (!keys.includes(key)) {
+		await asyncClient.setex(key, TIMEOUT, JSON.stringify(token));
+    }
+
+    keys.push(key);
+
+    return;
+};
+
+const isBlacklisted = (id, token) => {
+	// Vérifier si le token est dans la liste ou pas
+    const key = `${DB_PREFIX}:${token}`;
+    if (keys.find(item => key === item)) {
+		return true;
+	} else {
+        return false;
+    }
+};
+
+const cleanBlacklist = async (_, __, next) => {
+	for (const key of keys) {
+		await asyncClient.del(key);
+	}
+
+	keys.length = 0;
+	next();
+};
+
+module.exports = {addToBlacklist, isBlacklisted, cleanBlacklist};

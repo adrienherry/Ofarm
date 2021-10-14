@@ -13,3 +13,46 @@ export const collapseUserMenu = () => (
     type: COLLAPSE_USER_MENU,
   }
 );
+
+export const SET_USER_INFO = 'SET_USER_INFO';
+
+export const setUserInfo = (payload) => (
+  {
+    type: SET_USER_INFO,
+    payload,
+  }
+);
+
+export const SET_USER_TOKEN = 'SET_USER_TOKEN';
+
+export const setUserToken = (token) => (
+  {
+    type: SET_USER_TOKEN,
+    token,
+  }
+);
+
+export const SET_NEW_USERNAMESLUG = 'SET_NEW_USERNAMESLUG';
+
+export const setNewUsernameSlug = (slug) => (
+  {
+    type: SET_NEW_USERNAMESLUG,
+    slug,
+  }
+);
+
+export const OPEN_POPUP_ALERT = 'OPEN_POPUP_ALERT';
+
+export const openPopUpAlert = () => (
+  {
+    type: OPEN_POPUP_ALERT,
+  }
+);
+
+export const CLOSE_POPUP_ALERT = 'CLOSE_POPUP_ALERT';
+
+export const closePopUpAlert = () => (
+  {
+    type: CLOSE_POPUP_ALERT,
+  }
+);

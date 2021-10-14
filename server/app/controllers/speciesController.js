@@ -1,40 +1,163 @@
-const db = require("../services/sequelize");
-const { col, Op } = require("sequelize");
-const { Species, Garden } = require("../models");
+const {
+	Species,
+	Garden,
+	SoilType,
+	Exposition,
+	CultureType,
+	WaterNeed,
+	Event,
+	EventType,
+} = require("../models");
+const { standardErrors, validate } = require("../helpers");
 
 const speciesController = {
 	findAll: async (_, res) => {
 		try {
-			const species = await Species.findAll();
+			const species = await Species.findAll({
+				include: [
+					{
+						model: SoilType,
+						as: "soil",
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
+						through: { attributes: [] },
+					},
+					{
+						model: CultureType,
+						as: "culture",
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
+						through: { attributes: [] },
+					},
+					{
+						model: WaterNeed,
+						as: "water_need",
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
+						through: { attributes: [] },
+					},
+					{
+						model: Exposition,
+						as: "exposition",
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
+						through: { attributes: [] },
+					},
+					{
+						model: Event,
+						as: "events",
+						include: "eventType",
+						attributes: {
+							exclude: ["eventTypeId", "speciesId", "createdAt", "updatedAt"]
+						}
+					}
+				],
+				order: [["name", "ASC"]],
+				attributes: { exclude: ["createdAt", "updatedAt"] },
+			});
 			res.json(species);
 		} catch (error) {
-			res.status(500).json(error.message);
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
 	findOne: async (req, res) => {
 		try {
+			if (!validate.isValidAsInt(req.params.id)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
 			const id = parseInt(req.params.id);
-			const speciesItem = await Species.findByPk(id, {
+
+			const speciesItem = await Species.findOne({
+				where: {
+					id: id,
+				},
 				include: [
-					"events",
+					{
+						model: Event,
+						as: "events",
+						attributes: {
+							exclude: ["createdAt", "updatedAt", "eventTypeId", "speciesId"],
+						},
+					},
 					{
 						association: "events",
-						include: "eventType",
+						include: {
+							model: EventType,
+							as: "eventType",
+							attributes: {
+								exclude: ["createdAt", "updatedAt"],
+							},
+						},
+					},
+					{
+						model: SoilType,
+						as: "soil",
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
+						through: { attributes: [] },
+					},
+					{
+						model: CultureType,
+						as: "culture",
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
+						through: { attributes: [] },
+					},
+					{
+						model: WaterNeed,
+						as: "water_need",
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
+						through: { attributes: [] },
+					},
+					{
+						model: Exposition,
+						as: "exposition",
+						attributes: {
+							exclude: ["createdAt", "updatedAt"],
+						},
+						through: { attributes: [] },
 					},
 				],
+				attributes: { exclude: ["createdAt", "updatedAt"] },
 			});
 			res.json(speciesItem);
 		} catch (error) {
-			res.status(500).json(error.message);
+			console.log(error);
+			res.status(500).json(standardErrors.InternalServerError);
 		}
 	},
 
 	addOneToGarden: async (req, res) => {
 		try {
+			if (
+				!validate.isValidAsInt(req.params.garden_id) ||
+				!validate.isValidAsInt(req.body.speciesId)
+			) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+
 			const garden_id = parseInt(req.params.garden_id);
-			const user_id = parseInt(req.params.user_id);
 			const species_id = parseInt(req.body.speciesId);
+
+			if (!res.locals.id) {
+				res.status(403).json(standardErrors.UserNotLoggedError);
+				return;
+			}
+
+			const user_id = res.locals.id;
 
 			let garden = await Garden.findOne({
 				where: {
@@ -60,7 +183,7 @@ const speciesController = {
 			});
 
 			if (!garden) {
-				res.status(403).json({ error: "No garden with such id for this user" });
+				res.status(403).json(standardErrors.GardenNotFoundError);
 				return;
 			}
 
@@ -69,38 +192,92 @@ const speciesController = {
 			);
 
 			if (alreadyPresent) {
-				res.status(403).json({
-					error:
-						"Garden already contains this species. Please choose another species.",
-				});
+				res.status(403).json(standardErrors.SpeciesAlreadyExistsInGardenError);
 				return;
 			}
 
 			const foundSpecies = await Species.findByPk(species_id, {});
 			if (!foundSpecies) {
-				res
-					.status(403)
-					.json({ error: "The specified species does not exist." });
+				res.status(403).json(standardErrors.SpeciesDoesNotExistError);
 				return;
 			}
 
-			console.log(garden.species); // 2 espèces
+			const nbUpdated = await garden.addSpecies(foundSpecies);
 
-			// Ici j'ai tenté update(), save(), reload(), addSpecies(), setSpecies(), etc.
-			garden.species.push(foundSpecies); // => update l'instance
-			garden.addSpecies(foundSpecies); // => update la BD (après save()) mais pas l'instance
-			console.log(garden.species);
+			if (!nbUpdated.length === 1) {
+				res
+					.status(500)
+					.json(standardErrors.FailedUpdateError(nbUpdated.length));
+				return;
+			}
 
-			await garden.save();
+			res.json({
+				updated: nbUpdated.length,
+			});
+		} catch (error) {
+			res.status(500).json(standardErrors.InternalServerError);
+			return;
+		}
+	},
 
-			res.json({message: "Updated successfully!"})
+	removeOneFromGarden: async (req, res) => {
+		try {
+			if (!validate.isValidAsInt(req.params.garden_id)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+			const garden_id = parseInt(req.params.garden_id);
 
+			if (!res.locals.id) {
+				res.status(403).json(standardErrors.UserNotLoggedError);
+				return;
+			}
+
+			const user_id = res.locals.id;
+
+			if (!validate.isValidAsInt(req.body.speciesId)) {
+				res.status(403).json(standardErrors.BadRequestError);
+				return;
+			}
+			const species_id = parseInt(req.body.speciesId);
+
+			let garden = await Garden.findOne({
+				where: {
+					id: garden_id,
+					userId: user_id,
+				},
+				include: ["species"],
+			});
+
+			if (!garden) {
+				res.status(403).json(standardErrors.GardenNotFoundError);
+				return;
+			}
+
+			const foundSpecies = await garden.getSpecies({
+				where: { id: species_id },
+			});
+
+			if (!foundSpecies[0]) {
+				res.status(403).json(standardErrors.SpeciesNotInGardenError);
+				return;
+			}
+
+			const nbDeleted = await garden.removeSpecies(foundSpecies[0]);
+
+			if (nbDeleted != 1) {
+				res.status(500).json(standardErrors.FailedDeleteError(nbDeleted));
+				return;
+			}
+
+			res.json({
+				deleted: nbDeleted,
+			});
 		} catch (error) {
 			console.log(error);
-			res.status(500).json(error.message);
+			res.status(500).json(standardErrors.InternalServerError);
 			return;
 		}
 	},
 };
-
 module.exports = speciesController;
