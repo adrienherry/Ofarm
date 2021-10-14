@@ -87,6 +87,7 @@ const IndividualGarden = () => {
     }
   }, []);
 
+  
   return (
     <>
       <UserHeader />
