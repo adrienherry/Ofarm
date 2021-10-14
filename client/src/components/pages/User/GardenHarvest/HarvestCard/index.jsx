@@ -35,7 +35,8 @@ const HarvestCard = ({ date, quantity, comment, species, title }) => (
 			{!title && (
 				<>
 					<span className="harvest-card__span">
-						{(species.co2Data.co2_total * quantity).toFixed(2)} kg
+            {species.co2Data && (species.co2Data.co2_total * quantity).toFixed(2) + " kg"}
+            {!species.co2Data && "-"}
 					</span>
 				</>
 			)}
