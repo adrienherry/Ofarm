@@ -93,7 +93,7 @@ router.get(
 
 // "ME" ROUTES - REGISTERED USER WITH CORRECT USERNAME AND ID
 
-/** 
+/**
  * @route GET /user
  * @group User
  * @summary Find user using his access token (username and ID). Only accessible to logged users.
@@ -295,7 +295,6 @@ router.get(
 	jwtService.verifyAndDecodeTokenMiddleware,
 	harvestController.getHarvestByGardenId,
 );
-
 
 /**
  * @route POST /harvest

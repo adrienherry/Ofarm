@@ -1,4 +1,4 @@
-const { Garden, User, Field, Species } = require("../models");
+const { Garden, Field, Species } = require("../models");
 const { standardErrors, validate } = require("../helpers");
 
 const fieldController = {

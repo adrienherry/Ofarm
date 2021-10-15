@@ -59,7 +59,7 @@ const speciesController = {
 				order: [["name", "ASC"]],
 				attributes: { exclude: ["createdAt", "updatedAt"] },
 			});
-			res.json(species);
+			res.send(species);
 		} catch (error) {
 			console.log(error);
 			res.status(500).json(standardErrors.InternalServerError);

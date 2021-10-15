@@ -1,4 +1,4 @@
-const { Species, Garden } = require("../models");
+const { Species} = require("../models");
 const { Op, fn, col, where } = require("sequelize");
 const { standardErrors } = require("../helpers");
 

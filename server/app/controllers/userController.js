@@ -1,4 +1,3 @@
-const db = require("../services/sequelize");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const slugify = require("../helpers/slugify");

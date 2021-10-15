@@ -1,5 +1,4 @@
-const db = require("../services/sequelize");
-const { Op, transaction } = require("sequelize");
+const { Op } = require("sequelize");
 const { Garden, Species, EventType } = require("../models");
 const { standardErrors, slugify, validate } = require("../helpers");
 

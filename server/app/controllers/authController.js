@@ -1,15 +1,11 @@
 const bcrypt = require("bcrypt");
 
-const db = require("../services/sequelize");
-const { Op } = require("sequelize");
 const { User } = require("../models");
 
 const { slugify, standardErrors } = require("../helpers");
 
 const jwt = require("../services/jwtService");
 const blacklist = require("../services/jwtBlacklist");
-
-const saltRounds = 10;
 
 const authController = {
 	register: async (req, res) => {

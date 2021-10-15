@@ -1,5 +1,3 @@
-const db = require("../services/sequelize");
-const { Op, transaction } = require("sequelize");
 const {
 	Garden,
 	Event,
@@ -8,7 +6,7 @@ const {
 	EventType,
 	User,
 } = require("../models");
-const { standardErrors, slugify, validate } = require("../helpers");
+const { standardErrors, validate } = require("../helpers");
 
 const calendarEventController = {
 	getCalendarEvents: async (req, res) => {

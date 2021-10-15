@@ -13,8 +13,20 @@ const mockAxios = require("axios");
 
 describe("mock axios", () => {
 	it("calls mock axios with no params", async () => {
-		const { data } = await mockAxios.get("");
-		console.log(data)
-		// expect(data).toBe({ results: ["photoDeChat.png"] });
+		mockAxios.get.mockImplementationOnce(
+			() =>
+				new Promise((resolve, reject) =>
+					resolve({
+						data: {
+							results: ["someImg.png"],
+						},
+					}),
+				),
+		);
+
+		const response = await mockAxios.get("cats");
+		expect(response.data).toEqual({ results: ["someImg.png"] });
+		expect(mockAxios.get).toHaveBeenCalledTimes(1);
+		expect(mockAxios.get).toHaveBeenCalledWith("cats");
 	});
 });
