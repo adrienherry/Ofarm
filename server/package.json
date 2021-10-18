@@ -11,7 +11,6 @@
   "jest": {
     "testEnvironment": "node",
     "verbose": true,
-    "silent": true,
     "setupFilesAfterEnv": [
       "jest-extended/all"
     ]
@@ -32,14 +31,16 @@
     "express": "^4.17.1",
     "express-jwt": "^6.1.0",
     "express-swagger-generator": "^1.1.17",
-    "jest": "^27.2.5",
     "jest-extended": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12",
     "pg": "^8.7.1",
     "redis": "^3.1.2",
-    "sequelize": "^6.6.5",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "jest": "^27.3.0",
     "supertest": "^6.1.6"
   }
 }

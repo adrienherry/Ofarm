@@ -52,9 +52,9 @@ const speciesController = {
 						as: "events",
 						include: "eventType",
 						attributes: {
-							exclude: ["eventTypeId", "speciesId", "createdAt", "updatedAt"]
-						}
-					}
+							exclude: ["eventTypeId", "speciesId", "createdAt", "updatedAt"],
+						},
+					},
 				],
 				order: [["name", "ASC"]],
 				attributes: { exclude: ["createdAt", "updatedAt"] },
@@ -68,6 +68,7 @@ const speciesController = {
 
 	findOne: async (req, res) => {
 		try {
+			console.log(validate.isValidAsInt(req.params.id));
 			if (!validate.isValidAsInt(req.params.id)) {
 				res.status(403).json(standardErrors.BadRequestError);
 				return;

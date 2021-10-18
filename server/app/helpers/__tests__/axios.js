@@ -11,7 +11,7 @@
 
 const mockAxios = require("axios");
 
-describe("mock axios", () => {
+describe.skip("mock axios", () => {
 	it("calls mock axios with no params", async () => {
 		mockAxios.get.mockImplementationOnce(
 			() =>

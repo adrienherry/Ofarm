@@ -44,7 +44,9 @@ const router = require("./app/router");
 app.use("/api/v1", router);
 
 app.listen(port, () => {
-	console.log(`Server started on http://localhost:${port}...`);
+	if (process.env.NODE_ENV !== "production" && process.env.NODE_ENV!== "test") {
+		console.log(`Server started on http://localhost:${port}...`);
+	}
 });
 
 module.exports = app;

@@ -1,6 +1,6 @@
 const slugify = require("../slugify");
 
-describe("slugify", function () {
+describe("#slugify", function () {
 	it("should trim leading and trailing spaces", function () {
 		const input = "     trim   ";
 		expect(slugify(input)).toBe("trim");

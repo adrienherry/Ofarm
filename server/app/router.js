@@ -41,7 +41,7 @@ router.get("/species", cache, speciesController.findAll);
  * @group Species
  * @summary Get species with matching ID. Public route.
  * @param {integer} id.required - species id (ex: 2).
- * @returns {Array.<Species>} 200 - A single species matching the given ID.
+ * @returns {<Species>} 200 - A single species matching the given ID.
  * @returns {string} 500 - Internal Server Error.
  */
 router.get("/species/:id", cache, speciesController.findOne);

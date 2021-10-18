@@ -21,14 +21,14 @@ mergedData.forEach((speciesItem, index) => {
 		const shortName = found.nom_francais.split(",")[0].split("(")[0].trim();
 
 		speciesItem["co2_data"] = {
-			original_name: found.nom_francais,
-			short_name: shortName,
-			LCI_name: found.LCI_name,
+			originalName: found.nom_francais,
+			shortName: shortName,
+			LCIName: found.LCI_name,
 			category: found.groupe,
 			subcategory: found.sous_groupe,
-			co2_total: found.co2.synthese,
-			co2_units: found.co2.unite,
-			co2_share: {
+			co2Total: found.co2.synthese,
+			co2Units: found.co2.unite,
+			co2Share: {
 				agriculture: found.co2.etapes["Agriculture"],
 				transform: found.co2.etapes["Transformation"],
 				packaging: found.co2.etapes["Emballage"],
